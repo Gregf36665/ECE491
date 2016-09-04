@@ -30,8 +30,8 @@ module nexys4DDR (
 //		  input logic 	      BTND,
 		  output logic [6:0]  SEGS,
 		  output logic [7:0]  AN,
-		  output logic 	      DP,
-		  output logic [15:0] LED
+		  output logic 	      DP
+//		  output logic [15:0] LED
 //		  input logic         UART_TXD_IN,
 //		  input logic         UART_RTS,		  
 //		  output logic        UART_RXD_OUT,
@@ -40,13 +40,11 @@ module nexys4DDR (
 
   
     logic [4:0] d0, d1, d2, d3, d4, d5, d6, d7;
-   
-    
        
     dispctl U_DISPCTL ( .clk(CLK100MHZ), .reset(BTNC), .d7(d7[4:1]), .d6(d6[4:1]), .d5(d5[4:1]), .d4(d4[4:1]), .d3(d3[4:1]), 
-              .d2(d2[4:1]), .d1(d1[4:1]), .d0(d0[4:1]), .dp7(d7[0]), .dp6(d6[0]), .dp5(d5[0]), .dp4(d4[0]), 
-              .dp3(d3[0]), .dp2(d2[0]), .dp1(d1[0]), .dp0(d0[0]), .seg(SEGS), .dp(DP), .an(AN)
-            );
+                        .d2(d2[4:1]), .d1(d1[4:1]), .d0(d0[4:1]), .dp7(d7[0]), .dp6(d6[0]), .dp5(d5[0]), .dp4(d4[0]), 
+                        .dp3(d3[0]), .dp2(d2[0]), .dp1(d1[0]), .dp0(d0[0]), .seg(SEGS), .dp(DP), .an(AN)
+                       );
           
     reg_parm #(.W(5)) U_DIG0 (.clk(CLK100MHZ), .reset(BTNC), .lden(SW[0]), .d(SW[15:11]), .q(d0));
     reg_parm #(.W(5)) U_DIG1 (.clk(CLK100MHZ), .reset(BTNC), .lden(SW[1]), .d(SW[15:11]), .q(d1));
@@ -56,12 +54,5 @@ module nexys4DDR (
     reg_parm #(.W(5)) U_DIG5 (.clk(CLK100MHZ), .reset(BTNC), .lden(SW[5]), .d(SW[15:11]), .q(d5));
     reg_parm #(.W(5)) U_DIG6 (.clk(CLK100MHZ), .reset(BTNC), .lden(SW[6]), .d(SW[15:11]), .q(d6));
     reg_parm #(.W(5)) U_DIG7 (.clk(CLK100MHZ), .reset(BTNC), .lden(SW[7]), .d(SW[15:11]), .q(d7));
-
-
-
-    assign LED = SW; // For testing 
-//    assign AN = SW[7:0];
-//    assign SEGS = 7'h00;
-//    assign DP = 1'b0;
-    
+   
 endmodule // nexys4DDR

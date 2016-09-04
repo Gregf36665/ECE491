@@ -30,9 +30,6 @@ module dispctl (
 		output logic [7:0] an
 		);
 
-   // generate clock enable to drive time-multiplexing counter
-   // (you may need to adjust the frequency!)
-
    logic 			   enb;
    logic               [2:0] Q;
    logic               [7:0] an_n;
@@ -43,6 +40,8 @@ module dispctl (
    counter_parm #(.W(3)) U_COUNTER(.clk(clk), .enb(enb), .reset(reset), .q(Q));
    
    decoder_3_8_en U_DECODER (.a(Q), .enb(1'b1), .y(an_n));
+   
+   // Anodes and Decimal points are active-low
    assign an = ~an_n;
    assign dp = ~dp_n;
    
