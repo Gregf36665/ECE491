@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Sep 04 03:11:27 2016
+| Date         : Sun Sep 04 15:16:24 2016
 | Host         : ECE400-F6N3KB2 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file nexys4DDR_utilization_synth.rpt -pb nexys4DDR_utilization_synth.pb
 | Design       : nexys4DDR
@@ -148,13 +148,13 @@ Table of Contents
 +----------+------+---------------------+
 | FDRE     |   61 |        Flop & Latch |
 | OBUF     |   32 |                  IO |
-| LUT4     |   20 |                 LUT |
 | IBUF     |   18 |                  IO |
 | LUT5     |   17 |                 LUT |
+| LUT4     |   12 |                 LUT |
 | LUT6     |   10 |                 LUT |
+| LUT3     |    9 |                 LUT |
 | MUXF7    |    5 |               MuxFx |
 | CARRY4   |    4 |          CarryLogic |
-| LUT3     |    1 |                 LUT |
 | LUT2     |    1 |                 LUT |
 | LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |

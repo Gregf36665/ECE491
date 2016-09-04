@@ -41,11 +41,13 @@ module dispctl (
    clkenb #(.DIVFREQ(1000)) U_CLKENB(.clk(clk), .enb(enb), .reset(reset));
 
    counter_parm #(.W(3)) U_COUNTER(.clk(clk), .enb(enb), .reset(reset), .q(Q));
-   decoder_3_8_en U_DECODER (.a(Q), .enb(enb), .y(an_n));
+   
+   decoder_3_8_en U_DECODER (.a(Q), .enb(1'b1), .y(an_n));
    assign an = ~an_n;
+   assign dp = ~dp_n;
    
    mux8_parm #(.W(1)) U_DPMUX(.d0(dp0), .d1(dp1), .d2(dp2), .d3(dp3), .d4(dp4), 
-               .d5(dp5), .d6(dp6), .d7(dp7), .sel(Q), .y(dp));
+               .d5(dp5), .d6(dp6), .d7(dp7), .sel(Q), .y(dp_n));
                
    mux8_parm #(.W(4)) U_SEGMUX(.d0(d0), .d1(d1), .d2(d2), .d3(d3), .d4(d4), 
                .d5(d5), .d6(d6), .d7(d7), .sel(Q), .y(seg_val));
