@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Sun Sep 04 03:38:48 2016">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="c08fa25f43b847b2a05809ec6ab9bc66" type="ProjectID"/>
+<property name="ProjectIteration" value="7" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="2" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="4" type="JavaHandler"/>
+<property name="EditDelete" value="1" type="JavaHandler"/>
+<property name="EditSimulationSets" value="1" type="JavaHandler"/>
+<property name="HighglightDefaultColor" value="1" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="4" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="4" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
+<property name="RunBitgen" value="6" type="JavaHandler"/>
+<property name="RunSchematic" value="2" type="JavaHandler"/>
+<property name="SetTopNode" value="2" type="JavaHandler"/>
+<property name="SimulationRestart" value="1" type="JavaHandler"/>
+<property name="SimulationRun" value="8" type="JavaHandler"/>
+<property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
+<property name="ViewTaskSynthesis" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, decoder_3_8_test (decoder_3-8_test.sv" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1], 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1], 4, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources], 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FloatingTopDialog_IGNORE_AND_CONTINUE_WITH_INVALID_TOP, Ignore and continue with invalid top module" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, C:/Users/flynng/Desktop/ECE491/lab1/lab_1.xpr, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sim_1, [HDL 9-806] Syntax error near Error. [C:/Users/flynng/Desktop/ECE491/lab1/lab_1.srcs/sim_1/new/decoder_3-8_test.sv:40]. ], 5, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sim_1, [HDL 9-806] Syntax error near endmodule. [C:/Users/flynng/Desktop/ECE491/lab1/lab_1.srcs/sim_1/new/decoder_3-8_test.sv:48]. ], 5, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Simulation, sim_1, [VRFC 10-91] y_expected is not declared [C:/Users/flynng/Desktop/ECE491/lab1/lab_1.srcs/sim_1/new/decoder_3-8_test.sv:42]. ], 2, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Simulation, sim_1], 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, Messages_cleanUpMessages" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 167, 80" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 330, 40" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 112, 433" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 112, 469" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 113, 485" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 116, 471" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 119, 472" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 131, 367" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 135, 390" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 140, 502" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 153, 478" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 169, 467" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 169, 489" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 176, 540" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 177, 467" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 178, 472" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 181, 275" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 182, 163" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 182, 163, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 182, 468" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 188, 380" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 191, 515" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 191, 534" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 258, 488" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 309, 439" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 359, 467" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 420, 349" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 420, 349, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 462, 473" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 462, 473, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 53, 398" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 57, 399" value="1" type="GuiResourceData"/>
+<property name="decoder_3-8_test.sv, 99, 519" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="2" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="1" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

@@ -30,18 +30,18 @@ module nexys4DDR (
 //		  input logic 	      BTND,
 		  output logic [6:0]  SEGS,
 		  output logic [7:0]  AN,
-		  output logic 	      DP
-//		  output logic [15:0] LED,
+		  output logic 	      DP,
+		  output logic [15:0] LED
 //		  input logic         UART_TXD_IN,
 //		  input logic         UART_RTS,		  
 //		  output logic        UART_RXD_OUT,
 //		  output logic        UART_CTS		  
             );
-  // add SystemVerilog code & module instantiations here
+
   
     logic [4:0] d0, d1, d2, d3, d4, d5, d6, d7;
    
-    assign LED = SW; // For testing 
+    
        
     dispctl U_DISPCTL ( .clk(CLK100MHZ), .reset(BTNC), .d7(d7[4:1]), .d6(d6[4:1]), .d5(d5[4:1]), .d4(d4[4:1]), .d3(d3[4:1]), 
               .d2(d2[4:1]), .d1(d1[4:1]), .d0(d0[4:1]), .dp7(d7[0]), .dp6(d6[0]), .dp5(d5[0]), .dp4(d4[0]), 
@@ -58,4 +58,10 @@ module nexys4DDR (
     reg_parm #(.W(5)) U_DIG7 (.clk(CLK100MHZ), .reset(BTNC), .lden(SW[7]), .d(SW[15:11]), .q(d7));
 
 
+
+    assign LED = SW; // For testing 
+//    assign AN = SW[7:0];
+//    assign SEGS = 7'h00;
+//    assign DP = 1'b0;
+    
 endmodule // nexys4DDR

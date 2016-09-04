@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  "../../../seven_seg.sv"
+sv xil_defaultlib  "../../../mux8_parm.sv"
+sv xil_defaultlib  "../../../decoder_3_8_en.sv"
+sv xil_defaultlib  "../../../counter_parm.sv"
+sv xil_defaultlib  "../../../clkenb.sv"
+sv xil_defaultlib  "../../../reg_param.sv"
+sv xil_defaultlib  "../../../dispctl.sv"
+sv xil_defaultlib  "../../../nexys4DDR.sv"
+sv xil_defaultlib  "../../../lab_1.srcs/sim_1/new/decoder_3-8_test.sv"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
