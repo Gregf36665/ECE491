@@ -1,0 +1,4 @@
+Running: xsim.dir/transmitter_bench_behav/xsimk.exe -simmode gui -wdb transmitter_bench_behav.wdb -simrunnum 0 -socket 2944
+Design successfully loaded
+Design Loading Memory Usage: 7316 KB (Peak: 7316 KB)
+Design Loading CPU Usage: 30 ms

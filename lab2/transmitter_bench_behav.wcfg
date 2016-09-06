@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="transmitter_bench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="transmitter_bench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="39999999fs"></ZoomStartTime>
+      <ZoomEndTime time="280000001fs"></ZoomEndTime>
+      <Cursor1Time time="183457000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/transmitter_bench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/send" type="logic">
+      <obj_property name="ElementShortName">send</obj_property>
+      <obj_property name="ObjectShortName">send</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/rdy" type="logic">
+      <obj_property name="ElementShortName">rdy</obj_property>
+      <obj_property name="ObjectShortName">rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/txd" type="logic">
+      <obj_property name="ElementShortName">txd</obj_property>
+      <obj_property name="ObjectShortName">txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/U_COUNTER/q" type="array">
+      <obj_property name="ElementShortName">q[2:0]</obj_property>
+      <obj_property name="ObjectShortName">q[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/next" type="array">
+      <obj_property name="ElementShortName">next[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/U_COUNTER/carry" type="logic">
+      <obj_property name="ElementShortName">carry</obj_property>
+      <obj_property name="ObjectShortName">carry</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/U_COUNTER/q" type="array">
+      <obj_property name="ElementShortName">q[2:0]</obj_property>
+      <obj_property name="ObjectShortName">q[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/U_CLKENB/enb" type="logic">
+      <obj_property name="ElementShortName">enb</obj_property>
+      <obj_property name="ObjectShortName">enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/U_CLKENB/q" type="array">
+      <obj_property name="ElementShortName">q[0:0]</obj_property>
+      <obj_property name="ObjectShortName">q[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitter_bench/UUT/carry" type="logic">
+      <obj_property name="ElementShortName">carry</obj_property>
+      <obj_property name="ObjectShortName">carry</obj_property>
+   </wvobject>
+</wave_config>

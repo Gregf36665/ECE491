@@ -1,0 +1,25 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 374a03bc6742475ba50b197cacfa66f8 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot transmitter_bench_behav xil_defaultlib.transmitter_bench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/clkenb.sv" Line 20. Module clkenb(DIVFREQ=50000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/reg_param.sv" Line 1. Module reg_parm(W=8) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv" Line 1. Module mux8_parm(W=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/counter_parm.sv" Line 1. Module counter_parm(W=3) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/clkenb.sv" Line 20. Module clkenb(DIVFREQ=50000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/reg_param.sv" Line 1. Module reg_parm(W=8) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv" Line 1. Module mux8_parm(W=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sources_1/imports/lab1/counter_parm.sv" Line 1. Module counter_parm(W=3) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clkenb(DIVFREQ=50000000)
+Compiling module xil_defaultlib.reg_parm(W=8)
+Compiling module xil_defaultlib.mux8_parm(W=1)
+Compiling module xil_defaultlib.counter_parm(W=3)
+Compiling module xil_defaultlib.transmitter(BAUD_RATE=50000000)
+Compiling module xil_defaultlib.transmitter_bench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot transmitter_bench_behav
