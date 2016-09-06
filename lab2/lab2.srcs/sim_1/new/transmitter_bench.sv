@@ -38,9 +38,10 @@ module transmitter_bench();
     initial begin
         #20;
         send = 1'b1;
-        #20
-        send = 1'b0;
-        #200
+        #50
+        //send = 1'b0;
+        data = 8'b00001111;
+        #500
         $stop;
         
     end
