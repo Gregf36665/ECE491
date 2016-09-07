@@ -30,18 +30,21 @@ module transmitter_bench();
     // Outputs
     logic rdy, txd;
     
-    transmitter #(.BAUD_RATE(50_000_000)) UUT(.clk,.send,.data,.rdy,.txd);
+    transmitter #(.BAUD_RATE(25_000_000)) UUT(.clk,.send,.data,.rdy,.txd);
     
     always
         #5 clk = ~clk;
         
     initial begin
-        #20;
+        #40;
         send = 1'b1;
-        #50
+        #400
         //send = 1'b0;
+        // is sending 2 bits a long enough pause for stop bit and start bit?
         data = 8'b00001111;
-        #500
+        #200
+        send = 1'b0;
+        #400
         $stop;
         
     end
