@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module counter_parm #(parameter W=4, parameter CARRY_VAL=4'hF) (
 		     input logic clk, reset, enb,
 		     output logic [W-1:0] q,

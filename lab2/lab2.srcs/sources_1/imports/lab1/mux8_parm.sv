@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module mux8_parm #(parameter W=4) (
 		 input logic [W-1:0]  d0, d1, d2, d3, d4, d5, d6, d7,
 		 input logic [2:0]    sel,

@@ -45,6 +45,11 @@ module transmitter_bench();
         #200
         send = 1'b0;
         #400
+        data = 8'b00110011;
+        send = 1'b1;
+        repeat(30) @(posedge clk);
+        send = 1'b0;
+        #200
         $stop;
         
     end

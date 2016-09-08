@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //-----------------------------------------------------------------------------
 // Title         : Nexys4 Simple Top-Level File
 // Project       : ECE 491
@@ -28,15 +29,25 @@ module nexys4DDR (
 //		  input logic 	      BTNL, 
 //		  input logic 	      BTNR,
 //		  input logic 	      BTND,
-		  output logic [6:0]  SEGS,
-		  output logic [7:0]  AN,
-		  output logic 	      DP
-//		  output logic [15:0] LED
+//		  output logic [6:0]  SEGS,
+//		  output logic [7:0]  AN,
+//		  output logic 	      DP
+		  output logic        LED,
 //		  input logic         UART_TXD_IN,
+		  output logic        JA,
 //		  input logic         UART_RTS,		  
-//		  output logic        UART_RXD_OUT,
+		  output logic        UART_RXD_OUT
 //		  output logic        UART_CTS		  
             );
 
-   
+
+    logic send;
+    
+    single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse(send));
+    
+    transmitter #(.BAUD_RATE(9600)) U_TX (.clk(CLK100MHZ), .send, .data(SW[7:0]),
+                                            .rdy(LED), .txd(UART_RXD_OUT));   
+                                            
+    assign JA = UART_RXD_OUT; 
+                                            
 endmodule // nexys4DDR

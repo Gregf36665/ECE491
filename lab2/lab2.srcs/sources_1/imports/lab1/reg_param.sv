@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module reg_parm #(parameter W=4) (
 		input logic          clk,
 		input logic          reset,
