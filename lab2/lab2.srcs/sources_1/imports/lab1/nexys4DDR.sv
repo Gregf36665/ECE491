@@ -23,7 +23,7 @@
 module nexys4DDR (
 		  // un-comment the ports that you will use
           input logic         CLK100MHZ,
-		  input logic [7:0]   SW,
+		  input logic [8:0]   SW,
 		  input logic 	      BTNC,
 //		  input logic 	      BTNU, 
 //		  input logic 	      BTNL, 
@@ -41,11 +41,13 @@ module nexys4DDR (
             );
 
 
-    logic send;
+    logic send, d_pulse;
+   
+    assign send = d_pulse | SW[8];
     
-    single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse(send));
+    single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse);
     
-    transmitter #(.BAUD_RATE(9600)) U_TX (.clk(CLK100MHZ), .send, .data(SW),
+    transmitter #(.BAUD_RATE(9600)) U_TX (.clk(CLK100MHZ), .send, .data(SW[7:0]),
                                             .rdy(LED), .txd(UART_RXD_OUT));   
                                             
     assign JA = UART_RXD_OUT; // This allows the data to be viewed on the scope

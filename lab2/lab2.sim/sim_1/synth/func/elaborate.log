@@ -1,0 +1,9 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 374a03bc6742475ba50b197cacfa66f8 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot transmitter_bench_func_synth xil_defaultlib.transmitter_bench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port txd on this module [C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sim_1/new/transmitter_bench.sv:33]
+Completed static elaboration
+Starting simulation data flow analysis
+ERROR: [XSIM 43-3250] File C:/Users/flynng/Desktop/ECE491/lab2/lab2.sim/sim_1/synth/func/transmitter_bench_func_synth.v, line 526. Unsupported named port connection association : .clk(clk) where formal is alias port.

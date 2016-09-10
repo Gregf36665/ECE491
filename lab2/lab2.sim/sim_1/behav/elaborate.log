@@ -7,11 +7,11 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.clkenb(DIVFREQ=25000000)
+Compiling module xil_defaultlib.clkenb(DIVFREQ=12500000)
 Compiling module xil_defaultlib.reg_parm(W=8)
 Compiling module xil_defaultlib.mux8_parm(W=1)
 Compiling module xil_defaultlib.counter_parm(CARRY_VAL=4'b1000)
-Compiling module xil_defaultlib.transmitter(BAUD_RATE=25000000)
+Compiling module xil_defaultlib.transmitter(BAUD_RATE=12500000)
 Compiling module xil_defaultlib.transmitter_bench
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot transmitter_bench_behav

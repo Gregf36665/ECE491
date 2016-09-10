@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "transmitter_bench_func_synth.v"
+sv xil_defaultlib  "../../../../lab2.srcs/sim_1/new/transmitter_bench.sv"
+sv xil_defaultlib  "../../../../lab2.srcs/sim_1/new/enb_bench.sv"
+
+# Do not sort compile order
+nosort

@@ -11,11 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
-      <Cursor1Time time="484653000fs"></Cursor1Time>
+      <ZoomStartTime time="177335056fs"></ZoomStartTime>
+      <ZoomEndTime time="406887551fs"></ZoomEndTime>
+      <Cursor1Time time="377672000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="5" />
+   <wave_markers>
+      <marker time="1925000000" label="" />
+      <marker time="1565000000" label="" />
+      <marker time="1000000000" label="" />
+      <marker time="285000000" label="" />
+      <marker time="205000000" label="" />
+   </wave_markers>
    <wvobject fp_name="/transmitter_bench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -23,11 +30,6 @@
    <wvobject fp_name="/transmitter_bench/send" type="logic">
       <obj_property name="ElementShortName">send</obj_property>
       <obj_property name="ObjectShortName">send</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/data" type="array">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/transmitter_bench/rdy" type="logic">
       <obj_property name="ElementShortName">rdy</obj_property>
@@ -37,45 +39,9 @@
       <obj_property name="ElementShortName">txd</obj_property>
       <obj_property name="ObjectShortName">txd</obj_property>
    </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/sel" type="array">
-      <obj_property name="ElementShortName">sel[3:0]</obj_property>
-      <obj_property name="ObjectShortName">sel[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/U_COUNTER/q" type="array">
-      <obj_property name="ElementShortName">q[3:0]</obj_property>
-      <obj_property name="ObjectShortName">q[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/state" type="array">
-      <obj_property name="ElementShortName">state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">state[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/U_COUNTER/carry" type="logic">
-      <obj_property name="ElementShortName">carry</obj_property>
-      <obj_property name="ObjectShortName">carry</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/U_COUNTER/q" type="array">
-      <obj_property name="ElementShortName">q[3:0]</obj_property>
-      <obj_property name="ObjectShortName">q[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/U_CLKENB/enb" type="logic">
-      <obj_property name="ElementShortName">enb</obj_property>
-      <obj_property name="ObjectShortName">enb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/U_CLKENB/q" type="array">
-      <obj_property name="ElementShortName">q[1:0]</obj_property>
-      <obj_property name="ObjectShortName">q[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/carry" type="logic">
-      <obj_property name="ElementShortName">carry</obj_property>
-      <obj_property name="ObjectShortName">carry</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/count" type="array">
-      <obj_property name="ElementShortName">count[3:0]</obj_property>
-      <obj_property name="ObjectShortName">count[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/transmitter_bench/UUT/saved_data" type="array">
-      <obj_property name="ElementShortName">saved_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">saved_data[7:0]</obj_property>
+   <wvobject fp_name="/transmitter_bench/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
 </wave_config>

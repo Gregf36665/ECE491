@@ -1,0 +1,11 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/flynng/Desktop/ECE491/lab2/lab2.sim/sim_1/synth/func/transmitter_bench_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkenb
+INFO: [VRFC 10-311] analyzing module counter_parm
+INFO: [VRFC 10-311] analyzing module nexys4DDR
+INFO: [VRFC 10-311] analyzing module transmitter
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sim_1/new/transmitter_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module transmitter_bench
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sim_1/new/enb_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module enb_bench
+INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/lab2/lab2.srcs/sim_1/new/enb_bench.sv:26]
