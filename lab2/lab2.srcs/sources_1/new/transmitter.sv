@@ -1,23 +1,19 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/06/2016 08:46:25 AM
-// Design Name: 
-// Module Name: transmitter
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------
+// Title         : transmitter - ASYNCHRONOUS TRANSMITTER
+// Project       : ECE 491 - Senior Design I
+//-----------------------------------------------------------------------------
+// File          : transmitter.sv
+// Author        : Raji Birru & Greg Flynn
+// Created       : 09.05.2016
+// Last modified : 09.11.2016
+//-----------------------------------------------------------------------------
+// Description :
+//
+//-----------------------------------------------------------------------------
+// Modification history :
+// 09.05.2016 : created
+//-----------------------------------------------------------------------------
 
 
 module transmitter(
