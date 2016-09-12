@@ -1,24 +1,19 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/06/2016 09:47:25 AM
-// Design Name: 
-// Module Name: transmitter_bench
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
+//-----------------------------------------------------------------------------
+// Title         : transmitter_bench - ASYNCHRONOUS TRANSMITTER TESTBENCH
+// Project       : ECE 491 - Senior Design I
+//-----------------------------------------------------------------------------
+// File          : transmitter_bench.sv
+// Author        : Raji Birru & Greg Flynn
+// Created       : 09.05.2016
+// Last modified : 09.11.2016
+//-----------------------------------------------------------------------------
+// Description : This file serves as the testing module for the transmitter.
+// Various requirements listed in the Lab 2 design file are verified below. 
+//-----------------------------------------------------------------------------
+// Modification history :
+// 09.05.2016 : created
+//-----------------------------------------------------------------------------
 
 module transmitter_bench();
 
@@ -71,7 +66,7 @@ module transmitter_bench();
     endtask    
     
     task check_no_send;
-        data = 8'hXX;
+        data = 8'h00;
         #10;
         send = 0;
         repeat (10) @(posedge clk);

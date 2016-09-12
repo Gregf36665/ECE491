@@ -8,13 +8,14 @@
 // Created       : 09.05.2016
 // Last modified : 09.11.2016
 //-----------------------------------------------------------------------------
-// Description :
+// Description : This module is for an asynchronus parametrized 8-bit 
+// transmitter with a single start bit and a single stop bit with no parity.
+// 
 //
 //-----------------------------------------------------------------------------
 // Modification history :
 // 09.05.2016 : created
 //-----------------------------------------------------------------------------
-
 
 module transmitter(
     input logic clk,

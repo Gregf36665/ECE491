@@ -11,17 +11,17 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="177335056fs"></ZoomStartTime>
-      <ZoomEndTime time="406887551fs"></ZoomEndTime>
-      <Cursor1Time time="377672000fs"></Cursor1Time>
+      <ZoomStartTime time="1113333650fs"></ZoomStartTime>
+      <ZoomEndTime time="1608946583fs"></ZoomEndTime>
+      <Cursor1Time time="2063344000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="5" />
    <wave_markers>
-      <marker time="1925000000" label="" />
-      <marker time="1565000000" label="" />
-      <marker time="1000000000" label="" />
-      <marker time="285000000" label="" />
       <marker time="205000000" label="" />
+      <marker time="55000000" label="" />
+      <marker time="25000000" label="" />
+      <marker time="1205000000" label="" />
+      <marker time="1925000000" label="" />
    </wave_markers>
    <wvobject fp_name="/transmitter_bench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
