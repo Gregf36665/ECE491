@@ -1,0 +1,16 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+OK: txen line high on transmission
+OK: txen line high for EOF tx
+OK: txen line high for EOF tx
+OK: txen line high for EOF tx
+OK: txen line high for EOF tx
+OK: txen line high for EOF tx
+OK: txen line high for EOF tx due to clock delay
+Warning: FAIL(txen line low at end of tx) Failed test 8 at time 277.
+Time: 277 ns  Iteration: 0  Process: /check_p/check_ok  File: C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/check_p.sv
+Warning:   Expected value 0x0, Inspected Value 0x1
+Time: 277 ns  Iteration: 0  Process: /check_p/check_ok  File: C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/check_p.sv
+
+Tesbench Complete.
+ATTENTION: 1 Error(s) in 8 tests

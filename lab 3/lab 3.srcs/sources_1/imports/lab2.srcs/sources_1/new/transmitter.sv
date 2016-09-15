@@ -32,14 +32,15 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
     logic counter_rst, mux_out, carry, lden, clk_reset, eof_carry, eof_reset;
     logic [7:0] saved_data;
     logic [2:0] count; // this counts start, 8-bit and stop, 10 bits total
-    logic [$clog2(EOF_WIDTH)-1:0] eof_count;
+    logic [$clog2(EOF_WIDTH):0] eof_count;
     
     typedef enum logic [2:0] {
         IDLE    = 3'b000,
         STAND_BY_START   = 3'b001,
         SEND    = 3'b010,
         STAND_BY_STOP    = 3'b011,
-        EOF = 3'b100
+        EOF = 3'b100,
+        EOF_end = 3'b101
     } states;
     
     states state, next;
@@ -121,7 +122,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     end
                 EOF:
                     begin
-                        if(eof_carry) next = IDLE;
+                        if(eof_carry) next = EOF_end;
                         else next = EOF;
                         lden = 1'b0;
                         rdy = 1'b1;
@@ -132,6 +133,23 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                         clk_reset = 1'b0;
                         idle = 1'b1;
                     end 
+                EOF_end:
+                // This state ensures that the last bit of the EOF is sent completly 
+                // Since the enb signal is 1 clock cycle too late the EOF will be sent
+                // for 1 extra period.  This is noticable in the simulation but it will
+                // be acceptable in the hardware since we expect to operate at 10kHz
+                begin
+                    if(eof_count == '0) next = IDLE;
+                    else next = EOF_end;
+                    lden = 1'b0;
+                    rdy = 1'b1;
+                    txen = 1'b1;
+                    txd = 1'b1;
+                    counter_rst = 1'b1; // reset the counter
+                    eof_reset = 1'b0;
+                    clk_reset = 1'b0;
+                    idle = 1'b1;
+                end 
                 default:
                     begin
                        next = IDLE;
