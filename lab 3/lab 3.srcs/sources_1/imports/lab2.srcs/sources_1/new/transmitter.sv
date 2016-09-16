@@ -112,10 +112,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                 // I think this is acutally the last transmitted bit not the stop bit
                     begin
                         if(enb) begin
-                            lden = 1'b1; // reset the  
-                            next = send ? STAND_BY_START : EOF;
+                            lden = send; // reset the counter position if the send line is high  
+                            next = send ? SEND : EOF;
                         end
-                        else next = send ? STAND_BY_START : STAND_BY_STOP;                    
+                        else next = STAND_BY_STOP;                    
                         rdy = 1'b1;
                         clk_reset = 1'b0;
                         lden = 1'b0;

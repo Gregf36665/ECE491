@@ -135,7 +135,8 @@ module manchester_bench();
         init_signals;
         // check_single_bit_tx;
         // check_txen;
-        check_multi_byte(8'h00, 8'h33, 8'h55, 8'hCC, 8'hFF);
+        check_multi_byte(8'h00, 8'hFF, 8'h55, 8'hCC, 8'h33);
+        // check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
         check_summary_stop;
         $stop;        
     end

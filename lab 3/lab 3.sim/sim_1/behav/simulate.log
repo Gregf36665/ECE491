@@ -1,7 +1,13 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
+FAIL(Check TXD val frame 2/2) Failed test 16 at time 196.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Check TXD val frame 2/2) Failed test 32 at time 356.
+  Expected value 0x0, Inspected Value 0x1
 FAIL(Check TXD val frame 2/2) Failed test 48 at time 516.
   Expected value 0x1, Inspected Value 0x0
+FAIL(Check TXD val frame 2/2) Failed test 64 at time 676.
+  Expected value 0x0, Inspected Value 0x1
 
 Tesbench Complete.
-ATTENTION: 1 Error(s) in 80 tests
+ATTENTION: 4 Error(s) in 80 tests
