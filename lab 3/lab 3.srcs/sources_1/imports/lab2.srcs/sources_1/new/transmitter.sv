@@ -54,6 +54,8 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
    
     always_comb
         begin
+        // Default values
+        lden = 1'b0;
             unique case(state)
                 IDLE:
                     begin
@@ -107,6 +109,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                         txd = mux_out;
                         idle = 1'b0;
                     end
+                    
                 STAND_BY_STOP:
                 // This lets the stop bit stay in position for the entire baud cycle
                 // I think this is acutally the last transmitted bit not the stop bit

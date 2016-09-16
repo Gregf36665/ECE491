@@ -48,11 +48,11 @@ module transmitter_bench();
     endtask
     
     task check_multidata;
-        data = 8'h0F;
+        data = 8'h00;
         #10;
         send = 1;
         repeat (12) @(posedge clk); // wait long enough for the first data to be saved
-        data = 8'h00;
+        data = 8'hFF;
         repeat (40) @(posedge clk); // wait long enough to be at the second transmission
         send = 0;
         repeat (40) @(posedge clk); // wait long enough to send both bytes
@@ -88,14 +88,14 @@ module transmitter_bench();
     initial begin
         init_signals;
         check_no_send;
-        check_alternate_data;
-        repeat (9) @(posedge clk); // wait a little between each test
-        check_data33;
+//        check_alternate_data;
+//        repeat (9) @(posedge clk); // wait a little between each test
+//        check_data33;
         repeat (7) @(posedge clk); // wait a little between each test
         check_multidata;
         repeat (7) @(posedge clk); // wait a little between each test
-        check_all_1;
-        repeat (5) @(posedge clk); // wait a little between each test
+//        check_all_1;
+//        repeat (5) @(posedge clk); // wait a little between each test
         $stop;
         
     end
