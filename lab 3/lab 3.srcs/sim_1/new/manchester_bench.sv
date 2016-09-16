@@ -32,6 +32,7 @@ module manchester_bench();
         // Set up the inputs correctly;
         clk = 0;
         send = 0;
+        reset = 0;
     endtask
     
     task check_bit(nrz_val);
@@ -57,6 +58,30 @@ module manchester_bench();
             check_bit(((val >> (i)) & 8'h01)); // check each bit
     endtask
     
+    
+    task check_multi_byte(logic [7:0] val_a, val_b, val_c, val_d, val_e);
+        data = val_a;
+        send = 1;
+        @(negedge rdy); #1; // wait until we are starting to transmit
+        data = val_b;
+        for (int i=0; i<8; i++)
+                check_bit(((val_a >> (i)) & 8'h01)); // check each bit
+        data = val_c;
+        for (int i=0; i<8; i++)
+                check_bit(((val_b >> (i)) & 8'h01)); // check each bit
+        data = val_d;
+        for (int i=0; i<8; i++)
+            check_bit(((val_c >> (i)) & 8'h01)); // check each bit
+        data = val_e;
+        for (int i=0; i<8; i++)
+            check_bit(((val_d >> (i)) & 8'h01)); // check each bit
+        for (int i=0; i<8; i++)
+            check_bit(((val_e >> (i)) & 8'h01)); // check each bit
+                            
+    endtask
+        
+        
+    
     task check_idle();
         check("Checking idle", txd, 1'b1);
     endtask
@@ -70,20 +95,20 @@ module manchester_bench();
         send = 1;
         @(negedge rdy); #1; // we have started transmitting
         check_ok("txen line high on transmission", txen, 1'b1);
+        send = 0;
         @(posedge rdy); // this gets to the 8th bit
         repeat(2) @(posedge clk); #1; // this gets to the EOF section
         
         check_ok("txen line high for EOF tx", txen, 1'b1);
+        // get away from the clock edge
         repeat(4) @(posedge clk) // checking that the EOF is all good
                #1 check_ok("txen line high for EOF tx", txen, 1'b1);
          
          @(posedge clk) // The clk enb module is off by 1 cycle
-            #1 check_ok("txen line high for EOF tx due to clock delay", txen, 1'b1);
-                                       
-         #1 check_ok("txen line low at end of tx", txen, 1'b0);
+            #1; // skip this test since this part does not matter
             
-            // check_ok("Verify", txd, 1'b1); // Check that the txd line is held high
-            
+         @(posedge clk) // next clock edge the txen should be low                              
+         #1 check_ok("txen line low at end of tx", txen, 1'b0);            
     endtask
    
    task check_single_bit_tx;
@@ -109,7 +134,8 @@ module manchester_bench();
     initial begin
         init_signals;
         // check_single_bit_tx;
-        check_txen;
+        // check_txen;
+        check_multi_byte(8'h00, 8'h33, 8'h55, 8'hCC, 8'hFF);
         check_summary_stop;
         $stop;        
     end

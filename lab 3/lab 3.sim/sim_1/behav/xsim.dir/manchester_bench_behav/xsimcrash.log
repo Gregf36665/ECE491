@@ -1,41 +1,37 @@
-Unable to capture context for thread 8768 in process 8880, can not generate back trace
-Unable to capture context for thread 8996 in process 8880, can not generate back trace
-Exception at PC 0x000007FEFD4FA06D
-Unable to capture context for thread 8768 in process 8880, can not generate back trace
-Unable to capture context for thread 8996 in process 8880, can not generate back trace
-Exception at PC 0x000007FEB4FFBB93
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Unable to capture context for thread 4116 in process 5384, can not generate back trace
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEBF0FBB93
 Printing stacktrace...
 
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Unable to capture context for thread 7588 in process 8880, can not generate back trace
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-Exception at PC 0x000007FEFD4FA06D
-[0]  [0x000007FEB4FFBB93]
-[1]  [0x000007FEB4FFBB93]
-[2]  [0x000007FEB4FFB4A1]
-[3]  [0x000007FEB4FFB3EF]
-[4]  [0x000007FEB4FE19FE]
-[5]  [0x000007FEB4FE0ED1]
-[6]  [0x000007FEB4FE0D76]
-[7]  [0x000007FEB4F879F6]
-[8]  [0x000007FEB4F77AFB]
-[9]  [0x000007FEB509E90A]
-[10]  [0x000007FEB50B9F87]
-[11]  [0x000007FEB50BA05F]
-[12] (BaseThreadInitThunk+0xd) [0x00000000775659BD]
-[13] (RtlUserThreadStart+0x21) [0x000000007769A2E1]
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+Exception at PC 0x000007FEFD2BA06D
+[0]  [0x000007FEBF0FBB93]
+[1]  [0x000007FEBF0FBB93]
+[2]  [0x000007FEBF0FB4A1]
+[3]  [0x000007FEBF0FB3EF]
+[4]  [0x000007FEBF0E19FE]
+[5]  [0x000007FEBF0E0ED1]
+[6]  [0x000007FEBF0E0D76]
+[7]  [0x000007FEBF0879F6]
+[8]  [0x000007FEBF077AFB]
+[9]  [0x000007FEBF19E90A]
+[10]  [0x000007FEBF1B9F87]
+[11]  [0x000007FEBF1BA05F]
+[12] (BaseThreadInitThunk+0xd) [0x00000000773C59BD]
+[13] (RtlUserThreadStart+0x21) [0x00000000774FA2E1]
 Done

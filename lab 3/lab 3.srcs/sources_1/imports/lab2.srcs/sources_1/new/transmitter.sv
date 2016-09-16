@@ -32,7 +32,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
     logic counter_rst, mux_out, carry, lden, clk_reset, eof_carry, eof_reset;
     logic [7:0] saved_data;
     logic [2:0] count; // this counts start, 8-bit and stop, 10 bits total
-    logic [$clog2(EOF_WIDTH):0] eof_count;
+    logic [$clog2(EOF_WIDTH)-1:0] eof_count;
     
     typedef enum logic [2:0] {
         IDLE    = 3'b000,
@@ -89,17 +89,19 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin    
                         if(carry == 1'b1)
                             begin
-                                next = STAND_BY_STOP;
+                                next = send ? SEND : STAND_BY_STOP;
                                 rdy = 1'b1;
+                                lden = 1'b1;
                             end
                         else 
                             begin
                                 next = SEND;
                                 rdy = 1'b0;
+                                lden = 1'b0;
                             end                   
                         txen = 1'b1;
                         clk_reset = 1'b0;
-                        lden = 1'b0;
+                        
                         counter_rst = 1'b0;
                         eof_reset = 1'b1;
                         txd = mux_out;
@@ -109,8 +111,11 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                 // This lets the stop bit stay in position for the entire baud cycle
                 // I think this is acutally the last transmitted bit not the stop bit
                     begin
-                        if(enb) next = EOF;
-                        else next = STAND_BY_STOP;                    
+                        if(enb) begin
+                            lden = 1'b1; // reset the  
+                            next = send ? STAND_BY_START : EOF;
+                        end
+                        else next = send ? STAND_BY_START : STAND_BY_STOP;                    
                         rdy = 1'b1;
                         clk_reset = 1'b0;
                         lden = 1'b0;
@@ -174,7 +179,8 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                                            .d6(saved_data[6]), .d7(saved_data[7]), .sel(count), .y(mux_out));
                                             
         counter_parm #(.W(3), .CARRY_VAL(4'd7))  U_COUNTER  (.clk, .enb(enb), .reset(counter_rst), .q(count), .carry(carry));
-        counter_parm #(.W($clog2(EOF_WIDTH)), .CARRY_VAL(EOF_WIDTH-1))  U_EOF_WIDTH_COUNT (.clk, .enb(enb), .reset(eof_reset), .q(eof_count), .carry(eof_carry));
+        counter_parm #(.W($clog2(EOF_WIDTH)), .CARRY_VAL(EOF_WIDTH - 1))  
+                U_EOF_WIDTH_COUNT (.clk, .enb(enb), .reset(eof_reset), .q(eof_count), .carry(eof_carry));
         
         assign baud = enb;
             
