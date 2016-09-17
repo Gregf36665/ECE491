@@ -1,11 +1,11 @@
 0.4
 2016.2
 C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.sim/sim_1/behav/glbl.v,1464879896,verilog,,,,,,,,,,,
-C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sim_1/new/manchester_bench.sv,1474045235,verilog,,,,,,,,,,,
+C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sim_1/new/manchester_bench.sv,1474120729,verilog,,,,,,,,,,,
 C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv,1473871591,verilog,,,,,,,,,,,
 C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv,1473871591,verilog,,,,,,,,,,,
 C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv,1473871591,verilog,,,,,,,,,,,
 C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv,1473871591,verilog,,,,,,,,,,,
-C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv,1474047171,verilog,,,,,,,,,,,
-C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/check_p.sv,1473871591,verilog,C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sim_1/new/manchester_bench.sv,,,,,,,,,,
+C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv,1474120949,verilog,,,,,,,,,,,
+C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/check_p.sv,1474120839,verilog,C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sim_1/new/manchester_bench.sv,,,,,,,,,,
 C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/manchester_tx.sv,1473871591,verilog,,,,,,,,,,,

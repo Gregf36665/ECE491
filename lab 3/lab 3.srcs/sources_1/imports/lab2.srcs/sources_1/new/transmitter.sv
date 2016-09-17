@@ -29,18 +29,23 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
     output logic txd
     );   
        
-    logic counter_rst, mux_out, carry, lden, clk_reset, eof_carry, eof_reset;
+    logic counter_rst, mux_out, carry, lden, clk_reset, eof_carry, eof_reset, sending;
     logic [7:0] saved_data;
     logic [2:0] count; // this counts start, 8-bit and stop, 10 bits total
-    logic [$clog2(EOF_WIDTH)-1:0] eof_count;
+    logic [$clog2(EOF_WIDTH+1)-1:0] eof_count;
     
-    typedef enum logic [2:0] {
-        IDLE    = 3'b000,
-        STAND_BY_START   = 3'b001,
-        SEND    = 3'b010,
-        STAND_BY_STOP    = 3'b011,
-        EOF = 3'b100,
-        EOF_end = 3'b101
+    typedef enum logic [3:0] {
+        IDLE    = 4'b0000,
+        STAND_BY_START   = 4'b0001,
+        SEND_0    = 4'b0010,
+        SEND_1    = 4'b0011,
+        SEND_2    = 4'b0100,
+        SEND_3    = 4'b0101,
+        SEND_4    = 4'b0110,
+        SEND_5    = 4'b0111,
+        SEND_6    = 4'b1000,
+        SEND_7    = 4'b1001,
+        EOF       = 4'b1010
     } states;
     
     states state, next;
@@ -56,6 +61,8 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
         begin
         // Default values
         lden = 1'b0;
+        sending = 1'b0;
+        
             unique case(state)
                 IDLE:
                     begin
@@ -64,7 +71,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                         
                         lden = 1'b0;
                         rdy = 1'b1;
-                        txen = 1'b0;
+                        sending = 1'b0;
                         txd = 1'b1;
                         counter_rst = 1'b1; // reset the counter 
                         clk_reset = 1'b1;
@@ -74,97 +81,134 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                 STAND_BY_START:
                 // This waits for the baud rate clock to increment
                     begin
-                        if(enb) next = SEND;
+                        if(enb) next = SEND_0;
                         else next = STAND_BY_START;
                         
                         lden = 1'b1;
                         rdy = 1'b1;
-                        txen = 1'b0;
                         txd = 1'b1; 
                         clk_reset = 1'b0;
                         eof_reset = 1'b1;
                         counter_rst = 1'b1; // make sure the counter is at 0
                         idle = 1'b1;
                     end
-                
-                SEND:
-                    begin    
-                        if(carry == 1'b1)
-                            begin
-                                next = send ? SEND : STAND_BY_STOP;
-                                rdy = 1'b1;
-                                lden = 1'b1;
-                            end
-                        else 
-                            begin
-                                next = SEND;
-                                rdy = 1'b0;
-                                lden = 1'b0;
-                            end                   
-                        txen = 1'b1;
-                        clk_reset = 1'b0;
-                        
-                        counter_rst = 1'b0;
-                        eof_reset = 1'b1;
-                        txd = mux_out;
-                        idle = 1'b0;
-                    end
-                    
-                STAND_BY_STOP:
-                // This lets the stop bit stay in position for the entire baud cycle
-                // I think this is acutally the last transmitted bit not the stop bit
+                SEND_0:
                     begin
-                        if(enb) begin
-                            lden = send; // reset the counter position if the send line is high  
-                            next = send ? SEND : EOF;
-                        end
-                        else next = STAND_BY_STOP;                    
-                        rdy = 1'b1;
-                        clk_reset = 1'b0;
-                        lden = 1'b0;
-                        counter_rst = 1'b0;
-                        eof_reset = 1'b1;
-                        txen = 1'b1;
-                        txd = mux_out;
-                        idle = 1'b0;
+                    if (enb) next = SEND_1;
+                    else next = SEND_0;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[0]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_1:
+                    begin
+                    if (enb) next = SEND_2;
+                    else next = SEND_1;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[1]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_2:
+                    begin
+                    if (enb) next = SEND_3;
+                    else next = SEND_2;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[2]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_3:
+                    begin
+                    if (enb) next = SEND_4;
+                    else next = SEND_3;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[3]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_4:
+                    begin
+                    if (enb) next = SEND_5;
+                    else next = SEND_4;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[4]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_5:
+                    begin
+                    if (enb) next = SEND_6;
+                    else next = SEND_5;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[5]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_6:
+                    begin
+                    if (enb) next = SEND_7;
+                    else next = SEND_6;                    
+                    lden = 1'b1;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = data[6]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_7:
+                    begin
+                    if (send) next = SEND_0;
+                    else if (enb) next = EOF;
+                    else next = SEND_7;                    
+                    lden = 1'b1;
+                    rdy = 1'b1;
+                    sending = 1'b1;
+                    txd = data[7]; 
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
                     end
                 EOF:
                     begin
-                        if(eof_carry) next = EOF_end;
+                        if(eof_count == EOF_WIDTH) next = IDLE;
                         else next = EOF;
                         lden = 1'b0;
                         rdy = 1'b1;
-                        txen = 1'b1;
+                        sending = 1'b1;
                         txd = 1'b1;
                         counter_rst = 1'b1; // reset the counter
                         eof_reset = 1'b0;
                         clk_reset = 1'b0;
                         idle = 1'b1;
                     end 
-                EOF_end:
-                // This state ensures that the last bit of the EOF is sent completly 
-                // Since the enb signal is 1 clock cycle too late the EOF will be sent
-                // for 1 extra period.  This is noticable in the simulation but it will
-                // be acceptable in the hardware since we expect to operate at 10kHz
-                begin
-                    if(eof_count == '0) next = IDLE;
-                    else next = EOF_end;
-                    lden = 1'b0;
-                    rdy = 1'b1;
-                    txen = 1'b1;
-                    txd = 1'b1;
-                    counter_rst = 1'b1; // reset the counter
-                    eof_reset = 1'b0;
-                    clk_reset = 1'b0;
-                    idle = 1'b1;
-                end 
                 default:
                     begin
                        next = IDLE;
                        lden = 1'b0;
                        rdy = 1'b1;
                        txd = 1'b1;
-                       txen = 1'b0;
+                       sending = 1'b0;
                        counter_rst = 1'b1; // reset the counter 
                        eof_reset = 1'b1; 
                        clk_reset = 1'b1;
@@ -182,9 +226,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                                            .d6(saved_data[6]), .d7(saved_data[7]), .sel(count), .y(mux_out));
                                             
         counter_parm #(.W(3), .CARRY_VAL(4'd7))  U_COUNTER  (.clk, .enb(enb), .reset(counter_rst), .q(count), .carry(carry));
-        counter_parm #(.W($clog2(EOF_WIDTH)), .CARRY_VAL(EOF_WIDTH - 1))  
+        counter_parm #(.W($clog2(EOF_WIDTH+1)), .CARRY_VAL(EOF_WIDTH))  
                 U_EOF_WIDTH_COUNT (.clk, .enb(enb), .reset(eof_reset), .q(eof_count), .carry(eof_carry));
         
         assign baud = enb;
+        assign txen = sending && (eof_count != EOF_WIDTH);
             
 endmodule

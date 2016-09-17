@@ -76,7 +76,7 @@ package check_p;
 	    error_count = error_count + 1;
 	 end
      else
-       $display("OK: %0s", message);			
+       $display("OK: %0s at $0d.", message, $time);			
    endtask
 	
    // use the following two tasks to bracket several tests to display a pass fail

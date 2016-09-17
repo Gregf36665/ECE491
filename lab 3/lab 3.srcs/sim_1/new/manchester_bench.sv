@@ -101,11 +101,8 @@ module manchester_bench();
         
         check_ok("txen line high for EOF tx", txen, 1'b1);
         // get away from the clock edge
-        repeat(4) @(posedge clk) // checking that the EOF is all good
-               #1 check_ok("txen line high for EOF tx", txen, 1'b1);
-         
-         @(posedge clk) // The clk enb module is off by 1 cycle
-            #1; // skip this test since this part does not matter
+        repeat(3) @(posedge clk) // checking that the EOF is all good
+               #1 check_ok("txen line still high for EOF tx", txen, 1'b1);
             
          @(posedge clk) // next clock edge the txen should be low                              
          #1 check_ok("txen line low at end of tx", txen, 1'b0);            
