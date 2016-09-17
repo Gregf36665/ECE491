@@ -48,8 +48,9 @@ module nexys4DDR (
     single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse);
     
     manchester_tx #(.BAUD_RATE(9600)) U_TX (.clk(CLK100MHZ), .send, .data(SW[7:0]),
-                                            .rdy(LED), .txd(UART_RXD_OUT));   
+                                            .rdy(LED), .txd(UART_RXD_OUT), .txenb );   
                                             
     assign JA = UART_RXD_OUT; // This allows the data to be viewed on the scope
+    assign JB = txenb;
                                             
 endmodule // nexys4DDR
