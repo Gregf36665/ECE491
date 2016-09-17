@@ -38,11 +38,11 @@ module manchester_bench();
     task check_bit(nrz_val);
         if (nrz_val > 1 || nrz_val < 0)
             $error("NRZ value should be 0 or 1");
-        #1;
+        #1; // get away from the clock edge
         check("Check TXD value frame 1/2", txd, nrz_val);
-        @(posedge clk) #1 //wait 1 clock cycle
+        @(posedge clk) #1 //wait 1 clock cycle and get away from the edge
         check("Check TXD val frame 2/2", txd, !nrz_val); 
-        @(posedge clk) #1; //wait 1 clock cycle
+        @(posedge clk) #1; //wait 1 clock cycle and get away from the edge
     
     endtask
     
@@ -59,24 +59,33 @@ module manchester_bench();
     endtask
     
     
+    // This task checks multiple byte transmissions
+    // It assumes that the data can be changed after the first bit 
+    // has been transmitted
     task check_multi_byte(logic [7:0] val_a, val_b, val_c, val_d, val_e);
         data = val_a;
         send = 1;
         @(negedge rdy); #1; // wait until we are starting to transmit
-        data = val_b;
-        for (int i=0; i<8; i++)
+        for (int i=0; i<8; i++) begin
                 check_bit(((val_a >> (i)) & 8'h01)); // check each bit
-        data = val_c;
-        for (int i=0; i<8; i++)
+                data = val_b;
+        end
+        for (int i=0; i<8; i++) begin
                 check_bit(((val_b >> (i)) & 8'h01)); // check each bit
-        data = val_d;
-        for (int i=0; i<8; i++)
+                data = val_c;
+        end
+        for (int i=0; i<8; i++) begin
             check_bit(((val_c >> (i)) & 8'h01)); // check each bit
-        data = val_e;
-        for (int i=0; i<8; i++)
+            data = val_d;
+        end
+        for (int i=0; i<8; i++) begin
             check_bit(((val_d >> (i)) & 8'h01)); // check each bit
+            data = val_e;
+        end
+        send = 1'b0; // set the send line low
         for (int i=0; i<8; i++)
             check_bit(((val_e >> (i)) & 8'h01)); // check each bit
+            
                             
     endtask
         
@@ -130,11 +139,11 @@ module manchester_bench();
             
     initial begin
         init_signals;
-        // check_single_bit_tx;
-        check_txen;
-        // check_multi_byte(8'h00, 8'hFF, 8'h55, 8'hCC, 8'h33);
+        // check_byte(8'h55);
+        // check_txen;
+        check_multi_byte(8'h00, 8'hFF, 8'haa, 8'h55, 8'hcc);
         // check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
-        check_summary_stop;
-        $stop;        
+        #50; 
+        check_summary_stop;        
     end
 endmodule

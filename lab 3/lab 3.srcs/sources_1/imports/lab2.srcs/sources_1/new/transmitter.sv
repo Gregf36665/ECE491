@@ -99,7 +99,8 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     lden = 1'b1;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[0]; 
+                    txd = data[0];  // this sends data[0] rather than saved 0
+                    // This is because the saved data is being updated.
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -108,10 +109,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin
                     if (enb) next = SEND_2;
                     else next = SEND_1;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[1]; 
+                    txd = saved_data[1]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -120,10 +121,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin
                     if (enb) next = SEND_3;
                     else next = SEND_2;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[2]; 
+                    txd = saved_data[2]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -132,10 +133,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin
                     if (enb) next = SEND_4;
                     else next = SEND_3;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[3]; 
+                    txd = saved_data[3]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -144,10 +145,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin
                     if (enb) next = SEND_5;
                     else next = SEND_4;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[4]; 
+                    txd = saved_data[4]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -156,10 +157,10 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin
                     if (enb) next = SEND_6;
                     else next = SEND_5;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[5]; 
+                    txd = saved_data[5]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -168,23 +169,25 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                     begin
                     if (enb) next = SEND_7;
                     else next = SEND_6;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b0;
                     sending = 1'b1;
-                    txd = data[6]; 
+                    txd = saved_data[6]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
                     end
                 SEND_7:
                     begin
-                    if (send) next = SEND_0;
-                    else if (enb) next = EOF;
+                    if (enb) begin
+                        next = send ? SEND_0 : EOF;
+                        lden = 1'b1;
+                    end
                     else next = SEND_7;                    
-                    lden = 1'b1;
+                    lden = 1'b0;
                     rdy = 1'b1;
                     sending = 1'b1;
-                    txd = data[7]; 
+                    txd = saved_data[7]; 
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;

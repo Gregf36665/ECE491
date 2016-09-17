@@ -102,7 +102,7 @@ package check_p;
 	 if (error_count > 0) 
 	   $display ("ATTENTION: %0d Error(s) in %0d tests", error_count, test_count); 
 	 else
-	   $display("No errors in %0d tests. :)", test_count);		
+	   $display("No errors in %0d tests.", test_count);		
    endtask
 
    task check_summary_stop;

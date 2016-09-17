@@ -41,7 +41,7 @@ module nexys4DDR (
             );
 
 
-    logic send, d_pulse;
+    logic send, d_pulse, txenb;
    
     assign send = d_pulse | SW[8];
     

@@ -1,7 +1,7 @@
-Running: xsim.dir/manchester_bench_behav/xsimk.exe -simmode gui -wdb manchester_bench_behav.wdb -simrunnum 0 -socket 1848
+Running: xsim.dir/manchester_bench_behav/xsimk.exe -simmode gui -wdb manchester_bench_behav.wdb -simrunnum 0 -socket 17842
 Design successfully loaded
-Design Loading Memory Usage: 7324 KB (Peak: 7324 KB)
-Design Loading CPU Usage: 0 ms
+Design Loading Memory Usage: 7364 KB (Peak: 7364 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 8716 KB (Peak: 8716 KB)
-Simulation CPU Usage: 0 ms
+Simulation Memory Usage: 8772 KB (Peak: 8772 KB)
+Simulation CPU Usage: 15 ms
