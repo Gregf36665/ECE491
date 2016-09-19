@@ -46,11 +46,8 @@ module nexys4DDR (
     logic send, d_pulse, txen, rdy, txd;
     logic [7:0] data;
     
-    
-    single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse);
-    
     manchester_tx #(.BAUD_RATE(10_000)) U_TX (.clk(CLK100MHZ), .send, .data,
-                                            .rdy, .txd, .txen);   
+                                            .rdy, .txd, .txen, .reset(BTND));   
                      
     mxtest U_TX_CTL (.clk(CLK100MHZ), .send, .data, .ready(rdy), .run(BTNC),
                      .reset(BTND));

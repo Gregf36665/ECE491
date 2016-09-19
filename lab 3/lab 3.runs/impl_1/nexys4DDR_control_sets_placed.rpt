@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Sep 18 22:02:44 2016
+| Date         : Sun Sep 18 22:10:57 2016
 | Host         : ECE400-GHQ6S22 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_control_sets -verbose -file nexys4DDR_control_sets_placed.rpt
 | Design       : nexys4DDR
@@ -22,7 +22,7 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     4 |
+| Number of unique control sets                            |     5 |
 | Unused register locations in slices containing registers |    12 |
 +----------------------------------------------------------+-------+
 
@@ -33,10 +33,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              12 |            6 |
+| No           | No                    | No                     |               6 |            3 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              29 |            9 |
-| Yes          | No                    | No                     |               7 |            3 |
+| No           | Yes                   | No                     |              35 |           15 |
+| Yes          | No                    | No                     |               7 |            2 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              20 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -48,10 +48,11 @@ Table of Contents
 +----------------------+--------------------------------+--------------------------------+------------------+----------------+
 |     Clock Signal     |          Enable Signal         |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
 +----------------------+--------------------------------+--------------------------------+------------------+----------------+
-|  CLK100MHZ_IBUF_BUFG | U_TX/U_TX/U_SNAPSHOT/lden      |                                |                3 |              7 |
-|  CLK100MHZ_IBUF_BUFG |                                |                                |                6 |             12 |
+|  CLK100MHZ_IBUF_BUFG |                                |                                |                3 |              6 |
+|  CLK100MHZ_IBUF_BUFG |                                | BTND_IBUF                      |                3 |              6 |
+|  CLK100MHZ_IBUF_BUFG | U_TX/U_TX/U_SNAPSHOT/lden      |                                |                2 |              7 |
 |  CLK100MHZ_IBUF_BUFG | U_TX_CTL/wait_count[0]_i_2_n_0 | U_TX_CTL/wait_count[0]_i_1_n_0 |                5 |             20 |
-|  CLK100MHZ_IBUF_BUFG |                                | U_TX/U_TX/U_CLKENB/SR[0]       |                9 |             29 |
+|  CLK100MHZ_IBUF_BUFG |                                | U_TX/U_TX/U_CLKENB/SR[0]       |               12 |             29 |
 +----------------------+--------------------------------+--------------------------------+------------------+----------------+
 
 

@@ -63,7 +63,12 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
         // Default values
         lden = 1'b0;
         sending = 1'b0;
-        
+        rdy = 1'b1;
+        txd = 1'b1;
+        counter_rst = 1'b1; // reset the counter 
+        clk_reset = 1'b1;
+        eof_reset = 1'b1;
+        idle = 1'b1; 
             unique case(state)
                 IDLE:
                     begin
@@ -231,7 +236,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
             endcase
         end
         
-        clkenb #(.DIVFREQ(BAUD_RATE)) U_CLKENB (.clk(clk), .enb(enb), .reset(clk_reset));
+        clkenb #(.DIVFREQ(BAUD_RATE)) U_CLKENB (.clk(clk), .enb(enb), .reset(clk_reset), .baud());
         reg_parm #(.W(8))      U_SNAPSHOT (.clk, .reset(1'b0), .lden, .d(data), .q(saved_data));
         
   
@@ -243,7 +248,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
         counter_parm #(.W($clog2(EOF_WIDTH+1)), .CARRY_VAL(EOF_WIDTH))  
                 U_EOF_WIDTH_COUNT (.clk, .enb(enb), .reset(eof_reset), .q(eof_count), .carry(eof_carry));
         
-        clkenb #(.DIVFREQ(BAUD_RATE * 2)) U_BAUD_GEN (.clk(clk), .baud(baud), .reset(clk_reset));
+        clkenb #(.DIVFREQ(BAUD_RATE * 2)) U_BAUD_GEN (.clk(clk), .baud(baud), .reset(clk_reset), .enb());
         
         assign txen = sending && (eof_count != EOF_WIDTH);
             
