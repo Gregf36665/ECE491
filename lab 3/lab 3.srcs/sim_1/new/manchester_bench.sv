@@ -66,26 +66,28 @@ module manchester_bench();
         data = val_a;
         send = 1;
         @(negedge rdy); #1; // wait until we are starting to transmit
-        for (int i=0; i<8; i++) begin
+        
+        // verify first byte
+        for (int i=0; i<4; i++)
                 check_bit(((val_a >> (i)) & 8'h01)); // check each bit
-                data = val_b;
-        end
-        for (int i=0; i<8; i++) begin
+        data = val_b;
+        for (int i=4; i<8; i++)
+                check_bit(((val_a >> (i)) & 8'h01)); // check each bit
+        
+        // verify second byte
+        for (int i=0; i<4; i++)
                 check_bit(((val_b >> (i)) & 8'h01)); // check each bit
-                data = val_c;
-        end
-        for (int i=0; i<8; i++) begin
-            check_bit(((val_c >> (i)) & 8'h01)); // check each bit
-            data = val_d;
-        end
-        for (int i=0; i<8; i++) begin
-            check_bit(((val_d >> (i)) & 8'h01)); // check each bit
-            data = val_e;
-        end
-        send = 1'b0; // set the send line low
-        for (int i=0; i<8; i++)
-            check_bit(((val_e >> (i)) & 8'h01)); // check each bit
-            
+        data = val_c;
+        for (int i=4; i<8; i++) 
+                check_bit(((val_b >> (i)) & 8'h01)); // check each bit
+                
+        // verify third byte
+        for (int i=0; i<4; i++)
+                check_bit(((val_c >> (i)) & 8'h01)); // check each bit
+        data = val_d;
+        for (int i=4; i<8; i++)
+                check_bit(((val_c >> (i)) & 8'h01)); // check each bit
+                        
                             
     endtask
         
@@ -105,7 +107,13 @@ module manchester_bench();
         @(negedge rdy); #1; // we have started transmitting
         check_ok("txen line high on transmission", txen, 1'b1);
         send = 0;
+        repeat(5) @(posedge clk); // get away from rdy
+        $display($time);
+        $display(rdy);
         @(posedge rdy); // this gets to the 8th bit
+        $display(rdy);
+        $display($time);
+        
         repeat(2) @(posedge clk); #1; // this gets to the EOF section
         
         check_ok("txen line high for EOF tx", txen, 1'b1);
@@ -139,11 +147,13 @@ module manchester_bench();
             
     initial begin
         init_signals;
-        check_byte(8'h55);
+        //check_byte(8'h55);
+        #50;
         check_txen;
-        check_multi_byte(8'h00, 8'hFF, 8'haa, 8'h55, 8'hcc);
-        check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
-        check_idle;
+        #100;
+        // check_multi_byte(8'h00, 8'hFF, 8'haa, 8'h55, 8'hcc);
+        // check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
+        // check_idle;
         #50; 
         check_summary_stop;        
     end
