@@ -42,16 +42,20 @@ module nexys4DDR (
             );
 
 
-    logic send, d_pulse, txenb;
-   
+    logic send, d_pulse, txenb, rdy, txd;
+    logic [7:0] data;
     
     
     single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse);
     
-    manchester_tx #(.BAUD_RATE(9600)) U_TX (.clk(CLK100MHZ), .send, .data(SW[7:0]),
-                                            .rdy(LED), .txd(UART_RXD_OUT), .txenb );   
-                                            
-    assign JA = UART_RXD_OUT; // This allows the data to be viewed on the scope
-    assign JB = txenb;
+    manchester_tx #(.BAUD_RATE(10_000)) U_TX (.clk(CLK100MHZ), .send, .data,
+                                            .rdy, .txd, .txenb);   
+                     
+    mxtest U_TX_CTL (.clk(CLK100MHZ), .send, .data, .ready(rdy), .run(BTNC),
+                     .reset(BTND));
+    assign JA = txd; // This allows the data to be viewed on the scope
+    assign JB = rdy;
+    
+    
                                             
 endmodule // nexys4DDR
