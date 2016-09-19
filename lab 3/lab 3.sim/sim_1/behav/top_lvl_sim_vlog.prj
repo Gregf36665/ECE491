@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/new/manchester_tx.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/lab2.srcs/sim_1/new/transmitter_bench.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/new/check_p.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sources_1/imports/Downloads/mxtest.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sim_1/new/manchester_bench.sv"
+sv xil_defaultlib  "../../../lab 3.srcs/sim_1/new/top_lvl_sim.sv"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
