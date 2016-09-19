@@ -63,7 +63,6 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
         // Default values
         lden = 1'b0;
         sending = 1'b0;
-        rdy = 1'b1;
         txd = 1'b1;
         counter_rst = 1'b1; // reset the counter 
         clk_reset = 1'b1;

@@ -49,6 +49,7 @@ module manchester_bench();
     // This task checks the transmission of 1 byte.
     // It cannot verify multiple byte transmissions
     task check_byte(logic [7:0] val);
+        check_group_begin("Checking single byte");
         data = val; // set the next data to the current value
         @(posedge clk); // wait one clock cycle
         send = 1; // assert send
@@ -56,6 +57,7 @@ module manchester_bench();
         send = 0; // stop asserting send
         for (int i=0; i<8; i++)
             check_bit(((val >> (i)) & 8'h01)); // check each bit
+        check_group_end;
     endtask
     
     
@@ -63,6 +65,7 @@ module manchester_bench();
     // It assumes that the data can be changed after the first bit 
     // has been transmitted
     task check_multi_byte(logic [7:0] val_a, val_b, val_c, val_d, val_e);
+        check_group_begin("Checking multi byte tx");
         data = val_a;
         send = 1;
         @(negedge rdy); #1; // wait until we are starting to transmit
@@ -88,7 +91,21 @@ module manchester_bench();
         for (int i=4; i<8; i++)
                 check_bit(((val_c >> (i)) & 8'h01)); // check each bit
                         
-                            
+        // verify fourth byte
+        for (int i=0; i<4; i++)
+                check_bit(((val_d >> (i)) & 8'h01)); // check each bit
+        data = val_e;
+        for (int i=4; i<8; i++)
+                check_bit(((val_d >> (i)) & 8'h01)); // check each bit       
+                
+        // verify fifth byte
+        for (int i=0; i<4; i++)
+                check_bit(((val_e >> (i)) & 8'h01)); // check each bit
+        send = 0;
+        for (int i=4; i<8; i++)
+                check_bit(((val_e >> (i)) & 8'h01)); // check each bit
+                
+        check_group_end;
     endtask
         
         
@@ -98,21 +115,30 @@ module manchester_bench();
     endtask
     
     task check_txen;
+        check_group_begin("Checking tx_en line");
         reset = 1;
         repeat (2) @(posedge clk); #1
         reset = 0;
         data = 8'hFF;
         @(posedge clk); #1;
         send = 1;
-        @(negedge rdy); #1; // we have started transmitting
+        fork : ready_timeout
+            begin
+                @(negedge rdy); #1; // we have started transmitting
+                disable ready_timeout;
+            end
+            begin
+                #1000;
+                $error("Never found a falling ready edge");
+                check("No falling ready after send asserted", 1'b1, 1'b0);
+                disable ready_timeout;
+            end
+        join
         check_ok("txen line high on transmission", txen, 1'b1);
         send = 0;
         repeat(5) @(posedge clk); // get away from rdy
-        $display($time);
-        $display(rdy);
+        
         @(posedge rdy); // this gets to the 8th bit
-        $display(rdy);
-        $display($time);
         
         repeat(2) @(posedge clk); #1; // this gets to the EOF section
         
@@ -122,16 +148,10 @@ module manchester_bench();
                #1 check_ok("txen line still high for EOF tx", txen, 1'b1);
             
          @(posedge clk) // next clock edge the txen should be low                              
-         #1 check_ok("txen line low at end of tx", txen, 1'b0);            
+         #1 check_ok("txen line low at end of tx", txen, 1'b0);  
+         check_group_end;          
     endtask
    
-   task check_single_bit_tx;
-        check_group_begin("Starting single bit verification");
-        check_byte(8'h00);
-        check_byte(8'hFF);
-        check_byte(8'h55);
-        check_group_end;
-   endtask
    
    // Create the DUV
     manchester_tx #(.BAUD_RATE(50_000_000)) DUV(.clk,.send,.reset,.data,.rdy,.txen,.txd);
@@ -147,13 +167,13 @@ module manchester_bench();
             
     initial begin
         init_signals;
-        //check_byte(8'h55);
+        check_byte(8'h55);
         #50;
         check_txen;
         #100;
-        // check_multi_byte(8'h00, 8'hFF, 8'haa, 8'h55, 8'hcc);
-        // check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
-        // check_idle;
+        check_multi_byte(8'h00, 8'hFF, 8'haa, 8'h55, 8'hcc);
+        check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
+        check_idle;
         #50; 
         check_summary_stop;        
     end
