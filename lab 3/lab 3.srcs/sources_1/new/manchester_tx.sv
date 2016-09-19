@@ -16,7 +16,7 @@
 // 09.05.2016 : created
 //-----------------------------------------------------------------------------
 
-module manchester_tx #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
+module manchester_tx #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 10_000)(
     input logic clk,
     input logic send,
     input logic reset,

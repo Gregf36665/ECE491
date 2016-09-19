@@ -22,6 +22,9 @@ read_verilog -library xil_defaultlib -sv {
   {C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv}
   {C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/manchester_tx.sv}
   {C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv}
+  {C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sim_1/new/transmitter_bench.sv}
+  {C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/new/check_p.sv}
+  {C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/Downloads/mxtest.sv}
 }
 read_verilog -library xil_defaultlib {{C:/Users/flynng/Desktop/ECE491/lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/Downloads/single_pulser.v}}
 foreach dcp [get_files -quiet -all *.dcp] {

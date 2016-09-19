@@ -1,11 +1,2 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
-OK: txen line high on transmission at $0d.                 276
-OK: txen line high for EOF tx at $0d.                 436
-OK: txen line still high for EOF tx at $0d.                 446
-OK: txen line still high for EOF tx at $0d.                 456
-OK: txen line still high for EOF tx at $0d.                 466
-OK: txen line low at end of tx at $0d.                 476
-
-Tesbench Complete.
-No errors in 183 tests.
