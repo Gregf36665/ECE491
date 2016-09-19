@@ -37,6 +37,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
     typedef enum logic [3:0] {
         IDLE    = 4'b0000,
         STAND_BY_START   = 4'b0001,
+        SEND_0_LOAD    = 4'b1011,
         SEND_0    = 4'b0010,
         SEND_1    = 4'b0011,
         SEND_2    = 4'b0100,
@@ -92,15 +93,26 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                         counter_rst = 1'b1; // make sure the counter is at 0
                         idle = 1'b1;
                     end
-                SEND_0:
+                SEND_0_LOAD:
                     begin
-                    if (enb) next = SEND_1;
-                    else next = SEND_0;                    
+                    next = SEND_0;                    
                     lden = 1'b1;
                     rdy = 1'b0;
                     sending = 1'b1;
                     txd = data[0];  // this sends data[0] rather than saved 0
                     // This is because the saved data is being updated.
+                    clk_reset = 1'b0;
+                    eof_reset = 1'b1;
+                    idle = 1'b0;
+                    end
+                SEND_0:
+                    begin
+                    if (enb) next = SEND_1;
+                    else next = SEND_0;                    
+                    lden = 1'b0;
+                    rdy = 1'b0;
+                    sending = 1'b1;
+                    txd = saved_data[0];  // this sends the saved data
                     clk_reset = 1'b0;
                     eof_reset = 1'b1;
                     idle = 1'b0;
@@ -180,8 +192,7 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
                 SEND_7:
                     begin
                     if (enb) begin
-                        next = send ? SEND_0 : EOF;
-                        lden = 1'b1;
+                        next = send ? SEND_0_LOAD : EOF;
                     end
                     else next = SEND_7;                    
                     lden = 1'b0;

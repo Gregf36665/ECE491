@@ -1,39 +1,41 @@
-Unable to capture context for thread 9584 in process 5348, can not generate back trace
-Exception at PC 0x000007FEF272BB93
+Unable to capture context for thread 6080 in process 9148, can not generate back trace
+Unable to capture context for thread 3952 in process 9148, can not generate back trace
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Unable to capture context for thread 9748 in process 9148, can not generate back trace
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Unable to capture context for thread 9724 in process 9148, can not generate back trace
+Exception at PC 0x000007FEB421BB93
 Printing stacktrace...
 
-Unable to capture context for thread 9584 in process 5348, can not generate back trace
-Unable to capture context for thread 8568 in process 5348, can not generate back trace
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-Exception at PC 0x000007FEFCD6A06D
-[0]  [0x000007FEF272BB93]
-[1]  [0x000007FEF272BB93]
-[2]  [0x000007FEF272B4A1]
-[3]  [0x000007FEF272B3EF]
-[4]  [0x000007FEF27119FE]
-[5]  [0x000007FEF2710ED1]
-[6]  [0x000007FEF2710D76]
-[7]  [0x000007FEF26B79F6]
-[8]  [0x000007FEF26A7AFB]
-[9]  [0x000007FEF27CE90A]
-[10]  [0x000007FEF27E9F87]
-[11]  [0x000007FEF27EA05F]
-[12] (BaseThreadInitThunk+0xd) [0x0000000076EA59BD]
-[13] (RtlUserThreadStart+0x21) [0x0000000076FDA2E1]
+Unable to capture context for thread 7580 in process 9148, can not generate back trace
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+[0]  [0x000007FEB421BB93]
+[1]  [0x000007FEB421BB93]
+[2]  [0x000007FEB421B4A1]
+[3]  [0x000007FEB421B3EF]
+[4]  [0x000007FEB42019FE]
+[5]  [0x000007FEB4200ED1]
+[6]  [0x000007FEB4200D76]
+[7]  [0x000007FEB41A79F6]
+[8]  [0x000007FEB4197AFB]
+[9]  [0x000007FEB42BE90A]
+[10]  [0x000007FEB42D9F87]
+[11]  [0x000007FEB42DA05F]
+[12] (BaseThreadInitThunk+0xd) [0x00000000778759BD]
+[13] (RtlUserThreadStart+0x21) [0x0000000077AAA2E1]
 Done

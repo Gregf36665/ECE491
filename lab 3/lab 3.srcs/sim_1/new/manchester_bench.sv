@@ -139,10 +139,11 @@ module manchester_bench();
             
     initial begin
         init_signals;
-        // check_byte(8'h55);
-        // check_txen;
+        check_byte(8'h55);
+        check_txen;
         check_multi_byte(8'h00, 8'hFF, 8'haa, 8'h55, 8'hcc);
-        // check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
+        check_multi_byte(8'h00, 8'h00, 8'h00, 8'h00, 8'h00);
+        check_idle;
         #50; 
         check_summary_stop;        
     end
