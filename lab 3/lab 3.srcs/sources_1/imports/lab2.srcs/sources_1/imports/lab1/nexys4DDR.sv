@@ -23,28 +23,28 @@
 module nexys4DDR (
 		  // un-comment the ports that you will use
           input logic         CLK100MHZ,
-		  input logic [8:0]   SW,
+//		  input logic [8:0]   SW,
 		  input logic 	      BTNC,
 //		  input logic 	      BTNU, 
 //		  input logic 	      BTNL, 
 //		  input logic 	      BTNR,
-//		  input logic 	      BTND,
+		  input logic 	      BTND,
 //		  output logic [6:0]  SEGS,
 //		  output logic [7:0]  AN,
 //		  output logic 	      DP
 		  output logic        LED,
 //		  input logic         UART_TXD_IN,
 		  output logic        JA,
-		  output logic        JB,
+		  output logic        JB
 //		  input logic         UART_RTS,		  
-		  output logic        UART_RXD_OUT
+//		  output logic        UART_RXD_OUT
 //		  output logic        UART_CTS		  
             );
 
 
     logic send, d_pulse, txenb;
    
-    assign send = d_pulse | SW[8];
+    
     
     single_pulser U_SINGLE_PULSER (.clk(CLK100MHZ), .din(BTNC), .d_pulse);
     
