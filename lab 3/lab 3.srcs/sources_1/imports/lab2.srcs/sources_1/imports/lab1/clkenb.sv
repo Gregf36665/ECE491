@@ -18,7 +18,7 @@
 //
 //-----------------------------------------------------------------------------
 
-module clkenb(input logic clk, reset, output logic enb);
+module clkenb(input logic clk, reset, output logic enb, baud);
    parameter DIVFREQ = 100;  // desired frequency in Hz (change as needed)
    parameter CLKFREQ = 100_000_000;
    parameter DIVAMT = (CLKFREQ / DIVFREQ);
@@ -26,11 +26,12 @@ module clkenb(input logic clk, reset, output logic enb);
    
    logic [DIVBITS-1:0] q;
    
-   always @(posedge clk)
+   always @(posedge clk) begin
      if (reset)
        begin
 	       q <= 0;
 	       enb <= 0;
+	       baud <= 0;
        end
      else if (q == DIVAMT-1)
        begin
@@ -42,6 +43,8 @@ module clkenb(input logic clk, reset, output logic enb);
 	       q <= q + 1;
 	       enb <= 0;
        end
+     if(enb) baud <= ~baud;
+     end
    
 endmodule // clken
 

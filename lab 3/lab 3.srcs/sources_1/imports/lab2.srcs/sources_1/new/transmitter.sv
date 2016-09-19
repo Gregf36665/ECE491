@@ -243,7 +243,8 @@ module transmitter #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)(
         counter_parm #(.W($clog2(EOF_WIDTH+1)), .CARRY_VAL(EOF_WIDTH))  
                 U_EOF_WIDTH_COUNT (.clk, .enb(enb), .reset(eof_reset), .q(eof_count), .carry(eof_carry));
         
-        assign baud = enb;
+        clkenb #(.DIVFREQ(BAUD_RATE * 2)) U_BAUD_GEN (.clk(clk), .baud(baud), .reset(clk_reset));
+        
         assign txen = sending && (eof_count != EOF_WIDTH);
             
 endmodule

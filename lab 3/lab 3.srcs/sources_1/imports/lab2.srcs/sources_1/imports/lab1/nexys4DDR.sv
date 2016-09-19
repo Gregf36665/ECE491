@@ -35,6 +35,7 @@ module nexys4DDR (
 		  output logic        LED,
 //		  input logic         UART_TXD_IN,
 		  output logic        JA,
+		  output logic        JB,
 //		  input logic         UART_RTS,		  
 		  output logic        UART_RXD_OUT
 //		  output logic        UART_CTS		  

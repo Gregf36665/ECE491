@@ -1,16 +1,12 @@
-Unable to capture context for thread 6080 in process 9148, can not generate back trace
-Unable to capture context for thread 3952 in process 9148, can not generate back trace
+Unable to capture context for thread 1800 in process 4224, can not generate back trace
 Exception at PC 0x000007FEFDA6A06D
-Exception at PC 0x000007FEFDA6A06D
-Unable to capture context for thread 9748 in process 9148, can not generate back trace
-Exception at PC 0x000007FEFDA6A06D
-Exception at PC 0x000007FEFDA6A06D
-Exception at PC 0x000007FEFDA6A06D
-Unable to capture context for thread 9724 in process 9148, can not generate back trace
 Exception at PC 0x000007FEB421BB93
 Printing stacktrace...
 
-Unable to capture context for thread 7580 in process 9148, can not generate back trace
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
+Exception at PC 0x000007FEFDA6A06D
 Exception at PC 0x000007FEFDA6A06D
 Exception at PC 0x000007FEFDA6A06D
 Exception at PC 0x000007FEFDA6A06D
