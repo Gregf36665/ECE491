@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/Greg/Documents/Uni/Junior/Spring'
+let g:netrw_dirhist_2='/Users/Greg/Documents/Uni/Junior'
+let g:netrw_dirhist_3='/Users/Greg/Documents/Uni'
+let g:netrw_dirhist_4='/Users/Greg/Documents'
+let g:netrw_dirhist_5='/Users/Greg/Documents/programming'
+let g:netrw_dirhist_6='/Users/Greg/Documents/programming/ngspice'
+let g:netrw_dirhist_7='/Users/Greg/Documents/programming/avr/die'
