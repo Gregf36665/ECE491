@@ -26,6 +26,9 @@ module receiver #(parameter BAUD_RATE = 9600)(
 		output logic [7:0] data
     );
     
+	logic data; // A connection between the FSM data and the temporary data.  It is 1 since that is all being sent
+	logic [7:0] data_temp; // Connection between temp_data and the output data register
+
     fsm U_FSM ( .clk(clk), .reset(), .rxd_synced(rxd_synced), .start_check(start_check), .full_timer(), .half_timer(), .bit_count(),
     			.ferr_delay_count(), .bit_counter_rst(), .ferr_counter_rst(), .delay_timer_rst(), .rdy(), 
     			.store_data(), .store_bit(), .clr_ferr(clr_ferr), .set_ferr(set_ferr), .data());
@@ -37,4 +40,10 @@ module receiver #(parameter BAUD_RATE = 9600)(
     rxd_synchroniser 						U_RXD_SYNCHRONISER 	(.clk, .rxd(rxd), .rxd_synced(rxd_synced));
     f_error									U_F_ERROR			(.clk, .set_ferr(set_ferr), .clr_ferr(clr_ferr), .ferr(ferr));
     
+	temp_data U_TEMP_DATA( .clk, .data, .store_bit,
+						.bit_count(),
+						.data_out(data_temp)
+						);
+
+	data U_DATA (.clk, .data_in(data_temp), .data_out())
 endmodule

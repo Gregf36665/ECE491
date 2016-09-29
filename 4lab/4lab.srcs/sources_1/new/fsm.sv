@@ -42,11 +42,12 @@ module fsm(
     
     states state, next;
         
-        always_ff @(posedge clk)
-            begin
-                if(reset) state <= IDLE;
-                else state <= next;
-            end 
+	always_ff @(posedge clk)
+		begin
+			if(reset) state <= IDLE;
+			else state <= next;
+		end 
+
     always_comb
     	begin
 			rdy = 1'b0;
@@ -139,6 +140,9 @@ module fsm(
     					next = DATA_BAD;
     					ferr_counter_rst = 1'b1;
     				end
+				default:
+					next <= IDLE;
     		endcase
     	end
+
 endmodule
