@@ -28,8 +28,11 @@ module fsm(
 	output logic data
     );
     
+    assign data = rxd_synced;
+    
+    
     typedef enum logic [3:0] {
-            IDLE    	= 4'b0000,
+            IDLE    	= 4'b1000,
             START_MAYBE = 4'b0001,
             CLEAR_FLAG  = 4'b1011,
             UPDATE_DATA = 4'b0010,
@@ -41,7 +44,11 @@ module fsm(
     } states;
     
     states state, next;
-        
+    
+    // apparently this is the only way to get the current state to appear in simulation
+    states tmp;
+    assign tmp = state;    
+    
 	always_ff @(posedge clk)
 		begin
 			if(reset) state <= IDLE;
@@ -58,13 +65,14 @@ module fsm(
 			store_data = 1'b0;
 			clr_ferr = 1'b0;
 			set_ferr = 1'b0;
+			store_bit = 1'b0;
     	
     		unique case(state)
     			IDLE:
     				begin
     					if(start_check)
     						begin
-    							if(rxd_synced) next = START_MAYBE;
+    							if(~rxd_synced) next = START_MAYBE;
     							else next = IDLE;
     						end
     					else next = IDLE;
@@ -96,13 +104,12 @@ module fsm(
     				begin
     					next = WAIT;
     					store_bit = 1'b1;
-    					data = rxd_synced;
     			    end
     			WAIT:
     				begin
     					if(full_timer)
     						begin
-    							if(bit_count == 0) next = EOF;
+    							if(bit_count == 7) next = EOF;
     							else next = UPDATE_DATA;
     						end
     					else next = WAIT;

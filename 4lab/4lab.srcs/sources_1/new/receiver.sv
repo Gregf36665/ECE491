@@ -31,16 +31,17 @@ module receiver #(parameter BAUD_RATE = 9600)(
 	logic store_bit; // should the data bit be stored
 	logic store_data; // should the data be stored (all 8 bits)
 	logic full_timer, half_timer; // a pulse every baud and half baud
-	logic [3:0] bit_count; // keep track of what bit we are at
-	logic [4:0] ferr_delay_count; // keep track of how many bits we have seen a low signal for
+	logic [2:0] bit_count; // keep track of what bit we are at
+	logic [3:0] ferr_delay_count; // keep track of how many bits we have seen a low signal for
 	logic delay_timer_rst; // reset the delay timer
 
     fsm U_FSM ( .clk, .reset, .rxd_synced(rxd_synced), .start_check(start_check), .full_timer, .half_timer, .bit_count,
     			.ferr_delay_count, .bit_counter_rst(), .ferr_counter_rst(), .delay_timer_rst, .rdy(ready), 
     			.store_data, .store_bit, .clr_ferr(clr_ferr), .set_ferr(set_ferr), .data(data_internal));
     			
-    counter_parm #(.W(3), .CARRY_VAL(4'd7)) U_BIT_COUNTER  		(.clk, .enb(), .reset, .q(bit_count), .carry());
-    counter_parm #(.W(4), .CARRY_VAL(4'd9)) U_FERR_COUNTER 		(.clk, .enb(), .reset, .q(ferr_delay_count), .carry());
+    counter_parm #(.W(3), .CARRY_VAL(4'd7)) U_BIT_COUNTER  		(.clk, .enb(store_bit), .reset, .q(bit_count), .carry());
+    // TODO change this enb signal to a pulse from the FSM every time the bit count should be incremented
+    counter_parm #(.W(4), .CARRY_VAL(4'd9)) U_FERR_COUNTER 		(.clk, .enb(1'b1), .reset, .q(ferr_delay_count), .carry());
     delay_timer  #(.BAUD_RATE(BAUD_RATE)) 	U_DELAY_TIMER  		(.clk, .delay_timer_rst, .half_timer, .full_timer);
     clkenb #(.DIVFREQ(BAUD_RATE*16)) 		U_START_PULSER 		(.clk, .enb(start_check), .reset, .baud());
     rxd_synchroniser 						U_RXD_SYNCHRONISER 	(.clk, .rxd(rxd), .rxd_synced(rxd_synced));

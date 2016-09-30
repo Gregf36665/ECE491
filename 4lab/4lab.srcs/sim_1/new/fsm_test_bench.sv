@@ -43,7 +43,12 @@ module fsm_test_bench(
         );
         
     always
+    begin
         #5 clk = !clk;
+        start_check = !start_check;
+        half_timer = !half_timer;
+        full_timer = !full_timer;
+    end
         
     initial
     begin
@@ -51,7 +56,10 @@ module fsm_test_bench(
         reset = 0;
         #50;
         rxd_synced = 0;
-        #1000;    
+        #100;
+        bit_count = 0;
+        #10;
+            
     end
     
 endmodule

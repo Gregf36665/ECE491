@@ -1,0 +1,39 @@
+Unable to capture context for thread 5968 in process 3408, can not generate back trace
+Exception at PC 0x000007FEBCEDBB93
+Printing stacktrace...
+
+Unable to capture context for thread 5968 in process 3408, can not generate back trace
+Exception at PC 0x000007FEFCECA06D
+Unable to capture context for thread 6116 in process 3408, can not generate back trace
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+Exception at PC 0x000007FEFCECA06D
+[0]  [0x000007FEBCEDBB93]
+[1]  [0x000007FEBCEDBB93]
+[2]  [0x000007FEBCEDB4A1]
+[3]  [0x000007FEBCEDB3EF]
+[4]  [0x000007FEBCEC19FE]
+[5]  [0x000007FEBCEC0ED1]
+[6]  [0x000007FEBCEC0D76]
+[7]  [0x000007FEBCE679F6]
+[8]  [0x000007FEBCE57AFB]
+[9]  [0x000007FEBCF7E90A]
+[10]  [0x000007FEBCF99F87]
+[11]  [0x000007FEBCF9A05F]
+[12] (BaseThreadInitThunk+0xd) [0x0000000076CD59BD]
+[13] (RtlUserThreadStart+0x21) [0x0000000076E0A2E1]
+Done

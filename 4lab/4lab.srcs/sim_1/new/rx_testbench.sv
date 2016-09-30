@@ -22,10 +22,6 @@
 
 module rx_testbench();
 
-	task hello_world();
-		$display("Test");
-	endtask
-
 	// Inputs
 	logic rxd = 1; // Idle the data line
 	logic clk = 0;
@@ -47,6 +43,7 @@ module rx_testbench();
 	begin
 		#100;
 		reset = 0;
+		#100;
 		rxd = 0;
 		
 	end
