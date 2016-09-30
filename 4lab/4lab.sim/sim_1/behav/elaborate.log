@@ -1,28 +1,13 @@
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 4c15be1f5f6b4d908c899586820b7bff --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_testbench_behav xil_defaultlib.rx_testbench xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 4c15be1f5f6b4d908c899586820b7bff --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fsm_test_bench_behav xil_defaultlib.fsm_test_bench xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 4 differs from formal bit length 3 for port bit_count [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:36]
-WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 1 for port data [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:47]
-WARNING: [VRFC 10-278] actual bit length 4 differs from formal bit length 3 for port bit_count [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:48]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.fsm
-Compiling module xil_defaultlib.counter_parm(W=3,CARRY_VAL=4'b01...
-Compiling module xil_defaultlib.counter_parm(CARRY_VAL=4'b1001)
-Compiling module xil_defaultlib.clkenb(DIVFREQ=19200)
-Compiling module xil_defaultlib.clkenb(DIVFREQ=9600)
-Compiling module xil_defaultlib.delay_timer(BAUD_RATE=9600)
-Compiling module xil_defaultlib.clkenb(DIVFREQ=153600)
-Compiling module xil_defaultlib.rxd_synchroniser
-Compiling module xil_defaultlib.f_error
-Compiling module xil_defaultlib.reg_parm(W=1)
-Compiling module xil_defaultlib.temp_data
-Compiling module xil_defaultlib.data
-Compiling module xil_defaultlib.receiver
-Compiling module xil_defaultlib.rx_testbench
+Compiling module xil_defaultlib.fsm_test_bench
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot rx_testbench_behav
+Built simulation snapshot fsm_test_bench_behav

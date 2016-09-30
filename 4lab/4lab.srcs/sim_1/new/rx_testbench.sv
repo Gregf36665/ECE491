@@ -47,6 +47,8 @@ module rx_testbench();
 	begin
 		#100;
 		reset = 0;
+		rxd = 0;
+		
 	end
 
 endmodule
