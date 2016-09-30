@@ -19,12 +19,15 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module data(input logic clk,
+module data(input logic clk, reset,
 			input logic [7:0] data_in,
-			input logic save,
+			input logic store_data,
 			output logic [7:0] data_out
 			);
 
 	always_ff @(posedge clk)
-		if (save)
+		if (reset) data_out <= 8'b0;
+		else if (store_data)
 			data_out <= data_in;
+			
+endmodule

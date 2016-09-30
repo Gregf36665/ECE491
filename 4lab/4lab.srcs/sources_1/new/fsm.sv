@@ -25,7 +25,8 @@ module fsm(
 	input logic [2:0] bit_count,
 	input logic [3:0] ferr_delay_count,
 	output logic bit_counter_rst, ferr_counter_rst, delay_timer_rst, rdy, store_data, store_bit, clr_ferr, set_ferr,
-	output logic [7:0] data
+	output logic [7:0] data,
+	output logic [3:0] tmp
     );
     
     typedef enum logic [3:0] {
@@ -48,6 +49,8 @@ module fsm(
 			else state <= next;
 		end 
 
+    assign tmp = state;
+    
     always_comb
     	begin
 			rdy = 1'b0;

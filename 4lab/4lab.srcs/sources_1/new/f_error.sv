@@ -21,13 +21,14 @@
 
 
 module f_error(
-		input logic clk, set_ferr, clr_ferr,
+		input logic clk, set_ferr, clr_ferr, reset,
 		output logic ferr
     );
     
     always_ff @(posedge clk)
     	begin
-    		if(set_ferr) ferr <= 1'b1;
+    	    if(reset) ferr <= 1'b0;
+    	    else if(set_ferr) ferr <= 1'b1;
     		else if(clr_ferr) ferr <= 1'b0;
     	end
     	

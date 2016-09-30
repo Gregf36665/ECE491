@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Sep 27 10:47:37 2016">
+<application name="pa" timeStamp="Thu Sep 29 20:19:59 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="5026f50edf8448619bc5e1d853269c43" type="ProjectID"/>
 <property name="ProjectIteration" value="2" type="ProjectIteration"/>
@@ -17,138 +17,28 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="9" type="JavaHandler"/>
+<property name="AddSources" value="11" type="JavaHandler"/>
 <property name="EditDelete" value="1" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
+<property name="OpenProject" value="1" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
 <property name="RunImplementation" value="1" type="JavaHandler"/>
 <property name="RunSynthesis" value="2" type="JavaHandler"/>
 <property name="SaveAllFiles" value="1" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="18" type="JavaHandler"/>
-<property name="SetTopNode" value="2" type="JavaHandler"/>
-<property name="SimulationRun" value="6" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="2" type="JavaHandler"/>
+<property name="SetTopNode" value="4" type="JavaHandler"/>
+<property name="SimulationRestart" value="1" type="JavaHandler"/>
+<property name="SimulationRun" value="22" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="4" type="JavaHandler"/>
+<property name="ToolsOptions" value="3" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="FINISH, Finish" value="1" type="GuiResourceData"/>
-<property name="NEXT, Next " value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, Add or create simulation sources" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, temp_data_bench" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_TYPE, SystemVerilog, 2" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, temp_data (temp_data.sv" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, transmitter_bench (transmitter_bench.sv" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, delay_timer_test (delay_timer_test.sv" value="3" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, temp_data (temp_data.sv" value="3" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, temp_data_bench (temp_data_bench.sv" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1], 14" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources], 13" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="6" type="GuiResourceData"/>
-<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, Open Recent File" value="3" type="GuiResourceData"/>
-<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="3" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sim_1, [HDL 9-806] Syntax error near .. [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/temp_data_bench.sv:34]. ], 2, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_CODE, Code" value="3" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="1" type="GuiResourceData"/>
 <property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="3" type="GuiResourceData"/>
-<property name="RDIResource.GraphicalView_ZOOM_FIT, Waveform Viewer_zoom_fit" value="2" type="GuiResourceData"/>
-<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, full_timer], 4, false" value="1" type="GuiResourceData"/>
-<property name="RDIResourceCommand.RDICommands_SAVE_FILE, Save File" value="3" type="GuiResourceData"/>
-<property name="delay_timer_test.sv, 110, 440" value="1" type="GuiResourceData"/>
-<property name="delay_timer_test.sv, 155, 283" value="1" type="GuiResourceData"/>
-<property name="delay_timer_test.sv, 235, 333" value="1" type="GuiResourceData"/>
-<property name="delay_timer_test.sv, 51, 531" value="1" type="GuiResourceData"/>
-<property name="delay_timer_test.sv, 62, 530" value="1" type="GuiResourceData"/>
-<property name="delay_timer_test.sv, 62, 541" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 203, 397" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 203, 413" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 215, 391" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 215, 391, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 234, 400" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 235, 414" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 28, 520" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 296, 538" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 370, 381" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 433, 519" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 475, 395" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 539, 383" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 539, 383, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 613, 502" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 613, 502, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 614, 490" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 614, 490, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 620, 446" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 620, 446, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 620, 469" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 620, 469, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 624, 428" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 624, 428, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 630, 416" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 630, 416, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 630, 517" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 640, 380" value="2" type="GuiResourceData"/>
-<property name="temp_data.sv, 640, 380, false, false, false, false, true" value="2" type="GuiResourceData"/>
-<property name="temp_data.sv, 641, 395" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 641, 395, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 644, 391" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 644, 391, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 644, 563" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 647, 389" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 650, 373" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 689, 514" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 705, 527" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 707, 521" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 714, 497" value="1" type="GuiResourceData"/>
-<property name="temp_data.sv, 798, 410" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 102, 296" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 107, 450" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 107, 450, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 110, 539" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 118, 422" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 121, 262" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 124, 383" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 124, 383, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 132, 437" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 148, 274" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 149, 382" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 160, 486" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 167, 296" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 168, 317" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 170, 380" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 189, 470" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 191, 400" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 198, 389" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 200, 488" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 210, 325" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 215, 337" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 219, 488" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 220, 337" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 277, 381" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 277, 381, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 360, 375" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 360, 375, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 395, 355" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 397, 350" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 52, 502" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 68, 528" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 68, 528, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 71, 351" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 76, 380" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 76, 380, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 81, 518" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 81, 518, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 86, 257" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 86, 257, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 96, 234" value="1" type="GuiResourceData"/>
-<property name="temp_data_bench.sv, 97, 378" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="28" type="GuiMode"/>
+<property name="GuiMode" value="2" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="22" type="TclMode"/>
+<property name="TclMode" value="1" type="TclMode"/>
 </item>
 </section>
 </application>
