@@ -59,6 +59,10 @@ module fsm(
     
     always_comb
     	begin
+    	
+    	// So I know this is how FSM are meant to be coded
+    	// but it creates aweful waveforms and pulses of 0 width
+    	// in simulation.  Fixes? Other than declare in every state
 			rdy = 1'b0;
 			bit_counter_rst = 1'b0;
 			ferr_counter_rst = 1'b0;
@@ -158,6 +162,7 @@ module fsm(
 				default:
 					next <= IDLE;
     		endcase
+    		
     	end
 
 endmodule

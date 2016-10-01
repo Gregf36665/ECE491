@@ -58,7 +58,7 @@ package check_p;
 	      );
 	 test_count=test_count+1;
 	 if (inspected  !== expected) begin 
-	    $display ("FAIL(%0s) Failed test %0d at time %0d.", message, test_count, $time); 
+	    $error ("FAIL(%0s) Failed test %0d at time %0d.", message, test_count, $time); 
 	    $display ("  Expected value 0x%0x, Inspected Value 0x%0x", expected, inspected); 
 	    error_count = error_count + 1;
 	 end 
@@ -71,8 +71,8 @@ package check_p;
 		 );
 	 test_count=test_count+1;
 	 if (inspected  !== expected) begin 
-	    $warning ("FAIL(%0s) Failed test %0d at time %0d.", message, test_count, $time); 
-	    $warning ("  Expected value 0x%0x, Inspected Value 0x%0x", expected, inspected); 
+	    $error ("FAIL(%0s) Failed test %0d at time %0d.", message, test_count, $time); 
+	    $display ("  Expected value 0x%0x, Inspected Value 0x%0x", expected, inspected); 
 	    error_count = error_count + 1;
 	 end
      else
@@ -93,14 +93,15 @@ package check_p;
 	 if(last_error_count==error_count)
 	   $display ("OK: %0s (%0d tests passed)", saved_message, test_count-last_test_count); 
 	 else
-	   $display ("FAIL: %0s. (%0d/%0d falures)", saved_message,
+	   $info ("FAIL: %0s. (%0d/%0d falures)", saved_message,
 		     error_count-last_error_count, test_count-last_test_count); 
    endtask
    
    task check_summary;
-	 $display("\nTesbench Complete.");
+   	 $display("===================");
+	 $display("Tesbench Complete.");
 	 if (error_count > 0) 
-	   $display ("ATTENTION: %0d Error(s) in %0d tests", error_count, test_count); 
+	   $warning ("ATTENTION: %0d Error(s) in %0d tests", error_count, test_count); 
 	 else
 	   $display("No errors in %0d tests.", test_count);		
    endtask

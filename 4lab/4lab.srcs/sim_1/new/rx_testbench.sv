@@ -71,10 +71,73 @@ module rx_testbench();
 		for (i=0; i<8; i++)
 		begin
 			rxd = data_in[i];
-			delay_for_one_baud();
+			#period_max;
 		end
 		stop_bit;
-		check("Verifying correct data received", data, data_in);
+		check_ok("Verifying correct data received", data, data_in);	
+		check_ok("Verifying ferr low", ferr, 1'b0);	
+	endtask
+	
+	task send_byte_faster(logic [7:0] data_in);
+		int i;
+		start_bit;
+		for (i=0; i<8; i++)
+		begin
+			rxd = data_in[i];
+			#period_min;
+		end
+		stop_bit;
+		check_ok("Verifying correct data received", data, data_in);	
+		check_ok("Verifying ferr low", ferr, 1'b0);
+	endtask
+	
+	task send_byte_slower(logic [7:0] data_in);
+			int i;
+			start_bit;
+			for (i=0; i<8; i++)
+			begin
+				rxd = data_in[i];
+				delay_for_one_baud();
+			end
+			stop_bit;
+			check_ok("Verifying correct data received", data, data_in);
+			check_ok("Verifying ferr low", ferr, 1'b0);	
+	endtask
+	
+	
+	task start_bit_glitch();
+		rxd = 0;
+		# ((period + period + period) / 8); // check at 6/16 the baud rate
+		rxd = 1;
+		# period check_ok("Testing start bit ready stays high on glitch", ready, 1'b1);
+	endtask
+	
+	// This task waits for ready to be high 
+	task check_idle();
+		if(!rxd)
+			$error("Data line low, idle should not be checked here");
+		fork : ready_timeout
+			begin
+			while (~ready)
+			begin
+				#1;
+			end
+			disable ready_timeout;
+			end
+			begin
+				#10000; $error("Ready still low");
+				disable ready_timeout;
+			end
+		join
+				
+	endtask
+	
+	task check_baud_rate_bounds;
+		check_group_begin("1.0 Baud Rate Bounds");
+		send_byte_faster(8'h55);
+		check_idle();
+		send_byte_slower(8'haa);
+		check_group_end;
 		
 	endtask
 	
@@ -86,8 +149,9 @@ module rx_testbench();
 		#100;
 		reset = 0;
 		#100;
-		send_byte(8'h55);
-		#1000;
+		start_bit_glitch;
+		repeat(10) #period; // since apparently vivado hates *
+		check_baud_rate_bounds;
 		check_summary_stop;
 		
 	end
