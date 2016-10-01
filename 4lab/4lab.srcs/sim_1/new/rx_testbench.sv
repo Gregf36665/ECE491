@@ -104,6 +104,19 @@ module rx_testbench();
 			check_ok("1.0 Verifying ferr low", ferr, 1'b0);	
 	endtask
 	
+	task send_byte_bad_eof(logic [7:0] data_in, logic [7:0] last_data);
+		int i;
+		start_bit;
+		for (i=0; i<8; i++)
+		begin
+			rxd = data_in[i];
+			#period_max;
+		end
+		rxd = 1'b0;
+		check("Verifying data ignored", data, last_data);	
+		check("Verifying ferr high", ferr, 1'b1);	
+	endtask
+
 	task start_bit_glitch();
 		send_byte(8'hFF);
 		rxd = 0;
@@ -163,16 +176,9 @@ module rx_testbench();
 	task check_single_ferr(logic [7:0] data_in);
 		int i;
 		// send a good byte first
-		send_byte(8'h55); // send a known byte
-		start_bit;
-		for (i=0; i<8; i++)
-		begin
-			rxd = data_in[i];
-			#period;
-		end
-		rxd = 1'b0; // hold the line low
-		# period;
-		rxd = 1'b1;
+		send_byte(8'haa); // send a known byte
+		send_byte_bad_eof(data_in, 8'haa); // send a bad byte
+		rxd = 1'b1; // send the data line to idle
 		check_ok("3.1 Verify ferr error generated", ferr, 1'b1);
 		check_ok("3.1 Verify data not changed", data, 8'h55);
 		repeat (10) # period; // wait 10 periods
@@ -195,10 +201,12 @@ module rx_testbench();
 
 	endtask
 
-	task check_multi_ferr;
+	task check_multi_ferr(logic [7:0] data_in);
+		int i;
 		check_single_ferr(8'hFF); // trigger ferr
 		// send the second byte
 		start_bit;
+		check_ok("3.4 ferr reset on incomming data stream", ferr, 1'b0);
 		for (i=0; i<8; i++)
 		begin
 			rxd = data_in[i];
