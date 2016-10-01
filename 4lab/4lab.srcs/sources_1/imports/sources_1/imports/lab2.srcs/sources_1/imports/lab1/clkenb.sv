@@ -16,6 +16,8 @@
 // To use, instantaite with the DIVFREQ parameter set to the desired frequency in Hz.
 // DO NOT CONNECT THE ENB OUTPUT OF THIS TO MODULE TO A CLOCKED INPUT!
 //
+// Revision 1.2
+// Added in error checking for the div freq vs the clk freq
 //-----------------------------------------------------------------------------
 
 module clkenb(input logic clk, reset, output logic enb, baud);
@@ -24,6 +26,10 @@ module clkenb(input logic clk, reset, output logic enb, baud);
    parameter DIVAMT = (CLKFREQ / DIVFREQ);
    parameter DIVBITS = $clog2(DIVAMT);   // enough bits to represent DIVAMT
    
+   if (DIVFREQ > CLKFREQ)
+   		// the %m displays the instance name in the error message
+   		$fatal("Invalid div_freq greater than clk_freq\nError in %m\n");
+
    logic [DIVBITS-1:0] q;
    
    always @(posedge clk) begin

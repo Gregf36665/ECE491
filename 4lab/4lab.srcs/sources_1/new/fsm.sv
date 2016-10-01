@@ -40,7 +40,8 @@ module fsm(
             EOF    		= 4'b0100,
             DATA_GOOD   = 4'b0101,
             DATA_BAD    = 4'b0110,
-            STILL_BAD   = 4'b0111
+            STILL_BAD   = 4'b0111,
+            LAST_SAVE	= 4'b1100
     } states;
     
     states state, next;
@@ -87,6 +88,7 @@ module fsm(
     						begin
     							if(!rxd_synced) next = CLEAR_FLAG;
     							else next = IDLE;
+    							delay_timer_rst = 1; // reset the 1/2 full timer
     						end
     					else next = START_MAYBE;
     					rdy = 1'b1;
@@ -109,10 +111,15 @@ module fsm(
     				begin
     					if(full_timer)
     						begin
-    							if(bit_count == 7) next = EOF;
+    							if(bit_count == 7) next = LAST_SAVE;
     							else next = UPDATE_DATA;
     						end
     					else next = WAIT;
+    				end
+    			LAST_SAVE:
+    				begin
+    					next = EOF;
+    					store_bit = 1'b1;
     				end
     			EOF:
     				begin
