@@ -25,7 +25,7 @@ module fsm(
 	input logic [2:0] bit_count,
 	input logic [3:0] ferr_delay_count,
 	output logic bit_counter_rst, ferr_counter_rst, delay_timer_rst, rdy, store_data, store_bit, clr_ferr, set_ferr,
-	output logic data
+	output logic data, ferr_count_inc
     );
     
     assign data = rxd_synced;
@@ -63,7 +63,7 @@ module fsm(
     	// So I know this is how FSM are meant to be coded
     	// but it creates aweful waveforms and pulses of 0 width
     	// in simulation.  Fixes? Other than declare in every state
-			rdy = 1'b0;
+			rdy = 1'b0; // see this one looks really really ugly
 			bit_counter_rst = 1'b0;
 			ferr_counter_rst = 1'b0;
 			delay_timer_rst = 1'b0;
@@ -71,6 +71,7 @@ module fsm(
 			clr_ferr = 1'b0;
 			set_ferr = 1'b0;
 			store_bit = 1'b0;
+			ferr_count_inc = 0;
     	
     		unique case(state)
     			IDLE:
@@ -146,7 +147,8 @@ module fsm(
     						begin
     							if(rxd_synced)
     								begin
-    									if(ferr_delay_count == 4'd10) next = IDLE;
+										ferr_count_inc = 1;
+    									if(ferr_delay_count == 4'd9) next = IDLE;
     									else next = DATA_BAD;
     								end
     							else next = STILL_BAD;
