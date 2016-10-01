@@ -46,9 +46,6 @@ module fsm(
     
     states state, next;
     
-    // apparently this is the only way to get the current state to appear in simulation
-    states tmp;
-    assign tmp = state;    
     
 	always_ff @(posedge clk)
 		begin
