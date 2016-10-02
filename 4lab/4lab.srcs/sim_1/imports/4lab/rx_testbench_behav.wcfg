@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tx_rx_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="check_p" />
+            <top_module name="glbl" />
+            <top_module name="tx_rx_testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="3125051000001fs"></ZoomEndTime>
+      <Cursor1Time time="120920958000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="3" />
+   <wave_markers>
+      <marker time="24093645000000" label="" />
+      <marker time="24197785000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tx_rx_testbench/DUV_TX/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tx_rx_testbench/DUV_RX/U_FSM/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tx_rx_testbench/data_line" type="logic">
+      <obj_property name="ElementShortName">data_line</obj_property>
+      <obj_property name="ObjectShortName">data_line</obj_property>
+   </wvobject>
+</wave_config>

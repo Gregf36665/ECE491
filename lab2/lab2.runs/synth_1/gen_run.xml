@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1473629526">
-  <File Type="RDS-PROPCONSTRS" Name="nexys4DDR_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="nexys4DDR.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="nexys4DDR_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="nexys4DDR.vds"/>
   <File Type="RDS-UTIL" Name="nexys4DDR_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="nexys4DDR_utilization_synth.pb"/>
@@ -12,7 +12,7 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/Downloads/single_pulser.v">
       <FileInfo SFType="SVerilog">
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../flynng/Downloads/single_pulser.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/single_pulser.v"/>
         <Attr Name="ImportTime" Val="1473163934"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

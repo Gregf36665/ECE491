@@ -1,14 +1,3 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mux8_parm
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module clkenb
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module reg_parm
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module counter_parm
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module transmitter
-INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv:238]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/new/manchester_tx.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module manchester_tx
 INFO: [VRFC 10-2458] undeclared symbol txd_nrz, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/new/manchester_tx.sv:30]
@@ -17,6 +6,8 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE49
 INFO: [VRFC 10-311] analyzing module transmitter_bench
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module nexys4DDR
+INFO: [VRFC 10-2458] undeclared symbol reset, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol clk, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv:58]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/rxd_synchroniser.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module rxd_synchroniser
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/f_error.sv" into library xil_defaultlib
@@ -31,19 +22,53 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE49
 INFO: [VRFC 10-311] analyzing module temp_data
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module receiver
-INFO: [VRFC 10-2458] undeclared symbol rxd_synced, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:38]
-INFO: [VRFC 10-2458] undeclared symbol start_check, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:38]
-INFO: [VRFC 10-2458] undeclared symbol clr_ferr, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:40]
-INFO: [VRFC 10-2458] undeclared symbol set_ferr, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:40]
+INFO: [VRFC 10-2458] undeclared symbol rxd_synced, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:40]
+INFO: [VRFC 10-2458] undeclared symbol start_check, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:40]
+INFO: [VRFC 10-2458] undeclared symbol clr_ferr, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:42]
+INFO: [VRFC 10-2458] undeclared symbol set_ferr, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:42]
+INFO: [VRFC 10-2458] undeclared symbol bit_counter_rst, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/new/receiver.sv:44]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/new/check_p.sv" into library xil_defaultlib
 INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/new/check_p.sv:85]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_testbench
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/lab1/dispctl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dispctl
+INFO: [VRFC 10-2458] undeclared symbol dp_n, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/lab1/dispctl.sv:49]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/lab1/seven_seg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module seven_seg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_3_8_en
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_parm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux8_parm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_parm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkenb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/tx_rx_testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_rx_testbench
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/tx_rx_testbench.sv:48]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/top_lvl_test_bench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_lvl_test_bench
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/temp_data_bench.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module temp_data_bench
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/delay_timer_test.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module delay_timer_test
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_testbench
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:68]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:81]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:92]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:105]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:118]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:118]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:133]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:192]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:222]
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/rx_testbench.sv:241]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/fsm_test_bench.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module fsm_test_bench
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sim_1/new/delay_timer_test.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module delay_timer_test
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/new/transmitter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module transmitter
+INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/new/transmitter.sv:140]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/flynng/Desktop/ECE491/4lab/4lab.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

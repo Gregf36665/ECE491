@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log temp_data.vds -m64 -mode batch -messageDb vivado.pb -notrace -source temp_data.tcl
+EAStep vivado -log nexys4DDR.vds -m64 -mode batch -messageDb vivado.pb -notrace -source nexys4DDR.tcl

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="rx_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="check_p" />
+            <top_module name="glbl" />
+            <top_module name="rx_testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="48097572000001fs"></ZoomEndTime>
+      <Cursor1Time time="28306032000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="6" />
+   <wave_markers>
+      <marker time="24093645000000" label="" />
+      <marker time="24197785000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/rx_testbench/rxd" type="logic">
+      <obj_property name="ElementShortName">rxd</obj_property>
+      <obj_property name="ObjectShortName">rxd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rx_testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rx_testbench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rx_testbench/ferr" type="logic">
+      <obj_property name="ElementShortName">ferr</obj_property>
+      <obj_property name="ObjectShortName">ferr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rx_testbench/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/rx_testbench/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+</wave_config>

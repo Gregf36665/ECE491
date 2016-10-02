@@ -3,19 +3,19 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="C:/Users/birrur/ECE491/lab2/lab2.xpr">
+<Project Version="7" Minor="14" Path="C:/Users/flynng/Desktop/ECE491/lab2/lab2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="374a03bc6742475ba50b197cacfa66f8"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
-    <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
-    <Option Name="CompiledLibDirQuesta" Val="$PCACHEDIR/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PCACHEDIR/compile_simlib/ies"/>
-    <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
-    <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
-    <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
+    <Option Name="CompiledLibDirModelSim" Val="C:/Users/flynng/Desktop/ECE491/lab2/lab2.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="C:/Users/flynng/Desktop/ECE491/lab2/lab2.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="C:/Users/flynng/Desktop/ECE491/lab2/lab2.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="C:/Users/flynng/Desktop/ECE491/lab2/lab2.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="C:/Users/flynng/Desktop/ECE491/lab2/lab2.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="C:/Users/flynng/Desktop/ECE491/lab2/lab2.cache/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val="digilentinc.com:nexys4_ddr:part0:1.1"/>
     <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
@@ -46,7 +46,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/Downloads/single_pulser.v">
         <FileInfo SFType="SVerilog">
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../flynng/Downloads/single_pulser.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/single_pulser.v"/>
           <Attr Name="ImportTime" Val="1473163934"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
