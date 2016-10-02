@@ -68,7 +68,7 @@ module fsm(
 			clr_ferr = 1'b0;
 			set_ferr = 1'b0;
 			store_bit = 1'b0;
-			ferr_count_inc = 0;
+			ferr_count_inc = 1'b0;
     	
     		unique case(state)
     			IDLE:

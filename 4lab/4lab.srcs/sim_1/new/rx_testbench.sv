@@ -71,7 +71,7 @@ module rx_testbench();
 		for (i=0; i<8; i++)
 		begin
 			rxd = data_in[i];
-			#period_max;
+			delay_for_one_baud;
 		end
 		stop_bit;
 		check("Verifying correct data received", data, data_in);	
@@ -348,6 +348,39 @@ module rx_testbench();
 
 	endtask
 
+	// Watch ready during each byte transmission
+	task check_ready_multi_byte;
+		int i;
+		check_idle(); // get back to a resting state
+		check_ok("4.5 Ready high at the beginning", ready, 1'b1);
+		for (i=0;i<5;i++)
+			begin
+			send_byte(8'haa);
+			check("4.5 Ready high after 1 byte transmitted", ready, 1'b1);
+			end
+	endtask
+
+	// Watch the data during a standard tx
+	task check_data_good;
+		send_byte(8'h82);
+		check("5.1 Check data is good during 1 byte tx", data, 8'h82);
+	endtask
+	
+	task check_multi_data_good;
+		int i;
+		for (i=0; i<16; i++)
+		begin
+			send_byte((i<<4) | i);
+			check("5.2 Check multiple bytes", data, (i<<4) | i);
+		end
+	endtask
+	
+	task check_no_update_on_ferr;
+		send_byte(8'h0F);
+		send_byte_bad_eof(8'hF0, 8'h0F);
+		check("5.3 Check data not updated", data, 8'h0F);
+	endtask
+
 	// All of the gropus of tests
 	task check_baud_rate_bounds;
 		check_group_begin("1.0 Baud Rate Bounds");
@@ -380,9 +413,17 @@ module rx_testbench();
 		check_ready_on_good_byte();
 		check_ready_on_bad_byte();
 		check_ready_on_glitch;
+		check_ready_multi_byte;
 		check_group_end();
 	endtask
 
+	task check_data;
+		check_group_begin("5.0 Data testing");
+		check_data_good;
+		check_multi_data_good;
+		check_no_update_on_ferr;
+		check_group_end();
+	endtask;
 	// get the clock going
     always
     	#5 clk = ~clk;
@@ -401,6 +442,8 @@ module rx_testbench();
 		check_frame_error;
 		repeat(10) #period; // since apparently vivado hates *
 		check_ready;
+		repeat(10) #period; // since apparently vivado hates *
+		check_data;
 		repeat(10) #period; // since apparently vivado hates *
 		check_summary_stop;
 		
