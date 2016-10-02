@@ -17,7 +17,7 @@
 // 09.05.2016 : created
 //-----------------------------------------------------------------------------
 
-module transmitter #(BAUD_RATE = 9600) (
+module transmitter(
     input logic clk,
     input logic send,
     input logic [7:0] data,    
@@ -25,6 +25,7 @@ module transmitter #(BAUD_RATE = 9600) (
     output logic txd
     );
     
+    parameter BAUD_RATE = 9600;
        
     logic counter_rst, mux_out, carry, lden, clk_reset;
     logic [7:0] saved_data;

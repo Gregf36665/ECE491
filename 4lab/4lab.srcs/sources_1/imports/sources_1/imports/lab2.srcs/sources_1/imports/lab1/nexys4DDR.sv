@@ -23,39 +23,64 @@
 module nexys4DDR (
 		  // un-comment the ports that you will use
           input logic         CLK100MHZ,
-//		  input logic [8:0]   SW,
+		  input logic [1:0]   SW,
 		  input logic 	      BTNC,
 //		  input logic 	      BTNU, 
 //		  input logic 	      BTNL, 
 //		  input logic 	      BTNR,
-		  input logic 	      BTND,
-//		  output logic [6:0]  SEGS,
-//		  output logic [7:0]  AN,
-//		  output logic 	      DP
-		  output logic        LED,
+//		  input logic 	      BTND,
+		  output logic [6:0]  SEGS,
+		  output logic [7:0]  AN,
+		  output logic [1:0]  LED,
 //		  input logic         UART_TXD_IN,
-		  output logic        JA,
-		  output logic        JB,
-		  output logic        JC
-//		  input logic         UART_RTS,		  
+		  output logic [2:0]  JA,
+		  input logic         UART_TXD_IN		  
 //		  output logic        UART_RXD_OUT
 //		  output logic        UART_CTS		  
             );
 
 
-    logic send, d_pulse, txen, rdy, txd;
+	// Signals
+	logic ferr, ready, rxd;
     logic [7:0] data;
+
+
+	// GSR
+	assign reset = BTNC;
+
+	// wiring for the 7 seg display
+	logic [6:0] seg;
+	logic [7:0] an;
+	assign SEGS = seg;
+	assign AN = an;
+
+	assign clk = CLK100MHZ;
+
+	// create the 7-seg display
+	dispctl U_DISP (.clk, .reset, .d7(4'b0), .d6(4'b0),. d5(4'b0), 
+					.d4(4'b0), .d3(4'b0),. d2(4'b0),
+					.dp7(1'b0), .dp6(1'b0), .dp5(1'b0), .dp4(1'b0), 
+					.dp3(1'b0), .dp2(1'b0), .dp1(1'b0), .dp0(1'b0),
+					.d1(data[7:4]), .d0(data[3:0]), .seg, .an, .dp());
+
+	// create the receiver
+	receiver #(.BAUD_RATE(9600)) U_RX (.clk, .rxd, .reset, .ferr, .ready, .data);
+
+
+	always_comb
+	case(SW)
+		2'b00: rxd = 1'b1; // idle
+		2'b01: rxd = 1'b1; // not implemented yet
+		2'b10: rxd = 1'b0; // get ferr
+		2'b11: rxd = UART_TXD_IN; // Use realterm
+	endcase
     
-    manchester_tx #(.BAUD_RATE(10_000)) U_TX (.clk(CLK100MHZ), .send, .data,
-                                            .rdy, .txd, .txen, .reset(BTND));   
                      
-    mxtest U_TX_CTL (.clk(CLK100MHZ), .send, .data, .ready(rdy), .run(BTNC),
-                     .reset(BTND));
-    assign JA = txd; // This allows the data to be viewed on the scope
-    assign JB = rdy;
-    assign LED = rdy;
-    assign JC = txen;
-    
+    assign JA[0] = rxd; // This allows the data to be viewed on the scope
+    assign JA[1] = ferr; // This allows the data to be viewed on the scope
+    assign JA[2] = ready; // This allows the data to be viewed on the scope
+    assign LED[0] = ready;
+    assign LED[1] = ferr;
     
                                             
 endmodule // nexys4DDR

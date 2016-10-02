@@ -26,9 +26,13 @@ module clkenb(input logic clk, reset, output logic enb, baud);
    parameter DIVAMT = (CLKFREQ / DIVFREQ);
    parameter DIVBITS = $clog2(DIVAMT);   // enough bits to represent DIVAMT
    
+   generate
    if (DIVFREQ > CLKFREQ)
    		// the %m displays the instance name in the error message
-   		$fatal("Invalid div_freq greater than clk_freq\nError in %m\n");
+   		$error("Invalid div_freq greater than clk_freq\nError in %m\n");
+		// Well apparently sv hates validating parameters
+	endgenerate
+	// whitespace...
 
    logic [DIVBITS-1:0] q;
    

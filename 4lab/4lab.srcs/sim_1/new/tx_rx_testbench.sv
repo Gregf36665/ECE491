@@ -40,7 +40,7 @@ module tx_rx_testbench();
 	// outputs
 	logic rdy;
 
-	transmitter #(.BAUDRATE(baud_rate)) DUV_TX (.clk, .send, .rdy, .data(data_in), .txd(data_line));
+	transmitter #(.BAUD_RATE(baud_rate)) DUV_TX (.clk, .send, .rdy, .data(data_in), .txd(data_line));
 
 	// great convention with naming the parameters
 	receiver #(.BAUD_RATE(baud_rate)) DUV_RX (.clk, .reset, .rxd(data_line), .data(data_out));
@@ -54,13 +54,13 @@ module tx_rx_testbench();
 	endtask
 
 	task send_many_byte;
-		data_in = 8'hFF;
+		data_in = 8'h33;
 		send = 1;
-		@(posedge rdy) data_in = 8'h00;
+		@(posedge rdy) data_in = 8'h0F;
 		#period;
-		check_ok("5.4 Check multi byte 1/2", data_out, 8'hFF);
+		check_ok("5.4 Check multi byte 1/2", data_out, 8'h33);
 		repeat(10) #period;
-		check_ok("5.4 Check multi byte 2/2", data_out, 8'h00);
+		check_ok("5.4 Check multi byte 2/2", data_out, 8'h0F);
 	endtask
 		
 	always
@@ -70,7 +70,7 @@ module tx_rx_testbench();
 	begin
 		#100;
 		reset = 0;
-		send_one_byte(8'h55);
+		send_one_byte(8'h55); // This is the first byte required to be sent
 		send_many_byte;
 		check_summary_stop;
 	end
