@@ -95,6 +95,7 @@ package check_p;
 	 else
 	   $display ("FAIL: %0s. (%0d/%0d falures)", saved_message,
 		     error_count-last_error_count, test_count-last_test_count); 
+	 $stop;
    endtask
    
    task check_summary;
@@ -108,7 +109,7 @@ package check_p;
 
    task check_summary_stop;
 	 check_summary();
-	 $stop;
+	 $finish;
    endtask
    
 endpackage

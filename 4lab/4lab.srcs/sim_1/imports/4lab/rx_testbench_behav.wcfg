@@ -3,34 +3,43 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tx_rx_testbench_behav.wdb" id="1">
+      <db_ref path="rx_testbench_behav.wdb" id="1">
          <top_modules>
             <top_module name="check_p" />
             <top_module name="glbl" />
-            <top_module name="tx_rx_testbench" />
+            <top_module name="rx_testbench" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="3125051000001fs"></ZoomEndTime>
-      <Cursor1Time time="120920958000fs"></Cursor1Time>
+      <ZoomStartTime time="8361396694938fs"></ZoomStartTime>
+      <ZoomEndTime time="9670736287278fs"></ZoomEndTime>
+      <Cursor1Time time="8490360376000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="3" />
    <wave_markers>
       <marker time="24093645000000" label="" />
       <marker time="24197785000000" label="" />
+      <marker time="1224944000000" label="" />
+      <marker time="1329110000000" label="" />
+      <marker time="4037426000000" label="" />
+      <marker time="4180654000000" label="" />
+      <marker time="4141592000000" label="" />
+      <marker time="4388986000000" label="" />
+      <marker time="4284820000000" label="" />
+      <marker time="5385073000000" label="" />
+      <marker time="5326480000000" label="" />
    </wave_markers>
-   <wvobject fp_name="/tx_rx_testbench/DUV_TX/state" type="array">
-      <obj_property name="ElementShortName">state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   <wvobject fp_name="/rx_testbench/ferr" type="logic">
+      <obj_property name="ElementShortName">ferr</obj_property>
+      <obj_property name="ObjectShortName">ferr</obj_property>
    </wvobject>
-   <wvobject fp_name="/tx_rx_testbench/DUV_RX/U_FSM/state" type="array">
-      <obj_property name="ElementShortName">state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   <wvobject fp_name="/rx_testbench/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/tx_rx_testbench/data_line" type="logic">
-      <obj_property name="ElementShortName">data_line</obj_property>
-      <obj_property name="ObjectShortName">data_line</obj_property>
+   <wvobject fp_name="/rx_testbench/rxd" type="logic">
+      <obj_property name="ElementShortName">rxd</obj_property>
+      <obj_property name="ObjectShortName">rxd</obj_property>
    </wvobject>
 </wave_config>
