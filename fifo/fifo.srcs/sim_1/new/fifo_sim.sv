@@ -67,7 +67,6 @@ module fifo_sim(
 
 	endtask
 
-
 	task over_write;
 		int i;
 		logic [7:0] data [4:0] = '{8'h42, 8'h00, 8'h10, 8'hab, 8'h0f};
@@ -127,8 +126,6 @@ module fifo_sim(
 		reset;
 		over_read;
 		#100; // wait to see what happened
-
-
 		check_summary;
 		$finish();
 	end

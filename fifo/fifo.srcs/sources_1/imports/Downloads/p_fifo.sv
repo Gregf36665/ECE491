@@ -53,7 +53,7 @@
 //               Initial Checkin
 //				 Modified by Greg
 //				 Ported to SV
-//				 Made it dim-wit resistant (nothing can be idiot proof)
+//				 Made it dimwit resistant (nothing can be idiot proof)
 //				 Parameterized the FIFO depth
 //
 
@@ -66,9 +66,9 @@ module p_fifo #(parameter DEPTH=4)
 			 output logic full, empty,
 			 output logic [7:0] dout);
 
-	localparam POINTER_WIDTH = $clog2(DEPTH); // get the required width of the pointers
+	localparam POINTER_WIDTH = $clog2(DEPTH) - 1; // get the required width of the pointers
 
-	logic [POINTER_WIDTH:0] wp, rp; // set up the read and write pointers
+	logic [POINTER_WIDTH:0] wp, rp, wp_p1, rp_p1; // set up the read and write pointers
 
 	logic [7:0] mem [0:DEPTH-1]; // the memory for the FIFO
 
@@ -94,7 +94,7 @@ module p_fifo #(parameter DEPTH=4)
 					rp <= #1 rp_p1;
 			end
 
-
+	// Nuke the FIFO
 	function clear_all();
 		int i;
 		for(i=0;i<DEPTH;i++)

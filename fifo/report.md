@@ -44,6 +44,8 @@ When the byte is read out the empty bit goes low.
 This can be seen in figure 5.
 The data that is read out is previous values from the FIFO.
 
+The error in the test bench is due to data being overwritten.
+
 Testbench
 =========
 Checking 10
@@ -64,11 +66,72 @@ OK: Verify data read correctly
 
 Tesbench Complete.
 ATTENTION: 1 Error(s) in 7 tests
-$finish called at time : 1111 ns : File "C:/Users/flynng/Desktop/ECE491/fifo/fifo.srcs/sim_1/new/fifo_sim.sv" Line 135
 
 
 Part 2
 ------
 
 Modifications to the original verilog
+Parameterized the depth of the FIFO
+Added in more useful comments
+Added in a reset that actually resets the values in the FIFO not just the pointers
+Made FIFO dimwit resistant:
+Prevented overflowing the FIFO
+Leave the pointers alone to prevent segfault
 
+It would be nice to:
+Built an interface to allow for the connection between FIFO and other devices
+
+Features to add?
+Segfault output?
+Overflow output?
+These signals would pulse once when the violation happens
+
+Prove it works.
+Figure 6 shows 0x10 being clocked in and out.
+The empty signal falls low as the byte is clocked in.
+Once the byte is clocked out the empty signal goes high again.
+
+The test bench verifies all requirements are met.
+
+The test bench should have 14 tests
+1) R/W 1 byte
+2-5) R/W 4 bytes (fill FIFO)
+6-9) R/W 5 bytes (don't read 5th since empty asserted)
+10) R nothing (try empty FIFO)
+11-14) R/W 4 more bytes
+
+
+Testbench
+=========
+Checking 10
+OK: Verify data read correctly
+Checking 0f
+OK: Verify data read correctly
+Checking ab
+OK: Verify data read correctly
+Checking 10
+OK: Verify data read correctly
+Checking 42
+OK: Verify data read correctly
+Checking 0f
+OK: Verify data read correctly
+Checking ab
+OK: Verify data read correctly
+Checking 10
+OK: Verify data read correctly
+Checking 00
+OK: Verify data read correctly
+Checking 00
+OK: Verify data read correctly
+Checking 0f
+OK: Verify data read correctly
+Checking ab
+OK: Verify data read correctly
+Checking 10
+OK: Verify data read correctly
+Checking 42
+OK: Verify data read correctly
+
+Tesbench Complete.
+No errors in 14 tests. :)

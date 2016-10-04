@@ -85,13 +85,44 @@ module fifo_upgrade_sim();
 		read_byte(8'h00);
 	endtask
 	
+	// Get the FIFO into a known state
+	// Not really, I'd like to flush the data
+	// Due to the new implementation now it does!
+	task reset;
+		#50; 
+		we = 0;
+		re = 0;
+		rst = 1'b0;
+		clr = 1; // apparently reset doesn't clear the FIFO
+		// well apparently clr doesn't either.
+		// just putting the read/write pt back to 0 apparently
+		// New implementation means it does
+		#50;
+		rst = 1'b1;
+		clr = 1'b0;
+	endtask
+
 	always
 		#5 clk = !clk;
 
 	initial
 	begin
-
-	check_summary;
-	$finish();
+		reset;
+		write_byte(8'h10);
+		read_byte(8'h10);
+		reset;
+		multi_read_write;
+		reset;
+		over_write;
+		reset;
+		// get all 0s into the FIFO
+		repeat(4) write_byte(8'h00);
+		reset;
+		over_read;
+		#100; // wait to see what happened
+		multi_read_write;
+		check_summary;
+		$finish();
 	end
+
 endmodule
