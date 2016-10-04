@@ -36,6 +36,12 @@ module fifo_sim(
 	logic we; // Write enable
 	logic re; // Read enable
 
+	logic [15:0] test;
+	assign test = 16'h55aa;
+
+	logic [7:0] tmp;
+	assign tmp = test[8+:8];
+
 	logic full, empty;
 
 	task read_byte(logic [7:0] expected);
