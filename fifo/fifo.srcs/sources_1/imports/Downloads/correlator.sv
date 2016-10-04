@@ -67,19 +67,9 @@ module correlator #(parameter LEN=16, PATTERN=16'b0000000011111111, HTHRESH=13, 
 		automatic logic [W-1:0] ones = 0;
 		automatic logic [5:0] tmp;
 
-		$display("Val is at %h", val);
 		data = {pad, val};
-		$display("Data is %h", data);
-		$display("Ones is at %i", ones);
-		$display("=============");
-		$display("Data index 0 is %h", data[0+:6]);
 		for (i=0; i< WIDTH / 6; i++)
-		begin
-			$display("Showing data %h", data[(6*i)+:6]);
 			ones += count_ones6(.val(data[i*6+:6]));
-			$display("Ones are at %i, at %i", tmp, i);
-		end
-		$display("=== Final value: %d ones", ones);
 
 		return ones; 
 	endfunction
@@ -93,7 +83,6 @@ module correlator #(parameter LEN=16, PATTERN=16'b0000000011111111, HTHRESH=13, 
 	// 
 	// def count_one(a):
 	// return bin(a)[2:].count('1')
-	$display("Checking %h", val);
 	case(val)
 		6'd0: out = 3'd0;
 		6'd1: out = 3'd1;
