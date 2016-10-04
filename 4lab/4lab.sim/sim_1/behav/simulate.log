@@ -1,29 +1,16 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
-START: 1.0 Baud Rate Bounds at time 200.
-OK: 1.0 Verifying correct data received at a faster baud rate at $0d.             1016612
-OK: 1.0 Verifying ferr low at $0d.             1016612
-4.1 ready is high in idle
-check idle completed
-OK: 1.0 Verifying correct data received at a slower baud rate at $0d.             2058272
-OK: 1.0 Verifying ferr low at $0d.             2058272
-OK: 1.0 Baud Rate Bounds (5 tests passed)
-START: 1.0 Baud Rate Bounds at time 200.
-OK: 1.0 Verifying correct data received at a faster baud rate at $0d.             1016612
-OK: 1.0 Verifying ferr low at $0d.             1016612
-4.1 ready is high in idle
-check idle completed
-OK: 1.0 Verifying correct data received at a slower baud rate at $0d.             2058272
-OK: 1.0 Verifying ferr low at $0d.             2058272
-OK: 1.0 Baud Rate Bounds (5 tests passed)
-START: 2.0 Start bit width at time 3099932.
-OK: 2.0 Testing start bit ready stays high on glitch at $0d.             4284820
-OK: 2.0 Verifying data did not change after glitch at $0d.             4284820
-OK: 2.0 Testing start bit ready stays goes low on glitch at 9/16 periods at $0d.             5489239
-OK: 2.0 Checking data after glitch at $0d.             6321346
-OK: 2.0 Start bit width (8 tests passed)
-START: 3.0 Framing error tests at time 7363006.
-OK: 3.1 Verify ferr error generated at $0d.             9446326
-OK: 3.1 Verify data not changed at $0d.             9446326
-OK: 3.4 ferr held high due to misformat halfway through the message at $0d.            16791706
-OK: 3.0 Framing error tests (17 tests passed)
+OK: 5.4 Check single byte 0x55 at $0d.             1145926
+OK: 5.4 Check multi byte 1/2 0x33 at $0d.             2291711
+OK: 5.4 Check multi byte 2/2 0x0F at $0d.             3333371
+===================
+Tesbench Complete.
+No errors in 3 tests.
+$finish called at time : 3333371 ns : File "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/new/check_p.sv" Line 112
+OK: 5.4 Check single byte 0x55 at $0d.             1145926
+OK: 5.4 Check multi byte 1/2 0x33 at $0d.             2291711
+OK: 5.4 Check multi byte 2/2 0x0F at $0d.             3333371
+===================
+Tesbench Complete.
+No errors in 3 tests.
+$finish called at time : 3333371 ns : File "C:/Users/flynng/Desktop/ECE491/4lab/4lab.srcs/sources_1/imports/sources_1/new/check_p.sv" Line 112

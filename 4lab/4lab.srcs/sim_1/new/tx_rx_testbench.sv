@@ -50,7 +50,7 @@ module tx_rx_testbench();
 		send = 1;
 		#period send = 0;
 		repeat(10) #period;
-		check_ok("5.4 Check single byte", data_out, data);
+		check_ok("5.4 Check single byte 0x55", data_out, data);
 	endtask
 
 	task send_many_byte;
@@ -58,9 +58,9 @@ module tx_rx_testbench();
 		send = 1;
 		@(posedge rdy) data_in = 8'h0F;
 		#period;
-		check_ok("5.4 Check multi byte 1/2", data_out, 8'h33);
+		check_ok("5.4 Check multi byte 1/2 0x33", data_out, 8'h33);
 		repeat(10) #period;
-		check_ok("5.4 Check multi byte 2/2", data_out, 8'h0F);
+		check_ok("5.4 Check multi byte 2/2 0x0F", data_out, 8'h0F);
 	endtask
 		
 	always
