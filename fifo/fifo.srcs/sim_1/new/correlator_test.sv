@@ -23,7 +23,7 @@
 module correlator_test();
 
 	// Inputs
-	logic clk=0, reset=0, enb=0,d_in;
+	logic clk=0, reset=1, enb=0,d_in=1;
 
 	// outputs
 	logic h_out, l_out;
@@ -36,5 +36,15 @@ module correlator_test();
 	always
 		#5 clk = ~clk;
 
+	initial
+	begin
+		#100;
+		reset = 0;
+		DUV.shreg = 16'h007F;
+		#100;
+		@(negedge clk) enb = 1;
+		@(posedge clk) #1 enb = 0;
+		$finish;
+	end
 
 endmodule
