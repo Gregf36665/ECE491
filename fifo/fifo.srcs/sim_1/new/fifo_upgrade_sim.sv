@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/03/2016 06:24:28 PM
+// Create Date: 10/03/2016 08:41:06 PM
 // Design Name: 
-// Module Name: fifo_sim
+// Module Name: fifo_upgrade_sim
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -21,22 +21,17 @@
 
 import check_p::*;
 
-module fifo_sim(
+module fifo_upgrade_sim();
 
-    );
-
-	// inputs
-	logic clk = 0;
-	logic rst = 0;
-	logic clr = 0;
-
-	// Data in/out
+	// Inputs
+	logic clk = 0, rst = 0, clr = 0, we = 0, re = 0;
+	// Data lines
 	logic [7:0] din, dout;
 
-	logic we; // Write enable
-	logic re; // Read enable
-
+	// Outputs
 	logic full, empty;
+
+	p_fifo #(.DEPTH(4)) DUV (.*);
 
 	task read_byte(logic [7:0] expected);
 		$display("Checking %h", expected);
@@ -67,7 +62,6 @@ module fifo_sim(
 
 	endtask
 
-
 	task over_write;
 		int i;
 		logic [7:0] data [4:0] = '{8'h42, 8'h00, 8'h10, 8'hab, 8'h0f};
@@ -90,46 +84,14 @@ module fifo_sim(
 	task over_read;
 		read_byte(8'h00);
 	endtask
-		
-	// Get the FIFO into a known state
-	// Not really, I'd like to flush the data
-	task reset;
-		#50; 
-		we = 0;
-		re = 0;
-		rst = 1'b0;
-		clr = 1; // apparently reset doesn't clear the FIFO
-		// well apparently clr doesn't either.
-		// just putting the read/write pt back to 0 apparently
-		#50;
-		rst = 1'b1;
-		clr = 1'b0;
-	endtask
-
-
-	sasc_fifo4 DUV (clk, rst, clr, din, we, dout, re, full, empty);
-
+	
 	always
-		#5 clk = ~clk;
+		#5 clk = !clk;
 
 	initial
 	begin
-		reset;
-		write_byte(8'h10);
-		read_byte(8'h10);
-		reset;
-		multi_read_write;
-		reset;
-		over_write;
-		reset;
-		// get all 0s into the FIFO
-		repeat(4) write_byte(8'h00);
-		reset;
-		over_read;
-		#100; // wait to see what happened
 
-
-		check_summary;
-		$finish();
+	check_summary;
+	$finish();
 	end
 endmodule
