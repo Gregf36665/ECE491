@@ -23,6 +23,7 @@ import check_p::*;
 
 module tx_rx_testbench();
 
+	// make these uppercase in the future
 	parameter baud_rate = 9600;
 	parameter period = 1_000_000_000 / baud_rate; // get the time period in ns
 	
@@ -42,7 +43,7 @@ module tx_rx_testbench();
 
 	transmitter #(.BAUD_RATE(baud_rate)) DUV_TX (.clk, .send, .rdy, .data(data_in), .txd(data_line));
 
-	// great convention with naming the parameters
+	// great convention with naming the parameters (fixed it!)
 	receiver #(.BAUD_RATE(baud_rate)) DUV_RX (.clk, .reset, .rxd(data_line), .data(data_out));
 
 	task send_one_byte(logic [7:0] data);
