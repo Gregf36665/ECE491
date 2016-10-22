@@ -23,7 +23,7 @@
 
 module fsm_pll(
 		input logic clk, reset, data_bit, enable_pll,
-		input logic [5:0] sample_count, current_time,
+		input logic [5:0] sample_count, 
 		input logic [6:0] current_corr,
 		output logic sample_inc, sample_dec
 		);
@@ -94,13 +94,13 @@ module fsm_pll(
 						begin
 							next = FIND_MINMAX;
 							max_corr = current_corr;
-							max_time = current_time;
+							max_time = sample_count;
 						end
 					UPDATE_MIN:
 						begin
 							next = FIND_MINMAX;
 							min_corr = current_corr;
-							min_time = current_time;
+							min_time = sample_count;
 						end
 					UPDATE_TIME_MAX:
 						begin

@@ -23,7 +23,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module fsm_psfd(
-		input logic clk, reset, sample_slow, preamble_match, sfd_match, set_ferr, data_done,
+		input logic clk, reset, preamble_match, sfd_match, set_ferr, data_done,
 		input logic [6:0] slow_sample_count,
 		output logic cardet, bit_counter_rst, sample_counter_rst, slow_sample_rst, enable_pll
 		);
@@ -57,11 +57,7 @@ module fsm_psfd(
 				unique case (state)
 					IDLE:
 						begin
-							if(sample_slow)
-								begin
-									if(preamble_match) next = PREAMBLE_MATCH;
-									else next = IDLE;
-								end
+							if(preamble_match) next = PREAMBLE_MATCH;
 							else next = IDLE;
 							bit_counter_rst    = 1'b1;
 							sample_counter_rst = 1'b1;

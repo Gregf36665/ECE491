@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../fifo.srcs/sources_1/imports/Downloads/sasc_fifo4.v"
+sv xil_defaultlib  "../../../fifo.srcs/sources_1/imports/Downloads/p_fifo.sv"
+sv xil_defaultlib  "../../../fifo.srcs/sources_1/imports/Downloads/check_p.sv"
+sv xil_defaultlib  "../../../fifo.srcs/sources_1/imports/Downloads/correlator.sv"
+sv xil_defaultlib  "../../../fifo.srcs/sim_1/new/fifo_sim.sv"
+sv xil_defaultlib  "../../../fifo.srcs/sim_1/new/fifo_upgrade_sim.sv"
+sv xil_defaultlib  "../../../fifo.srcs/sim_1/new/correlator_test.sv"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
