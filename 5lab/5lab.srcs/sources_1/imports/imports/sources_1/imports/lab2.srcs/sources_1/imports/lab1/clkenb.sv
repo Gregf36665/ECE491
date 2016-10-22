@@ -27,7 +27,7 @@ module clkenb(input logic clk, reset, output logic enb, baud);
    parameter DIVAMT = (CLKFREQ / DIVFREQ);
    parameter DIVBITS = $clog2(DIVAMT);   // enough bits to represent DIVAMT
 
-   logic q [DIVBITS-1:0];
+   logic [DIVBITS-1:0] q;
    
    generate
    if (DIVFREQ > CLKFREQ)

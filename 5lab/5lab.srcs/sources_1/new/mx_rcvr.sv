@@ -21,13 +21,13 @@
 
 
 module mx_rcvr #(parameter BIT_RATE = 50_000)(
-    input clk,
-    input reset,
-    input rxd,
-    output cardet,
-    output [7:0] data,
-    output write,
-    output error
+    input logic clk,
+    input logic reset,
+    input logic rxd,
+    output logic cardet,
+    output logic [7:0] data,
+    output logic write,
+    output logic error
     );
 
 	// Start up all 3 FSM blocks to RX data
@@ -48,9 +48,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	clkenb #(.DIVFREQ(BIT_RATE * 64)) U_SAMPLE (.clk, .enb(sample));
 
 	// Set up the counters for the samplers and bit count
-	counter #(.MAX(7)) U_BIT_COUNT (.clk, .enb(store_bit), .reset(.bit_count_rst), .q(bit_count));
+	counter #(.MAX(7)) U_BIT_COUNT (.clk, .enb(store_bit), .reset(bit_count_rst), .q(bit_count));
 	counter #(.MAX(127)) U_SLOW_COUNT (.clk, .enb(sample_slow), .reset(slow_sample_reset),
-										.q(slow_sample_count);
+										.q(slow_sample_count));
 	counter #(.MAX(63)) U_FAST_COUNT (.clk, .enb(sample), .reset(?), .inc(sample_inc),
 										.dec(sample_dec), .q(sample_count));
 

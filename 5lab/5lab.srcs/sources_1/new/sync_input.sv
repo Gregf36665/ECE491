@@ -21,9 +21,9 @@
 
 
 module sync_input(
-    input clk,
-    input async_in,
-    input sync_out
+    input logic clk,
+    input logic async_in,
+    output logic sync_out
     );
 
 	always_ff @(posedge clk)

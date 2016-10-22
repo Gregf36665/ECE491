@@ -21,12 +21,12 @@
 
 
 module data_buffer(
-    input clk,
-    input rst,
-    input data_bit,
-    input store_bit,
-    input store_data,
-    output [7:0] data
+    input logic clk,
+    input logic rst,
+    input logic data_bit,
+    input logic store_bit,
+    input logic store_data,
+    output logic [7:0] data
     );
 
 	logic [7:0] buffer;

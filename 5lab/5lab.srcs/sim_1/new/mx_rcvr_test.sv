@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/22/2016 04:13:36 PM
+// Create Date: 10/22/2016 05:35:18 PM
 // Design Name: 
-// Module Name: counter
+// Module Name: mx_rcvr_test
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,16 +20,28 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module counter #(parameter MAX = 7)(
-	input logic clk, enb, inc, dec, reset,
-	output logic [$clog2(MAX)-1:0] q
-    );
+import check_p::*;
 
-	always_ff @(posedge clk)
+module mx_rcvr_test();
+	
+	// Connections
+	// Inputs
+	logic clk = 0;
+	logic reset = 0;
+	logic rxd = 0;
+
+	logic cardet, write, error;
+	logic [7:0] data;
+
+	task send_bit(logic data_bit)
+		repeat(1_000_000) @(posedge clk);
+
+	endtask
+
+	initial
 	begin
-		if(reset) q <= 0;
-		if(inc) q <= q + 2; // skip a step
-		if(dec) q <= q; // hold a step
-		if(enb) q <= q+1;
+		#100;
+		$finish();
 	end
+
 endmodule
