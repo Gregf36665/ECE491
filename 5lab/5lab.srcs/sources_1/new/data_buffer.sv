@@ -22,7 +22,7 @@
 
 module data_buffer(
     input logic clk,
-    input logic rst,
+    input logic reset,
     input logic data_bit,
     input logic store_bit,
     input logic store_data,
@@ -32,7 +32,7 @@ module data_buffer(
 	logic [7:0] buffer;
 	always_ff @(posedge clk)
 	begin
-		if (rst) buffer <= 8'h00;
+		if (reset) buffer <= 8'h00;
 		if (store_bit) buffer <= {buffer[6:0], data_bit};
 		if (store_data) data <= buffer;
 	end

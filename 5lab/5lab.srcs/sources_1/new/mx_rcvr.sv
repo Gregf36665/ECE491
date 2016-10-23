@@ -30,14 +30,20 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
     output logic error
     );
 
+	// All of the internal wires
+	logic data_bit, set_ferr, match_error, store_data, match_zero, match_one, sfd_match;
+	logic preamble_match, match_idle, clr_ferr;
+	logic [6:0] zero_one_strength;
+
 	// Start up all 3 FSM blocks to RX data
-	FSMs U_FSM (.clk, .rst(reset), .slow_sample_count, .preamble_match, .sfd_match, .match_error,
-				.match_idle, .match_one, .match_zero, .set_ferr, . slow_sample_count, sample_count,
-				.bit_count, .zero_one_strength, .sample_inc, .sample_dec, .bit_count_rst, .store_bit,
-				.slow_sample_reset, .store_data, .store_bit, .data_bit);
+	FSMs U_FSM (.clk, .reset, .slow_sample_count, .preamble_match(1'b0), .bad_port(),
+				.sfd_match, .match_error, .match_idle, .match_one, .match_zero, 
+				.set_ferr, .sample_count,
+				.bit_count, .zero_one_strength, .sample_inc, .sample_dec, .bit_count_rst, 
+				.slow_sample_reset, .store_data, .store_bit, .data_bit, .write);
 
 	// Create a buffer to keep track of the data
-	data_buffer U_DATA (.clk, .rst,.data_bit, .store_bit, .store_data, .data);
+	data_buffer U_DATA (.clk, .reset ,.data_bit, .store_bit, .store_data, .data);
 
 	// Sync the input 
 	sync_input U_SYNC (.clk, .async_in(rxd), .sync_out(rxd_sync));
@@ -51,10 +57,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	counter #(.MAX(7)) U_BIT_COUNT (.clk, .enb(store_bit), .reset(bit_count_rst), .q(bit_count));
 	counter #(.MAX(127)) U_SLOW_COUNT (.clk, .enb(sample_slow), .reset(slow_sample_reset),
 										.q(slow_sample_count));
-	counter #(.MAX(63)) U_FAST_COUNT (.clk, .enb(sample), .reset(?), .inc(sample_inc),
+	// TODO fix the reset signal
+	counter #(.MAX(63)) U_FAST_COUNT (.clk, .enb(sample), .reset(1'b0), .inc(sample_inc),
 										.dec(sample_dec), .q(sample_count));
-
-
 
 	// error block
 	f_error U_ERROR (.clk, .set_ferr, .clr_ferr, .reset, .ferr(error));

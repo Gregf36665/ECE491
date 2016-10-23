@@ -25,7 +25,7 @@
 module fsm_psfd(
 		input logic clk, reset, preamble_match, sfd_match, set_ferr, data_done,
 		input logic [6:0] slow_sample_count,
-		output logic cardet, bit_counter_rst, sample_counter_rst, slow_sample_rst, enable_pll
+		output logic cardet, bit_counter_reset, sample_counter_reset, slow_sample_rst, enable_pll
 		);
 				
 		typedef enum logic [2:0] {

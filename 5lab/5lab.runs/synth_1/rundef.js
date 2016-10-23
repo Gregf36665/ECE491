@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log clkenb.vds -m64 -mode batch -messageDb vivado.pb -notrace -source clkenb.tcl" );
+         "-log mx_rcvr.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mx_rcvr.tcl" );
 
 
 

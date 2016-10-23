@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477166947">
-  <File Type="PA-TCL" Name="clkenb.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="clkenb_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="clkenb.vds"/>
-  <File Type="RDS-UTIL" Name="clkenb_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="clkenb_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="clkenb.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="clkenb_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="clkenb_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477242668">
+  <File Type="RDS-PROPCONSTRS" Name="mx_rcvr_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="mx_rcvr.tcl"/>
+  <File Type="RDS-RDS" Name="mx_rcvr.vds"/>
+  <File Type="RDS-UTIL" Name="mx_rcvr_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="mx_rcvr_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="mx_rcvr.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mx_rcvr_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="mx_rcvr_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv"/>
+        <Attr Name="ImportTime" Val="1474977960"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv"/>
@@ -19,11 +28,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv">
+    <File Path="$PSRCDIR/sources_1/imports/new/temp_data.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv"/>
-        <Attr Name="ImportTime" Val="1474977960"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/temp_data.sv"/>
+        <Attr Name="ImportTime" Val="1474987241"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -31,38 +39,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/imports/lab1/seven_seg.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/lab1/seven_seg.sv"/>
-        <Attr Name="ImportTime" Val="1474977960"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv"/>
-        <Attr Name="ImportTime" Val="1474977960"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/imports/lab1/decoder_3_8_en.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv"/>
-        <Attr Name="ImportTime" Val="1474977960"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv"/>
         <Attr Name="ImportTime" Val="1474977960"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -71,7 +48,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/new/rxd_synchroniser.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/rxd_synchroniser.sv"/>
         <Attr Name="ImportTime" Val="1474985462"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -79,31 +55,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/fsm.sv">
+    <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/fsm.sv"/>
-        <Attr Name="ImportTime" Val="1475429762"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/temp_data.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/temp_data.sv"/>
-        <Attr Name="ImportTime" Val="1474987241"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/data.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/data.sv"/>
-        <Attr Name="ImportTime" Val="1475340694"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv"/>
+        <Attr Name="ImportTime" Val="1474977960"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -111,7 +66,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/new/f_error.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/f_error.sv"/>
         <Attr Name="ImportTime" Val="1475340694"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -119,9 +73,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/fsm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/fsm.sv"/>
+        <Attr Name="ImportTime" Val="1475429762"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/delay_timer.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/delay_timer.sv"/>
         <Attr Name="ImportTime" Val="1475431275"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -129,11 +91,28 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/imports/lab1/dispctl.sv">
+    <File Path="$PSRCDIR/sources_1/imports/imports/lab1/decoder_3_8_en.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/lab1/dispctl.sv"/>
-        <Attr Name="ImportTime" Val="1475431118"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv"/>
+        <Attr Name="ImportTime" Val="1474977960"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/data.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/data.sv"/>
+        <Attr Name="ImportTime" Val="1475340694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv"/>
+        <Attr Name="ImportTime" Val="1474977960"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -141,7 +120,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/new/receiver.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/new/receiver.sv"/>
         <Attr Name="ImportTime" Val="1475431334"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -149,9 +127,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/imports/lab1/dispctl.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/lab1/dispctl.sv"/>
+        <Attr Name="ImportTime" Val="1475431118"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/sources_1/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv"/>
         <Attr Name="ImportTime" Val="1475431856"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -161,7 +147,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/5lab/fsm_data.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/fsm_data.sv"/>
         <Attr Name="ImportTime" Val="1477163574"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -171,7 +156,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/5lab/fsm_pll.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/fsm_pll.sv"/>
         <Attr Name="ImportTime" Val="1477163574"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -181,7 +165,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/5lab/fsm_psfd.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/fsm_psfd.sv"/>
         <Attr Name="ImportTime" Val="1477163574"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -191,7 +174,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/FSMs.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -199,7 +181,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/mx_rcvr.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -207,7 +188,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/data_buffer.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -215,7 +195,22 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/sync_input.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/check_p.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/check_p.sv"/>
+        <Attr Name="ImportTime" Val="1475533415"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -223,7 +218,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="clkenb"/>
+      <Option Name="TopModule" Val="mx_rcvr"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

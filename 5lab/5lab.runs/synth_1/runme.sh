@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log clkenb.vds -m64 -mode batch -messageDb vivado.pb -notrace -source clkenb.tcl
+EAStep vivado -log mx_rcvr.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mx_rcvr.tcl

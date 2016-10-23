@@ -44,6 +44,13 @@ module mx_rcvr_test();
 		repeat(10) @(posedge clk); // get into known state
 	endtask
 
+	// Create interfearance on the line
+	function interfear(input logic rxd_clean);
+		parameter NOISE = 0; // Bigger = more noise
+		if ($urandom_range(100,1) <= NOISE) interfear = ~rxd_clean;
+		else interfear = rxd_clean; 
+	endfunction
+
 	// Send a manchester bit
 	task send_bit(input logic data_bit, input logic noise);
 		@(posedge clk);
@@ -93,13 +100,6 @@ module mx_rcvr_test();
 			data = 1;
 	endtask
 
-
-	// Create interfearance on the line
-	task interfear(input logic rxd_clean);
-		parameter NOISE = 0; // Bigger = more noise
-		interfear = ($urandom_range(100,1) <= NOISE) ?  ~rxd_clean: rxd_clean; 
-	endtask
-
 	// This checks for cardet rise and fall with no data and a clean line
 	task check_preamble_clean();
 		reset_systems;
@@ -114,7 +114,7 @@ module mx_rcvr_test();
 	endtask
 
 	// This checks for cardet rise and fall with no data and a noisy line
-	task check_preamble_clean();
+	task check_preamble_noise();
 		reset_systems;
 		// Start up clean preamble
 		send_preamble(.noise(1'b1)); // no noise
@@ -131,7 +131,7 @@ module mx_rcvr_test();
 		reset_systems;
 		send_preamble(.noise(1'b0)); // Should only need one byte of preamble
 		send_SFD(.noise(1'b0)); // SFD should trigger
-		send_byte(8'h55);
+		send_byte(8'h55, 1'b0);
 		check("Cardet high with data", cardet, 1'b1);
 		check("Data matches expected value", data, 8'h55);
 		check("No error", error, 1'b0);
@@ -141,10 +141,14 @@ module mx_rcvr_test();
 		check("Cardet fell after EOF", cardet, 1'b0);
 	endtask
 
+	// Create a module to test and connect every wire
+	// This will check that there are only the ports assigned
+	mx_rcvr DUV (.*);
+
 	initial
 	begin
 		#100
-		send_SFD();
+		send_preamble(.noise(1'b0));
 		$finish();
 	end
 
