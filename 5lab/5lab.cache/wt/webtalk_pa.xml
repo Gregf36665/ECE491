@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sun Oct 23 13:44:38 2016">
+<application name="pa" timeStamp="Sun Oct 23 20:46:49 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="7e36df56cfcf4a238c796bcfad0fa20b" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -17,41 +17,161 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="12" type="JavaHandler"/>
+<property name="AddSources" value="14" type="JavaHandler"/>
 <property name="EditDelete" value="1" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="OpenProject" value="2" type="JavaHandler"/>
-<property name="ProjectSettingsCmdHandler" value="7" type="JavaHandler"/>
-<property name="RunSynthesis" value="4" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="8" type="JavaHandler"/>
+<property name="RunSynthesis" value="13" type="JavaHandler"/>
 <property name="SetSourceEnabled" value="2" type="JavaHandler"/>
 <property name="SetTopNode" value="4" type="JavaHandler"/>
-<property name="ShowView" value="2" type="JavaHandler"/>
-<property name="SimulationRelaunch" value="9" type="JavaHandler"/>
-<property name="SimulationRestart" value="4" type="JavaHandler"/>
-<property name="SimulationRun" value="38" type="JavaHandler"/>
-<property name="SimulationRunAll" value="6" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="12" type="JavaHandler"/>
+<property name="ShowView" value="8" type="JavaHandler"/>
+<property name="SimulationBreak" value="1" type="JavaHandler"/>
+<property name="SimulationRelaunch" value="30" type="JavaHandler"/>
+<property name="SimulationRestart" value="8" type="JavaHandler"/>
+<property name="SimulationRun" value="47" type="JavaHandler"/>
+<property name="SimulationRunAll" value="11" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="17" type="JavaHandler"/>
 <property name="ToolsOptions" value="5" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, mx_rcvr (mx_rcvr.sv" value="3" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, C:/Users/flynng/Desktop/ECE491/5lab/5lab.xpr, 0" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] preamble_match is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:40]. , [Synth 8-1031] clr_ferr is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:67]. ], 14, false" value="2" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] preamble_match is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:40]. , [Synth 8-1031] set_ferr is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:67]. ], 13, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] preamble_match is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:40]. , [Synth 8-1031] store_data is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:43]. ], 9, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] preamble_match is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:40]. , [Synth 8-1031] store_data is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:46]. ], 12, false" value="2" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] preamble_match is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:40]. ], 6" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-1031] preamble_match is not declared [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:40]. ], 6, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String" value="1" type="GuiResourceData"/>
-<property name="mx_rcvr.sv, 406, 390" value="1" type="GuiResourceData"/>
+<property name="CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="2" type="GuiResourceData"/>
+<property name="OK, OK" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_BREAK, simulation_live_break" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RESTART, simulation_live_restart" value="4" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="5" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, simulation_live_run_all" value="5" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, simulation_relaunch" value="21" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="7" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, correlator (correlator.sv" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, mx_rcvr (mx_rcvr.sv" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, correlator (correlator.sv" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="9" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Simulation Settings], 10, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Synthesis, Run Synthesis], 17, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sim_1, [HDL 9-806] Syntax error near =. [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/mx_rcvr_test.sv:273]. ], 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sources_1, [HDL 9-806] Syntax error near ;. [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:75]. ], 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-3331] design fsm_psfd has unconnected port sample_count[6]. ], 11" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-689] width (6" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Synth 8-87] always_comb on 'next_reg' did not result in combinational logic [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_pll.sv:71]. ], 7, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Vivado Commands, launch_simulation. , [Vivado 12-3661] Failed to remove file:C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/mx_rcvr_test_behav.wdb. ], 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgView_WARNING_MESSAGES, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_CODE, Code" value="2" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectSettingsSimulationPanel_TABBED_PANE, PAResourceOtoP.ProjectSettingsSimulationPanel_SIMULATION, Simulation, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationLiveRunForComp_SPECIFY_TIME_AND_UNITS, 200" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationLiveRunForComp_SPECIFY_TIME_AND_UNITS, ms, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, cardet ; 0 ; Logic, 19, cardet, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, cardet ; 0 ; Logic, 19, cardet, 0, false, false, false, false, true, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, cardet ; X ; Logic, 3, cardet, 0, false" value="4" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, cardet ; X ; Logic, 3, cardet, 0, false, false, false, false, true, false" value="4" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, sample_count[6:0] ; Z? ; Array, 9, sample_count[6:0], 0, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, slow_sample_count[6:0] ; ZZ ; Array, 8, slow_sample_count[6:0], 0, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, zero_one_strength[6:0] ; 20 ; Array, 18, zero_one_strength[6:0], 0, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, DUV ; mx_rcvr ; Verilog Module, 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, DUV ; mx_rcvr ; Verilog Module, 1, DUV, 0, true" value="6" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, U_DETECT ; fsm_psfd ; Verilog Module, 4, U_DETECT, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, U_DETECT ; fsm_psfd ; Verilog Module, 4, U_DETECT, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, U_FSM ; FSMs ; Verilog Module, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, U_FSM ; FSMs ; Verilog Module, 2, U_FSM, 0, true" value="6" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, U_FSM ; FSMs ; Verilog Module, 2, U_FSM, 0, true, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, U_PREAMBLE_CORR ; correlator ; Verilog Module, 11, U_PREAMBLE_CORR, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, Copy sources into project, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="8" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_APPLY, Apply" value="10" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="5" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, laun, true" value="2" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, launch_sim, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, launch_simulation, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_FIT, Waveform Viewer_zoom_fit" value="36" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_IN, Waveform Viewer_zoom_in" value="1" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_OUT, Waveform Viewer_zoom_out" value="2" type="GuiResourceData"/>
+<property name="RDIResource.ProgressDialog_BACKGROUND, Background" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 1, 251" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 1012, 627" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 1014, 552" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 103, 186" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 123, 174" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 126, 208" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 127, 279" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 128, 241" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 128, 298" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 148, 164" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 156, -42" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 160, -39" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 162, -39" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 209, -74" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 220, 188" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 235, 354" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 301, 601" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 340, 175" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 388, 207" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 390, 198" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 399, 243" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 406, 212" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 408, 261" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 412, 235" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 43, 170" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 49, 292" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 505, 224" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 508, 239" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 53, 184" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 6, 154" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 61, 175" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 615, 425" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 665, 196" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 665, 202" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 668, 525" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 673, 423" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 7, 190" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 72, 215" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 77, 212" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 80, 240" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 860, 265" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 9, -53" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 91, 349" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 94, 432" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 969, 212" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 39" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 39, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 211, 49" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 212, 84" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 217, 41" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 305, 83" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 321, 91" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 352, 48" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 389, 57" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 431, 26" value="1" type="GuiResourceData"/>
+<property name="RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 602, 89" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_AUTO, Auto" value="3" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_CLIP, Clip" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_FIXED, Fixed" value="2" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_HIDE, Hide" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_HOLD, Hold" value="2" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_HORIZONTAL_LINE, Horizontal line, false" value="2" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_HORIZONTAL_LINE, Horizontal line, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_LINEAR, Linear" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_MAX, 64" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_ROW_HEIGHT, 100" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformAnalogSettingsDialog_ROW_HEIGHT, 99" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, NOISE[31:0]], 7, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, NOISE[31:0]], 7, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, data[7:0]], 6" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, zero_one_strength[6:0]], 8" value="1" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, zero_one_strength[6:0]], 8, true" value="5" type="GuiResourceData"/>
+<property name="RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, [true, zero_one_strength[6:0]], 8, true, false, false, false, true, false" value="9" type="GuiResourceData"/>
+<property name="mx_rcvr_test.sv, 406, 143" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="5" type="GuiMode"/>
+<property name="GuiMode" value="41" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="4" type="TclMode"/>
+<property name="TclMode" value="35" type="TclMode"/>
 </item>
 </section>
 </application>

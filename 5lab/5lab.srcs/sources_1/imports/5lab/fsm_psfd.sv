@@ -25,7 +25,8 @@
 module fsm_psfd(
 		input logic clk, reset, preamble_match, sfd_match, set_ferr, data_done,
 		input logic [6:0] slow_sample_count,
-		output logic cardet, bit_counter_reset, sample_counter_reset, slow_sample_rst, enable_pll
+		input logic [6:0] sample_count, // TODO check bit width
+		output logic cardet, bit_count_reset, sample_count_reset, slow_sample_reset, enable_pll
 		);
 				
 		typedef enum logic [2:0] {
@@ -48,9 +49,9 @@ module fsm_psfd(
 			begin
 				
 				cardet = 1'b0;
-				bit_counter_rst = 1'b0;
-				sample_counter_rst = 1'b0;
-				slow_sample_rst = 1'b0;
+				bit_count_reset = 1'b0;
+				sample_count_reset = 1'b0;
+				slow_sample_reset = 1'b0;
 				enable_pll = 1'b0;
 				next = IDLE;
 							
@@ -59,9 +60,9 @@ module fsm_psfd(
 						begin
 							if(preamble_match) next = PREAMBLE_MATCH;
 							else next = IDLE;
-							bit_counter_rst    = 1'b1;
-							sample_counter_rst = 1'b1;
-							slow_sample_rst    = 1'b1;
+							bit_count_reset    = 1'b1;
+							sample_count_reset = 1'b1;
+							slow_sample_reset    = 1'b1;
 						end
 					PREAMBLE_MATCH:
 						begin
@@ -77,7 +78,7 @@ module fsm_psfd(
 						begin
 							next = SFD_MAYBE;
 							cardet = 1'b1;
-							slow_sample_rst = 1'b1;
+							slow_sample_reset = 1'b1;
 						end
 					SFD_MAYBE:
 						begin

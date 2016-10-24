@@ -39,6 +39,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/sync_input.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/counter.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp

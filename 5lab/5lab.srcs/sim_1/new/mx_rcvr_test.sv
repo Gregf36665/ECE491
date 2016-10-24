@@ -24,6 +24,9 @@ import check_p::*;
 
 module mx_rcvr_test();
 	
+	// This is the chance of a bit flip happening
+	parameter NOISE = 10; // Set between 0 and 100.
+
 	// Connections
 	// Inputs
 	logic clk = 0;
@@ -44,9 +47,8 @@ module mx_rcvr_test();
 		repeat(10) @(posedge clk); // get into known state
 	endtask
 
-	// Create interfearance on the line
+	// Return interfearance on the input
 	function interfear(input logic rxd_clean);
-		parameter NOISE = 0; // Bigger = more noise
 		if ($urandom_range(100,1) <= NOISE) interfear = ~rxd_clean;
 		else interfear = rxd_clean; 
 	endfunction
@@ -87,22 +89,20 @@ module mx_rcvr_test();
 
 	// Hold rxd line low for both baud
 	task send_error(input logic noise);
-		rxd = 0;
-		repeat(2_000) @(posedge clk);
+		repeat(2_000) @(posedge clk) rxd = noise ? interfear(1'b0) : 0;
 	endtask
 
-	// Generate random noise on data
+	// Generate random noise on rxd
 	task noise();
-		parameter NOISE = 10;  // Amount of noise compared to rxd = 1
-		if ($urandom_range(100,1) <= NOISE)
-			data = 0;
+		// set to 50% so it is 50/50 noise
+		if ($urandom_range(100,1) <= 50)
+			rxd = 0;
 		else
-			data = 1;
+			rxd = 1;
 	endtask
 
 	// This checks for cardet rise and fall with no data and a clean line
 	task check_preamble_clean();
-		reset_systems;
 		// Start up clean preamble
 		send_preamble(.noise(1'b0)); // no noise
 		check("Clean preamble cardet trigger", cardet, 1'b1); // The cardet should go high
@@ -115,7 +115,6 @@ module mx_rcvr_test();
 
 	// This checks for cardet rise and fall with no data and a noisy line
 	task check_preamble_noise();
-		reset_systems;
 		// Start up clean preamble
 		send_preamble(.noise(1'b1)); // no noise
 		check("Noisy preamble cardet trigger", cardet, 1'b1); // The cardet should go high
@@ -128,7 +127,6 @@ module mx_rcvr_test();
 
 	// Tx 1 byte correctly framed
 	task send_clean_byte();
-		reset_systems;
 		send_preamble(.noise(1'b0)); // Should only need one byte of preamble
 		send_SFD(.noise(1'b0)); // SFD should trigger
 		send_byte(8'h55, 1'b0);
@@ -141,14 +139,178 @@ module mx_rcvr_test();
 		check("Cardet fell after EOF", cardet, 1'b0);
 	endtask
 
+	// Tx 1 byte correctly framed with noise
+	task send_noise_byte();
+		send_preamble(.noise(1'b1)); // Should only need one byte of preamble
+		send_SFD(.noise(1'b1)); // SFD should trigger
+		send_byte(8'h55, .noise(1'b1));
+		check("Cardet high with data", cardet, 1'b1);
+		check("Data matches expected value", data, 8'h55);
+		check("No error", error, 1'b0);
+		check("Write pulsed", write, 1'b1);
+		send_EOF(.noise(1'b1));
+		check("No error after EOF detected", error, 1'b0);
+		check("Cardet fell after EOF", cardet, 1'b0);
+	endtask
+
+	// Tx 1 byte with error in the middle clean
+	task tx_error;
+		reset = 1;
+		repeat(10) @(posedge clk);
+		reset = 0;
+		repeat(10) @(posedge clk);
+		send_preamble(1'b0);
+		send_SFD(1'b0);
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		send_error(1'b0); // one bit is actually an error
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		check("Error triggered", error, 1'b1);
+		check("Carrier detect dropped", cardet, 1'b0);
+		// Who cares what the data output is doing
+	endtask
+
+	// Tx 1 byte with error in the middle noisy
+	task tx_error_noise;
+		reset = 1;
+		repeat(10) @(posedge clk);
+		reset = 0;
+		repeat(10) @(posedge clk);
+		send_preamble(1'b1);
+		send_SFD(1'b0);
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		send_error(1'b1); // one bit is actually an error
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		check("Error triggered", error, 1'b1);
+		check("Carrier detect dropped", cardet, 1'b0);
+		// Who cares what the data output is doing
+	endtask
+
+	// Tx 1 byte but stop halfway through
+	task tx_short;
+		reset = 1;
+		repeat(10) @(posedge clk);
+		reset = 0;
+		repeat(10) @(posedge clk);
+		send_preamble(1'b0);
+		send_SFD(1'b0);
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		send_bit(1'b1,.noise(1'b0));
+		send_EOF(1'b0);
+		check("Error triggered", error, 1'b1);
+		check("Carrier detect dropped", cardet, 1'b0);
+		// Who cares what the data output is doing
+	endtask
+
+	// Tx 1 byte but stop halfway through
+	task tx_short_noise;
+		reset = 1;
+		repeat(10) @(posedge clk);
+		reset = 0;
+		repeat(10) @(posedge clk);
+		send_preamble(1'b1);
+		send_SFD(1'b1);
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		send_bit(1'b1,.noise(1'b1));
+		send_EOF(1'b1);
+		check("Error triggered", error, 1'b1);
+		check("Carrier detect dropped", cardet, 1'b0);
+		// Who cares what the data output is doing
+	endtask
+
 	// Create a module to test and connect every wire
 	// This will check that there are only the ports assigned
-	mx_rcvr DUV (.*);
+	mx_rcvr DUV (.clk, .reset, .rxd, .cardet, .data, .write, .error);
+
+	task preamble_tests;
+		check_group_begin("2.1 Check response to preamble");
+		check_preamble_clean;
+		check_preamble_noise;
+		check_group_end();
+	endtask
+
+	task one_byte_test;
+		send_clean_byte;
+		send_noise_byte;
+	endtask
+
+	// 10a test
+	task test_10a;
+		check_group_begin("10a check one byte");
+		rxd = 1;
+		reset_systems;
+		send_preamble(.noise(1'b0));
+		check("Cardet high", cardet, 1'b1);
+		send_SFD(.noise(1'b0));
+		send_byte(8'h0F, .noise(1'b0));
+		send_EOF(.noise(1'b0));
+		check("Error low", error, 1'b0);
+		check("Data received", data, 8'h0F);
+		check_group_end;
+	endtask
+
+	// 10b test
+	task test_10b;
+		logic [7:0] byte_to_send;
+		check_group_begin("10b check 24 bytes");
+		rxd = 1;
+		reset_systems;
+		send_preamble(.noise(1'b0));
+		check("Cardet high", cardet, 1'b1);
+		send_SFD(.noise(1'b0));
+		repeat(24)  // send 24 bytes
+		begin
+			byte_to_send = $urandom_range(8'hFF,8'h00);
+			send_byte(byte_to_send, .noise(1'b0));
+			check("Error low", error, 1'b0);
+			check("Data received", data, byte_to_send);
+		end
+		send_EOF(.noise(1'b0));
+		check_group_end;
+	endtask
+		
+	// 10c test
+	task one_byte_noise_before_after;
+		check_group_begin("10c test");
+		// repeat 10e6 for bits then 2000 for each clock in a bit period
+		repeat(10e6) repeat(2000) @(posedge clk) noise();
+		send_noise_byte;
+		repeat(10e6) repeat(2000) @(posedge clk) noise();
+		check_group_end;
+	endtask
+
+	task test_10d;
+		check_group_begin("10d test");
+		tx_error;
+		tx_error_noise;
+		check_group_end;
+	endtask
+
+	task test_10e;
+		check_group_begin("10e test");
+		tx_short;
+		tx_short_noise;
+		check_group_end;
+	endtask
+	
+	// Test 10f/g are in a different test bench
 
 	initial
 	begin
-		#100
-		send_preamble(.noise(1'b0));
+		reset_systems;
+		#100;
+		test_10a; // The most basic test send 1 byte clean
 		$finish();
 	end
 

@@ -1,0 +1,48 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto dd429faf13654bdbaa58cc108d99a37b --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mx_rcvr_test_behav xil_defaultlib.mx_rcvr_test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 7 for port slow_sample_count [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:39]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 7 for port sample_count [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:41]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 3 for port bit_count [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:42]
+WARNING: [VRFC 10-278] actual bit length 7 differs from formal bit length 6 for port sample_count [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:36]
+WARNING: [VRFC 10-278] actual bit length 7 differs from formal bit length 6 for port sample_count [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:44]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 3 for port q [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:57]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 7 for port q [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:59]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 6 for port q [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:62]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=128,PATTERN=128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111,HTHRESH=8'b01100100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=256,PATTERN=256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000,HTHRESH=8'b11001000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111100000000000000000000000000000000,HTHRESH=8'b0110010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111111111111111111111111111111111111,HTHRESH=8'b0110010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv" Line 37. Module check_p doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=128,PATTERN=128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111,HTHRESH=8'b01100100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=256,PATTERN=256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000,HTHRESH=8'b11001000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111100000000000000000000000000000000,HTHRESH=8'b0110010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111111111111111111111111111111111111,HTHRESH=8'b0110010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv" Line 37. Module check_p doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fsm_pll
+Compiling module xil_defaultlib.fsm_psfd
+Compiling module xil_defaultlib.fsm_data
+Compiling module xil_defaultlib.FSMs
+Compiling module xil_defaultlib.data_buffer
+Compiling module xil_defaultlib.sync_input
+Compiling module xil_defaultlib.clkenb(DIVFREQ=800000)
+Compiling module xil_defaultlib.clkenb(DIVFREQ=3200000)
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.counter(MAX=127)
+Compiling module xil_defaultlib.counter(MAX=63)
+Compiling module xil_defaultlib.f_error
+Compiling module xil_defaultlib.correlator(LEN=128,PATTERN=128'b...
+Compiling module xil_defaultlib.correlator(LEN=256,PATTERN=256'b...
+Compiling module xil_defaultlib.correlator(LEN=64,PATTERN=64'b11...
+Compiling module xil_defaultlib.correlator(LEN=64,PATTERN=64'b11...
+Compiling module xil_defaultlib.mx_rcvr_default
+Compiling module xil_defaultlib.mx_rcvr_test
+Compiling module xil_defaultlib.glbl
+Compiling package xil_defaultlib.check_p
+Built simulation snapshot mx_rcvr_test_behav
