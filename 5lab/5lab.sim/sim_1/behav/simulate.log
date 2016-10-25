@@ -1,37 +1,16 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
 START: 10a check one byte at time 295.
-FAIL(Cardet high) Failed test 1 at time 320645.
-  Expected value 0x1, Inspected Value 0x0
+FAIL(Error low) Failed test 2 at time 660805.
+  Expected value 0x0, Inspected Value 0x1
 FAIL(Data received) Failed test 3 at time 660805.
-  Expected value 0xf, Inspected Value 0xxx
+  Expected value 0xf, Inspected Value 0x0
 FAIL: 10a check one byte. (2/3 falures)
 $finish called at time : 660805 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/mx_rcvr_test.sv" Line 314
 START: 10a check one byte at time 295.
-FAIL(Cardet high) Failed test 1 at time 320645.
-  Expected value 0x1, Inspected Value 0x0
+FAIL(Error low) Failed test 2 at time 660805.
+  Expected value 0x0, Inspected Value 0x1
 FAIL(Data received) Failed test 3 at time 660805.
-  Expected value 0xf, Inspected Value 0xxx
-FAIL: 10a check one byte. (2/3 falures)
-$finish called at time : 660805 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/mx_rcvr_test.sv" Line 314
-START: 10a check one byte at time 295.
-FAIL(Cardet high) Failed test 1 at time 320645.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(Data received) Failed test 3 at time 660805.
-  Expected value 0xf, Inspected Value 0xxx
-FAIL: 10a check one byte. (2/3 falures)
-$finish called at time : 660805 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/mx_rcvr_test.sv" Line 314
-START: 10a check one byte at time 295.
-FAIL(Cardet high) Failed test 1 at time 320645.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(Data received) Failed test 3 at time 660805.
-  Expected value 0xf, Inspected Value 0xxx
-FAIL: 10a check one byte. (2/3 falures)
-$finish called at time : 660805 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/mx_rcvr_test.sv" Line 314
-START: 10a check one byte at time 295.
-FAIL(Cardet high) Failed test 1 at time 320645.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(Data received) Failed test 3 at time 660805.
-  Expected value 0xf, Inspected Value 0xxx
+  Expected value 0xf, Inspected Value 0x0
 FAIL: 10a check one byte. (2/3 falures)
 $finish called at time : 660805 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/mx_rcvr_test.sv" Line 314

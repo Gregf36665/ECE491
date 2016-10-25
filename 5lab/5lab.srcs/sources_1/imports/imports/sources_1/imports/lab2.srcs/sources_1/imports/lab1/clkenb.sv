@@ -20,7 +20,7 @@
 // Added in error checking for the div freq vs the clk freq
 //-----------------------------------------------------------------------------
 
-module clkenb(input logic clk, reset, output logic enb, baud);
+module clkenb(input logic clk, reset, output logic enb);
 
    parameter DIVFREQ = 100;  // desired frequency in Hz (change as needed)
    parameter CLKFREQ = 100_000_000;
@@ -37,12 +37,12 @@ module clkenb(input logic clk, reset, output logic enb, baud);
 	endgenerate
 	// whitespace...
    
-   always @(posedge clk) begin
+   always @(posedge clk)
+   begin
      if (reset)
        begin
 	       q <= 0;
 	       enb <= 0;
-	       baud <= 0;
        end
      else if (q == DIVAMT-1)
        begin
@@ -54,7 +54,6 @@ module clkenb(input logic clk, reset, output logic enb, baud);
 	       q <= q + 1;
 	       enb <= 0;
        end
-     if(enb) baud <= ~baud;
      end
    
 endmodule // clken

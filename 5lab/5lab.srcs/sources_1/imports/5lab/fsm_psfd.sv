@@ -25,8 +25,9 @@
 module fsm_psfd(
 		input logic clk, reset, preamble_match, sfd_match, set_ferr, data_done,
 		input logic [6:0] slow_sample_count,
-		input logic [6:0] sample_count, // TODO check bit width
-		output logic cardet, bit_count_reset, sample_count_reset, slow_sample_reset, enable_pll
+		input logic [5:0] sample_count, 
+		output logic cardet, bit_count_reset, sample_count_reset,
+			slow_sample_reset, enable_pll, enable_data
 		);
 				
 		typedef enum logic [2:0] {
@@ -34,14 +35,16 @@ module fsm_psfd(
 			PREAMBLE_MATCH    = 3'b001,
 			RESET_SLOW_SAMPLE = 3'b010,
 			SFD_MAYBE 		  = 3'b011,
-			START 			  = 3'b100
+			STARTING		  = 3'b100,
+			START 			  = 3'b101,
+			RESET			  = 3'b111
 		} states;
 				
 		states state, next;
 		
 		always_ff @(posedge clk)
 			begin
-				if(reset) state <= IDLE;
+				if(reset) state <= RESET;
 				else state <= next;
 			end
 			
@@ -54,6 +57,7 @@ module fsm_psfd(
 				slow_sample_reset = 1'b0;
 				enable_pll = 1'b0;
 				next = IDLE;
+				enable_data = 1'b0;
 							
 				unique case (state)
 					IDLE:
@@ -82,13 +86,20 @@ module fsm_psfd(
 						end
 					SFD_MAYBE:
 						begin
-							if(slow_sample_count == 7'd95)
+							if(slow_sample_count == 7'h43) // We should see SFD here
 								begin
-									if(sfd_match) next = START;
-									else next = IDLE;
+									if(sfd_match) next = STARTING;
+									//else next = IDLE;
 								end
 							else next = SFD_MAYBE;
 							cardet = 1'b1;
+						end
+					STARTING:
+						begin
+							next = START;
+							// Start up the other 2 FSMs
+							enable_pll = 1'b1;
+							enable_data = 1'b1;
 						end
 					START:
 						begin
@@ -101,9 +112,17 @@ module fsm_psfd(
 								end
 							cardet = 1'b1;
 							enable_pll = 1'b1;
+							enable_data = 1'b1;
 						end
+					RESET:
+					begin
+						next = IDLE;
+						bit_count_reset = 1'b1;
+						sample_count_reset = 1'b1;
+						slow_sample_reset = 1'b1;
+					end
 					default:
-						next <= IDLE;
+						next = RESET;
 				endcase
 			end
 endmodule		

@@ -22,10 +22,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module fsm_data(
-		input logic clk, reset, match_one, match_zero, match_idle, match_error,
+		input logic clk, reset, match_one, match_zero, match_idle, match_error, enable_data,
 		input logic [5:0] sample_count,
 		input logic [2:0] bit_count,
-		output logic data_bit, store_bit, store_byte, set_ferr, write
+		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done
 		);
 				
 		typedef enum logic [2:0] {
@@ -55,13 +55,17 @@ module fsm_data(
 				store_byte 	= 1'b0;
 				set_ferr    = 1'b0;
 				write       = 1'b0;
+				data_done = 1'b0;
 							
 				unique case (state)
 					IDLE:
-						next = START_RECIEVE;
+					begin
+						next = enable_data ? START_RECIEVE : IDLE;
+						data_done = 1'b1;
+					end
 					START_RECIEVE:
 						begin
-							if(sample_count < 6'd48)
+							if(6'd15 > sample_count && sample_count < 6'd48)
 								begin
 									if(match_one) next = FOUND_ONE;
 									else if(match_zero)next = FOUND_ZERO;
@@ -80,17 +84,18 @@ module fsm_data(
 						begin
 							next = STORE_DATA;
 							data_bit = 1'b1;
+							store_bit = 1'b1;
 						end
 					FOUND_ZERO:
 						begin
 							next = STORE_DATA;
 							data_bit = 1'b0;
+							store_bit = 1'b1;
 						end
 					STORE_DATA:
 						begin
 							if(bit_count == 3'b000)	next = BYTE_DONE;
 							else next = WAIT_FOR_NEXT;
-							store_bit = 1'b1;
 						end
 					BYTE_DONE:
 						begin
@@ -100,7 +105,7 @@ module fsm_data(
 						end
 					WAIT_FOR_NEXT:
 						begin
-							if(sample_count > 6'd15) next = START_RECIEVE;
+							if(sample_count > 6'h15) next = START_RECIEVE;
 							else next = WAIT_FOR_NEXT;
 						end
 					ERROR:
