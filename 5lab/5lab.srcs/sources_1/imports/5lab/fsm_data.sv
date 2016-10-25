@@ -55,14 +55,14 @@ module fsm_data(
 				store_byte 	= 1'b0;
 				set_ferr    = 1'b0;
 				write       = 1'b0;
-				data_done = 1'b0;
+				data_done   = 1'b0;
 							
 				unique case (state)
 					IDLE:
-					begin
-						next = enable_data ? START_RECIEVE : IDLE;
-						data_done = 1'b1;
-					end
+					   begin
+					       next = enable_data ? START_RECIEVE : IDLE;
+					       data_done = 1'b1;
+					   end
 					START_RECIEVE:
 						begin
 							if(6'd15 > sample_count && sample_count < 6'd48)

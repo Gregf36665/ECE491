@@ -64,13 +64,14 @@ module fsm_pll(
 				final_time = 6'd0;
 				min_time = 6'd0;
 				max_time = 6'd0;
+				
+				// Inferred latch on next now gone, but further investigation recommended
+				next = IDLE;
 							
 				unique case (state)
 					IDLE:
-						begin
-							if(enable_pll) next = WAIT;
-							else next = IDLE;
-						end
+						if(enable_pll) next = WAIT;
+						else next = IDLE;
 					WAIT:
 						begin
 							if(sample_count > 6'd48) next = FIND_MINMAX;
@@ -82,10 +83,8 @@ module fsm_pll(
 					FIND_MINMAX:
 						begin
 							if(sample_count < 6'd48 && sample_count > 6'd15)
-								begin
-									if(data_bit == 1'b1) next = UPDATE_TIME_MAX;
-									else next = UPDATE_TIME_MIN;
-								end
+								if(data_bit == 1'b1) next = UPDATE_TIME_MAX;
+								else next = UPDATE_TIME_MIN;
 							else if (current_corr > max_corr) next = UPDATE_MAX;
 							else if (current_corr < min_corr) next = UPDATE_MIN;
 							else next = FIND_MINMAX;
@@ -115,7 +114,7 @@ module fsm_pll(
 					INC_DEC:
 						begin
 							if((final_time <= 6'd15) && (final_time >= 6'd4)) next = INC_SAMPLE;
-							else if(final_time <= 6'd60 && final_time >= 6'd48) next = DEC_SAMPLE;
+							else if((final_time <= 6'd60) && (final_time >= 6'd48)) next = DEC_SAMPLE;
 							else next = WAIT;
 						end
 					INC_SAMPLE:
