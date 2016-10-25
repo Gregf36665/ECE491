@@ -65,7 +65,7 @@ module fsm_data(
 					   end
 					START_RECIEVE:
 						begin
-							if(6'd15 > sample_count && sample_count < 6'd48)
+							if(6'd10 > sample_count && sample_count < 6'd40)
 								begin
 									if(match_one) next = FOUND_ONE;
 									else if(match_zero)next = FOUND_ZERO;
@@ -105,7 +105,7 @@ module fsm_data(
 						end
 					WAIT_FOR_NEXT:
 						begin
-							if(sample_count > 6'h15) next = START_RECIEVE;
+							if(6'd10 < sample_count && sample_count > 6'd40) next = START_RECIEVE;
 							else next = WAIT_FOR_NEXT;
 						end
 					ERROR:

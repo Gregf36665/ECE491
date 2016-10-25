@@ -270,7 +270,7 @@ module mx_rcvr_test();
 		send_byte(8'h55, .noise(1'b0));
 		send_EOF(.noise(1'b0));
 		check("Error low", error, 1'b0);
-		check("Data received", data, 8'h0F);
+		check("Data received", data, 8'h55);
 		check_group_end;
 	endtask
 
@@ -295,7 +295,7 @@ module mx_rcvr_test();
 	endtask
 		
 	// 10c test
-	task one_byte_noise_before_after;
+	task test_10c;
 		check_group_begin("10c test");
 		// repeat 10e6 for bits then 2000 for each clock in a bit period
 		repeat(10e6) repeat(2000) @(posedge clk) noise();
@@ -324,8 +324,12 @@ module mx_rcvr_test();
 	begin
 		reset_systems;
 		#100;
-		test_10a; // The most basic test send 1 byte clean
-		$finish();
+		test_10a; // The most basic test send 1 byte clean.
+		test_10b; // Sending a frame of 24 random bytes.
+		//test_10c; // 10e6 bit periods of random noise followed by a noisy byte, then more noise
+		test_10d; // Sending a byte with an error in the middle
+		test_10e; // Sending short byte, should be an error
+		check_summary_stop();
 	end
 
 endmodule

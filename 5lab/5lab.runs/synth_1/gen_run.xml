@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477370695">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477405156">
   <File Type="RDS-PROPCONSTRS" Name="mx_rcvr_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="mx_rcvr.tcl"/>
   <File Type="RDS-RDS" Name="mx_rcvr.vds"/>

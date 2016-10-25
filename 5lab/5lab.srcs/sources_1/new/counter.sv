@@ -28,8 +28,8 @@ module counter #(parameter MAX = 7)(
 	always_ff @(posedge clk)
 	begin
 		if(reset) q <= 0;
-		if(inc) q <= q + 2; // skip a step
-		if(dec) q <= q; // hold a step
-		if(enb) q <= q+1;
+		if(inc)   q <= q + 2; // skip a step
+		if(dec)   q <= q;     // hold a step
+		if(enb)   q <= q+1;
 	end
 endmodule

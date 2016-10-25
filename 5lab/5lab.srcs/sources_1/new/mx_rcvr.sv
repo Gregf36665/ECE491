@@ -71,23 +71,19 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	
 	// Correlators
 	localparam PREAMBLE_PATTERN = {4{32'hFF0000FF}};
-	localparam SFD_PATTERN = {{PREAMBLE_PATTERN,
-							{4{16'h00FF}},
-							{1{16'hFF00}},
-							{1{16'h00FF}},
-							{2{16'hFF00}}
-							}};
-	localparam ONE_PATTERN = {{32{1'b1}},{32{1'b0}}};
+	localparam SFD_PATTERN  = {{PREAMBLE_PATTERN, {4{16'h00FF}}, {1{16'hFF00}}, 
+	                          {1{16'h00FF}}, {2{16'hFF00}}}};
+	localparam ONE_PATTERN  = {{32{1'b1}},{32{1'b0}}};
 	localparam IDLE_PATTERN = {{32{1'b1}},{32{1'b1}}};
 
-	correlator #(.LEN(128), .PATTERN(PREAMBLE_PATTERN), .HTHRESH(8'd100)) U_PREAMBLE_CORR 
-		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(preamble_match), .csum());
-	correlator #(.LEN(256), .PATTERN(SFD_PATTERN), .HTHRESH(8'd200)) U_SFD_CORR 
-		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(sfd_match), .csum());
-	correlator #(.LEN(64), .PATTERN(ONE_PATTERN), .HTHRESH(8'd50)) U_ONE_N_ZERO_CORR
+	correlator #(.LEN(128), .PATTERN(PREAMBLE_PATTERN), .HTHRESH(8'd100), .LTHRESH(8'd14)) U_PREAMBLE_CORR 
+		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(preamble_match), .csum(), .l_out());
+	correlator #(.LEN(256), .PATTERN(SFD_PATTERN), .HTHRESH(8'd200), .LTHRESH(8'd14)) U_SFD_CORR 
+		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(sfd_match), .csum(), .l_out());
+	correlator #(.LEN(64), .PATTERN(ONE_PATTERN), .HTHRESH(8'd50), .LTHRESH(8'd14)) U_ONE_N_ZERO_CORR
 		(.clk, .reset, .enb(sample), .d_in(rxd_sync), .h_out(match_one), 
 		.l_out(match_zero), .csum(zero_one_strength));
-	correlator #(.LEN(64), .PATTERN(IDLE_PATTERN), .HTHRESH(8'd50)) U_IDLE_N_ERROR_CORR
+	correlator #(.LEN(64), .PATTERN(IDLE_PATTERN), .HTHRESH(8'd50), .LTHRESH(8'd14)) U_IDLE_N_ERROR_CORR
 		(.clk, .reset, .enb(sample), .d_in(rxd_sync), .csum(),
 		.h_out(match_idle), .l_out(match_error));
 

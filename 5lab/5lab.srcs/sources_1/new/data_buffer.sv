@@ -37,7 +37,7 @@ module data_buffer(
 			buffer <= 8'h00;
 			data <= 8'h00;
 		end
-		if (store_bit) buffer <= {buffer[6:0], data_bit};
+		if (store_bit) buffer <= {data_bit, buffer[7:1]};
 		if (store_byte) data <= buffer;
 	end
 

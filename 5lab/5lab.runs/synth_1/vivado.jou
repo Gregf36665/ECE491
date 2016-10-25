@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Tue Oct 25 00:44:56 2016
-# Process ID: 8272
+# Start of session at: Tue Oct 25 10:19:16 2016
+# Process ID: 2172
 # Current directory: C:/Users/birrur/ECE491/5lab/5lab.runs/synth_1
 # Command line: vivado.exe -log mx_rcvr.vds -mode batch -messageDb vivado.pb -notrace -source mx_rcvr.tcl
 # Log file: C:/Users/birrur/ECE491/5lab/5lab.runs/synth_1/mx_rcvr.vds

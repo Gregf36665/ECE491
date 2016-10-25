@@ -14,10 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7180 
-WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv:35]
+INFO: Helper process launched with PID 7492 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 326.223 ; gain = 118.035
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 325.883 ; gain = 118.168
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'mx_rcvr' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:23]
 	Parameter BIT_RATE bound to: 50000 - type: integer 
@@ -25,7 +24,7 @@ INFO: [Synth 8-638] synthesizing module 'mx_rcvr' [C:/Users/birrur/ECE491/5lab/5
 	Parameter SFD_PATTERN bound to: 256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000 
 	Parameter ONE_PATTERN bound to: 64'b1111111111111111111111111111111100000000000000000000000000000000 
 	Parameter IDLE_PATTERN bound to: 64'b1111111111111111111111111111111111111111111111111111111111111111 
-INFO: [Synth 8-638] synthesizing module 'FSMs' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:23]
+INFO: [Synth 8-638] synthesizing module 'FSMs' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:22]
 INFO: [Synth 8-638] synthesizing module 'fsm_pll' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_pll.sv:24]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_pll.sv:71]
 INFO: [Synth 8-256] done synthesizing module 'fsm_pll' (1#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_pll.sv:24]
@@ -36,8 +35,7 @@ INFO: [Synth 8-638] synthesizing module 'fsm_data' [C:/Users/birrur/ECE491/5lab/
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_data.sv:60]
 INFO: [Synth 8-226] default block is never used [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_data.sv:60]
 INFO: [Synth 8-256] done synthesizing module 'fsm_data' (3#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_data.sv:24]
-WARNING: [Synth 8-3848] Net clr_ferr in module/entity FSMs does not have driver. [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:31]
-INFO: [Synth 8-256] done synthesizing module 'FSMs' (4#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:23]
+INFO: [Synth 8-256] done synthesizing module 'FSMs' (4#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:22]
 INFO: [Synth 8-638] synthesizing module 'data_buffer' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/data_buffer.sv:23]
 INFO: [Synth 8-256] done synthesizing module 'data_buffer' (5#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/data_buffer.sv:23]
 INFO: [Synth 8-638] synthesizing module 'sync_input' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/sync_input.sv:23]
@@ -69,52 +67,43 @@ INFO: [Synth 8-638] synthesizing module 'correlator' [C:/Users/birrur/ECE491/5la
 	Parameter LEN bound to: 128 - type: integer 
 	Parameter PATTERN bound to: 128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111 
 	Parameter HTHRESH bound to: 8'b01100100 
-	Parameter LTHRESH bound to: 3 - type: integer 
+	Parameter LTHRESH bound to: 8'b00001110 
 	Parameter W bound to: 8 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'correlator' (10#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
-WARNING: [Synth 8-350] instance 'U_PREAMBLE_CORR' of module 'correlator' requires 7 connections, but only 6 given [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:83]
 INFO: [Synth 8-638] synthesizing module 'correlator__parameterized0' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
 	Parameter LEN bound to: 256 - type: integer 
 	Parameter PATTERN bound to: 256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000 
 	Parameter HTHRESH bound to: 8'b11001000 
-	Parameter LTHRESH bound to: 3 - type: integer 
+	Parameter LTHRESH bound to: 8'b00001110 
 	Parameter W bound to: 9 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'correlator__parameterized0' (10#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
-WARNING: [Synth 8-350] instance 'U_SFD_CORR' of module 'correlator' requires 7 connections, but only 6 given [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:85]
 INFO: [Synth 8-638] synthesizing module 'correlator__parameterized1' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
 	Parameter LEN bound to: 64 - type: integer 
 	Parameter PATTERN bound to: 64'b1111111111111111111111111111111100000000000000000000000000000000 
 	Parameter HTHRESH bound to: 8'b00110010 
-	Parameter LTHRESH bound to: 3 - type: integer 
+	Parameter LTHRESH bound to: 8'b00001110 
 	Parameter W bound to: 7 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'correlator__parameterized1' (10#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
 INFO: [Synth 8-638] synthesizing module 'correlator__parameterized2' [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
 	Parameter LEN bound to: 64 - type: integer 
 	Parameter PATTERN bound to: 64'b1111111111111111111111111111111111111111111111111111111111111111 
 	Parameter HTHRESH bound to: 8'b00110010 
-	Parameter LTHRESH bound to: 3 - type: integer 
+	Parameter LTHRESH bound to: 8'b00001110 
 	Parameter W bound to: 7 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'correlator__parameterized2' (10#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv:21]
 INFO: [Synth 8-256] done synthesizing module 'mx_rcvr' (11#1) [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:23]
-WARNING: [Synth 8-3331] design fsm_psfd has unconnected port sample_count[5]
-WARNING: [Synth 8-3331] design fsm_psfd has unconnected port sample_count[4]
-WARNING: [Synth 8-3331] design fsm_psfd has unconnected port sample_count[3]
-WARNING: [Synth 8-3331] design fsm_psfd has unconnected port sample_count[2]
-WARNING: [Synth 8-3331] design fsm_psfd has unconnected port sample_count[1]
-WARNING: [Synth 8-3331] design fsm_psfd has unconnected port sample_count[0]
-WARNING: [Synth 8-3331] design FSMs has unconnected port clr_ferr
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 352.051 ; gain = 143.863
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 351.676 ; gain = 143.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 352.051 ; gain = 143.863
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 351.676 ; gain = 143.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 352.051 ; gain = 143.863
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 351.676 ; gain = 143.961
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'fsm_pll'
@@ -125,7 +114,9 @@ INFO: [Synth 8-5544] ROM "next" won't be mapped to Block RAM because address siz
 INFO: [Synth 8-5544] ROM "next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'fsm_psfd'
 INFO: [Synth 8-5544] ROM "enable_pll" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "clr_ferr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "slow_sample_reset" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sample_count_reset" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "bit_count_reset" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cardet" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -182,7 +173,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'fsm_data'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 398.355 ; gain = 190.168
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 398.211 ; gain = 190.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -224,7 +215,7 @@ Detailed RTL Component Info :
 	  15 Input      3 Bit        Muxes := 1     
 	  18 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
-	   7 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
 	   8 Input      1 Bit        Muxes := 5     
 	   2 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
@@ -242,7 +233,7 @@ Module fsm_psfd
 Detailed RTL Component Info : 
 +---Muxes : 
 	  15 Input      3 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
 Module fsm_data 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -353,7 +344,7 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 479.762 ; gain = 271.574
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 478.582 ; gain = 270.867
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -361,9 +352,9 @@ INFO: [Synth 8-5546] ROM "U_SAMPLE/enb" won't be mapped to RAM because it is too
 INFO: [Synth 8-5546] ROM "U_SLOW_SAMPLE/enb" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "U_SLOW_SAMPLE/enb" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 479.895 ; gain = 271.707
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 479.719 ; gain = 272.004
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 479.895 ; gain = 271.707
+Finished Parallel Reinference  : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 479.719 ; gain = 272.004
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -415,65 +406,65 @@ INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[21]' (FDRE)
 INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[22]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[22]'
 INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[23]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[23]'
 INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[24]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[24]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[25]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[25]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[26]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[26]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[16]' (FDRE) to 'U_SFD_CORR/shreg_reg[16]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[17]' (FDRE) to 'U_SFD_CORR/shreg_reg[17]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[18]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[18]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[19]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[19]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[27]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[27]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[28]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[28]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[29]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[29]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[30]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[30]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[31]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[31]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[32]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[32]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[25]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[25]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[26]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[26]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[27]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[27]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[28]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[28]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[29]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[29]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[20]' (FDRE) to 'U_SFD_CORR/shreg_reg[20]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[21]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[21]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[33]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[33]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[34]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[34]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[35]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[35]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[30]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[30]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[31]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[32]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[32]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[33]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[33]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[22]' (FDRE) to 'U_SFD_CORR/shreg_reg[22]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[23]' (FDRE) to 'U_SFD_CORR/shreg_reg[23]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[24]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[24]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[25]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[25]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[36]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[36]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[37]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[37]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[38]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[38]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[39]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[39]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[40]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[40]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[41]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[41]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[34]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[34]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[35]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[35]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[36]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[36]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[37]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[37]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[38]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[38]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[26]' (FDRE) to 'U_SFD_CORR/shreg_reg[26]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[27]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[27]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[28]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[28]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[42]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[42]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[43]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[43]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[44]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[44]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[39]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[39]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[40]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[40]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[41]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[41]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[42]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[42]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[29]' (FDRE) to 'U_SFD_CORR/shreg_reg[29]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[30]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[30]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[45]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[45]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[46]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[46]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[47]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[47]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[43]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[43]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[44]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[44]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[45]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[45]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[31]' (FDRE) to 'U_SFD_CORR/shreg_reg[31]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[32]' (FDRE) to 'U_SFD_CORR/shreg_reg[32]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[33]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[33]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[48]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[48]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[49]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[49]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[50]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[50]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[51]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[51]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[52]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[52]'
-INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[53]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[53]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[46]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[46]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[47]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[47]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[48]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[48]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[49]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[49]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[50]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[50]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[34]' (FDRE) to 'U_SFD_CORR/shreg_reg[34]'
 INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[35]' (FDRE) to 'U_SFD_CORR/shreg_reg[35]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[36]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[36]'
 INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[37]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[37]'
+INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[51]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[51]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[52]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[52]'
+INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[53]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[53]'
+INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[38]' (FDRE) to 'U_SFD_CORR/shreg_reg[38]'
+INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[39]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[39]'
 INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[54]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[54]'
 INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[55]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[55]'
 INFO: [Synth 8-3886] merging instance 'U_ONE_N_ZERO_CORR/shreg_reg[56]' (FDRE) to 'U_IDLE_N_ERROR_CORR/shreg_reg[56]'
-INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[38]' (FDRE) to 'U_SFD_CORR/shreg_reg[38]'
-INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[39]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[39]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[57]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[57]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[58]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[58]'
-INFO: [Synth 8-3886] merging instance 'U_IDLE_N_ERROR_CORR/shreg_reg[59]' (FDRE) to 'U_ONE_N_ZERO_CORR/shreg_reg[59]'
+INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[40]' (FDRE) to 'U_SFD_CORR/shreg_reg[40]'
+INFO: [Synth 8-3886] merging instance 'U_PREAMBLE_CORR/shreg_reg[41]' (FDRE) to 'U_SFD_CORR/shreg_reg[41]'
+INFO: [Synth 8-3886] merging instance 'U_SFD_CORR/shreg_reg[42]' (FDRE) to 'U_PREAMBLE_CORR/shreg_reg[42]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[0]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[1]) is unused and will be removed from module mx_rcvr.
@@ -516,70 +507,70 @@ WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[21]) i
 WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[22]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[23]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[24]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[25]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[26]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[16]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[17]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[18]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[19]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[27]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[28]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[29]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[30]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[31]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[32]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[25]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[26]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[27]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[28]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[29]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[20]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[21]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[33]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[34]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[35]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[30]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[31]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[32]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[33]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[22]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[23]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[24]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[25]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[36]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[37]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[38]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[39]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[40]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[41]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[34]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[35]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[36]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[37]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[38]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[26]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[27]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[28]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[42]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[43]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[44]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[39]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[40]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[41]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[42]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[29]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[30]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[45]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[46]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[47]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[43]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[44]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[45]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[31]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[32]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[33]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[48]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[49]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[50]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[51]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[52]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[53]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[46]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[47]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[48]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[49]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[50]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[34]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[35]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[36]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[37]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[51]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[52]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[53]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[38]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[39]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[54]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[55]) is unused and will be removed from module mx_rcvr.
 WARNING: [Synth 8-3332] Sequential element (U_ONE_N_ZERO_CORR/shreg_reg[56]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[38]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[39]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[57]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[58]) is unused and will be removed from module mx_rcvr.
-WARNING: [Synth 8-3332] Sequential element (U_IDLE_N_ERROR_CORR/shreg_reg[59]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[40]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_PREAMBLE_CORR/shreg_reg[41]) is unused and will be removed from module mx_rcvr.
+WARNING: [Synth 8-3332] Sequential element (U_SFD_CORR/shreg_reg[42]) is unused and will be removed from module mx_rcvr.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 579.906 ; gain = 371.719
+Finished Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 578.590 ; gain = 370.875
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 579.906 ; gain = 371.719
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 578.590 ; gain = 370.875
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -591,7 +582,7 @@ Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 579.906 ; gain = 371.719
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 578.590 ; gain = 370.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -603,16 +594,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -629,7 +620,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -642,7 +633,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -654,25 +645,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -691,10 +682,10 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |     5|
 |3     |LUT2   |    11|
-|4     |LUT3   |   327|
-|5     |LUT4   |    18|
-|6     |LUT5   |   308|
-|7     |LUT6   |   186|
+|4     |LUT3   |   331|
+|5     |LUT4   |    17|
+|6     |LUT5   |   312|
+|7     |LUT6   |   187|
 |8     |MUXF7  |     1|
 |9     |FDRE   |   377|
 |10    |IBUF   |     3|
@@ -705,17 +696,17 @@ Report Instance Areas:
 +------+----------------------+---------------------------+------+
 |      |Instance              |Module                     |Cells |
 +------+----------------------+---------------------------+------+
-|1     |top                   |                           |  1248|
+|1     |top                   |                           |  1256|
 |2     |  U_BIT_COUNT         |counter                    |    10|
 |3     |  U_DATA              |data_buffer                |    16|
 |4     |  U_ERROR             |f_error                    |     1|
 |5     |  U_FAST_COUNT        |counter__parameterized1    |    18|
 |6     |  U_FSM               |FSMs                       |    37|
-|7     |    U_DATA            |fsm_data                   |    19|
+|7     |    U_DATA            |fsm_data                   |    20|
 |8     |    U_DETECT          |fsm_psfd                   |     9|
-|9     |    U_PLL             |fsm_pll                    |     9|
-|10    |  U_IDLE_N_ERROR_CORR |correlator__parameterized2 |   183|
-|11    |  U_ONE_N_ZERO_CORR   |correlator__parameterized1 |    63|
+|9     |    U_PLL             |fsm_pll                    |     8|
+|10    |  U_IDLE_N_ERROR_CORR |correlator__parameterized2 |   147|
+|11    |  U_ONE_N_ZERO_CORR   |correlator__parameterized1 |   107|
 |12    |  U_PREAMBLE_CORR     |correlator                 |   251|
 |13    |  U_SAMPLE            |clkenb__parameterized0     |    12|
 |14    |  U_SFD_CORR          |correlator__parameterized0 |   603|
@@ -724,11 +715,11 @@ Report Instance Areas:
 |17    |  U_SYNC              |sync_input                 |     1|
 +------+----------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 203 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 588.254 ; gain = 350.684
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 588.254 ; gain = 380.066
+Synthesis finished with 0 errors, 0 critical warnings and 193 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 586.176 ; gain = 349.945
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 586.176 ; gain = 378.461
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -738,8 +729,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-182 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+184 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 597.754 ; gain = 363.668
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 597.754 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 25 00:45:25 2016...
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 600.641 ; gain = 366.320
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 600.641 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 25 10:19:39 2016...
