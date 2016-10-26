@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477405156">
-  <File Type="RDS-PROPCONSTRS" Name="mx_rcvr_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="mx_rcvr.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="mx_rcvr_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="mx_rcvr.vds"/>
   <File Type="RDS-UTIL" Name="mx_rcvr_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="mx_rcvr_utilization_synth.pb"/>
@@ -209,7 +209,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Downloads/check_p.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../flynng/Downloads/check_p.sv"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/check_p.sv"/>
         <Attr Name="ImportTime" Val="1475533415"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

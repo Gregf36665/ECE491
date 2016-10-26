@@ -25,21 +25,24 @@ module fsm_data(
 		input logic clk, reset, match_one, match_zero, match_idle, match_error, enable_data,
 		input logic [5:0] sample_count,
 		input logic [2:0] bit_count,
-		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done
+		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done, sample_count_reset
 		);
 				
-		typedef enum logic [2:0] {
-			IDLE 			  = 3'b000,
-			START_RECIEVE     = 3'b001,
-			FOUND_ONE		  = 3'b010,
-			FOUND_ZERO 		  = 3'b011,
-			STORE_DATA		  = 3'b100,
-			BYTE_DONE		  = 3'b101,
-			WAIT_FOR_NEXT     = 3'b110,
-			ERROR 			  = 3'b111
+		typedef enum logic [3:0] {
+			IDLE 			  = 4'h0,
+			START_RECIEVE     = 4'h1,
+			LOOKING			  = 4'h2,
+			FOUND_ONE		  = 4'h3,
+			FOUND_ZERO 		  = 4'h4,
+			STORE_DATA		  = 4'h5,
+			BYTE_DONE		  = 4'h6,
+			WAIT_FOR_NEXT	  = 4'h7,
+			ERROR 			  = 4'h8,
+			MISSED			  = 4'h9
 		} states;
 				
 		states state, next;
+		logic look;
 		
 		always_ff @(posedge clk)
 			begin
@@ -50,36 +53,36 @@ module fsm_data(
 		always_comb
 			begin
 				
+				look = 1'b0; // this is an internal signal for debugging
 				data_bit 	= 1'b0;
 				store_bit 	= 1'b0;
 				store_byte 	= 1'b0;
 				set_ferr    = 1'b0;
 				write       = 1'b0;
 				data_done   = 1'b0;
+			    sample_count_reset = 1'b0;
 							
 				unique case (state)
 					IDLE:
 					   begin
 					       next = enable_data ? START_RECIEVE : IDLE;
 					       data_done = 1'b1;
+						   sample_count_reset = 1'b1;
 					   end
 					START_RECIEVE:
-						begin
-							if(6'd10 > sample_count && sample_count < 6'd40)
-								begin
-									if(match_one) next = FOUND_ONE;
-									else if(match_zero)next = FOUND_ZERO;
-									else if(match_idle)
-										begin
-											if(bit_count == 1'b0) next = IDLE;
-											else next = ERROR;
-										end
-									else if (match_error) next = ERROR;
-									else if (sample_count > 15) next = ERROR;
-									else next = START_RECIEVE;
-								end
-							else next = START_RECIEVE;
-						end
+						next = sample_count == 54 ? LOOKING : START_RECIEVE;
+					// The sample count is where we expect to see another correlation
+					LOOKING:
+					begin
+						look = 1'b1;
+						if(match_one) next = FOUND_ONE;
+						else if(match_zero) next = FOUND_ZERO;
+						// Check if we got an EOF at the right point
+						else if(match_idle) next = bit_count == 3'b0 ? IDLE: ERROR;
+						else if(match_error) next = ERROR;
+						else if(sample_count == 10) next = ERROR; // We missed it
+						else next = LOOKING;
+					end
 					FOUND_ONE:
 						begin
 							next = STORE_DATA;
@@ -102,19 +105,23 @@ module fsm_data(
 							next = WAIT_FOR_NEXT;
 							store_byte = 1'b1;
 							write = 1'b1;
+							// Why do we have 2 wires that do the same thing???
 						end
 					WAIT_FOR_NEXT:
-						begin
-							if(6'd10 < sample_count && sample_count > 6'd40) next = START_RECIEVE;
-							else next = WAIT_FOR_NEXT;
-						end
+						next = sample_count == 10 ? START_RECIEVE : WAIT_FOR_NEXT;
+						// Prevent the FSM getting in a loop if correlation on sample 50
 					ERROR:
 					    begin
 						  next = IDLE;
 						  set_ferr = 1'b1;
 						end
+					MISSED:
+					    begin
+						  next = IDLE;
+						  set_ferr = 1'b1;
+						end
 					default:
-						next <= IDLE;
+						next = IDLE;
 				endcase
 			end
 endmodule		

@@ -106,7 +106,6 @@ package check_p;
 
    task check_summary_stop;
 	 check_summary();
-	 $stop;
    endtask
    
 endpackage

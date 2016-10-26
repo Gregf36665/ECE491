@@ -33,14 +33,27 @@ module mx_rcvr_test();
 	logic reset = 0;
 	logic rxd = 0;
 
+	typedef enum logic [3:0]{
+		IDLE = 4'h0,
+		PREAMBLE = 4'h1,
+		SFD = 4'h2,
+		DATA = 4'h3,
+		EOF = 4'h4,
+		ERROR = 4'h5
+	} states;
+
 	logic cardet, write, error;
 	logic [7:0] data;
+
+	// Use this to clearly display on the waveform what is happening
+	states state;
 	
 	// Start the clock
 	always
 		#5 clk = ~clk;
 
 	task reset_systems();
+		state = IDLE;
 		reset = 1;
 		repeat(10) @(posedge clk);
 		reset = 0;
@@ -55,7 +68,6 @@ module mx_rcvr_test();
 
 	// Send a manchester bit
 	task send_bit(input logic data_bit, input logic noise);
-		@(posedge clk);
 		rxd = data_bit;
 		repeat(1_000) @(posedge clk) // 1000 clock cycles @10ns = 100kBaud
 			rxd = noise ? interfear(data_bit) : data_bit;
@@ -73,22 +85,27 @@ module mx_rcvr_test();
 
 	// Hold the rxd line for both bauds
 	task send_EOF(input logic noise);
+		state = EOF;
 		rxd = 1;
 		repeat(2_000) @(posedge clk);
 	endtask
 
 	// Send preamble
 	task send_preamble(input logic noise);
+		state = PREAMBLE;
 		repeat(2) send_byte(8'h55, noise);
 	endtask
 
 	// Send SFD
 	task send_SFD(input logic noise);
+		state = SFD;
 		send_byte(8'hD0, noise);
+		state = DATA;
 	endtask
 
 	// Hold rxd line low for both baud
 	task send_error(input logic noise);
+		state = ERROR;
 		repeat(2_000) @(posedge clk) rxd = noise ? interfear(1'b0) : 0;
 	endtask
 
@@ -274,6 +291,29 @@ module mx_rcvr_test();
 		check_group_end;
 	endtask
 
+
+	task send_two_bytes;
+		logic [7:0] byte_to_send = 8'h00;
+		check_group_begin("2 byte tx");
+		rxd = 1;
+		reset_systems;
+		repeat(2)
+		begin
+			send_preamble(.noise(1'b0));
+			check("Cardet high", cardet, 1'b1);
+			send_SFD(.noise(1'b0));
+			send_byte(byte_to_send, .noise(1'b0));
+			send_EOF(.noise(1'b0));
+			check("Error low", error, 1'b0);
+			check("Data received", data, byte_to_send);
+			check("Carrier detect dropped", cardet, 1'b0);
+			byte_to_send = 8'hFF;
+		end
+		repeat(1000) @(posedge clk); // spin for a little
+		check_group_end;
+
+	endtask
+
 	// 10b test
 	task test_10b;
 		logic [7:0] byte_to_send;
@@ -285,7 +325,8 @@ module mx_rcvr_test();
 		send_SFD(.noise(1'b0));
 		repeat(24)  // send 24 bytes
 		begin
-			byte_to_send = $urandom_range(8'hFF,8'h00);
+			//byte_to_send = $urandom_range(8'hFF,8'h00);
+			byte_to_send = 8'h00;
 			send_byte(byte_to_send, .noise(1'b0));
 			check("Error low", error, 1'b0);
 			check("Data received", data, byte_to_send);
@@ -324,11 +365,12 @@ module mx_rcvr_test();
 	begin
 		reset_systems;
 		#100;
-		test_10a; // The most basic test send 1 byte clean.
+		//send_two_bytes;
+		//test_10a; // The most basic test send 1 byte clean.
 		test_10b; // Sending a frame of 24 random bytes.
 		//test_10c; // 10e6 bit periods of random noise followed by a noisy byte, then more noise
-		test_10d; // Sending a byte with an error in the middle
-		test_10e; // Sending short byte, should be an error
+		//test_10d; // Sending a byte with an error in the middle
+		//test_10e; // Sending short byte, should be an error
 		check_summary_stop();
 	end
 
