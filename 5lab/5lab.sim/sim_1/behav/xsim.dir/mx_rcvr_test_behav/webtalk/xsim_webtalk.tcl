@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Oct 25 20:24:57 2016" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Tue Oct 25 21:04:15 2016" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2016.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "1577090" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "5afd585b72b05ea7a65287d2ca2b639f" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "dd429faf13654bdbaa58cc108d99a37b" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "19" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "27" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 7 , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Service Pack 1  (build 7601)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz" -context "user_environment"
@@ -38,6 +38,6 @@ webtalk_add_data -client xsim -key Total_Processes -value "79" -context "xsim\\u
 webtalk_add_data -client xsim -key Total_Instances -value "20" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
 webtalk_add_data -client xsim -key Compiler_Time -value "0.31_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "40836_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2111091675 -regid "" -xml C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Memory -value "40848_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 2190224119 -regid "" -xml C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/sim_1/behav/xsim.dir/mx_rcvr_test_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

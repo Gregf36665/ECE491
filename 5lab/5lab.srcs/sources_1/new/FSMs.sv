@@ -38,11 +38,11 @@ module FSMs(input logic clk, reset, preamble_match, sfd_match, match_error,
 
 	fsm_psfd U_DETECT (.clk, .reset, .preamble_match, .sfd_match, .set_ferr,
 					   .data_done,  .slow_sample_count, .cardet, .bit_count_reset,
-					   .slow_sample_reset, .clr_ferr, .enable_pll, .enable_data);
+					   .sample_count_reset, .slow_sample_reset, .clr_ferr, .enable_pll, .enable_data);
 
 	fsm_data U_DATA   (.clk, .reset, .match_one, .match_zero, .match_idle, .match_error,
 					   .sample_count, .bit_count, .data_bit, .store_bit, .store_byte,
-					   .set_ferr, .write, .enable_data, .data_done, .sample_count_reset);
+					   .set_ferr, .write, .enable_data, .data_done);
 
 
 	
