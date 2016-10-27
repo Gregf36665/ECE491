@@ -376,8 +376,8 @@ module mx_rcvr_test();
 		//test_10a; // The most basic test send 1 byte clean.
 		//test_10b; // Sending a frame of 24 random bytes.
 		//test_10c; // 10e6 bit periods of random noise followed by a noisy byte, then more noise
-		test_10d; // Sending a byte with an error in the middle
-		//test_10e; // Sending short byte, should be an error
+		//test_10d; // Sending a byte with an error in the middle
+		test_10e; // Sending short byte, should be an error
 		check_summary_stop();
 		$stop();// this shouldn't be needed
 	end

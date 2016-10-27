@@ -1,7 +1,7 @@
-Running: xsim.dir/mx_rcvr_test_behav/xsimk.exe -simmode gui -wdb mx_rcvr_test_behav.wdb -simrunnum 0 -socket 7681
+Running: xsim.dir/mx_rcvr_test_behav/xsimk.exe -simmode gui -wdb mx_rcvr_test_behav.wdb -simrunnum 0 -socket 7731
 Design successfully loaded
-Design Loading Memory Usage: 7484 KB (Peak: 7484 KB)
-Design Loading CPU Usage: 0 ms
+Design Loading Memory Usage: 7476 KB (Peak: 7476 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 16948 KB (Peak: 16948 KB)
-Simulation CPU Usage: 561 ms
+Simulation Memory Usage: 16944 KB (Peak: 16944 KB)
+Simulation CPU Usage: 373 ms

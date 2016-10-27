@@ -14,9 +14,9 @@
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
       <ZoomEndTime time="1130685000001fs"></ZoomEndTime>
-      <Cursor1Time time="744391122000fs"></Cursor1Time>
+      <Cursor1Time time="148196578000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/mx_rcvr_test/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -189,6 +189,16 @@
          <obj_property name="ElementShortName">look</obj_property>
          <obj_property name="ObjectShortName">look</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/mx_rcvr_test/DUV/U_SFD_CORR/csum" type="array">
+      <obj_property name="ElementShortName">csum[8:0]</obj_property>
+      <obj_property name="ObjectShortName">csum[8:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+      <obj_property name="AnalogYRangeMin">1.84467e+19</obj_property>
+      <obj_property name="AnalogYRRangeMax">240</obj_property>
    </wvobject>
    <wvobject fp_name="group151" type="group">
       <obj_property name="label">detect_fsm</obj_property>

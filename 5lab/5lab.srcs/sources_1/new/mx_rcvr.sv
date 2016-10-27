@@ -82,7 +82,7 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 
 	correlator #(.LEN(128), .PATTERN(PREAMBLE_PATTERN), .HTHRESH(100), .LTHRESH(14)) U_PREAMBLE_CORR 
 		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(preamble_match), .csum(), .l_out());
-	correlator #(.LEN(256), .PATTERN(SFD_PATTERN), .HTHRESH(240), .LTHRESH(14)) U_SFD_CORR 
+	correlator #(.LEN(256), .PATTERN(SFD_PATTERN), .HTHRESH(220), .LTHRESH(14)) U_SFD_CORR 
 		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(sfd_match), .csum(), .l_out());
 	correlator #(.LEN(64), .PATTERN(ONE_PATTERN), .HTHRESH(MAX_TRIGGER), .LTHRESH(MIN_TRIGGER)) U_ONE_N_ZERO_CORR
 		(.clk, .reset, .enb(sample), .d_in(rxd_sync), .h_out(match_one), 
