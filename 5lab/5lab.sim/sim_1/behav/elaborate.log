@@ -1,17 +1,17 @@
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto dd429faf13654bdbaa58cc108d99a37b --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mx_rcvr_test_behav xil_defaultlib.mx_rcvr_test xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto dd429faf13654bdbaa58cc108d99a37b --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mx_rcvr_test_behav xil_defaultlib.mx_rcvr_test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=128,PATTERN=128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111,HTHRESH=8'b01100100,LTHRESH=8'b01110) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=256,PATTERN=256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000,HTHRESH=8'b11001000,LTHRESH=8'b01110) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=128,PATTERN=128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111,HTHRESH=100,LTHRESH=14) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=256,PATTERN=256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000,HTHRESH=240,LTHRESH=14) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111100000000000000000000000000000000,HTHRESH=60,LTHRESH=4) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111111111111111111111111111111111111,HTHRESH=60,LTHRESH=4) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv" Line 37. Module check_p doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=128,PATTERN=128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111,HTHRESH=8'b01100100,LTHRESH=8'b01110) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=256,PATTERN=256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000,HTHRESH=8'b11001000,LTHRESH=8'b01110) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=128,PATTERN=128'b11111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111111111111000000000000000011111111,HTHRESH=100,LTHRESH=14) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=256,PATTERN=256'b1111111100000000000000001111111111111111000000000000000011111111111111110000000000000000111111111111111100000000000000001111111100000000111111110000000011111111000000001111111100000000111111111111111100000000000000001111111111111111000000001111111100000000,HTHRESH=240,LTHRESH=14) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111100000000000000000000000000000000,HTHRESH=60,LTHRESH=4) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv" Line 21. Module correlator(LEN=64,PATTERN=64'b1111111111111111111111111111111111111111111111111111111111111111,HTHRESH=60,LTHRESH=4) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv" Line 37. Module check_p doesn't have a timescale but at least one module in design has a timescale.
@@ -20,6 +20,7 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.fsm_pll
 Compiling module xil_defaultlib.fsm_psfd
 Compiling module xil_defaultlib.fsm_data
+Compiling module xil_defaultlib.one_bit_ff
 Compiling module xil_defaultlib.FSMs
 Compiling module xil_defaultlib.data_buffer
 Compiling module xil_defaultlib.sync_input
@@ -27,7 +28,7 @@ Compiling module xil_defaultlib.clkenb(DIVFREQ=800000)
 Compiling module xil_defaultlib.clkenb(DIVFREQ=3200000)
 Compiling module xil_defaultlib.counter
 Compiling module xil_defaultlib.counter(MAX=127)
-Compiling module xil_defaultlib.counter(MAX=64)
+Compiling module xil_defaultlib.counter(MAX=63)
 Compiling module xil_defaultlib.f_error
 Compiling module xil_defaultlib.correlator(LEN=128,PATTERN=128'b...
 Compiling module xil_defaultlib.correlator(LEN=256,PATTERN=256'b...

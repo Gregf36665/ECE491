@@ -196,17 +196,21 @@ module mx_rcvr_test();
 		reset = 1;
 		repeat(10) @(posedge clk);
 		reset = 0;
-		repeat(10) @(posedge clk);
+		repeat(1000) @(posedge clk);
 		send_preamble(1'b1);
 		send_SFD(1'b0);
+		state = DATA;
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
+		state = ERROR;
 		send_error(1'b1); // one bit is actually an error
+		state = DATA;
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
+		send_EOF(.noise(1'b1));
 		check("Error triggered", error, 1'b1);
 		check("Carrier detect dropped", cardet, 1'b0);
 		// Who cares what the data output is doing
@@ -307,7 +311,7 @@ module mx_rcvr_test();
 			check("Error low", error, 1'b0);
 			check("Data received", data, byte_to_send);
 			check("Carrier detect dropped", cardet, 1'b0);
-			byte_to_send = 8'hFF;
+			byte_to_send = 8'hF0;
 		end
 		repeat(1000) @(posedge clk); // spin for a little
 		check_group_end;
@@ -325,8 +329,8 @@ module mx_rcvr_test();
 		send_SFD(.noise(1'b0));
 		repeat(24)  // send 24 bytes
 		begin
-			//byte_to_send = $urandom_range(8'hFF,8'h00);
-			byte_to_send = 8'h00;
+			byte_to_send = $urandom_range(8'hFF,8'h00);
+			//byte_to_send = 8'h00;
 			send_byte(byte_to_send, .noise(1'b0));
 			check("Error low", error, 1'b0);
 			check("Data received", data, byte_to_send);
@@ -338,6 +342,7 @@ module mx_rcvr_test();
 	// 10c test
 	task test_10c;
 		check_group_begin("10c test");
+		reset_systems;
 		// repeat 10e6 for bits then 2000 for each clock in a bit period
 		repeat(10e6) repeat(2000) @(posedge clk) noise();
 		send_noise_byte;
@@ -348,6 +353,7 @@ module mx_rcvr_test();
 	task test_10d;
 		check_group_begin("10d test");
 		tx_error;
+		#1000;
 		tx_error_noise;
 		check_group_end;
 	endtask
@@ -355,6 +361,7 @@ module mx_rcvr_test();
 	task test_10e;
 		check_group_begin("10e test");
 		tx_short;
+		repeat(1000) @(posedge clk);
 		tx_short_noise;
 		check_group_end;
 	endtask
@@ -367,11 +374,12 @@ module mx_rcvr_test();
 		#100;
 		//send_two_bytes;
 		//test_10a; // The most basic test send 1 byte clean.
-		test_10b; // Sending a frame of 24 random bytes.
+		//test_10b; // Sending a frame of 24 random bytes.
 		//test_10c; // 10e6 bit periods of random noise followed by a noisy byte, then more noise
-		//test_10d; // Sending a byte with an error in the middle
+		test_10d; // Sending a byte with an error in the middle
 		//test_10e; // Sending short byte, should be an error
 		check_summary_stop();
+		$stop();// this shouldn't be needed
 	end
 
 endmodule

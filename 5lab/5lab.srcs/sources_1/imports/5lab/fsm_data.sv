@@ -70,7 +70,7 @@ module fsm_data(
 						   sample_count_reset = 1'b1;
 					   end
 					START_RECIEVE:
-						next = sample_count == 54 ? LOOKING : START_RECIEVE;
+						next = sample_count == 60 ? LOOKING : START_RECIEVE;
 					// The sample count is where we expect to see another correlation
 					LOOKING:
 					begin
@@ -80,7 +80,7 @@ module fsm_data(
 						// Check if we got an EOF at the right point
 						else if(match_idle) next = bit_count == 3'b0 ? IDLE: ERROR;
 						else if(match_error) next = ERROR;
-						else if(sample_count == 10) next = ERROR; // We missed it
+						else if(sample_count == 20) next = ERROR; // We missed it
 						else next = LOOKING;
 					end
 					FOUND_ONE:
@@ -108,14 +108,15 @@ module fsm_data(
 							// Why do we have 2 wires that do the same thing???
 						end
 					WAIT_FOR_NEXT:
-						next = sample_count == 10 ? START_RECIEVE : WAIT_FOR_NEXT;
-						// Prevent the FSM getting in a loop if correlation on sample 50
+						next = sample_count >= 21 ? START_RECIEVE : WAIT_FOR_NEXT;
+						// Stay here until sample count has gone past where we are looking
 					ERROR:
 					    begin
 						  next = IDLE;
 						  set_ferr = 1'b1;
 						end
 					MISSED:
+						// This is a different state for debugging
 					    begin
 						  next = IDLE;
 						  set_ferr = 1'b1;

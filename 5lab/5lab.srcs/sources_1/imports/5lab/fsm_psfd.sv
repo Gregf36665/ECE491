@@ -65,12 +65,14 @@ module fsm_psfd(
 							if(preamble_match) next = PREAMBLE_MATCH;
 							else next = IDLE;
 							bit_count_reset      = 1'b1;
-							//sample_count_reset   = 1'b1;
+							sample_count_reset   = 1'b1;
 							slow_sample_reset    = 1'b1;
 						end
 					PREAMBLE_MATCH:
 						begin
-							if(slow_sample_count [4:0] == 5'd31)
+							// This looks at the lowest 5 bits of sample
+							// This lets the sample count go to 63
+							if(slow_sample_count [4:0] == 5'd33)
 								begin
 									if(!preamble_match) next = RESET_SLOW_SAMPLE;
 									else next = PREAMBLE_MATCH;
@@ -86,11 +88,9 @@ module fsm_psfd(
 						end
 					SFD_MAYBE:
 						begin
-							if(slow_sample_count == 7'h43) // We should see SFD here
-								begin
-									if(sfd_match) next = STARTING;
-									//else next = IDLE;
-								end
+							if(sfd_match) next = STARTING; // Found SFD
+							else if(slow_sample_count == 7'd127) // We should have seen SFD by here
+								next = IDLE; // Didn't see anything
 							else next = SFD_MAYBE;
 							cardet = 1'b1;
 						end
@@ -101,6 +101,7 @@ module fsm_psfd(
 							clr_ferr = 1'b1;
 							enable_pll = 1'b1;
 							enable_data = 1'b1;
+							cardet = 1'b1; // Keep cardet high
 						end
 					START:
 						begin

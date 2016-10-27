@@ -12,11 +12,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="274200000000fs"></ZoomStartTime>
-      <ZoomEndTime time="1121200000001fs"></ZoomEndTime>
-      <Cursor1Time time="530485000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1130685000001fs"></ZoomEndTime>
+      <Cursor1Time time="744391122000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="12" />
    <wvobject fp_name="/mx_rcvr_test/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -45,10 +45,13 @@
       <obj_property name="ElementShortName">data[7:0]</obj_property>
       <obj_property name="ObjectShortName">data[7:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/mx_rcvr_test/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="group47" type="group">
       <obj_property name="label">data_fsm</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DATA/state" type="array">
          <obj_property name="ElementShortName">state[3:0]</obj_property>
          <obj_property name="ObjectShortName">state[3:0]</obj_property>
@@ -69,10 +72,6 @@
       <wvobject fp_name="/mx_rcvr_test/DUV/U_SAMPLE/reset" type="logic">
          <obj_property name="ElementShortName">reset</obj_property>
          <obj_property name="ObjectShortName">reset</obj_property>
-      </wvobject>
-      <wvobject fp_name="/mx_rcvr_test/state" type="array">
-         <obj_property name="ElementShortName">state[3:0]</obj_property>
-         <obj_property name="ObjectShortName">state[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DATA/look" type="logic">
          <obj_property name="ElementShortName">look</obj_property>
@@ -120,6 +119,165 @@
          <obj_property name="ElementShortName">h_out</obj_property>
          <obj_property name="ObjectShortName">h_out</obj_property>
          <obj_property name="label">one</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group38" type="group">
+      <obj_property name="label">pll_fsm</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/data_bit" type="logic">
+         <obj_property name="ElementShortName">data_bit</obj_property>
+         <obj_property name="ObjectShortName">data_bit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/enable_pll" type="logic">
+         <obj_property name="ElementShortName">enable_pll</obj_property>
+         <obj_property name="ObjectShortName">enable_pll</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/sample_count" type="array">
+         <obj_property name="ElementShortName">sample_count[5:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_count[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/current_corr" type="array">
+         <obj_property name="ElementShortName">current_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">current_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/sample_inc" type="logic">
+         <obj_property name="ElementShortName">sample_inc</obj_property>
+         <obj_property name="ObjectShortName">sample_inc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/sample_dec" type="logic">
+         <obj_property name="ElementShortName">sample_dec</obj_property>
+         <obj_property name="ObjectShortName">sample_dec</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/next" type="array">
+         <obj_property name="ElementShortName">next[3:0]</obj_property>
+         <obj_property name="ObjectShortName">next[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/min_corr" type="array">
+         <obj_property name="ElementShortName">min_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">min_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/max_corr" type="array">
+         <obj_property name="ElementShortName">max_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">max_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/min_time" type="array">
+         <obj_property name="ElementShortName">min_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">min_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/max_time" type="array">
+         <obj_property name="ElementShortName">max_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">max_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/final_time" type="array">
+         <obj_property name="ElementShortName">final_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">final_time[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/look" type="logic">
+         <obj_property name="ElementShortName">look</obj_property>
+         <obj_property name="ObjectShortName">look</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group151" type="group">
+      <obj_property name="label">detect_fsm</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/preamble_match" type="logic">
+         <obj_property name="ElementShortName">preamble_match</obj_property>
+         <obj_property name="ObjectShortName">preamble_match</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/sfd_match" type="logic">
+         <obj_property name="ElementShortName">sfd_match</obj_property>
+         <obj_property name="ObjectShortName">sfd_match</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/set_ferr" type="logic">
+         <obj_property name="ElementShortName">set_ferr</obj_property>
+         <obj_property name="ObjectShortName">set_ferr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/data_done" type="logic">
+         <obj_property name="ElementShortName">data_done</obj_property>
+         <obj_property name="ObjectShortName">data_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/slow_sample_count" type="array">
+         <obj_property name="ElementShortName">slow_sample_count[6:0]</obj_property>
+         <obj_property name="ObjectShortName">slow_sample_count[6:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/cardet" type="logic">
+         <obj_property name="ElementShortName">cardet</obj_property>
+         <obj_property name="ObjectShortName">cardet</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/bit_count_reset" type="logic">
+         <obj_property name="ElementShortName">bit_count_reset</obj_property>
+         <obj_property name="ObjectShortName">bit_count_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/sample_count_reset" type="logic">
+         <obj_property name="ElementShortName">sample_count_reset</obj_property>
+         <obj_property name="ObjectShortName">sample_count_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/slow_sample_reset" type="logic">
+         <obj_property name="ElementShortName">slow_sample_reset</obj_property>
+         <obj_property name="ObjectShortName">slow_sample_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/clr_ferr" type="logic">
+         <obj_property name="ElementShortName">clr_ferr</obj_property>
+         <obj_property name="ObjectShortName">clr_ferr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/enable_pll" type="logic">
+         <obj_property name="ElementShortName">enable_pll</obj_property>
+         <obj_property name="ObjectShortName">enable_pll</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/enable_data" type="logic">
+         <obj_property name="ElementShortName">enable_data</obj_property>
+         <obj_property name="ObjectShortName">enable_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DETECT/state" type="array">
+         <obj_property name="ElementShortName">state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group163" type="group">
+      <obj_property name="label">error_latch</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_ERROR/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_ERROR/set_ferr" type="logic">
+         <obj_property name="ElementShortName">set_ferr</obj_property>
+         <obj_property name="ObjectShortName">set_ferr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_ERROR/clr_ferr" type="logic">
+         <obj_property name="ElementShortName">clr_ferr</obj_property>
+         <obj_property name="ObjectShortName">clr_ferr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_ERROR/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_ERROR/ferr" type="logic">
+         <obj_property name="ElementShortName">ferr</obj_property>
+         <obj_property name="ObjectShortName">ferr</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

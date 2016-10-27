@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log nexys4DDR.vds -m64 -mode batch -messageDb vivado.pb -notrace -source nexys4DDR.tcl" );
+         "-log manchester_tx.vds -m64 -mode batch -messageDb vivado.pb -notrace -source manchester_tx.tcl" );
 
 
 

@@ -43,29 +43,60 @@ module fsm_pll(
 				
 		states state, next;
 		
-		logic [6:0] final_corr, min_corr, max_corr;
+		// Register values to store important values
+		logic [6:0] min_corr, max_corr;
 		logic [5:0] min_time, max_time, final_time;
+		// Enable signals to use registers
+		logic update_min_time, update_max_time, update_min_corr, update_max_corr;
+		logic update_final_time;
+		// Wires for the next value to use
+		logic [6:0] next_min_corr, next_max_corr;
+		logic [5:0] next_min_time, next_max_time, next_final_time;
 		
+		logic look; // Internal signal for debugging
+
 		always_ff @(posedge clk)
 			begin
-				if(reset) state <= IDLE;
-				else state <= next;
+				if(reset | !enable_pll) 
+				begin
+					state <= IDLE;
+					min_time <= 0;
+					max_time <= 0;
+					min_corr <= 0;
+					max_corr <= 0;
+					final_time <= 0;
+				end
+				else
+				begin 
+					state <= next;
+					if(update_min_time) min_time <= next_min_time;
+					if(update_max_time) max_time <= next_max_time;
+					if(update_min_corr) min_corr <= next_min_corr;
+					if(update_max_corr) max_corr <= next_max_corr;
+					if(update_final_time) final_time <= next_final_time;
+				end
 			end
 			
 		always_comb
 			begin
+				look = 1'b0;
 				
 				sample_inc = 1'b0;
 				sample_dec = 1'b0;
 				
-				min_corr = 7'd0;
-				max_corr = 7'd0;
+				next_min_corr = 7'd0;
+				next_max_corr = 7'd0;
+			
+				next_final_time = 6'd0;
+				next_min_time = 6'd0;
+				next_max_time = 6'd0;
 				
-				final_time = 6'd0;
-				min_time = 6'd0;
-				max_time = 6'd0;
-				
-				// Inferred latch on next now gone, but further investigation recommended
+				update_min_time = 0;
+				update_max_time = 0;
+				update_min_corr = 0;
+				update_max_corr = 0;
+				update_final_time = 0;
+
 				next = IDLE;
 							
 				unique case (state)
@@ -74,47 +105,60 @@ module fsm_pll(
 						else next = IDLE;
 					WAIT:
 						begin
-							if(sample_count > 6'd48) next = FIND_MINMAX;
+							if(sample_count == 6'd40) next = FIND_MINMAX; // Start looking
 							else next = WAIT;
-							final_time = 6'd0;
-							min_corr = 7'd127;
-							max_corr = 7'd0;
+							next_final_time = 6'd0;
+							next_min_corr = 7'd127; // Reset values to default
+							next_max_corr = 7'd0;
+							// write the values
+							update_min_corr = 1'b1;
+							update_max_corr = 1'b1;
+							update_final_time = 1'b1;
 						end
 					FIND_MINMAX:
 						begin
-							if(sample_count < 6'd48 && sample_count > 6'd15)
+							if(sample_count == 6'd20) // at the end of looking
 								if(data_bit == 1'b1) next = UPDATE_TIME_MAX;
 								else next = UPDATE_TIME_MIN;
 							else if (current_corr > max_corr) next = UPDATE_MAX;
 							else if (current_corr < min_corr) next = UPDATE_MIN;
 							else next = FIND_MINMAX;
+							look = 1'b1;
 						end
 					UPDATE_MAX:
 						begin
 							next = FIND_MINMAX;
-							max_corr = current_corr;
-							max_time = sample_count;
+							next_max_corr = current_corr;
+							next_max_time = sample_count;
+							// Update the values
+							update_max_time = 1'b1;
+							update_max_corr = 1'b1;
 						end
 					UPDATE_MIN:
 						begin
 							next = FIND_MINMAX;
-							min_corr = current_corr;
-							min_time = sample_count;
+							next_min_corr = current_corr;
+							next_min_time = sample_count;
+							// Update values
+							update_min_time = 1'b1;
+							update_min_corr = 1'b1;
 						end
 					UPDATE_TIME_MAX:
 						begin
 							next = INC_DEC;
-							final_time = max_time;
+							next_final_time = max_time;
+							update_final_time = 1'b1;
 						end
 					UPDATE_TIME_MIN:
 						begin
 							next = INC_DEC;
-							final_time = min_time;
+							next_final_time = min_time;
+							update_final_time = 1'b1;
 						end
 					INC_DEC:
 						begin
-							if((final_time <= 6'd15) && (final_time >= 6'd4)) next = INC_SAMPLE;
-							else if((final_time <= 6'd60) && (final_time >= 6'd48)) next = DEC_SAMPLE;
+							if((final_time <= 6'd20) && (final_time >= 6'd4)) next = DEC_SAMPLE;
+							else if((final_time <= 6'd60) && (final_time >= 6'd40)) next = INC_SAMPLE;
 							else next = WAIT;
 						end
 					INC_SAMPLE:

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Mon Oct 03 20:45:35 2016
+| Date         : Wed Oct 26 20:58:26 2016
 | Host         : ECE400-F6N3KB2 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file p_fifo_utilization_synth.rpt -pb p_fifo_utilization_synth.pb
 | Design       : p_fifo
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   11 |     0 |     63400 |  0.02 |
-|   LUT as Logic          |   11 |     0 |     63400 |  0.02 |
+| Slice LUTs*             |   20 |     0 |     63400 |  0.03 |
+|   LUT as Logic          |   20 |     0 |     63400 |  0.03 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   19 |     0 |    126800 |  0.01 |
-|   Register as Flip Flop |   19 |     0 |    126800 |  0.01 |
+| Slice Registers         |   37 |     0 |    126800 |  0.03 |
+|   Register as Flip Flop |   37 |     0 |    126800 |  0.03 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 2     |          Yes |           - |        Reset |
+| 4     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 17    |          Yes |       Reset |            - |
+| 33    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,15 +146,13 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   17 |        Flop & Latch |
+| FDRE     |   33 |        Flop & Latch |
+| LUT6     |   14 |                 LUT |
 | IBUF     |   13 |                  IO |
 | OBUF     |   10 |                  IO |
-| LUT3     |   10 |                 LUT |
-| LUT5     |    2 |                 LUT |
-| LUT4     |    2 |                 LUT |
-| FDCE     |    2 |        Flop & Latch |
-| LUT6     |    1 |                 LUT |
-| LUT2     |    1 |                 LUT |
+| LUT5     |    6 |                 LUT |
+| FDCE     |    4 |        Flop & Latch |
+| LUT4     |    1 |                 LUT |
 | LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
