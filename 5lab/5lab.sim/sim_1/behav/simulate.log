@@ -1,7 +1,46 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
-START: 10e test at time 295.
+START: 10a check one byte at time 295.
+OK: 10a check one byte (3 tests passed)
+START: 10b check 24 bytes at time 660485.
+OK: 10b check 24 bytes (49 tests passed)
+START: 10d test at time 5000685.
+OK: 10d test (4 tests passed)
+START: 10e test at time 6311975.
 OK: 10e test (4 tests passed)
 
 Tesbench Complete.
-No errors in 4 tests. :)
+No errors in 60 tests. :)
+START: 10a check one byte at time 295.
+OK: 10a check one byte (3 tests passed)
+START: 10b check 24 bytes at time 660485.
+OK: 10b check 24 bytes (49 tests passed)
+START: 10d test at time 5000685.
+OK: 10d test (4 tests passed)
+START: 10e test at time 6311975.
+OK: 10e test (4 tests passed)
+
+Tesbench Complete.
+No errors in 60 tests. :)
+START: 10a check one byte at time 295.
+OK: 10a check one byte (3 tests passed)
+START: 10b check 24 bytes at time 660485.
+OK: 10b check 24 bytes (49 tests passed)
+START: 10d test at time 5000685.
+OK: 10d test (4 tests passed)
+START: 10e test at time 6311975.
+OK: 10e test (4 tests passed)
+
+Tesbench Complete.
+No errors in 60 tests. :)
+START: 10a check one byte at time 295.
+OK: 10a check one byte (3 tests passed)
+START: 10b check 24 bytes at time 660485.
+OK: 10b check 24 bytes (49 tests passed)
+START: 10d test at time 5000685.
+OK: 10d test (4 tests passed)
+START: 10e test at time 6311975.
+OK: 10e test (4 tests passed)
+
+Tesbench Complete.
+No errors in 60 tests. :)
