@@ -32,6 +32,7 @@ module FSMs(input logic clk, reset, preamble_match, sfd_match, match_error,
 	logic enable_pll;
 	logic enable_data;
 	logic data_done;
+	logic write_next;
 
 	fsm_pll  U_PLL    (.clk, .reset, .data_bit(data_bit_last), .enable_pll, .sample_count, 
 			           .current_corr(zero_one_strength), .sample_inc, .sample_dec);
@@ -42,10 +43,11 @@ module FSMs(input logic clk, reset, preamble_match, sfd_match, match_error,
 
 	fsm_data U_DATA   (.clk, .reset, .match_one, .match_zero, .match_idle, .match_error,
 					   .sample_count, .bit_count, .data_bit, .store_bit, .store_byte,
-					   .set_ferr, .write, .enable_data, .data_done);
+					   .set_ferr, .write(write_next), .enable_data, .data_done);
 
 
 	
 	one_bit_ff U_LAST_BIT (.clk, .reset, .enb(store_bit), .D(data_bit), .Q(data_bit_last));
 					
+	sync_input U_WRITE (.clk, .async_in(write_next), .sync_out(write));
 endmodule

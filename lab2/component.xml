@@ -240,7 +240,7 @@
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>rs232_tx_v1_0</spirit:description>
+  <spirit:description>transmitter_v1_0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>BAUD_RATE</spirit:name>
@@ -260,10 +260,10 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>rs232_tx_v1_0</xilinx:displayName>
+      <xilinx:displayName>transmitter_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2016-10-27T01:15:24Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2016-10-27T16:46:48Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:transmitter:1.0_ARCHIVE_LOCATION">C:/Users/flynng/Desktop/ECE491/lab2</xilinx:tag>
       </xilinx:tags>

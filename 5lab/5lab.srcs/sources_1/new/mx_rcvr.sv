@@ -76,11 +76,12 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	localparam IDLE_PATTERN = {{32{1'b1}},{32{1'b1}}};
 
 	// These are the triggers for the 1/0/idle/error bits
-	localparam MIN_TRIGGER = 4;
-	localparam MAX_TRIGGER = 60;
+	localparam MIN_TRIGGER = 8;
+	localparam MAX_TRIGGER = 56;
 
 
-	correlator #(.LEN(128), .PATTERN(PREAMBLE_PATTERN), .HTHRESH(100), .LTHRESH(14)) U_PREAMBLE_CORR 
+	// HTHRESH set to fall after 1 wrong bit + 2 samples
+	correlator #(.LEN(128), .PATTERN(PREAMBLE_PATTERN), .HTHRESH(111), .LTHRESH(14)) U_PREAMBLE_CORR 
 		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(preamble_match), .csum(), .l_out());
 	correlator #(.LEN(256), .PATTERN(SFD_PATTERN), .HTHRESH(220), .LTHRESH(14)) U_SFD_CORR 
 		(.clk, .reset, .enb(sample_slow), .d_in(rxd_sync), .h_out(sfd_match), .csum(), .l_out());

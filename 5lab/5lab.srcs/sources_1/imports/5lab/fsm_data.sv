@@ -62,7 +62,7 @@ module fsm_data(
 				data_done   = 1'b0;
 			    sample_count_reset = 1'b0;
 							
-				unique case (state)
+				case (state)
 					IDLE:
 					   begin
 					       next = enable_data ? START_RECIEVE : IDLE;
@@ -80,7 +80,7 @@ module fsm_data(
 						// Check if we got an EOF at the right point
 						else if(match_idle) next = bit_count == 3'b0 ? IDLE: ERROR;
 						else if(match_error) next = ERROR;
-						else if(sample_count == 20) next = ERROR; // We missed it
+						else if(sample_count == 20) next = MISSED; // We missed it
 						else next = LOOKING;
 					end
 					FOUND_ONE:
@@ -106,10 +106,13 @@ module fsm_data(
 							store_byte = 1'b1;
 							write = 1'b1;
 							// Why do we have 2 wires that do the same thing???
+							// Because write must happen one clock cycle later
 						end
 					WAIT_FOR_NEXT:
-						next = sample_count >= 21 ? START_RECIEVE : WAIT_FOR_NEXT;
+						next = sample_count >= 21 &&
+							   sample_count < 60 ? START_RECIEVE : WAIT_FOR_NEXT;
 						// Stay here until sample count has gone past where we are looking
+						// Added in <60 to allow overflow first
 					ERROR:
 					    begin
 						  next = IDLE;

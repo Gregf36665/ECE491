@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tx_rx_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="check_p" />
+            <top_module name="glbl" />
+            <top_module name="tx_rx_test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="411854859833fs"></ZoomStartTime>
+      <ZoomEndTime time="2772241142834fs"></ZoomEndTime>
+      <Cursor1Time time="2378843429000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="group1405" type="group">
+      <obj_property name="label">sim top level</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tx_rx_test/state" type="array">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+         <obj_property name="label">sim state</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/clk_1" type="logic">
+         <obj_property name="ElementShortName">clk_1</obj_property>
+         <obj_property name="ObjectShortName">clk_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/clk_2" type="logic">
+         <obj_property name="ElementShortName">clk_2</obj_property>
+         <obj_property name="ObjectShortName">clk_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/send" type="logic">
+         <obj_property name="ElementShortName">send</obj_property>
+         <obj_property name="ObjectShortName">send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/rdy" type="logic">
+         <obj_property name="ElementShortName">rdy</obj_property>
+         <obj_property name="ObjectShortName">rdy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/rxd" type="logic">
+         <obj_property name="ElementShortName">rxd</obj_property>
+         <obj_property name="ObjectShortName">rxd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/txd" type="logic">
+         <obj_property name="ElementShortName">txd</obj_property>
+         <obj_property name="ObjectShortName">txd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/cardet" type="logic">
+         <obj_property name="ElementShortName">cardet</obj_property>
+         <obj_property name="ObjectShortName">cardet</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/write" type="logic">
+         <obj_property name="ElementShortName">write</obj_property>
+         <obj_property name="ObjectShortName">write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/error" type="logic">
+         <obj_property name="ElementShortName">error</obj_property>
+         <obj_property name="ObjectShortName">error</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/data_out" type="array">
+         <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/data_in" type="array">
+         <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group1404" type="group">
+      <obj_property name="label">tx</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tx_rx_test/DUV_TX/U_TX/enb" type="logic">
+         <obj_property name="ElementShortName">enb</obj_property>
+         <obj_property name="ObjectShortName">enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_TX/U_TX/send" type="logic">
+         <obj_property name="ElementShortName">send</obj_property>
+         <obj_property name="ObjectShortName">send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_TX/baud" type="logic">
+         <obj_property name="ElementShortName">baud</obj_property>
+         <obj_property name="ObjectShortName">baud</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_TX/txd_nrz" type="logic">
+         <obj_property name="ElementShortName">txd_nrz</obj_property>
+         <obj_property name="ObjectShortName">txd_nrz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_TX/U_TX/saved_data" type="array">
+         <obj_property name="ElementShortName">saved_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">saved_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_TX/U_TX/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group482" type="group">
+      <obj_property name="label">psfd</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DETECT/state" type="array">
+         <obj_property name="ElementShortName">state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DETECT/preamble_match" type="logic">
+         <obj_property name="ElementShortName">preamble_match</obj_property>
+         <obj_property name="ObjectShortName">preamble_match</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DETECT/sfd_match" type="logic">
+         <obj_property name="ElementShortName">sfd_match</obj_property>
+         <obj_property name="ObjectShortName">sfd_match</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_PREAMBLE_CORR/csum" type="array">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">csum[7:0]</obj_property>
+         <obj_property name="ObjectShortName">csum[7:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="label">preamble</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_SFD_CORR/csum" type="array">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">csum[8:0]</obj_property>
+         <obj_property name="ObjectShortName">csum[8:0]</obj_property>
+         <obj_property name="label">sfd_preamble</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group481" type="group">
+      <obj_property name="label">pll</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/data_bit" type="logic">
+         <obj_property name="ElementShortName">data_bit</obj_property>
+         <obj_property name="ObjectShortName">data_bit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/enable_pll" type="logic">
+         <obj_property name="ElementShortName">enable_pll</obj_property>
+         <obj_property name="ObjectShortName">enable_pll</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/sample_count" type="array">
+         <obj_property name="ElementShortName">sample_count[5:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_count[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/current_corr" type="array">
+         <obj_property name="ElementShortName">current_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">current_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/sample_inc" type="logic">
+         <obj_property name="ElementShortName">sample_inc</obj_property>
+         <obj_property name="ObjectShortName">sample_inc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/sample_dec" type="logic">
+         <obj_property name="ElementShortName">sample_dec</obj_property>
+         <obj_property name="ObjectShortName">sample_dec</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/next" type="array">
+         <obj_property name="ElementShortName">next[3:0]</obj_property>
+         <obj_property name="ObjectShortName">next[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/min_corr" type="array">
+         <obj_property name="ElementShortName">min_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">min_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/max_corr" type="array">
+         <obj_property name="ElementShortName">max_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">max_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/min_time" type="array">
+         <obj_property name="ElementShortName">min_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">min_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/max_time" type="array">
+         <obj_property name="ElementShortName">max_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">max_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/final_time" type="array">
+         <obj_property name="ElementShortName">final_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">final_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/update_min_time" type="logic">
+         <obj_property name="ElementShortName">update_min_time</obj_property>
+         <obj_property name="ObjectShortName">update_min_time</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/update_max_time" type="logic">
+         <obj_property name="ElementShortName">update_max_time</obj_property>
+         <obj_property name="ObjectShortName">update_max_time</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/update_min_corr" type="logic">
+         <obj_property name="ElementShortName">update_min_corr</obj_property>
+         <obj_property name="ObjectShortName">update_min_corr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/update_max_corr" type="logic">
+         <obj_property name="ElementShortName">update_max_corr</obj_property>
+         <obj_property name="ObjectShortName">update_max_corr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/update_final_time" type="logic">
+         <obj_property name="ElementShortName">update_final_time</obj_property>
+         <obj_property name="ObjectShortName">update_final_time</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/next_min_corr" type="array">
+         <obj_property name="ElementShortName">next_min_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">next_min_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/next_max_corr" type="array">
+         <obj_property name="ElementShortName">next_max_corr[6:0]</obj_property>
+         <obj_property name="ObjectShortName">next_max_corr[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/next_min_time" type="array">
+         <obj_property name="ElementShortName">next_min_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">next_min_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/next_max_time" type="array">
+         <obj_property name="ElementShortName">next_max_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">next_max_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/next_final_time" type="array">
+         <obj_property name="ElementShortName">next_final_time[5:0]</obj_property>
+         <obj_property name="ObjectShortName">next_final_time[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_PLL/look" type="logic">
+         <obj_property name="ElementShortName">look</obj_property>
+         <obj_property name="ObjectShortName">look</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group502" type="group">
+      <obj_property name="label">data</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/match_one" type="logic">
+         <obj_property name="ElementShortName">match_one</obj_property>
+         <obj_property name="ObjectShortName">match_one</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/match_zero" type="logic">
+         <obj_property name="ElementShortName">match_zero</obj_property>
+         <obj_property name="ObjectShortName">match_zero</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/match_idle" type="logic">
+         <obj_property name="ElementShortName">match_idle</obj_property>
+         <obj_property name="ObjectShortName">match_idle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/match_error" type="logic">
+         <obj_property name="ElementShortName">match_error</obj_property>
+         <obj_property name="ObjectShortName">match_error</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/enable_data" type="logic">
+         <obj_property name="ElementShortName">enable_data</obj_property>
+         <obj_property name="ObjectShortName">enable_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/sample_count" type="array">
+         <obj_property name="ElementShortName">sample_count[5:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_count[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/bit_count" type="array">
+         <obj_property name="ElementShortName">bit_count[2:0]</obj_property>
+         <obj_property name="ObjectShortName">bit_count[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/data_bit" type="logic">
+         <obj_property name="ElementShortName">data_bit</obj_property>
+         <obj_property name="ObjectShortName">data_bit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/store_bit" type="logic">
+         <obj_property name="ElementShortName">store_bit</obj_property>
+         <obj_property name="ObjectShortName">store_bit</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/store_byte" type="logic">
+         <obj_property name="ElementShortName">store_byte</obj_property>
+         <obj_property name="ObjectShortName">store_byte</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/set_ferr" type="logic">
+         <obj_property name="ElementShortName">set_ferr</obj_property>
+         <obj_property name="ObjectShortName">set_ferr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/write" type="logic">
+         <obj_property name="ElementShortName">write</obj_property>
+         <obj_property name="ObjectShortName">write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/data_done" type="logic">
+         <obj_property name="ElementShortName">data_done</obj_property>
+         <obj_property name="ObjectShortName">data_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/sample_count_reset" type="logic">
+         <obj_property name="ElementShortName">sample_count_reset</obj_property>
+         <obj_property name="ObjectShortName">sample_count_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tx_rx_test/DUV_RX/U_FSM/U_DATA/look" type="logic">
+         <obj_property name="ElementShortName">look</obj_property>
+         <obj_property name="ObjectShortName">look</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tx_rx_test/DUV_RX/U_DATA/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+</wave_config>

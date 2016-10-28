@@ -32,7 +32,7 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/5lab.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="nexys4_ddr"/>
-    <Option Name="WTXSimLaunchSim" Val="413"/>
+    <Option Name="WTXSimLaunchSim" Val="693"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -132,6 +132,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/correlator.sv">
         <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -178,10 +179,51 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/transmitter.sv">
+      <File Path="$PSRCDIR/sources_1/imports/new/transmitter_for_mx.sv">
+        <FileInfo RelPath="transmitter_for_mx.sv">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/clkenb_baud.sv">
+        <FileInfo RelPath="clkenb_baud.sv">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/lab1/counter_parm.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/new/transmitter.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/counter_parm.sv"/>
           <Attr Name="ImportTime" Val="1474977960"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/lab1/reg_param.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/reg_param.sv"/>
+          <Attr Name="ImportTime" Val="1474977960"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/lab1/mux8_parm.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/mux8_parm.sv"/>
+          <Attr Name="ImportTime" Val="1474977960"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/correlator.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../fifo/fifo.srcs/sources_1/imports/Downloads/correlator.sv"/>
+          <Attr Name="ImportTime" Val="1477609323"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -194,6 +236,14 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/lab1/nexys4DDR.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../4lab/4lab.srcs/constrs_1/imports/lab1/nexys4DDR.xdc"/>
+          <Attr Name="ImportTime" Val="1475431807"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
@@ -212,14 +262,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/tx_rx_test_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="mx_rcvr_test"/>
+        <Option Name="TopModule" Val="tx_rx_test"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/mx_rcvr_test_behav.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/tx_rx_test_behav.wcfg"/>
         <Option Name="xsim.simulate.runtime" Val="10ms"/>
       </Config>
     </FileSet>
@@ -256,7 +312,7 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -269,6 +325,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
   </Runs>
   <MsgRule>

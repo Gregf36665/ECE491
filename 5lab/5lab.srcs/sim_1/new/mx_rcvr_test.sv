@@ -25,7 +25,7 @@ import check_p::*;
 module mx_rcvr_test();
 	
 	// This is the chance of a bit flip happening
-	parameter NOISE = 10; // Set between 0 and 100.
+	parameter NOISE = 8; // Set between 0 and 100.
 
 	// Connections
 	// Inputs
@@ -55,9 +55,9 @@ module mx_rcvr_test();
 	task reset_systems();
 		state = IDLE;
 		reset = 1;
-		repeat(10) @(posedge clk);
+		repeat(10000) @(posedge clk);
 		reset = 0;
-		repeat(10) @(posedge clk); // get into known state
+		repeat(10000) @(posedge clk); // get into known state
 	endtask
 
 	// Return interfearance on the input
@@ -172,10 +172,7 @@ module mx_rcvr_test();
 
 	// Tx 1 byte with error in the middle clean
 	task tx_error;
-		reset = 1;
-		repeat(10) @(posedge clk);
-		reset = 0;
-		repeat(10) @(posedge clk);
+		reset_systems;
 		send_preamble(1'b0);
 		send_SFD(1'b0);
 		send_bit(1'b1,.noise(1'b0));
@@ -211,8 +208,8 @@ module mx_rcvr_test();
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
 		send_EOF(.noise(1'b1));
-		check("Error triggered", error, 1'b1);
-		check("Carrier detect dropped", cardet, 1'b0);
+		check("Error triggered with noise", error, 1'b1);
+		check("Carrier detect dropped with noise", cardet, 1'b0);
 		// Who cares what the data output is doing
 	endtask
 
@@ -245,7 +242,7 @@ module mx_rcvr_test();
 		send_bit(1'b1,.noise(1'b1));
 		send_bit(1'b1,.noise(1'b1));
 		send_EOF(1'b1);
-		check("Error triggered", error, 1'b1);
+		check("Error triggered with noise", error, 1'b1);
 		check("Carrier detect dropped", cardet, 1'b0);
 		// Who cares what the data output is doing
 	endtask

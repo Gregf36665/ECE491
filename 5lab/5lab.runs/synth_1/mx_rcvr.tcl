@@ -6,9 +6,9 @@ set_param general.maxThreads 8
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
-set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -ruleid {1}  -id {Synth 8-1921}  -string {{WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv:35]}}  -suppress 
 set_msg_config  -ruleid {2}  -id {Synth 8-1921}  -new_severity {ADVISORY} 
+set_msg_config  -ruleid {3}  -id {Synth 8-3332}  -new_severity {ADVISORY} 
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,12 +38,23 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/data_buffer.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/sync_input.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/counter.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/correlator.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/jitteryclock.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/manchester_tx.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter_for_mx.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/clkenb_baud.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/counter_parm.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/reg_param.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/mux8_parm.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/correlator.sv
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/constrs_1/imports/lab1/nexys4DDR.xdc
+set_property used_in_implementation false [get_files C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/constrs_1/imports/lab1/nexys4DDR.xdc]
+
 
 synth_design -top mx_rcvr -part xc7a100tcsg324-1
 
