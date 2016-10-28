@@ -169,31 +169,50 @@ module tx_rx_test();
 		reset_systems;
 		repeat(2) send_preamble;
 		send_byte(8'hD0);
-		// Send random byte
+		// Send random frames 10 times
 		repeat(10)
-		repeat($urandom_range(256,1)) // send a random amount of bytes
-		begin
-			byte_to_send = $urandom_range(8'hFF,8'h00);
-			send_byte(byte_to_send);
-			@(posedge write); // wait for the tx to get to the last bit
-			// The data should be correct when the write happens
-			check("Error low", error, 1'b0);
-			check("Data received", data_out, byte_to_send);
-		end
+			begin
+			repeat($urandom_range(256,1)) // send a random amount of bytes
+				begin
+					byte_to_send = $urandom_range(8'hFF,8'h00);
+					send_byte(byte_to_send);
+					@(posedge write); // wait for the tx to get to the last bit
+					// The data should be correct when the write happens
+					check("Error low", error, 1'b0);
+					check("Data received", data_out, byte_to_send);
+				end
+			check_ok("Data received for random duration", data_out, byte_to_send);
+			end
 		repeat(2000) @(posedge clk_1); // Idle here for EOF
 		check_group_end;
 	endtask
 		
-	task test_10f_
+	task test_10f_1frame;
 		logic [7:0] byte_to_send;
-		check_group_begin("10f check random bytes");
+		check_group_begin("10f check one byte");
 		rxd = 1;
 		reset_systems;
 		repeat(2) send_preamble;
 		send_byte(8'hD0);
-		// Send random byte
-		repeat(10)
-		repeat($urandom_range(256,1)) // send a random amount of bytes
+		// Send random byte once
+		byte_to_send = $urandom_range(8'hFF,8'h00);
+		send_byte(byte_to_send);
+		@(posedge write); // wait for the tx to get to the last bit
+		// The data should be correct when the write happens
+		check("Error low", error, 1'b0);
+		check("Data received", data_out, byte_to_send);
+		repeat(2000) @(posedge clk_1); // Idle here for EOF
+		check_group_end;
+	endtask
+
+	task test_10f_256frame;
+		logic [7:0] byte_to_send;
+		check_group_begin("10f check 256 bytes");
+		rxd = 1;
+		reset_systems;
+		repeat(2) send_preamble;
+		send_byte(8'hD0);
+		repeat(256) // send 256 bytes
 		begin
 			byte_to_send = $urandom_range(8'hFF,8'h00);
 			send_byte(byte_to_send);
@@ -206,17 +225,18 @@ module tx_rx_test();
 		check_group_end;
 	endtask
 
-	// Test 10f/g are in a different test bench
+	// Test a-e and g are in another bench
 
 	initial
 	begin
 		reset_systems;
 		#100;
 		repeat(20000) @(posedge clk_1);
-		test_10a; // The most basic test send 1 byte clean
+		test_10f_1frame;
 		repeat(20000) @(posedge clk_1);
-		test_10b;
+		test_10f_256frame;
 		repeat(20000) @(posedge clk_1);
+		test_10f_random_bytes;
 		check_summary_stop;
 		$finish();
 	end
