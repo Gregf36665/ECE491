@@ -59,10 +59,28 @@ module mx_test_tx_rx_test();
 		check_group_end;
 	endtask
 
+
+	task check_many_byte;
+		int i = 0;
+		check_group_begin("mxTest send 29 byte");
+		length = 32; // 2 pre 1 sfd 29 byte
+		#100 run = 1;
+		for(i=3; i<32; i++)
+			@(posedge write) check("Verify byte match", data_out, DUV_MXTEST.byterom[i]);
+		run = 0;
+		check_group_end;
+	endtask
+
 	task check_preamble;
 		check_group_begin("Checking preamble");
 		length = 2; // just the pre
 		#100 run = 1;
+		// Watch cardet but timeout 
+		fork : cardet_detect
+			@(posedge cardet) disable cardet_detect;
+			@(posedge rdy) disable cardet_detect;
+			#10_000_000 disable cardet_detect;
+		join
 		check("Preamble detected", cardet, 1);
 		check_group_end;
 	endtask
@@ -72,7 +90,13 @@ module mx_test_tx_rx_test();
 	begin
 		#100;
 		reset = 0;
+		check_preamble;
 		check_one_byte;
+		#10_000; // wait a little
+		reset = 1;
+		#100 reset = 0;
+		// Reset the system
+		check_many_byte;
 		check_summary_stop;
 		$finish; // sometimes it falls through the last task
 	end
