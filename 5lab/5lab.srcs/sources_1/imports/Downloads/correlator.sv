@@ -40,12 +40,17 @@ module correlator #(parameter LEN=16, PATTERN=16'b0000000011111111, HTHRESH=13, 
 	// shift register shifts from right to left so that oldest data is on
 	// the left and newest data is on the right
 	always_ff  @(posedge clk)
-	  if (reset) shreg <= '0;
-	  else if (enb) shreg <= { shreg[LEN-2:0], d_in };
+		if (reset) shreg <= '0;
+		else if (enb) shreg <= { shreg[LEN-2:0], d_in };
+
+	// FF for csum
+	always_ff @(posedge clk)
+		if(enb) csum <= count_ones(.val(match_count));
+
 
 	assign match_count = shreg ^~ PATTERN;
 
-	assign csum = count_ones(.val(match_count));
+	//assign csum = count_ones(.val(match_count));
 
 	assign h_out = csum >= HTHRESH;
 

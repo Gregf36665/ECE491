@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mx_test_tx_rx_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="check_p" />
+            <top_module name="glbl" />
+            <top_module name="mx_test_tx_rx_test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="78972907163fs"></ZoomStartTime>
+      <ZoomEndTime time="775251418568fs"></ZoomEndTime>
+      <Cursor1Time time="659205000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/mx_test_tx_rx_test/data_line" type="logic">
+      <obj_property name="ElementShortName">data_line</obj_property>
+      <obj_property name="ObjectShortName">data_line</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/cardet" type="logic">
+      <obj_property name="ElementShortName">cardet</obj_property>
+      <obj_property name="ObjectShortName">cardet</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/write" type="logic">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/error" type="logic">
+      <obj_property name="ElementShortName">error</obj_property>
+      <obj_property name="ObjectShortName">error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/send" type="logic">
+      <obj_property name="ElementShortName">send</obj_property>
+      <obj_property name="ObjectShortName">send</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/rdy" type="logic">
+      <obj_property name="ElementShortName">rdy</obj_property>
+      <obj_property name="ObjectShortName">rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/run" type="logic">
+      <obj_property name="ElementShortName">run</obj_property>
+      <obj_property name="ObjectShortName">run</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/length" type="array">
+      <obj_property name="ElementShortName">length[5:0]</obj_property>
+      <obj_property name="ObjectShortName">length[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/DUV_MXTEST/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/DUV_MXTEST/byte_addr_reset" type="logic">
+      <obj_property name="ElementShortName">byte_addr_reset</obj_property>
+      <obj_property name="ObjectShortName">byte_addr_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/DUV_MXTEST/byte_addr" type="array">
+      <obj_property name="ElementShortName">byte_addr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_addr[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mx_test_tx_rx_test/DUV_MXTEST/byte_addr_last" type="logic">
+      <obj_property name="ElementShortName">byte_addr_last</obj_property>
+      <obj_property name="ObjectShortName">byte_addr_last</obj_property>
+   </wvobject>
+</wave_config>

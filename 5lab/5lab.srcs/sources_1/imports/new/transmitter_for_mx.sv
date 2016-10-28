@@ -233,7 +233,7 @@ module transmitter_for_mx #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)
             endcase
         end
         
-        clkenb #(.DIVFREQ(BAUD_RATE)) U_CLKENB (.clk(clk), .enb(enb), .reset(clk_reset), .baud());
+        clkenb #(.DIVFREQ(BAUD_RATE)) U_CLKENB (.clk(clk), .enb(enb), .reset(clk_reset));
         reg_parm #(.W(8))      U_SNAPSHOT (.clk, .reset(1'b0), .lden, .d(data), .q(saved_data));
         
   

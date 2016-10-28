@@ -24,9 +24,6 @@ import check_p::*;
 
 module tx_rx_test();
 	
-	// This is the chance of a bit flip happening
-	parameter NOISE = 10; // Set between 0 and 100.
-
 	// Connections
 	// Inputs
 	logic clk_1 = 0;
