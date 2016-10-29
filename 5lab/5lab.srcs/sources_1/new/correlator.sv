@@ -28,6 +28,7 @@ module correlator #(parameter LEN=16, PATTERN=16'b0000000011111111, HTHRESH=13, 
 	      output logic 	   l_out
 	      );
 
+	$error("Using wrong correlator");
 
    logic [LEN-1:0] shreg, matched;
    

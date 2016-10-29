@@ -72,6 +72,7 @@ module fifo_fsm(input logic clk, empty, reset, ready,
 			SEND:
 				begin
 					send = 1;
+					read = 1;
 					next_state = IDLE;
 				end
 		endcase

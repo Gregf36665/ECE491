@@ -24,7 +24,7 @@ import check_p::*;
 
 module mx_rcvr_test();
 	
-	// This is the chance of a bit flip happening
+	// This is the chance of a bit getting noise
 	parameter NOISE = 8; // Set between 0 and 100.
 
 	// Connections

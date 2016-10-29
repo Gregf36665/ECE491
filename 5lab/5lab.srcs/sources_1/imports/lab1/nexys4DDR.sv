@@ -21,41 +21,35 @@
 //-----------------------------------------------------------------------------
 
 module nexys4DDR (
-		  // un-comment the ports that you will use
           input logic         CLK100MHZ,
 		  input logic [15:0]  SW,
 		  input logic 	      BTNC,
-//		  input logic 	      BTNU, 
-//		  input logic 	      BTNL, 
-//		  input logic 	      BTNR,
-//		  input logic 	      BTND,
 		  output logic [6:0]  SEGS,
 		  output logic [7:0]  AN,
 		  output logic 	      DP,
 		  output logic [1:0]  LED, // can be up to 7
 //		  input logic         UART_TXD_IN,
-		  output logic [2:0]  JA
-//		  input logic         UART_RTS,		  
-//		  output logic        UART_RXD_OUT
-//		  output logic        UART_CTS		  
+		  output logic [2:0]  JA,
+		  output logic        UART_RXD_OUT
             );
 
 
-	// Data input and output for tx and rx
-    logic [7:0] data_in, data_out;
+	// Data input and output for tx and rx, data out of the fifo and the fsm
+    logic [7:0] data_in, data_out, data_fifo, data_fsm;
     
-	logic data_line, cardet, write, error, send;
+	logic data_line, cardet, write, error, send_mx;
 	logic txd; // Raw output from the tx
 
 	// Modules to connect
-	// receiver
-	mx_rcvr U_RX (.clk, .reset, .rxd(data_line), .cardet, .data(data_out), .write, .error);
+
+	// mx_test, ROM to send bytes (hello world! HELLO WORLD!)
+	mxtest_2 U_MXTEST (.clk, .reset, .run, .length(SW[5:0]), .send(send_mx), .data(data_in), .ready(rdy));
 
 	// transmitter don't connect the txen to anything
-	manchester_tx U_TX (.clk, .reset, .send, .txen(), .data(data_in), .rdy, .txd);
+	manchester_tx U_TX (.clk, .reset, .send(send_mx), .txen(), .data(data_in), .rdy, .txd);
 
-	// mx_test, ROM to send bytes
-	mxtest_2 U_MXTEST (.clk, .reset, .run, .length(SW[5:0]), .send, .data(data_in), .ready(rdy));
+	// receiver
+	mx_rcvr U_RX (.clk, .reset, .rxd(data_line), .cardet, .data(data_out), .write, .error);
 
 	// Control the seven seg display with data from the rx
 	dispctl U_SEG_CTL (.clk, .reset, .d7(4'h0), .d6(4'h0), .d5(4'h0), .d4(4'h0), 
@@ -63,10 +57,25 @@ module nexys4DDR (
 						.dp7(1'b0), .dp6(1'b0), .dp5(1'b0), .dp4(1'b0), .dp3(1'b0), 
 						.dp2(1'b0), .dp1(1'b0), .dp0(1'b0), .seg(SEGS), .dp(DP), .an(AN)); 
 						
+	// Conections between the FIFO and the FSM
+	logic empty, read;
+
+	// The FIFO is active low reset
+	// A FIFO to deal with data from the receiver
+	p_fifo #(.DEPTH(32)) U_FIFO (.clk, .rst(~reset), .clr(1'b0), .din(data_out), .we(write), .re(read),
+							.full(), .empty, .dout(data_fifo));
+
+	// Connection between FIFO and UART_tx
+	logic send_uart, ready; 
 	// This FIFO FSM pulls data out of the FIFO
 	fifo_fsm U_FIFO_EXTRACTOR (.clk, .reset, .empty, .ready,
-								.read, .send,
+								.read, .send(send_uart),
 								.data_fifo, .data_fsm);
+
+	// This UART tx sends the messages to the com port
+
+	transmitter U_UART_TX (.clk, .send(send_uart), .data(data_fsm), .rdy(ready), .txd(UART_RXD_OUT));
+
                      
 	// Assign statements
     assign JA[0] = data_line; // This allows the data to be viewed on the scope

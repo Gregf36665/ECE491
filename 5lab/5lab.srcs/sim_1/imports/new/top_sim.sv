@@ -34,6 +34,7 @@ module top_sim();
 	logic [7:0] AN;
 	logic DP;
 	logic [2:0] JA;
+	logic UART_RXD_OUT;
 
 
 	// Module 
