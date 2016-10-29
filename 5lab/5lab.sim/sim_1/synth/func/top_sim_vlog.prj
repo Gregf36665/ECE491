@@ -1,0 +1,6 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "top_sim_func_synth.v"
+sv xil_defaultlib  "../../../../5lab.srcs/sim_1/imports/new/top_sim.sv"
+
+# Do not sort compile order
+nosort

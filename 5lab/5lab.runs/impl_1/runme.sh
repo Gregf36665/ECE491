@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log mx_rcvr.vdi -applog -m64 -messageDb vivado.pb -mode batch -source mx_rcvr.tcl -notrace
+/bin/touch .write_bitstream.begin.rst
+EAStep vivado -log nexys4DDR.vdi -applog -m64 -messageDb vivado.pb -mode batch -source nexys4DDR.tcl -notrace
 
 

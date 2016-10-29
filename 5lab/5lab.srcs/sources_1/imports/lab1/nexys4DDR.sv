@@ -23,39 +23,63 @@
 module nexys4DDR (
 		  // un-comment the ports that you will use
           input logic         CLK100MHZ,
-//		  input logic [8:0]   SW,
+		  input logic [15:0]  SW,
 		  input logic 	      BTNC,
 //		  input logic 	      BTNU, 
 //		  input logic 	      BTNL, 
 //		  input logic 	      BTNR,
-		  input logic 	      BTND,
-//		  output logic [6:0]  SEGS,
-//		  output logic [7:0]  AN,
-//		  output logic 	      DP
-		  output logic        LED,
+//		  input logic 	      BTND,
+		  output logic [6:0]  SEGS,
+		  output logic [7:0]  AN,
+		  output logic 	      DP,
+		  output logic [1:0]  LED, // can be up to 7
 //		  input logic         UART_TXD_IN,
-		  output logic        JA,
-		  output logic        JB,
-		  output logic        JC
+		  output logic [2:0]  JA
 //		  input logic         UART_RTS,		  
 //		  output logic        UART_RXD_OUT
 //		  output logic        UART_CTS		  
             );
 
 
-    logic send, d_pulse, txen, rdy, txd;
-    logic [7:0] data;
+	// Data input and output for tx and rx
+    logic [7:0] data_in, data_out;
     
-    manchester_tx #(.BAUD_RATE(10_000)) U_TX (.clk(CLK100MHZ), .send, .data,
-                                            .rdy, .txd, .txen, .reset(BTND));   
+	logic data_line, cardet, write, error, send;
+	logic txd; // Raw output from the tx
+
+	// Modules to connect
+	// receiver
+	mx_rcvr U_RX (.clk, .reset, .rxd(data_line), .cardet, .data(data_out), .write, .error);
+
+	// transmitter don't connect the txen to anything
+	manchester_tx U_TX (.clk, .reset, .send, .txen(), .data(data_in), .rdy, .txd);
+
+	// mx_test, ROM to send bytes
+	mxtest_2 U_MXTEST (.clk, .reset, .run, .length(SW[5:0]), .send, .data(data_in), .ready(rdy));
+
+	// Control the seven seg display with data from the rx
+	dispctl U_SEG_CTL (.clk, .reset, .d7(4'h0), .d6(4'h0), .d5(4'h0), .d4(4'h0), 
+						.d3(4'h0), .d2(4'h0), .d1(data_out[7:4]), .d0(data_out[3:0]),
+						.dp7(1'b0), .dp6(1'b0), .dp5(1'b0), .dp4(1'b0), .dp3(1'b0), 
+						.dp2(1'b0), .dp1(1'b0), .dp0(1'b0), .seg(SEGS), .dp(DP), .an(AN)); 
+						
+	// This FIFO FSM pulls data out of the FIFO
+	fifo_fsm U_FIFO_EXTRACTOR (.clk, .reset, .empty, .ready,
+								.read, .send,
+								.data_fifo, .data_fsm);
                      
-    mxtest U_TX_CTL (.clk(CLK100MHZ), .send, .data, .ready(rdy), .run(BTNC),
-                     .reset(BTND));
-    assign JA = txd; // This allows the data to be viewed on the scope
-    assign JB = rdy;
-    assign LED = rdy;
-    assign JC = txen;
+	// Assign statements
+    assign JA[0] = data_line; // This allows the data to be viewed on the scope
+    assign JA[1] = error;
+	assign JA[2] = cardet; 
+    assign LED[0] = error; // Is there an error for the rx
+    assign LED[1] = cardet; // Light up when carrier detected
+	assign clk = CLK100MHZ; // connect the clock
+	assign reset = BTNC;
+	assign run = SW[6]; // enable mxtest
     
+	assign crash_type = SW[14]; // Go high or low when crashing
+	assign data_line = SW[15] ? crash_type : txd; // Crash the line
     
                                             
 endmodule // nexys4DDR

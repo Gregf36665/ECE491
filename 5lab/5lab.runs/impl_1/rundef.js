@@ -23,9 +23,9 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
-         "-log mx_rcvr.vdi -applog -m64 -messageDb vivado.pb -mode batch -source mx_rcvr.tcl -notrace" );
+         "-log nexys4DDR.vdi -applog -m64 -messageDb vivado.pb -mode batch -source nexys4DDR.tcl -notrace" );
 
 
 

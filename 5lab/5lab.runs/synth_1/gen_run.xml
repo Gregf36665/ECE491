@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477663222">
-  <File Type="RDS-PROPCONSTRS" Name="mx_rcvr_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="mx_rcvr.tcl"/>
-  <File Type="RDS-RDS" Name="mx_rcvr.vds"/>
-  <File Type="RDS-UTIL" Name="mx_rcvr_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="mx_rcvr_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="mx_rcvr.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="mx_rcvr_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="mx_rcvr_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477771892">
+  <File Type="RDS-PROPCONSTRS" Name="nexys4DDR_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="nexys4DDR.tcl"/>
+  <File Type="RDS-RDS" Name="nexys4DDR.vds"/>
+  <File Type="RDS-UTIL" Name="nexys4DDR_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="nexys4DDR_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="nexys4DDR.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="nexys4DDR_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="nexys4DDR_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/5lab/fsm_data.sv">
@@ -114,14 +114,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sim_1/new/tx_rx_test.sv">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/Downloads/jitteryclock.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/jitteryclock.sv"/>
@@ -190,9 +182,61 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/nexys4DDR.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv"/>
+        <Attr Name="ImportTime" Val="1474977960"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/mxtest_2.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/mxtest_2.sv"/>
+        <Attr Name="ImportTime" Val="1474128219"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fifo_fsm.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/dispctl.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1/dispctl.sv"/>
+        <Attr Name="ImportTime" Val="1474303460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/decoder_3_8_en.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1/decoder_3_8_en.sv"/>
+        <Attr Name="ImportTime" Val="1474303460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/seven_seg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1/seven_seg.sv"/>
+        <Attr Name="ImportTime" Val="1474303460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="mx_rcvr"/>
+      <Option Name="TopModule" Val="nexys4DDR"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

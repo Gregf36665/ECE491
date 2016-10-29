@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_sim_func_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_sim" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="13920000000003fs"></ZoomEndTime>
+      <Cursor1Time time="10000000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="6" />
+   <wave_markers>
+      <marker time="1190115100000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/top_sim/CLK100MHZ" type="logic">
+      <obj_property name="ElementShortName">CLK100MHZ</obj_property>
+      <obj_property name="ObjectShortName">CLK100MHZ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_sim/BTNC" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">BTNC</obj_property>
+      <obj_property name="ObjectShortName">BTNC</obj_property>
+      <obj_property name="label">reset_button</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_sim/SW" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">SW[15:0]</obj_property>
+      <obj_property name="ObjectShortName">SW[15:0]</obj_property>
+      <obj_property name="label">bytes_to_send</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_sim/LED" type="array">
+      <obj_property name="ElementShortName">LED[1:0]</obj_property>
+      <obj_property name="ObjectShortName">LED[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_sim/JA" type="array">
+      <obj_property name="ElementShortName">JA[2:0]</obj_property>
+      <obj_property name="ObjectShortName">JA[2:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="group554" type="group">
+      <obj_property name="label">digit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_sim/SEGS" type="array">
+         <obj_property name="ElementShortName">SEGS[6:0]</obj_property>
+         <obj_property name="ObjectShortName">SEGS[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/AN" type="array">
+         <obj_property name="ElementShortName">AN[7:0]</obj_property>
+         <obj_property name="ObjectShortName">AN[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DP" type="logic">
+         <obj_property name="ElementShortName">DP</obj_property>
+         <obj_property name="ObjectShortName">DP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/SW" type="array">
+         <obj_property name="ElementShortName">SW[15:0]</obj_property>
+         <obj_property name="ObjectShortName">SW[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

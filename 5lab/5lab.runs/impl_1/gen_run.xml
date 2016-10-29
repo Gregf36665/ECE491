@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477663222">
-  <File Type="OPT-DCP" Name="mx_rcvr_opt.dcp"/>
-  <File Type="ROUTE-STATUS-PB" Name="mx_rcvr_route_status.pb"/>
-  <File Type="PA-TCL" Name="mx_rcvr.tcl"/>
-  <File Type="RDI-RDI" Name="mx_rcvr.vdi"/>
-  <File Type="PWROPT-DRC" Name="mx_rcvr_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="mx_rcvr_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="mx_rcvr_timing_summary_init.rpt"/>
-  <File Type="OPT-DRC" Name="mx_rcvr_drc_opted.rpt"/>
-  <File Type="PWROPT-DCP" Name="mx_rcvr_pwropt.dcp"/>
-  <File Type="OPT-HWDEF" Name="mx_rcvr.hwdef"/>
-  <File Type="OPT-TIMING" Name="mx_rcvr_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="mx_rcvr_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="mx_rcvr_placed.dcp"/>
-  <File Type="PLACE-IO" Name="mx_rcvr_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="mx_rcvr_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="mx_rcvr_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="mx_rcvr_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="mx_rcvr_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="mx_rcvr_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="mx_rcvr_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="mx_rcvr_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="mx_rcvr_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="mx_rcvr_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="mx_rcvr_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="mx_rcvr_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-TIMING" Name="mx_rcvr_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-DCP" Name="mx_rcvr_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="mx_rcvr_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="mx_rcvr_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="mx_rcvr_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="mx_rcvr_methodology_drc_routed.rpt"/>
-  <File Type="BG-BIT" Name="mx_rcvr.bit"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mx_rcvr_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="mx_rcvr_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="mx_rcvr_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="mx_rcvr_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="mx_rcvr_route_status.rpt"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="mx_rcvr_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="mx_rcvr_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="mx_rcvr_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="mx_rcvr_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="mx_rcvr_clock_utilization_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="mx_rcvr_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mx_rcvr_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mx_rcvr_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mx_rcvr_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mx_rcvr_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BG-BIN" Name="mx_rcvr.bin"/>
-  <File Type="BITSTR-MSK" Name="mx_rcvr.msk"/>
-  <File Type="BITSTR-RBT" Name="mx_rcvr.rbt"/>
-  <File Type="BITSTR-NKY" Name="mx_rcvr.nky"/>
-  <File Type="BITSTR-BMM" Name="mx_rcvr_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="mx_rcvr.mmi"/>
-  <File Type="BITSTR-SYSDEF" Name="mx_rcvr.sysdef"/>
-  <File Type="BG-BGN" Name="mx_rcvr.bgn"/>
-  <File Type="BG-DRC" Name="mx_rcvr.drc"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477772216">
+  <File Type="OPT-TIMING" Name="nexys4DDR_timing_summary_opted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="nexys4DDR_physopt.dcp"/>
+  <File Type="PA-DCP" Name="nexys4DDR.dcp"/>
+  <File Type="OPT-DCP" Name="nexys4DDR_opt.dcp"/>
+  <File Type="ROUTE-STATUS-PB" Name="nexys4DDR_route_status.pb"/>
+  <File Type="PA-TCL" Name="nexys4DDR.tcl"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="nexys4DDR_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="nexys4DDR_timing_summary_init.rpt"/>
+  <File Type="OPT-DRC" Name="nexys4DDR_drc_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="nexys4DDR_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="nexys4DDR.hwdef"/>
+  <File Type="RDI-RDI" Name="nexys4DDR.vdi"/>
+  <File Type="PWROPT-DRC" Name="nexys4DDR_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="nexys4DDR_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="nexys4DDR_placed.dcp"/>
+  <File Type="PLACE-IO" Name="nexys4DDR_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="nexys4DDR_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="nexys4DDR_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="nexys4DDR_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="nexys4DDR_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="nexys4DDR_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="nexys4DDR_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="nexys4DDR_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="nexys4DDR_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="nexys4DDR_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="nexys4DDR_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="nexys4DDR_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="nexys4DDR_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="nexys4DDR_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="nexys4DDR_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="nexys4DDR_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="nexys4DDR_methodology_drc_routed.rpt"/>
+  <File Type="BG-BIT" Name="nexys4DDR.bit"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="nexys4DDR_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="nexys4DDR_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="nexys4DDR_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="nexys4DDR_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="nexys4DDR_route_status.rpt"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="nexys4DDR_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="nexys4DDR_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="nexys4DDR_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="nexys4DDR_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="nexys4DDR_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="nexys4DDR_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="nexys4DDR_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="nexys4DDR_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="nexys4DDR_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="nexys4DDR_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIN" Name="nexys4DDR.bin"/>
+  <File Type="BITSTR-MSK" Name="nexys4DDR.msk"/>
+  <File Type="BITSTR-RBT" Name="nexys4DDR.rbt"/>
+  <File Type="BITSTR-NKY" Name="nexys4DDR.nky"/>
+  <File Type="BITSTR-BMM" Name="nexys4DDR_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="nexys4DDR.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="nexys4DDR.sysdef"/>
+  <File Type="BG-BGN" Name="nexys4DDR.bgn"/>
+  <File Type="BG-DRC" Name="nexys4DDR.drc"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -163,14 +164,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sim_1/new/tx_rx_test.sv">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/Downloads/jitteryclock.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/jitteryclock.sv"/>
@@ -239,9 +232,61 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/nexys4DDR.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab 3/lab 3.srcs/sources_1/imports/lab2.srcs/sources_1/imports/lab1/nexys4DDR.sv"/>
+        <Attr Name="ImportTime" Val="1474977960"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/mxtest_2.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/mxtest_2.sv"/>
+        <Attr Name="ImportTime" Val="1474128219"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fifo_fsm.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/dispctl.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1/dispctl.sv"/>
+        <Attr Name="ImportTime" Val="1474303460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/decoder_3_8_en.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1/decoder_3_8_en.sv"/>
+        <Attr Name="ImportTime" Val="1474303460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/lab1/seven_seg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1/seven_seg.sv"/>
+        <Attr Name="ImportTime" Val="1474303460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="mx_rcvr"/>
+      <Option Name="TopModule" Val="nexys4DDR"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

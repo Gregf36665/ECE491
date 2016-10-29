@@ -59,9 +59,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 
 	// Set up the counters for the samplers and bit count
 	counter #(.MAX(7)) U_BIT_COUNT (.clk, .enb(store_bit), .reset(bit_count_reset), .q(bit_count),
-									.inc(), .dec());
+									.inc(1'b0), .dec(1'b0));
 	counter #(.MAX(127)) U_SLOW_COUNT (.clk, .enb(sample_slow), .reset(slow_sample_reset),
-										.q(slow_sample_count), .inc(), .dec());
+										.q(slow_sample_count), .inc(1'b0), .dec(1'b0));
 	counter #(.MAX(63)) U_FAST_COUNT (.clk, .enb(sample), .reset(sample_count_reset), .inc(sample_inc),
 										.dec(sample_dec), .q(sample_count));
 

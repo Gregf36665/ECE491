@@ -1,0 +1,57 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto dd429faf13654bdbaa58cc108d99a37b --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot top_sim_func_synth xil_defaultlib.top_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.sffsrce_fdre
+Compiling module unisims_ver.FDRE
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.x_lut3_mux4
+Compiling module unisims_ver.x_lut3_mux4_reduced_0
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.mxtest_2
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.data_buffer
+Compiling module xil_defaultlib.f_error
+Compiling module xil_defaultlib.counter__parameterized1
+Compiling module xil_defaultlib.fsm_data
+Compiling module xil_defaultlib.fsm_psfd
+Compiling module xil_defaultlib.one_bit_ff
+Compiling module xil_defaultlib.fsm_pll
+Compiling module xil_defaultlib.FSMs
+Compiling module xil_defaultlib.correlator__parameterized2
+Compiling module xil_defaultlib.correlator__parameterized1
+Compiling module xil_defaultlib.correlator
+Compiling module xil_defaultlib.clkenb__parameterized0
+Compiling module xil_defaultlib.correlator__parameterized0
+Compiling module xil_defaultlib.counter__parameterized0
+Compiling module xil_defaultlib.clkenb
+Compiling module xil_defaultlib.sync_input
+Compiling module xil_defaultlib.mx_rcvr
+Compiling module xil_defaultlib.clkenb__parameterized2
+Compiling module xil_defaultlib.counter_parm__parameterized1
+Compiling module xil_defaultlib.dispctl
+Compiling module xil_defaultlib.clkenb_baud
+Compiling module xil_defaultlib.clkenb__parameterized1
+Compiling module xil_defaultlib.counter_parm__parameterized0
+Compiling module xil_defaultlib.reg_parm
+Compiling module xil_defaultlib.transmitter_for_mx
+Compiling module xil_defaultlib.manchester_tx
+Compiling module xil_defaultlib.nexys4DDR
+Compiling module xil_defaultlib.top_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_sim_func_synth
