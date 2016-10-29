@@ -70,7 +70,10 @@ module fsm_data(
 						   sample_count_reset = 1'b1;
 					   end
 					START_RECIEVE:
-						next = sample_count == 60 ? LOOKING : START_RECIEVE;
+						begin
+							if(!enable_data) next = IDLE;
+							else next = sample_count == 60 ? LOOKING : START_RECIEVE;
+						end
 					// The sample count is where we expect to see another correlation
 					LOOKING:
 					begin

@@ -81,7 +81,6 @@ module p_fifo #(parameter DEPTH=4)
 		begin
 			wp <= #1 0;
 			rp <= #1 0;
-			clear_all;
 		end
 		else if(clr)		
 			begin
@@ -96,13 +95,6 @@ module p_fifo #(parameter DEPTH=4)
 					rp <= #1 rp_p1;
 			end
 
-	// Nuke the FIFO (useful for simulation)
-	function clear_all();
-		int i;
-		for(i=0;i<DEPTH;i++)
-			mem[i] <= 8'b0; // clear all data in the FIFO
-	endfunction
-
 	assign wp_p1 = wp + 1;
 
 	assign rp_p1 = rp + 1;
@@ -112,7 +104,7 @@ module p_fifo #(parameter DEPTH=4)
 
 	// Fifo Input 
 	always @(posedge clk)
-			if(full  | clr | rst); // do nothing
+			if(full | clr | ~rst); // do nothing (active low reset)
 			else if(we)     mem[ wp ] <= #1 din;
 
 	// Status
