@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477619000">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1477663222">
+  <File Type="OPT-DCP" Name="mx_rcvr_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="mx_rcvr_route_status.pb"/>
   <File Type="PA-TCL" Name="mx_rcvr.tcl"/>
-  <File Type="OPT-DCP" Name="mx_rcvr_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="mx_rcvr_timing_summary_init.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="mx_rcvr_methodology_drc_opted.rpt"/>
   <File Type="RDI-RDI" Name="mx_rcvr.vdi"/>
   <File Type="PWROPT-DRC" Name="mx_rcvr_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="mx_rcvr_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="mx_rcvr_timing_summary_init.rpt"/>
   <File Type="OPT-DRC" Name="mx_rcvr_drc_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="mx_rcvr_pwropt.dcp"/>
   <File Type="OPT-HWDEF" Name="mx_rcvr.hwdef"/>
@@ -31,8 +31,8 @@
   <File Type="ROUTE-DRC" Name="mx_rcvr_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="mx_rcvr_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="mx_rcvr_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mx_rcvr_methodology_drc_routed.pb"/>
   <File Type="BG-BIT" Name="mx_rcvr.bit"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mx_rcvr_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="mx_rcvr_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="mx_rcvr_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="mx_rcvr_power_routed.rpx"/>

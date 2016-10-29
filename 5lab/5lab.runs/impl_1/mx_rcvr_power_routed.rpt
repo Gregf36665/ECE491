@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Thu Oct 27 21:45:00 2016
+| Date             : Fri Oct 28 10:01:49 2016
 | Host             : ECE400-F6N3KB2 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file mx_rcvr_power_routed.rpt -pb mx_rcvr_power_summary_routed.pb -rpx mx_rcvr_power_routed.rpx
 | Design           : mx_rcvr
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 0.107  |
-| Dynamic (W)              | 0.002  |
+| Total On-Chip Power (W)  | 0.109  |
+| Dynamic (W)              | 0.005  |
 | Device Static (W)        | 0.104  |
 | Effective TJA (C/W)      | 4.6    |
 | Max Ambient (C)          | 84.5   |
@@ -49,16 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1204 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      616 |     63400 |            0.97 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1220 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      592 |     63400 |            0.93 |
 |   CARRY4       |    <0.001 |       11 |     15850 |            0.07 |
-|   Register     |    <0.001 |      412 |    126800 |            0.32 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |    <0.001 |     1093 |       --- |             --- |
+|   Register     |    <0.001 |      442 |    126800 |            0.35 |
+|   Others       |     0.000 |       22 |       --- |             --- |
+| Signals        |    <0.001 |     1080 |       --- |             --- |
 | I/O            |    <0.001 |       14 |       210 |            6.67 |
 | Static Power   |     0.104 |          |           |                 |
-| Total          |     0.107 |          |           |                 |
+| Total          |     0.109 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,7 +68,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.002 |      0.015 |
+| Vccint    |       1.000 |     0.019 |       0.004 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -124,7 +124,7 @@ Table of Contents
 +-------------+--------+-----------------+
 | Clock       | Domain | Constraint (ns) |
 +-------------+--------+-----------------+
-| sys_clk_pin | clk    |            20.0 |
+| sys_clk_pin | clk    |            10.0 |
 +-------------+--------+-----------------+
 
 
@@ -137,7 +137,7 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| mx_rcvr               |     0.002 |
+| mx_rcvr               |     0.005 |
 |   U_BIT_COUNT         |    <0.001 |
 |   U_DATA              |    <0.001 |
 |   U_ERROR             |    <0.001 |
@@ -147,11 +147,12 @@ Table of Contents
 |     U_DETECT          |    <0.001 |
 |     U_LAST_BIT        |    <0.001 |
 |     U_PLL             |    <0.001 |
+|     U_WRITE           |    <0.001 |
 |   U_IDLE_N_ERROR_CORR |    <0.001 |
 |   U_ONE_N_ZERO_CORR   |    <0.001 |
 |   U_PREAMBLE_CORR     |    <0.001 |
 |   U_SAMPLE            |    <0.001 |
-|   U_SFD_CORR          |    <0.001 |
+|   U_SFD_CORR          |     0.001 |
 |   U_SLOW_COUNT        |    <0.001 |
 |   U_SLOW_SAMPLE       |    <0.001 |
 |   U_SYNC              |    <0.001 |
