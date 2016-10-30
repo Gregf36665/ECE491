@@ -45,7 +45,7 @@ module top_sim();
 		#5 CLK100MHZ = ~ CLK100MHZ;
 
 	task send_preamble;
-		SW[5:0] = 6; // the first 2 bytes are 0x55
+		SW[5:0] = 6'h20; // the first 2 bytes are 0x55
 		repeat(10e2) @(posedge CLK100MHZ); // wait a little
 		SW[6] = 1;
 		repeat(10e5) @(posedge CLK100MHZ); // wait a little

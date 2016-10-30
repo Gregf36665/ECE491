@@ -8,7 +8,6 @@ set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 set_msg_config  -ruleid {1}  -id {Synth 8-1921}  -string {{WARNING: [Synth 8-1921] elaboration system task error violates IEEE 1800 syntax [C:/Users/birrur/ECE491/5lab/5lab.srcs/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv:35]}}  -suppress 
 set_msg_config  -ruleid {2}  -id {Synth 8-1921}  -new_severity {ADVISORY} 
-set_msg_config  -ruleid {3}  -id {Synth 8-3332}  -new_severity {ADVISORY} 
 set_msg_config  -ruleid {4}  -id {Synth 8-2292}  -string {{WARNING: [Synth 8-2292] literal value truncated to fit in 5 bits [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_psfd.sv:75]}}  -suppress 
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -55,6 +54,8 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/dispctl.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/seven_seg.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/p_fifo.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter.sv
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
@@ -63,7 +64,7 @@ read_xdc C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/constrs_1/imports/lab1/ne
 set_property used_in_implementation false [get_files C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/constrs_1/imports/lab1/nexys4DDR.xdc]
 
 
-synth_design -top nexys4DDR -part xc7a100tcsg324-1
+synth_design -top nexys4DDR -part xc7a100tcsg324-1 -flatten_hierarchy none
 
 
 write_checkpoint -force -noxdef nexys4DDR.dcp

@@ -41,7 +41,8 @@ module mxtest_2(
 	      );
    
    parameter  MEM_SIZE = 32;
-   parameter  WAIT_TIME_US  = 10_000;   // delay between frames in clock cycles (10ms default)
+   // This is set to 30ms to allow for the full tx over UART before the next frame
+   parameter  WAIT_TIME_US  = 30_000;   // delay between frames in clock cycles (10ms default)
    parameter  CLK_PD_NS = 10;          // clock period in ns (10ns for Nexys4DDR)
    parameter  WAIT_TIME = (WAIT_TIME_US*1000)/CLK_PD_NS;
    
@@ -76,36 +77,36 @@ module mxtest_2(
 					8'h55,  // byterom[0]
 					8'h55,
 					8'hd0,
-					8'h68, 
-					8'h65, 
-					8'h6c,
-					8'h6c, 
-					8'h6f, 
-					8'h20,
-					8'h77,
-					8'h6f,
-					8'h72,
-					8'h6c,
-					8'h64,
-					8'h21, 
-					8'h20,
-					8'h48,
-					8'h45,
-					8'h4c,
-					8'h4c,
-					8'h4f,
-					8'h20,
-					8'h57, 
-					8'h4f,
-					8'h52,
-					8'h4c,
-					8'h44,
-					8'h31,
-					8'h20,
-					8'h08,
-					8'hFF,
-					8'hFF				
-					};
+					8'ha0, 
+					8'ha1, 
+					8'ha2,
+					8'ha3, 
+					8'ha4, 
+					8'ha5,
+					8'ha6,
+					8'ha7,
+					8'ha8,
+					8'ha9,
+					8'haa,
+					8'hab, 
+					8'hac,
+					8'had,
+					8'hae,
+					8'haf,
+					8'hb0,
+					8'hb1,
+					8'hb2,
+					8'hb3, 
+					8'hb4,
+					8'hb5,
+					8'hb6,
+					8'hb7,
+					8'hb8,
+					8'hb9,
+					8'hba,
+					8'hbb,
+					8'hbc 
+					}; 
    
    assign data = byterom[byte_addr];
    

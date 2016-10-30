@@ -27,10 +27,12 @@ module nexys4DDR (
 		  output logic [6:0]  SEGS,
 		  output logic [7:0]  AN,
 		  output logic 	      DP,
-		  output logic [1:0]  LED, // can be up to 7
+		  output logic [3:0]  LED, // can be up to 7
 //		  input logic         UART_TXD_IN,
 		  output logic [2:0]  JA,
-		  output logic        UART_RXD_OUT
+		  output logic        UART_RXD_OUT,
+		  output logic		  LED16_R, LED16_G,
+		  output logic		  LED17_R, LED17_G
             );
 
 
@@ -52,18 +54,22 @@ module nexys4DDR (
 	mx_rcvr U_RX (.clk, .reset, .rxd(data_line), .cardet, .data(data_out), .write, .error);
 
 	// Control the seven seg display with data from the rx
-	dispctl U_SEG_CTL (.clk, .reset, .d7(4'h0), .d6(4'h0), .d5(4'h0), .d4(4'h0), 
+	dispctl U_SEG_CTL (.clk, .reset, .d7(SW[5:4]), .d6(SW[3:0]), .d5(4'h0), .d4(4'h0), 
 						.d3(4'h0), .d2(4'h0), .d1(data_out[7:4]), .d0(data_out[3:0]),
 						.dp7(1'b0), .dp6(1'b0), .dp5(1'b0), .dp4(1'b0), .dp3(1'b0), 
 						.dp2(1'b0), .dp1(1'b0), .dp0(1'b0), .seg(SEGS), .dp(DP), .an(AN)); 
 						
 	// Conections between the FIFO and the FSM
-	logic empty, read;
+	logic empty, read, full;
 
 	// The FIFO is active low reset
 	// A FIFO to deal with data from the receiver
-	p_fifo #(.DEPTH(32)) U_FIFO (.clk, .rst(~reset), .clr(1'b0), .din(data_out), .we(write), .re(read),
-							.full(), .empty, .dout(data_fifo));
+	// What is the biggest packet we can deal with?
+	// 1kB FIFO
+	// If more space is needed on the board make this smaller
+	p_fifo #(.DEPTH(1024)) U_FIFO (.clk, .rst(~reset), .clr(1'b0), 
+							.din(data_out), .we(write), .re(read),
+							.full, .empty, .dout(data_fifo));
 
 	// Connection between FIFO and UART_tx
 	logic send_uart, ready; 
@@ -78,7 +84,7 @@ module nexys4DDR (
 
                      
 	// Assign statements
-    assign JA[0] = data_line; // This allows the data to be viewed on the scope
+    assign JA[0] = data_line; // This allows the mx data link to be viewed on the scope
     assign JA[1] = error;
 	assign JA[2] = cardet; 
     assign LED[0] = error; // Is there an error for the rx
@@ -90,5 +96,21 @@ module nexys4DDR (
 	assign crash_type = SW[14]; // Go high or low when crashing
 	assign data_line = SW[15] ? crash_type : txd; // Crash the line
     
+	// Color LEDs to update the user
+	// This color matrix does:
+	// Red = Full
+	// Yellow = Not full or Empty
+	// Green = Empty
+	// FIFO information
+	assign LED16_R = full | ~empty; 
+	assign LED16_G = empty;
+	assign LED[2] = empty;
+	assign LED[3] = full;
+
+
+	// Mx receiver info
+	assign LED17_R = error; // Red = error
+	assign LED17_G = cardet; // carrier detected
+
                                             
 endmodule // nexys4DDR

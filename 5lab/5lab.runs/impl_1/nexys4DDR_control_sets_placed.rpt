@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Oct 29 16:17:27 2016
+| Date         : Sat Oct 29 22:22:18 2016
 | Host         : ECE400-9877QW1 running 64-bit Service Pack 1  (build 7601)
 | Command      : report_control_sets -verbose -file nexys4DDR_control_sets_placed.rpt
 | Design       : nexys4DDR
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    21 |
-| Unused register locations in slices containing registers |    41 |
+| Number of unique control sets                            |    43 |
+| Unused register locations in slices containing registers |    53 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,42 +33,64 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               7 |            4 |
+| No           | No                    | No                     |              13 |            7 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              76 |           30 |
-| Yes          | No                    | No                     |              37 |           13 |
-| Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             407 |          140 |
+| No           | Yes                   | No                     |              98 |           39 |
+| Yes          | No                    | No                     |              45 |           14 |
+| Yes          | No                    | Yes                    |              20 |            6 |
+| Yes          | Yes                   | No                     |             611 |          208 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+------------------------------------+------------------------------------------------------+------------------+----------------+
-|     Clock Signal     |            Enable Signal           |                   Set/Reset Signal                   | Slice Load Count | Bel Load Count |
-+----------------------+------------------------------------+------------------------------------------------------+------------------+----------------+
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_DATA/ferr_reg         | BTNC_IBUF                                            |                1 |              1 |
-|  CLK100MHZ_IBUF_BUFG |                                    | U_RX/U_FSM/U_DETECT/FSM_sequential_state_reg[0]_0[0] |                4 |              4 |
-|  CLK100MHZ_IBUF_BUFG | U_TX/U_TX/E[0]                     | U_MXTEST/byte_addr[4]_i_1_n_0                        |                1 |              5 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_final_time | U_RX/U_FSM/U_DETECT/FSM_sequential_state_reg[0]_0[0] |                3 |              6 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_max_time   | U_RX/U_FSM/U_DETECT/FSM_sequential_state_reg[0]_0[0] |                3 |              6 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_min_time   | U_RX/U_FSM/U_DETECT/FSM_sequential_state_reg[0]_0[0] |                3 |              6 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/E[0]              | U_RX/U_FSM/U_DETECT/SR[0]                            |                2 |              6 |
-|  CLK100MHZ_IBUF_BUFG |                                    |                                                      |                4 |              7 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_max_corr   | U_RX/U_FSM/U_DETECT/FSM_sequential_state_reg[0]_0[0] |                2 |              7 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_min_corr   | U_RX/U_FSM/U_DETECT/FSM_sequential_state_reg[0]_0[0] |                2 |              7 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_SLOW_SAMPLE/sample_slow     | U_RX/U_FSM/U_DETECT/q_reg[0][0]                      |                2 |              7 |
-|  CLK100MHZ_IBUF_BUFG | U_TX/U_TX/U_SNAPSHOT/lden          |                                                      |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_DATA/buffer_reg[7]    | U_RX/U_FSM/U_DATA/buffer_reg[0]                      |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_DATA/data_reg[7][0]   | U_RX/U_FSM/U_DATA/data_reg[0][0]                     |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_SAMPLE/E[0]                 |                                                      |                6 |             14 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_SLOW_SAMPLE/sample_slow     |                                                      |                5 |             15 |
-|  CLK100MHZ_IBUF_BUFG | U_MXTEST/wait_count_enable         | U_MXTEST/byte_addr[4]_i_1_n_0                        |                5 |             20 |
-|  CLK100MHZ_IBUF_BUFG |                                    | U_TX/U_TX/U_CLKENB/SR[0]                             |                9 |             23 |
-|  CLK100MHZ_IBUF_BUFG |                                    | BTNC_IBUF                                            |               17 |             49 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_SAMPLE/E[0]                 | BTNC_IBUF                                            |               22 |             64 |
-|  CLK100MHZ_IBUF_BUFG | U_RX/U_SLOW_SAMPLE/sample_slow     | BTNC_IBUF                                            |               90 |            256 |
-+----------------------+------------------------------------+------------------------------------------------------+------------------+----------------+
++----------------------+--------------------------------------+--------------------------------------------------+------------------+----------------+
+|     Clock Signal     |             Enable Signal            |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++----------------------+--------------------------------------+--------------------------------------------------+------------------+----------------+
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_ERROR/ferr_i_1_n_0            | BTNC_IBUF                                        |                1 |              1 |
+|  CLK100MHZ_IBUF_BUFG |                                      | U_RX/U_FSM/U_PLL/FSM_sequential_state[3]_i_1_n_0 |                3 |              4 |
+|  CLK100MHZ_IBUF_BUFG | U_UART_TX/U_CLKENB/enb               | U_UART_TX/counter_rst                            |                2 |              4 |
+|  CLK100MHZ_IBUF_BUFG | U_MXTEST/byte_addr_enable            | U_MXTEST/byte_addr[4]_i_1_n_0                    |                2 |              5 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_max_time     | U_RX/U_FSM/U_PLL/FSM_sequential_state[3]_i_1_n_0 |                3 |              6 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FAST_COUNT/q[5]_i_2_n_0       | U_RX/U_FAST_COUNT/q[5]_i_1_n_0                   |                2 |              6 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_final_time   | U_RX/U_FSM/U_PLL/FSM_sequential_state[3]_i_1_n_0 |                3 |              6 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_min_time     | U_RX/U_FSM/U_PLL/FSM_sequential_state[3]_i_1_n_0 |                2 |              6 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_max_corr     | U_RX/U_FSM/U_PLL/FSM_sequential_state[3]_i_1_n_0 |                2 |              7 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_PLL/update_min_corr     | U_RX/U_FSM/U_PLL/FSM_sequential_state[3]_i_1_n_0 |                3 |              7 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_SLOW_SAMPLE/enb               | U_RX/U_SLOW_COUNT/q[6]_i_1_n_0                   |                2 |              7 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_DATA/buffer[7]_i_2_n_0        | U_RX/U_DATA/buffer[7]_i_1_n_0                    |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO_EXTRACTOR/data_fsm[7]_i_1_n_0 | BTNC_IBUF                                        |                8 |              8 |
+|  CLK100MHZ_IBUF_BUFG | U_TX/U_TX/lden                       |                                                  |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_FSM/U_DATA/store_byte         | U_RX/U_DATA/data[7]_i_1_n_0                      |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | U_UART_TX/lden                       |                                                  |                2 |              8 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/wp0                           | BTNC_IBUF                                        |                3 |             10 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/rp0                           | BTNC_IBUF                                        |                3 |             10 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_640_703_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_960_1023_0_2_i_1_n_0  |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_896_959_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_256_319_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_0_63_0_2_i_1_n_0      |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_128_191_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_192_255_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_320_383_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_384_447_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_448_511_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_512_575_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_576_639_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_64_127_0_2_i_1_n_0    |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_704_767_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_768_831_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG | U_FIFO/mem_reg_832_895_0_2_i_1_n_0   |                                                  |                3 |             12 |
+|  CLK100MHZ_IBUF_BUFG |                                      |                                                  |                7 |             13 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_SAMPLE/enb                    |                                                  |                5 |             14 |
+|  CLK100MHZ_IBUF_BUFG |                                      | U_UART_TX/clk_reset                              |                4 |             15 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_SLOW_SAMPLE/enb               |                                                  |                5 |             15 |
+|  CLK100MHZ_IBUF_BUFG | U_MXTEST/wait_count_enable           | U_MXTEST/byte_addr[4]_i_1_n_0                    |                6 |             22 |
+|  CLK100MHZ_IBUF_BUFG |                                      | U_TX/U_TX/clk_reset                              |                8 |             23 |
+|  CLK100MHZ_IBUF_BUFG |                                      | BTNC_IBUF                                        |               24 |             56 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_SAMPLE/enb                    | BTNC_IBUF                                        |               39 |            128 |
+|  CLK100MHZ_IBUF_BUFG | U_RX/U_SLOW_SAMPLE/enb               | BTNC_IBUF                                        |              129 |            382 |
++----------------------+--------------------------------------+--------------------------------------------------+------------------+----------------+
 
 

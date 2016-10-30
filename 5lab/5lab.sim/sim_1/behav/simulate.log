@@ -1,2 +1,3 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
+$finish called at time : 12010095 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/imports/new/top_sim.sv" Line 65
