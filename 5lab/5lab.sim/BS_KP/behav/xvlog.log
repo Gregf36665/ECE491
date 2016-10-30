@@ -1,0 +1,81 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_data.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fsm_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_pll.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fsm_pll
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_psfd.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fsm_psfd
+WARNING: [VRFC 10-986] literal value truncated to fit in 5 bits [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_psfd.sv:75]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/one_bit_ff.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module one_bit_ff
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkenb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/f_error.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module f_error
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FSMs
+INFO: [VRFC 10-2458] undeclared symbol data_bit_last, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv:37]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/data_buffer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/sync_input.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_input
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/counter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mx_rcvr
+INFO: [VRFC 10-2458] undeclared symbol rxd_sync, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:53]
+INFO: [VRFC 10-2458] undeclared symbol sample_slow, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:57]
+INFO: [VRFC 10-2458] undeclared symbol sample, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:58]
+INFO: [VRFC 10-2458] undeclared symbol store_bit, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:61]
+INFO: [VRFC 10-2458] undeclared symbol slow_sample_reset, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:63]
+INFO: [VRFC 10-2458] undeclared symbol sample_inc, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:65]
+INFO: [VRFC 10-2458] undeclared symbol sample_dec, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv:66]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv" into library xil_defaultlib
+INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv:84]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/jitteryclock.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jitteryclock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/manchester_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module manchester_tx
+INFO: [VRFC 10-2458] undeclared symbol txd_nrz, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/manchester_tx.sv:30]
+INFO: [VRFC 10-2458] undeclared symbol txd_man, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/manchester_tx.sv:31]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter_for_mx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module transmitter_for_mx
+INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter_for_mx.sv:236]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/clkenb_baud.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkenb_baud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/counter_parm.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_parm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/reg_param.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_parm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/mux8_parm.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux8_parm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/correlator.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module correlator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nexys4DDR
+INFO: [VRFC 10-2458] undeclared symbol rdy, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv:48]
+INFO: [VRFC 10-2458] undeclared symbol reset, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv:70]
+INFO: [VRFC 10-2458] undeclared symbol clk, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv:92]
+INFO: [VRFC 10-2458] undeclared symbol run, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv:94]
+INFO: [VRFC 10-2458] undeclared symbol crash_type, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv:96]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/mxtest_2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mxtest_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/fifo_fsm.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_fsm
+WARNING: [VRFC 10-756] identifier state is used before its declaration [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/fifo_fsm.sv:35]
+WARNING: [VRFC 10-756] identifier state is used before its declaration [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/fifo_fsm.sv:40]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/dispctl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dispctl
+INFO: [VRFC 10-2458] undeclared symbol dp_n, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/dispctl.sv:50]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_3_8_en
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/seven_seg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module seven_seg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/p_fifo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module transmitter
+INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter.sv:152]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/BS_KP/imports/Downloads/mx_rcvr_testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mx_rcvr_testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/flynng/Desktop/ECE491/5lab/5lab.sim/BS_KP/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
