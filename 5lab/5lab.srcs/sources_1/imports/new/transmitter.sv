@@ -37,7 +37,8 @@ module transmitter(
         SEND    = 3'b010,
         STOP    = 3'b011,
         STAND_BY_START = 3'b100,
-        STAND_BY_STOP = 3'b101 
+        STAND_BY_STOP = 3'b101 ,
+		SAVE_DATA = 3'b110
     } states;
     
     states state, next;
@@ -51,9 +52,10 @@ module transmitter(
     always_comb
         begin
             unique case(state)
+			// Declare defaults outside of the case in the future
                 IDLE:
                     begin
-                        if(send) next = STAND_BY_START;
+                        if(send) next = SAVE_DATA;
                         else next = IDLE;
                         
                         lden = 1'b0;
@@ -62,15 +64,24 @@ module transmitter(
                         counter_rst = 1'b1; // reset the counter 
                         clk_reset = 1'b1;                        
                     end
+				SAVE_DATA:
+					begin	
+						next = STAND_BY_START;
+                        lden = 1'b1;
+                        txd = 1'b1; 
+						rdy = 1'b1;
+                        clk_reset = 1'b0;
+                        counter_rst = 1'b1; // make sure the counter is at 0
+					end
                 STAND_BY_START:
                 // This waits for the baud rate clock to increment
                     begin
                         if(enb) next = START;
                         else next = STAND_BY_START;
                         
-                        lden = 1'b1;
-                        rdy = 1'b1;
+                        lden = 1'b0;
                         txd = 1'b1; 
+						rdy = 1'b0;
                         clk_reset = 1'b0;
                         counter_rst = 1'b1; // make sure the counter is at 0
                     end
@@ -78,7 +89,8 @@ module transmitter(
                 START:
                     begin
                         // This makes sure that the state changes at the baud rate
-                        if (enb) begin
+                        if (enb) 
+						begin
                             next = SEND;
                             counter_rst = 1'b1;
                         end
@@ -120,7 +132,7 @@ module transmitter(
                         else next = IDLE;
                         
                         lden = 1'b0;
-                        rdy = 1'b1;
+                        rdy = 1'b0;
                         txd = 1'b1;     
                         counter_rst = 1'b0;
                         clk_reset = 1'b0;                 

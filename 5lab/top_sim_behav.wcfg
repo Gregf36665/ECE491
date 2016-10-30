@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="top_sim_func_impl.wdb" id="1">
+      <db_ref path="top_sim_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="top_sim" />
@@ -11,14 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="13920000000003fs"></ZoomEndTime>
-      <Cursor1Time time="10000000000000fs"></Cursor1Time>
+      <ZoomStartTime time="1628324605401fs"></ZoomStartTime>
+      <ZoomEndTime time="1876369025642fs"></ZoomEndTime>
+      <Cursor1Time time="1729538133000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="6" />
-   <wave_markers>
-      <marker time="1190115100000" label="" />
-   </wave_markers>
+   <WVObjectSize size="11" />
    <wvobject fp_name="/top_sim/CLK100MHZ" type="logic">
       <obj_property name="ElementShortName">CLK100MHZ</obj_property>
       <obj_property name="ObjectShortName">CLK100MHZ</obj_property>
@@ -28,6 +25,10 @@
       <obj_property name="ElementShortName">BTNC</obj_property>
       <obj_property name="ObjectShortName">BTNC</obj_property>
       <obj_property name="label">reset_button</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_sim/UART_RXD_OUT" type="logic">
+      <obj_property name="ElementShortName">UART_RXD_OUT</obj_property>
+      <obj_property name="ObjectShortName">UART_RXD_OUT</obj_property>
    </wvobject>
    <wvobject fp_name="/top_sim/SW" type="array">
       <obj_property name="DisplayName">label</obj_property>
@@ -47,7 +48,6 @@
    <wvobject fp_name="group554" type="group">
       <obj_property name="label">digit</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/top_sim/SEGS" type="array">
          <obj_property name="ElementShortName">SEGS[6:0]</obj_property>
          <obj_property name="ObjectShortName">SEGS[6:0]</obj_property>
@@ -65,5 +65,128 @@
          <obj_property name="ElementShortName">SW[15:0]</obj_property>
          <obj_property name="ObjectShortName">SW[15:0]</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="group2011" type="group">
+      <obj_property name="label">fifo_fsm</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/ready" type="logic">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/read" type="logic">
+         <obj_property name="ElementShortName">read</obj_property>
+         <obj_property name="ObjectShortName">read</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/send" type="logic">
+         <obj_property name="ElementShortName">send</obj_property>
+         <obj_property name="ObjectShortName">send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/data_fifo" type="array">
+         <obj_property name="ElementShortName">data_fifo[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_fifo[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/data_fsm" type="array">
+         <obj_property name="ElementShortName">data_fsm[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_fsm[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/update_data" type="logic">
+         <obj_property name="ElementShortName">update_data</obj_property>
+         <obj_property name="ObjectShortName">update_data</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/state" type="array">
+         <obj_property name="ElementShortName">state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">state[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO_EXTRACTOR/next_state" type="array">
+         <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group2028" type="group">
+      <obj_property name="label">fifo</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/clr" type="logic">
+         <obj_property name="ElementShortName">clr</obj_property>
+         <obj_property name="ObjectShortName">clr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/din" type="array">
+         <obj_property name="ElementShortName">din[7:0]</obj_property>
+         <obj_property name="ObjectShortName">din[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/we" type="logic">
+         <obj_property name="ElementShortName">we</obj_property>
+         <obj_property name="ObjectShortName">we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/re" type="logic">
+         <obj_property name="ElementShortName">re</obj_property>
+         <obj_property name="ObjectShortName">re</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/full" type="logic">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/dout" type="array">
+         <obj_property name="ElementShortName">dout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/wp" type="array">
+         <obj_property name="ElementShortName">wp[4:0]</obj_property>
+         <obj_property name="ObjectShortName">wp[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/rp" type="array">
+         <obj_property name="ElementShortName">rp[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rp[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/wp_p1" type="array">
+         <obj_property name="ElementShortName">wp_p1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">wp_p1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/rp_p1" type="array">
+         <obj_property name="ElementShortName">rp_p1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rp_p1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/mem" type="array">
+         <obj_property name="ElementShortName">mem[0:31][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mem[0:31][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_sim/DUV/U_FIFO/gb" type="logic">
+         <obj_property name="ElementShortName">gb</obj_property>
+         <obj_property name="ObjectShortName">gb</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/top_sim/DUV/U_UART_TX/data" type="array">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_sim/DUV/U_UART_TX/state" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      <obj_property name="label">uart_tx_state</obj_property>
    </wvobject>
 </wave_config>

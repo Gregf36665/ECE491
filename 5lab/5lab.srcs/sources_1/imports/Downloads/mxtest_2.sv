@@ -76,8 +76,8 @@ module mxtest_2(
 					8'h55,  // byterom[0]
 					8'h55,
 					8'hd0,
-					8'h55, //68
-					8'haa, //65
+					8'h68, 
+					8'h65, 
 					8'h6c,
 					8'h6c, 
 					8'h6f, 
@@ -103,8 +103,8 @@ module mxtest_2(
 					8'h31,
 					8'h20,
 					8'h08,
-					8'h0D,
-					8'h55				
+					8'hFF,
+					8'hFF				
 					};
    
    assign data = byterom[byte_addr];
