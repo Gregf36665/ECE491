@@ -2,3 +2,6 @@ Running: xsim.dir/mx_rcvr_testbench_behav/xsimk.exe -simmode gui -wdb mx_rcvr_te
 Design successfully loaded
 Design Loading Memory Usage: 7500 KB (Peak: 7500 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 17016 KB (Peak: 17016 KB)
+Simulation CPU Usage: 8407 ms

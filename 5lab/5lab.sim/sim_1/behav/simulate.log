@@ -1,3 +1,22 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
-$finish called at time : 12010095 ns : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/imports/new/top_sim.sv" Line 65
+START: 10f check one byte at time 201138.
+OK: 10f check one byte (2 tests passed)
+START: 10f check 256 bytes at time 1080144.
+OK: 10f check 256 bytes (512 tests passed)
+START: 10f check random bytes at time 42760796.
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: Data received for random duration
+OK: 10f check random bytes (2730 tests passed)
+
+Tesbench Complete.
+No errors in 3244 tests. :)
+$finish called at time : 265709669780 ps : File "C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sim_1/new/tx_rx_test_jitter.sv" Line 243

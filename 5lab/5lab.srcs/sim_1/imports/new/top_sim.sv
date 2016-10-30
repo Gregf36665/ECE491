@@ -35,6 +35,7 @@ module top_sim();
 	logic DP;
 	logic [2:0] JA;
 	logic UART_RXD_OUT;
+	logic LED16_R, LED16_G, LED17_R, LED17_G;
 
 
 	// Module 

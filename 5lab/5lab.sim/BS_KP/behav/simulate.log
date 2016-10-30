@@ -241,4 +241,13 @@ FAIL(write, post-byte) Failed test 403 at time 14098586.
   Expected value 0x1, Inspected Value 0x0
 FAIL(data, post-byte) Failed test 408 at time 14259156.
   Expected value 0x93, Inspected Value 0x15
-FAIL(write, post-byte) Failed test 409 at time 1425915
+FAIL(write, post-byte) Failed test 409 at time 14259156.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(data, post-byte) Failed test 414 at time 14419116.
+  Expected value 0x15, Inspected Value 0xdf
+FAIL(write, post-byte) Failed test 415 at time 14419116.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Requirement test 10e - erroneous byte ends early. (46/145 falures)
+
+Tesbench Complete.
+ATTENTION: 120 Error(s) in 420 tests
