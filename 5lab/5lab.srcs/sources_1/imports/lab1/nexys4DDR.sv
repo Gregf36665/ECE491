@@ -97,13 +97,11 @@ module nexys4DDR (
 	assign data_line = SW[15] ? crash_type : txd; // Crash the line
     
 	// Color LEDs to update the user
-	// This color matrix does:
-	// Red = Full
-	// Yellow = Not full or Empty
 	// Green = Empty
+	// Red = Full
 	// FIFO information
-	assign LED16_R = full | ~empty; 
 	assign LED16_G = empty;
+	assign LED16_R = full; 
 	assign LED[2] = empty;
 	assign LED[3] = full;
 

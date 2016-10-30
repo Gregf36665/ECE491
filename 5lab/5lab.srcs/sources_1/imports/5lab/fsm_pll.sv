@@ -172,7 +172,7 @@ module fsm_pll(
 							sample_dec = 1'b1;
 						end
 					default:
-						next <= IDLE;
+						next = IDLE;
 				endcase
 			end
 endmodule		

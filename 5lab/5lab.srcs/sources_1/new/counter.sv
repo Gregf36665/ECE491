@@ -10,7 +10,7 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// 
+// A counter that can be incremented or decremented
 // Dependencies: 
 // 
 // Revision:
