@@ -26,7 +26,8 @@ module top_sim();
 	// Set the inputs all to 0
 	logic CLK100MHZ = 0;
 	logic BTNC = 0;
-	logic [15:0] SW = 0;
+	logic BTND = 0;
+	logic [15:0] SW = '0;
 
 	// Outputs
 	logic [6:0] SEGS;
@@ -46,23 +47,28 @@ module top_sim();
 		#5 CLK100MHZ = ~ CLK100MHZ;
 
 	task send_preamble;
-		SW[5:0] = 6'h20; // the first 2 bytes are 0x55
+		BTND = 1;
 		repeat(10e2) @(posedge CLK100MHZ); // wait a little
-		SW[6] = 1;
+		BTND = 0;
 		repeat(10e5) @(posedge CLK100MHZ); // wait a little
-		//SW[6] = 0;
-		// data should be sending now
+	endtask
+
+	task send_data_cont;
+		SW[6] = 1;
+		repeat(10e6) @(posedge CLK100MHZ); // wait a little
 	endtask
 
 
 	initial
 	begin
 		BTNC = 1; // Reset systems
+		SW[6:0] = 7'h04;// send one byte of data don't enable;
 		#100;
 		BTNC = 0; // Reset systems
 		repeat(10e4) @(posedge CLK100MHZ); // wait a little
 		send_preamble;
 		repeat(10e4) @(posedge CLK100MHZ); // wait a little
+		send_data_cont;
 		$finish;
 	end
 

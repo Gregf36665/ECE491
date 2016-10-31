@@ -1,6 +1,6 @@
 @echo off
 set xv_path=C:\\Xilinx\\Vivado\\2016.2\\bin
-call %xv_path%/xsim tx_rx_test_jitter_behav -key {Behavioral:sim_1:Functional:tx_rx_test_jitter} -tclbatch tx_rx_test_jitter.tcl -view C:/Users/flynng/Desktop/ECE491/5lab/mx_rcvr_test_behav.wcfg -view C:/Users/flynng/Desktop/ECE491/5lab/tx_rx_test_behav.wcfg -view C:/Users/flynng/Desktop/ECE491/5lab/top_sim_behav.wcfg -log simulate.log
+call %xv_path%/xsim mx_rcvr_test_behav -key {Behavioral:sim_1:Functional:mx_rcvr_test} -tclbatch mx_rcvr_test.tcl -view C:/Users/flynng/Desktop/ECE491/5lab/mx_rcvr_test_behav.wcfg -view C:/Users/flynng/Desktop/ECE491/5lab/tx_rx_test_behav.wcfg -view C:/Users/flynng/Desktop/ECE491/5lab/top_sim_behav.wcfg -log simulate.log
 if "%errorlevel%"=="0" goto SUCCESS
 if "%errorlevel%"=="1" goto END
 :END

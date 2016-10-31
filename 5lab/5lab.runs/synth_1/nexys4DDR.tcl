@@ -33,29 +33,30 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/5lab/fsm_psfd.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/one_bit_ff.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/imports/sources_1/imports/lab2.srcs/sources_1/imports/lab1/clkenb.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/f_error.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/data_buffer.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/sync_input.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/counter.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/jitteryclock.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/manchester_tx.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter_for_mx.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/clkenb_baud.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/counter_parm.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/reg_param.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/mux8_parm.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/f_error.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/FSMs.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/data_buffer.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/counter.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter_for_mx.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/correlator.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/seven_seg.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/mx_rcvr.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/manchester_tx.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/mxtest_2.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/fifo_fsm.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/dispctl.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/decoder_3_8_en.sv
-  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/seven_seg.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/p_fifo.sv
   C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/new/transmitter.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/check_p.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/Downloads/jitteryclock.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/imports/lab1/nexys4DDR.sv
+  C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/sources_1/new/single_pulser.sv
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp

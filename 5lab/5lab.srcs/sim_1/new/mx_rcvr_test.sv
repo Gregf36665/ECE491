@@ -126,8 +126,8 @@ module mx_rcvr_test();
 		send_preamble(.noise(1'b0)); // no noise
 		check("Clean preamble cardet stay trigger", cardet, 1'b1); // The cardet should go high
 		send_EOF(.noise(1'b0));
+		repeat(20000) @(posedge clk); // give it time to lose the correlation value
 		check("Cardet fell on clean EOF", cardet, 1'b0); // No one talking, cardet should be low
-		// TODO check if we even pass this, I don't think we will.  Should we?
 	endtask
 
 	// This checks for cardet rise and fall with no data and a noisy line
@@ -138,8 +138,8 @@ module mx_rcvr_test();
 		send_preamble(.noise(1'b1)); // no noise
 		check("Clean preamble cardet stay trigger", cardet, 1'b1); // The cardet should go high
 		send_EOF(.noise(1'b1));
+		repeat(20000) @(posedge clk); // give it time to lose the correlation value
 		check("Cardet fell on noisy EOF", cardet, 1'b0); // No one talking, cardet should be low
-		// TODO check if we even pass this, I don't think we will.  Should we?
 	endtask
 
 	// Tx 1 byte correctly framed
@@ -150,7 +150,6 @@ module mx_rcvr_test();
 		check("Cardet high with data", cardet, 1'b1);
 		check("Data matches expected value", data, 8'h55);
 		check("No error", error, 1'b0);
-		check("Write pulsed", write, 1'b1);
 		send_EOF(.noise(1'b0));
 		check("No error after EOF detected", error, 1'b0);
 		check("Cardet fell after EOF", cardet, 1'b0);
@@ -164,7 +163,6 @@ module mx_rcvr_test();
 		check("Cardet high with data", cardet, 1'b1);
 		check("Data matches expected value", data, 8'h55);
 		check("No error", error, 1'b0);
-		check("Write pulsed", write, 1'b1);
 		send_EOF(.noise(1'b1));
 		check("No error after EOF detected", error, 1'b0);
 		check("Cardet fell after EOF", cardet, 1'b0);
@@ -254,18 +252,21 @@ module mx_rcvr_test();
 	task preamble_tests;
 		check_group_begin("2.1 Check response to preamble");
 		check_preamble_clean;
+		repeat(20000) @(posedge clk);
 		check_preamble_noise;
 		check_group_end();
 	endtask
 
 	task one_byte_test;
+		check_group_begin("2.2 Check response to one byte");
 		send_clean_byte;
 		send_noise_byte;
+		check_group_end;
 	endtask
 
 	// Send 0 bytes test
 	task test_just_SFD;
-		check_group_begin("Check no byte");
+		check_group_begin("2.3 Check no byte");
 		rxd = 1;
 		reset_systems;
 		send_preamble(.noise(1'b0));
@@ -291,7 +292,6 @@ module mx_rcvr_test();
 		check("Data received", data, 8'h55);
 		check_group_end;
 	endtask
-
 
 	task send_two_bytes;
 		logic [7:0] byte_to_send = 8'h00;
@@ -369,7 +369,10 @@ module mx_rcvr_test();
 	begin
 		reset_systems;
 		#100;
-		//send_two_bytes;
+		preamble_tests;
+		one_byte_test;
+		test_just_SFD;
+		send_two_bytes;
 		test_10a; // The most basic test send 1 byte clean.
 		test_10b; // Sending a frame of 24 random bytes.
 		//test_10c; // 10e6 bit periods of random noise followed by a noisy byte, then more noise

@@ -5,249 +5,131 @@ OK: Requirement test 10a - 24-bit preamble/SFD, single byte, rxd high before/aft
 START: Requirement test 10b - 24-bit preamble/SFD, 24 (or more) bytes, rxd high before/after at time 1040215.
 FAIL(data, post-byte) Failed test 12 at time 1698106.
   Expected value 0x33, Inspected Value 0x80
-FAIL(write, post-byte) Failed test 13 at time 1698106.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 18 at time 1858986.
+FAIL(data, post-byte) Failed test 17 at time 1858986.
   Expected value 0x80, Inspected Value 0x2a
-FAIL(write, post-byte) Failed test 19 at time 1858986.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 24 at time 2019256.
+FAIL(data, post-byte) Failed test 22 at time 2019256.
   Expected value 0x2a, Inspected Value 0xe8
-FAIL(write, post-byte) Failed test 25 at time 2019256.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 30 at time 2177986.
+FAIL(data, post-byte) Failed test 27 at time 2177986.
   Expected value 0xe8, Inspected Value 0x5c
-FAIL(write, post-byte) Failed test 31 at time 2177986.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 36 at time 2338566.
+FAIL(data, post-byte) Failed test 32 at time 2338566.
   Expected value 0x5c, Inspected Value 0x48
-FAIL(write, post-byte) Failed test 37 at time 2338566.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 42 at time 2498216.
+FAIL(data, post-byte) Failed test 37 at time 2498216.
   Expected value 0x48, Inspected Value 0x4d
-FAIL(write, post-byte) Failed test 43 at time 2498216.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 48 at time 2658796.
+FAIL(data, post-byte) Failed test 42 at time 2658796.
   Expected value 0x4d, Inspected Value 0x5f
-FAIL(write, post-byte) Failed test 49 at time 2658796.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 54 at time 2819056.
+FAIL(data, post-byte) Failed test 47 at time 2819056.
   Expected value 0x5f, Inspected Value 0x25
-FAIL(write, post-byte) Failed test 55 at time 2819056.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 60 at time 2979016.
+FAIL(data, post-byte) Failed test 52 at time 2979016.
   Expected value 0x25, Inspected Value 0xd8
-FAIL(write, post-byte) Failed test 61 at time 2979016.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 66 at time 3138676.
+FAIL(data, post-byte) Failed test 57 at time 3138676.
   Expected value 0xd8, Inspected Value 0xb8
-FAIL(write, post-byte) Failed test 67 at time 3138676.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 72 at time 3299246.
+FAIL(data, post-byte) Failed test 62 at time 3299246.
   Expected value 0xb8, Inspected Value 0xc6
-FAIL(write, post-byte) Failed test 73 at time 3299246.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 78 at time 3457976.
+FAIL(data, post-byte) Failed test 67 at time 3457976.
   Expected value 0xc6, Inspected Value 0xb6
-FAIL(write, post-byte) Failed test 79 at time 3457976.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 84 at time 3618556.
+FAIL(data, post-byte) Failed test 72 at time 3618556.
   Expected value 0xb6, Inspected Value 0x90
-FAIL(write, post-byte) Failed test 85 at time 3618556.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 90 at time 3779126.
+FAIL(data, post-byte) Failed test 77 at time 3779126.
   Expected value 0x90, Inspected Value 0xf7
-FAIL(write, post-byte) Failed test 91 at time 3779126.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 96 at time 3938786.
+FAIL(data, post-byte) Failed test 82 at time 3938786.
   Expected value 0xf7, Inspected Value 0x5e
-FAIL(write, post-byte) Failed test 97 at time 3938786.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 102 at time 4099046.
+FAIL(data, post-byte) Failed test 87 at time 4099046.
   Expected value 0x5e, Inspected Value 0x6
-FAIL(write, post-byte) Failed test 103 at time 4099046.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 108 at time 4259006.
+FAIL(data, post-byte) Failed test 92 at time 4259006.
   Expected value 0x6, Inspected Value 0x25
-FAIL(write, post-byte) Failed test 109 at time 4259006.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 114 at time 4418666.
+FAIL(data, post-byte) Failed test 97 at time 4418666.
   Expected value 0x25, Inspected Value 0x66
-FAIL(write, post-byte) Failed test 115 at time 4418666.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 120 at time 4579236.
+FAIL(data, post-byte) Failed test 102 at time 4579236.
   Expected value 0x66, Inspected Value 0x0
-FAIL(write, post-byte) Failed test 121 at time 4579236.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 126 at time 4737966.
+FAIL(data, post-byte) Failed test 107 at time 4737966.
   Expected value 0x0, Inspected Value 0x78
-FAIL(write, post-byte) Failed test 127 at time 4737966.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 132 at time 4898546.
+FAIL(data, post-byte) Failed test 112 at time 4898546.
   Expected value 0x78, Inspected Value 0xa4
-FAIL(write, post-byte) Failed test 133 at time 4898546.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 138 at time 5058196.
+FAIL(data, post-byte) Failed test 117 at time 5058196.
   Expected value 0xa4, Inspected Value 0x9f
-FAIL(write, post-byte) Failed test 139 at time 5058196.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 144 at time 5219076.
+FAIL(data, post-byte) Failed test 122 at time 5219076.
   Expected value 0x9f, Inspected Value 0x6
-FAIL(write, post-byte) Failed test 145 at time 5219076.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 150 at time 5379036.
+FAIL(data, post-byte) Failed test 127 at time 5379036.
   Expected value 0x6, Inspected Value 0xc3
-FAIL(write, post-byte) Failed test 151 at time 5379036.
-  Expected value 0x1, Inspected Value 0x0
-FAIL: Requirement test 10b - 24-bit preamble/SFD, 24 (or more) bytes, rxd high before/after. (48/147 falures)
+FAIL: Requirement test 10b - 24-bit preamble/SFD, 24 (or more) bytes, rxd high before/after. (24/123 falures)
 START: Requirement test 10d - erroneous full low bit within frame at time 5640235.
-FAIL(data, post-byte) Failed test 159 at time 6298126.
+FAIL(data, post-byte) Failed test 135 at time 6298126.
   Expected value 0xc3, Inspected Value 0x58
-FAIL(write, post-byte) Failed test 160 at time 6298126.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 165 at time 6459006.
+FAIL(data, post-byte) Failed test 140 at time 6459006.
   Expected value 0x58, Inspected Value 0xc1
-FAIL(write, post-byte) Failed test 166 at time 6459006.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 171 at time 6619276.
+FAIL(data, post-byte) Failed test 145 at time 6619276.
   Expected value 0xc1, Inspected Value 0x2c
-FAIL(write, post-byte) Failed test 172 at time 6619276.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 177 at time 6778006.
+FAIL(data, post-byte) Failed test 150 at time 6778006.
   Expected value 0x2c, Inspected Value 0x53
-FAIL(write, post-byte) Failed test 178 at time 6778006.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 183 at time 6939196.
+FAIL(data, post-byte) Failed test 155 at time 6939196.
   Expected value 0x53, Inspected Value 0xc7
-FAIL(write, post-byte) Failed test 184 at time 6939196.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 189 at time 7099156.
+FAIL(data, post-byte) Failed test 160 at time 7099156.
   Expected value 0xc7, Inspected Value 0xe5
-FAIL(write, post-byte) Failed test 190 at time 7099156.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 195 at time 7258816.
+FAIL(data, post-byte) Failed test 165 at time 7258816.
   Expected value 0xe5, Inspected Value 0x67
-FAIL(write, post-byte) Failed test 196 at time 7258816.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 201 at time 7419076.
+FAIL(data, post-byte) Failed test 170 at time 7419076.
   Expected value 0x67, Inspected Value 0xa
-FAIL(write, post-byte) Failed test 202 at time 7419076.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 207 at time 7578116.
+FAIL(data, post-byte) Failed test 175 at time 7578116.
   Expected value 0xa, Inspected Value 0x9e
-FAIL(write, post-byte) Failed test 208 at time 7578116.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 213 at time 7738696.
+FAIL(data, post-byte) Failed test 180 at time 7738696.
   Expected value 0x9e, Inspected Value 0xb5
-FAIL(write, post-byte) Failed test 214 at time 7738696.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 219 at time 7898346.
+FAIL(data, post-byte) Failed test 185 at time 7898346.
   Expected value 0xb5, Inspected Value 0xbd
-FAIL(write, post-byte) Failed test 220 at time 7898346.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 225 at time 8059226.
+FAIL(data, post-byte) Failed test 190 at time 8059226.
   Expected value 0xbd, Inspected Value 0x6
-FAIL(write, post-byte) Failed test 226 at time 8059226.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(cardet, post-byte) Failed test 261 at time 9500255.
+FAIL(cardet, post-byte) Failed test 225 at time 9500255.
   Expected value 0x0, Inspected Value 0x1
-FAIL(cardet, pre-byte) Failed test 263 at time 9500255.
+FAIL(cardet, pre-byte) Failed test 227 at time 9500255.
   Expected value 0x0, Inspected Value 0x1
-FAIL: Requirement test 10d - erroneous full low bit within frame. (26/123 falures)
+FAIL: Requirement test 10d - erroneous full low bit within frame. (14/111 falures)
 START: Requirement test 10e - erroneous byte ends early at time 10240255.
-FAIL(data, post-byte) Failed test 282 at time 10899066.
+FAIL(data, post-byte) Failed test 246 at time 10899066.
   Expected value 0x6, Inspected Value 0x2e
-FAIL(write, post-byte) Failed test 283 at time 10899066.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 288 at time 11058726.
+FAIL(data, post-byte) Failed test 251 at time 11058726.
   Expected value 0x2e, Inspected Value 0x58
-FAIL(write, post-byte) Failed test 289 at time 11058726.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 294 at time 11218376.
+FAIL(data, post-byte) Failed test 256 at time 11218376.
   Expected value 0x58, Inspected Value 0x92
-FAIL(write, post-byte) Failed test 295 at time 11218376.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 300 at time 11378026.
+FAIL(data, post-byte) Failed test 261 at time 11378026.
   Expected value 0x92, Inspected Value 0x5f
-FAIL(write, post-byte) Failed test 301 at time 11378026.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 306 at time 11539216.
+FAIL(data, post-byte) Failed test 266 at time 11539216.
   Expected value 0x5f, Inspected Value 0xd9
-FAIL(write, post-byte) Failed test 307 at time 11539216.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 312 at time 11698256.
+FAIL(data, post-byte) Failed test 271 at time 11698256.
   Expected value 0xd9, Inspected Value 0x45
-FAIL(write, post-byte) Failed test 313 at time 11698256.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 318 at time 11859136.
+FAIL(data, post-byte) Failed test 276 at time 11859136.
   Expected value 0x45, Inspected Value 0xc8
-FAIL(write, post-byte) Failed test 319 at time 11859136.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 324 at time 12019096.
+FAIL(data, post-byte) Failed test 281 at time 12019096.
   Expected value 0xc8, Inspected Value 0xea
-FAIL(write, post-byte) Failed test 325 at time 12019096.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 330 at time 12179056.
+FAIL(data, post-byte) Failed test 286 at time 12179056.
   Expected value 0xea, Inspected Value 0x34
-FAIL(write, post-byte) Failed test 331 at time 12179056.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 336 at time 12338716.
+FAIL(data, post-byte) Failed test 291 at time 12338716.
   Expected value 0x34, Inspected Value 0x79
-FAIL(write, post-byte) Failed test 337 at time 12338716.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 342 at time 12498366.
+FAIL(data, post-byte) Failed test 296 at time 12498366.
   Expected value 0x79, Inspected Value 0x6f
-FAIL(write, post-byte) Failed test 343 at time 12498366.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 348 at time 12659246.
+FAIL(data, post-byte) Failed test 301 at time 12659246.
   Expected value 0x6f, Inspected Value 0x2e
-FAIL(write, post-byte) Failed test 349 at time 12659246.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 354 at time 12819206.
+FAIL(data, post-byte) Failed test 306 at time 12819206.
   Expected value 0x2e, Inspected Value 0x13
-FAIL(write, post-byte) Failed test 355 at time 12819206.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 360 at time 12979166.
+FAIL(data, post-byte) Failed test 311 at time 12979166.
   Expected value 0x13, Inspected Value 0x2c
-FAIL(write, post-byte) Failed test 361 at time 12979166.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 366 at time 13139126.
+FAIL(data, post-byte) Failed test 316 at time 13139126.
   Expected value 0x2c, Inspected Value 0x3
-FAIL(write, post-byte) Failed test 367 at time 13139126.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 372 at time 13298476.
+FAIL(data, post-byte) Failed test 321 at time 13298476.
   Expected value 0x3, Inspected Value 0x80
-FAIL(write, post-byte) Failed test 373 at time 13298476.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 378 at time 13459046.
+FAIL(data, post-byte) Failed test 326 at time 13459046.
   Expected value 0x80, Inspected Value 0xfb
-FAIL(write, post-byte) Failed test 379 at time 13459046.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 384 at time 13618706.
+FAIL(data, post-byte) Failed test 331 at time 13618706.
   Expected value 0xfb, Inspected Value 0xbe
-FAIL(write, post-byte) Failed test 385 at time 13618706.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 390 at time 13779276.
+FAIL(data, post-byte) Failed test 336 at time 13779276.
   Expected value 0xbe, Inspected Value 0x6
-FAIL(write, post-byte) Failed test 391 at time 13779276.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 396 at time 13938006.
+FAIL(data, post-byte) Failed test 341 at time 13938006.
   Expected value 0x6, Inspected Value 0x90
-FAIL(write, post-byte) Failed test 397 at time 13938006.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 402 at time 14098586.
+FAIL(data, post-byte) Failed test 346 at time 14098586.
   Expected value 0x90, Inspected Value 0x93
-FAIL(write, post-byte) Failed test 403 at time 14098586.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 408 at time 14259156.
+FAIL(data, post-byte) Failed test 351 at time 14259156.
   Expected value 0x93, Inspected Value 0x15
-FAIL(write, post-byte) Failed test 409 at time 14259156.
-  Expected value 0x1, Inspected Value 0x0
-FAIL(data, post-byte) Failed test 414 at time 14419116.
+FAIL(data, post-byte) Failed test 356 at time 14419116.
   Expected value 0x15, Inspected Value 0xdf
-FAIL(write, post-byte) Failed test 415 at time 14419116.
-  Expected value 0x1, Inspected Value 0x0
-FAIL: Requirement test 10e - erroneous byte ends early. (46/145 falures)
+FAIL: Requirement test 10e - erroneous byte ends early. (23/122 falures)
 
 Tesbench Complete.
-ATTENTION: 120 Error(s) in 420 tests
+ATTENTION: 61 Error(s) in 361 tests

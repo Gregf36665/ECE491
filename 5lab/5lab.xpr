@@ -18,7 +18,7 @@
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val="digilentinc.com:nexys4_ddr:part0:1.1"/>
     <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
-    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="ActiveSimSet" Val="CL_RS"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../4lab"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/."/>
@@ -32,7 +32,7 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/5lab.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="nexys4_ddr"/>
-    <Option Name="WTXSimLaunchSim" Val="913"/>
+    <Option Name="WTXSimLaunchSim" Val="950"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -279,6 +279,13 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/imports/lab1/nexys4DDR.sv"/>
           <Attr Name="ImportTime" Val="1477793946"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/single_pulser.sv">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -545,7 +552,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="tx_rx_test_jitter"/>
+        <Option Name="TopModule" Val="mx_rcvr_test"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -558,6 +565,7 @@
       </Config>
     </FileSet>
     <FileSet Name="MG_EG" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/MG_EG">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/MG_EG/imports/Updated_benches/mx_rcvr_bench_2.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Updated_benches/Updated_benches/mx_rcvr_bench_2.sv"/>
@@ -587,9 +595,8 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="nexys4DDR"/>
+        <Option Name="TopModule" Val="mx_rcvr_bench_3"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
@@ -597,6 +604,7 @@
       </Config>
     </FileSet>
     <FileSet Name="BS_KP" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/BS_KP">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/BS_KP/imports/Downloads/mx_rcvr_testbench.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/mx_rcvr_testbench.sv"/>
@@ -617,10 +625,11 @@
       </Config>
     </FileSet>
     <FileSet Name="CL_RS" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/CL_RS">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/CL_RS/imports/TestbenchVerification/receiver_test_bench.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/TestbenchVerification/TestbenchVerification/receiver_test_bench.sv"/>
-          <Attr Name="ImportTime" Val="1477413000"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/receiver_test_bench.sv"/>
+          <Attr Name="ImportTime" Val="1477874770"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -637,9 +646,8 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="nexys4DDR"/>
+        <Option Name="TopModule" Val="mxtest_transmitter_receiver_testbench"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
@@ -647,6 +655,7 @@
       </Config>
     </FileSet>
     <FileSet Name="SB_JP" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/SB_JP">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/SB_JP/imports/Testbenches/Byte24_Selfcheck.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Testbenches/Testbenches/Byte24_Selfcheck.sv"/>
@@ -676,9 +685,8 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="nexys4DDR"/>
+        <Option Name="TopModule" Val="SingleByte_SelfCheck"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
@@ -686,6 +694,7 @@
       </Config>
     </FileSet>
     <FileSet Name="YH_JY" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/YH_JY">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/YH_JY/imports/Downloads/testbench_2.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/testbench_2.sv"/>
@@ -707,6 +716,7 @@
       </Config>
     </FileSet>
     <FileSet Name="KD_ZH" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/KD_ZH">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/KD_ZH/imports/Lab_5 mx_rcvr Testbench/rcvrTEST.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Lab_5 mx_rcvr Testbench/Lab_5 mx_rcvr Testbench/rcvrTEST.sv"/>
@@ -728,6 +738,7 @@
       </Config>
     </FileSet>
     <FileSet Name="AW_MH" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/AW_MH">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/AW_MH/imports/Downloads/checkcheck.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/checkcheck.sv"/>
@@ -749,6 +760,7 @@
       </Config>
     </FileSet>
     <FileSet Name="JS_CB" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/JS_CB">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/JS_CB/imports/SlukeBennettTestBenchesLab5/mx_rcvr_randData_TB.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/SlukeBennettTestBenchesLab5/mx_rcvr_randData_TB.sv"/>
@@ -788,6 +800,7 @@
       </Config>
     </FileSet>
     <FileSet Name="RD_LK" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/RD_LK">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/RD_LK/imports/Lab 5 Testbenches/mxTransmit_Receive_Bench.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Lab 5 Testbenches/Lab 5 Testbenches/mxTransmit_Receive_Bench.sv"/>
@@ -827,6 +840,7 @@
       </Config>
     </FileSet>
     <FileSet Name="MT_JP" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/MT_JP">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/MT_JP/imports/Downloads/Port_Townley_lab5_testbench.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Port_Townley_lab5_testbench.sv"/>
@@ -848,6 +862,7 @@
       </Config>
     </FileSet>
     <FileSet Name="CH_AN" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/CH_AN">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/CH_AN/imports/Hoeflinger_Ness_Testbenches/man_rcvr_bench2.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Hoeflinger_Ness_Testbenches/Hoeflinger_Ness_Testbenches/man_rcvr_bench2.sv"/>
@@ -922,7 +937,9 @@
         <Step Id="phys_opt_design"/>
         <Step Id="route_design"/>
         <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
+        <Step Id="write_bitstream">
+          <Option Id="BinFile">1</Option>
+        </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>

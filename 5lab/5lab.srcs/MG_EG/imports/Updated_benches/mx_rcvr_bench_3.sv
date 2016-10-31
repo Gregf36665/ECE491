@@ -24,7 +24,7 @@ module mx_rcvr_bench_3();
     parameter EOF_LEN = 2;
     parameter PREAMBLE_LEN = 16;
     parameter N = $clog2(PREAMBLE_LEN);
-    parameter BIT_TIME = 20000;
+    parameter BIT_TIME = 2000;
     parameter BAUD_TIME = BIT_TIME/2;
     parameter NUM_DATA_BYTES = 1;
 

@@ -1,0 +1,9 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto dd429faf13654bdbaa58cc108d99a37b --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mxtest_transmitter_receiver_testbench_behav xil_defaultlib.mxtest_transmitter_receiver_testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port txen on this module [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/CL_RS/imports/TestbenchVerification/mxtest_transmitter_receiver_testbench.sv:74]
+WARNING: [VRFC 10-1037] module transmitter does not have a parameter named BITRATE [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/CL_RS/imports/TestbenchVerification/mxtest_transmitter_receiver_testbench.sv:74]
+ERROR: [VRFC 10-2063] Module <receiver> not found while processing module instance <U_receiver_normal> [C:/Users/flynng/Desktop/ECE491/5lab/5lab.srcs/CL_RS/imports/TestbenchVerification/mxtest_transmitter_receiver_testbench.sv:79]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

@@ -24,6 +24,7 @@ module nexys4DDR (
           input logic         CLK100MHZ,
 		  input logic [15:0]  SW,
 		  input logic 	      BTNC,
+		  input logic 	      BTND,
 		  output logic [6:0]  SEGS,
 		  output logic [7:0]  AN,
 		  output logic 	      DP,
@@ -39,12 +40,17 @@ module nexys4DDR (
 	// Data input and output for tx and rx, data out of the fifo and the fsm
     logic [7:0] data_in, data_out, data_fifo, data_fsm;
     
-	logic data_line, cardet, write, error, send_mx;
+	logic data_line, cardet, write, error, send_mx, pulse;
 	logic txd; // Raw output from the tx
 
 	// Modules to connect
+	
+	// Single pulser to enable MX_test once
+	single_pulser U_PULSER (.clk, .reset, .pulse, .enb(BTND));
 
-	// mx_test, ROM to send bytes (hello world! HELLO WORLD!)
+	assign run = pulse | SW[6]; // either send MXTEST once or continious
+
+	// mx_test, ROM to send bytes 
 	mxtest_2 U_MXTEST (.clk, .reset, .run, .length(SW[5:0]), .send(send_mx), .data(data_in), .ready(rdy));
 
 	// transmitter don't connect the txen to anything
@@ -91,7 +97,6 @@ module nexys4DDR (
     assign LED[1] = cardet; // Light up when carrier detected
 	assign clk = CLK100MHZ; // connect the clock
 	assign reset = BTNC;
-	assign run = SW[6]; // enable mxtest
     
 	assign crash_type = SW[14]; // Go high or low when crashing
 	assign data_line = SW[15] ? crash_type : txd; // Crash the line

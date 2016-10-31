@@ -1,0 +1,192 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+START: Check reset at time 0.
+OK: Check reset (3 tests passed)
+START: Single data byte transmission without error at time 39995.
+Data byte 00110011
+FAIL(Single data byte- cardet Preamble) Failed test 41 at time 169995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 44 at time 179995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 47 at time 189995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 50 at time 199995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 53 at time 209995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 198 at time 689995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 200 at time 699995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 201 at time 699995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 203 at time 709995.
+  Expected value 0x1, Inspected Value 0x0
+Data byte 00001111
+FAIL(Single data byte- cardet Preamble) Failed test 255 at time 969995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 400 at time 1449995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 402 at time 1459995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 403 at time 1459995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 405 at time 1469995.
+  Expected value 0x1, Inspected Value 0x0
+Data byte 00000000
+FAIL(Single data byte- cardet Preamble) Failed test 457 at time 1729995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 602 at time 2209995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 604 at time 2219995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 605 at time 2219995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 607 at time 2229995.
+  Expected value 0x1, Inspected Value 0x0
+Data byte 11111111
+FAIL(Single data byte- cardet Preamble) Failed test 659 at time 2489995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 804 at time 2969995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 806 at time 2979995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 807 at time 2979995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 809 at time 2989995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Single data byte transmission without error. (24/808 falures)
+START: Single data byte transmission with erroneous manchester bit at time 3079995.
+Data byte xxxxxxxx
+FAIL(Single data byte- cardet Preamble) Failed test 861 at time 3249995.
+  Expected value 0x0, Inspected Value 0x1
+Data byte 11111111
+FAIL(Single data byte- cardet Preamble) Failed test 1063 at time 4009995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 1208 at time 4489995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1210 at time 4499995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 1211 at time 4499995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1213 at time 4509995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Single data byte transmission with erroneous manchester bit. (6/404 falures)
+START: Single data byte transmission that contains shortened data byte at time 4599995.
+Data byte 00000000
+FAIL(Single data byte- cardet Preamble) Failed test 1265 at time 4769995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - cardet data) Failed test 1394 at time 5199995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - error data) Failed test 1396 at time 5199995.
+  Expected value 0x0, Inspected Value 0x1
+Data byte 00000000
+FAIL(Single data byte- cardet Preamble) Failed test 1467 at time 5529995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 1612 at time 6009995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1614 at time 6019995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 1615 at time 6019995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1617 at time 6029995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Single data byte transmission that contains shortened data byte. (8/404 falures)
+
+Tesbench Complete.
+ATTENTION: 38 Error(s) in 1619 tests
+START: Check reset at time 0.
+OK: Check reset (3 tests passed)
+START: Single data byte transmission without error at time 39995.
+Data byte 00110011
+FAIL(Single data byte- cardet Preamble) Failed test 41 at time 169995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 44 at time 179995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 47 at time 189995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 50 at time 199995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte- cardet Preamble) Failed test 53 at time 209995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 198 at time 689995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 200 at time 699995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 201 at time 699995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 203 at time 709995.
+  Expected value 0x1, Inspected Value 0x0
+Data byte 00001111
+FAIL(Single data byte- cardet Preamble) Failed test 255 at time 969995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 400 at time 1449995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 402 at time 1459995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 403 at time 1459995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 405 at time 1469995.
+  Expected value 0x1, Inspected Value 0x0
+Data byte 00000000
+FAIL(Single data byte- cardet Preamble) Failed test 457 at time 1729995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 602 at time 2209995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 604 at time 2219995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 605 at time 2219995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 607 at time 2229995.
+  Expected value 0x1, Inspected Value 0x0
+Data byte 11111111
+FAIL(Single data byte- cardet Preamble) Failed test 659 at time 2489995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 804 at time 2969995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 806 at time 2979995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 807 at time 2979995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 809 at time 2989995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Single data byte transmission without error. (24/808 falures)
+START: Single data byte transmission with erroneous manchester bit at time 3079995.
+Data byte xxxxxxxx
+FAIL(Single data byte- cardet Preamble) Failed test 861 at time 3249995.
+  Expected value 0x0, Inspected Value 0x1
+Data byte 11111111
+FAIL(Single data byte- cardet Preamble) Failed test 1063 at time 4009995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 1208 at time 4489995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1210 at time 4499995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 1211 at time 4499995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1213 at time 4509995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Single data byte transmission with erroneous manchester bit. (6/404 falures)
+START: Single data byte transmission that contains shortened data byte at time 4599995.
+Data byte 00000000
+FAIL(Single data byte- cardet Preamble) Failed test 1265 at time 4769995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - cardet data) Failed test 1394 at time 5199995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - error data) Failed test 1396 at time 5199995.
+  Expected value 0x0, Inspected Value 0x1
+Data byte 00000000
+FAIL(Single data byte- cardet Preamble) Failed test 1467 at time 5529995.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(Single data byte - write EOF) Failed test 1612 at time 6009995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1614 at time 6019995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - write EOF) Failed test 1615 at time 6019995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(Single data byte - cardet EOF) Failed test 1617 at time 6029995.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: Single data byte transmission that contains shortened data byte. (8/404 falures)
+
+Tesbench Complete.
+ATTENTION: 38 Error(s) in 1619 tests

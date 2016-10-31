@@ -127,7 +127,7 @@ module mx_rcvr_testbench();
             check("cardet, post-byte", cardet, 1); 
             check("error, post-byte", error, 0);
             check("data, post-byte", data_out, temp_data);
-            check("write, post-byte", write, 1);
+            //check("write, post-byte", write, 1);
         end
         join_none
     endtask

@@ -26,7 +26,7 @@ module mx_rcvr_bench_1();
     //parameter EXPECTED_LEN = 8;
     parameter N = $clog2(PREAMBLE_LEN);
     //parameter W = $clog2(EXPECTED_LEN);
-    parameter BIT_TIME = 20_000;
+    parameter BIT_TIME = 20_00;
     parameter BAUD_TIME = BIT_TIME/2;
     parameter NUM_DATA_BYTES = 24;
 
@@ -169,7 +169,7 @@ module mx_rcvr_bench_1();
             end
             else if (i < 2*(PREAMBLE_LEN)+15+16*NUM_DATA_BYTES ) begin //Data
                 j = i - (2*(PREAMBLE_LEN)+16);
-                $display("j %d", j);
+                //$display("j %d", j);
                 check("Single data byte - cardet data", cardet, 1);
                 if ( ((j % 16 == 0) || (j % 16 == 1)) && (j != 0) && (j != 1) ) check("Single data byte - write data", write, 1);
                 else check("Single data byte - write data", write, 0);

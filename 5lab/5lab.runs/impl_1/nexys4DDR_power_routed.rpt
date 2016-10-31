@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Sat Oct 29 22:22:54 2016
+| Date             : Sun Oct 30 19:51:32 2016
 | Host             : ECE400-9877QW1 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file nexys4DDR_power_routed.rpt -pb nexys4DDR_power_summary_routed.pb -rpx nexys4DDR_power_routed.rpx
 | Design           : nexys4DDR
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.003 |        3 |       --- |             --- |
-| Slice Logic              |     0.002 |     2173 |       --- |             --- |
+| Slice Logic              |     0.002 |     2178 |       --- |             --- |
 |   LUT as Logic           |     0.001 |      895 |     63400 |            1.41 |
 |   CARRY4                 |    <0.001 |       30 |     15850 |            0.19 |
-|   Register               |    <0.001 |      787 |    126800 |            0.62 |
+|   Register               |    <0.001 |      789 |    126800 |            0.62 |
 |   F7/F8 Muxes            |    <0.001 |       27 |     63400 |            0.04 |
 |   LUT as Distributed RAM |    <0.001 |      192 |     19000 |            1.01 |
-|   Others                 |     0.000 |       44 |       --- |             --- |
-| Signals                  |     0.002 |     1790 |       --- |             --- |
-| I/O                      |     0.009 |       39 |       210 |           18.57 |
+|   Others                 |     0.000 |       46 |       --- |             --- |
+| Signals                  |     0.002 |     1792 |       --- |             --- |
+| I/O                      |     0.009 |       40 |       210 |           19.05 |
 | Static Power             |     0.097 |          |           |                 |
 | Total                    |     0.113 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
@@ -207,6 +207,7 @@ Table of Contents
 |     mem_reg_960_1023_7_7 |    <0.001 |
 |   U_FIFO_EXTRACTOR       |    <0.001 |
 |   U_MXTEST               |    <0.001 |
+|   U_PULSER               |    <0.001 |
 |   U_RX                   |     0.004 |
 |     U_BIT_COUNT          |    <0.001 |
 |     U_DATA               |    <0.001 |
