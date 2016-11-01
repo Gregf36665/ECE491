@@ -1,6 +1,8 @@
 `timescale 1ns / 1ps
 // A module that allows an interface between
 // a manchester transmitter and a wimpFi radio
+// Created by Greg Flynn
+// 2016-11-01
 
 module TransmitterTestUnit(
 			input logic clk,
