@@ -131,7 +131,7 @@ module mxtest_2(
    //        FSM to generate test signals
    //-----------------------------------------------------------------------------
    
-   typedef enum logic [2:0] {WAIT_RH=3'd0, WAIT_RL=3'd1, WAIT_RH_DELAY=3'd2, WAIT_DELAY=3'd3 } state_t;
+   typedef enum logic [2:0] {IDLE=3'd0, RUNNING=3'd1, SEND=3'd2, WAIT_DELAY=3'd3 } state_t;
    
    state_t    	                 state, next;
    
@@ -139,46 +139,38 @@ module mxtest_2(
      if (reset) state <= WAIT_RH;
      else state <= next;
    
-   always_comb
-     begin
-        send = 1'b0;              // default output values
-        byte_addr_enable = 1'b0;
-        byte_addr_reset = 1'b0;
-        wait_count_enable = 1'b0;
-        wait_count_reset = 1'b0;
-        next = WAIT_RH;           // default next state
-        case (state)
-          WAIT_RH:    // wait for run=1 and ready=1
-            begin
-               if (run && ready && (length !=0)) next = WAIT_RL;
-	       else next = WAIT_RH;
-	    end
-	  WAIT_RL:	// wait for run=0
-	    begin
-               send = 1'b1;
-               if (ready) next = WAIT_RL;
-	       else
-		 begin
-		    byte_addr_enable = 1'b1;  // increment byte count at END of state
-		    if (byte_addr_last) next = WAIT_RH_DELAY;
-		    else next = WAIT_RH;
-		 end
-            end
-	  WAIT_RH_DELAY:  // wait for ready=1 at end of fram
-	    begin
-	       wait_count_reset = 1'b1;
-	       byte_addr_reset = 1'b1;
-	       if (ready) next = WAIT_DELAY;
-	       else next = WAIT_RH_DELAY;
-	     end
-          WAIT_DELAY:
-            begin
-               wait_count_enable = 1'b1;
-               if (wait_count_done) next = WAIT_RH;
-               else next = WAIT_DELAY;
-            end
-        endcase
-     end
-   
+	always_comb
+		begin
+			send = 1'b0;              // default output values
+			byte_addr_enable = 1'b0;
+			byte_addr_reset = 1'b0;
+			wait_count_enable = 1'b0;
+			wait_count_reset = 1'b0;
+			next = IDLE;           // default next state
+		 case(state)
+			IDLE:
+			   begin
+				byte_addr_reset = 1; // reset the rom pointer 
+				next = run ? RUNNING :  IDLE;
+			   end
+
+			RUNNING:
+				next = ready ? SEND : RUNNING;
+
+			SEND:
+				begin
+					send = 1;
+					next = byte_addr_last ? 
+							run ? WAIT_DELAY : IDLE : SEND;
+		   
+				end	
+			WAIT_DELAY:
+				begin
+					wait_count_enable = 1;
+					next = wait_count_done ? SEND : WAIT_DELAY;
+				end
+		endcase
+		
+	end
 endmodule
 
