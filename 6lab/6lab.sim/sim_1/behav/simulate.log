@@ -1,0 +1,5 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+START: 10f check one byte at time 200328.
+OK: 10f check one byte (2 tests passed)
+START: 10f check 256 bytes at time 1078339.
