@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Nov 01 10:53:50 2016">
+<application name="pa" timeStamp="Tue Nov 01 13:01:08 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="daa610d041b14b9b869f1880d4793f39" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -28,14 +28,24 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SimulationClose" value="1" type="JavaHandler"/>
 <property name="SimulationRelaunch" value="22" type="JavaHandler"/>
 <property name="SimulationRestart" value="6" type="JavaHandler"/>
-<property name="SimulationRun" value="7" type="JavaHandler"/>
-<property name="SimulationRunAll" value="28" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="37" type="JavaHandler"/>
+<property name="SimulationRun" value="9" type="JavaHandler"/>
+<property name="SimulationRunAll" value="30" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="42" type="JavaHandler"/>
 <property name="WaveformOpenConfiguration" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Synthesis, Run Synthesis], 17, false" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="5" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, simulation_live_run_all" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, nexys4DDR (nexys4DDR.sv" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, Top_level_sim (Top_level_sim.sv" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="2" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_FIT, Waveform Viewer_zoom_fit" value="3" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_OUT, Waveform Viewer_zoom_out" value="3" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 241, 516" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 811, 408" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 813, 422" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
 <property name="GuiMode" value="54" type="GuiMode"/>

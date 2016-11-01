@@ -83,8 +83,8 @@ module Top_level_sim();
 		BTNC = 0; // Exit reset
 		#1000;
 		repeat(20) send_byte(8'h55); // Send preamble
-		//send_byte(8'h0D); // send SFD
-		//send_byte(8'h72); // send data
+		send_byte(8'h0D); // send SFD
+		send_byte(8'h72); // send data
 		IN_JA1 = 1; // Idle the data line
 	endtask
 
