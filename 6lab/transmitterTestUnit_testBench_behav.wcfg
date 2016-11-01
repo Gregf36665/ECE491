@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="transmitterTestUnit_testBench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="transmitterTestUnit_testBench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1614000000001fs"></ZoomEndTime>
+      <Cursor1Time time="880200000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/transmitterTestUnit_testBench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitterTestUnit_testBench/enb" type="logic">
+      <obj_property name="ElementShortName">enb</obj_property>
+      <obj_property name="ObjectShortName">enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitterTestUnit_testBench/length" type="array">
+      <obj_property name="ElementShortName">length[5:0]</obj_property>
+      <obj_property name="ObjectShortName">length[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitterTestUnit_testBench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitterTestUnit_testBench/txen" type="logic">
+      <obj_property name="ElementShortName">txen</obj_property>
+      <obj_property name="ObjectShortName">txen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitterTestUnit_testBench/txdata" type="logic">
+      <obj_property name="ElementShortName">txdata</obj_property>
+      <obj_property name="ObjectShortName">txdata</obj_property>
+   </wvobject>
+   <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_PULSER/pulse" type="logic">
+      <obj_property name="ElementShortName">pulse</obj_property>
+      <obj_property name="ObjectShortName">pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="group44" type="group">
+      <obj_property name="label">mx_test</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/run" type="logic">
+         <obj_property name="ElementShortName">run</obj_property>
+         <obj_property name="ObjectShortName">run</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/length" type="array">
+         <obj_property name="ElementShortName">length[5:0]</obj_property>
+         <obj_property name="ObjectShortName">length[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/send" type="logic">
+         <obj_property name="ElementShortName">send</obj_property>
+         <obj_property name="ObjectShortName">send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/data" type="array">
+         <obj_property name="ElementShortName">data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/ready" type="logic">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/byte_addr_reset" type="logic">
+         <obj_property name="ElementShortName">byte_addr_reset</obj_property>
+         <obj_property name="ObjectShortName">byte_addr_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/byte_addr_enable" type="logic">
+         <obj_property name="ElementShortName">byte_addr_enable</obj_property>
+         <obj_property name="ObjectShortName">byte_addr_enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/byte_addr" type="array">
+         <obj_property name="ElementShortName">byte_addr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_addr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/byte_addr_last" type="logic">
+         <obj_property name="ElementShortName">byte_addr_last</obj_property>
+         <obj_property name="ObjectShortName">byte_addr_last</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/byterom" type="array">
+         <obj_property name="ElementShortName">byterom[0:31][7:0]</obj_property>
+         <obj_property name="ObjectShortName">byterom[0:31][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/wait_count_enable" type="logic">
+         <obj_property name="ElementShortName">wait_count_enable</obj_property>
+         <obj_property name="ObjectShortName">wait_count_enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/wait_count_reset" type="logic">
+         <obj_property name="ElementShortName">wait_count_reset</obj_property>
+         <obj_property name="ObjectShortName">wait_count_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/wait_count" type="array">
+         <obj_property name="ElementShortName">wait_count[21:0]</obj_property>
+         <obj_property name="ObjectShortName">wait_count[21:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/wait_count_done" type="logic">
+         <obj_property name="ElementShortName">wait_count_done</obj_property>
+         <obj_property name="ObjectShortName">wait_count_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/state" type="array">
+         <obj_property name="ElementShortName">state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_MXTEST/next" type="array">
+         <obj_property name="ElementShortName">next[2:0]</obj_property>
+         <obj_property name="ObjectShortName">next[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group103" type="group">
+      <obj_property name="label">tx</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/send" type="logic">
+         <obj_property name="ElementShortName">send</obj_property>
+         <obj_property name="ObjectShortName">send</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/data" type="array">
+         <obj_property name="ElementShortName">data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/rdy" type="logic">
+         <obj_property name="ElementShortName">rdy</obj_property>
+         <obj_property name="ObjectShortName">rdy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/txen" type="logic">
+         <obj_property name="ElementShortName">txen</obj_property>
+         <obj_property name="ObjectShortName">txen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/txd" type="logic">
+         <obj_property name="ElementShortName">txd</obj_property>
+         <obj_property name="ObjectShortName">txd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/idle" type="logic">
+         <obj_property name="ElementShortName">idle</obj_property>
+         <obj_property name="ObjectShortName">idle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/baud" type="logic">
+         <obj_property name="ElementShortName">baud</obj_property>
+         <obj_property name="ObjectShortName">baud</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/txd_nrz" type="logic">
+         <obj_property name="ElementShortName">txd_nrz</obj_property>
+         <obj_property name="ObjectShortName">txd_nrz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/txd_man" type="logic">
+         <obj_property name="ElementShortName">txd_man</obj_property>
+         <obj_property name="ObjectShortName">txd_man</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/enb" type="logic">
+         <obj_property name="ElementShortName">enb</obj_property>
+         <obj_property name="ObjectShortName">enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/transmitterTestUnit_testBench/DUV/U_TX/U_TX/state" type="array">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -57,7 +57,7 @@ module mxtest_2(
    logic [$clog2(MEM_SIZE)-1:0]  byte_addr;
    logic 			 byte_addr_last;
 
-   assign byte_addr_last = byte_addr == length-1;
+   assign byte_addr_last = (byte_addr == length - 1);
    
 
    always_ff @(posedge clk)  // does separating register and counting logic result in a BRAM?
@@ -131,12 +131,13 @@ module mxtest_2(
    //        FSM to generate test signals
    //-----------------------------------------------------------------------------
    
-   typedef enum logic [2:0] {IDLE=3'd0, RUNNING=3'd1, SEND=3'd2, WAIT_DELAY=3'd3 } state_t;
+   typedef enum logic [2:0] {IDLE=3'd0, RUNNING=3'd1, SEND=3'd2, WAIT_DELAY=3'd3,
+							WAIT_FOR_NEXT_BYTE=3'd4 } state_t;
    
    state_t    	                 state, next;
    
    always_ff @(posedge clk)
-     if (reset) state <= WAIT_RH;
+     if (reset) state <= IDLE;
      else state <= next;
    
 	always_comb
@@ -160,10 +161,19 @@ module mxtest_2(
 			SEND:
 				begin
 					send = 1;
-					next = byte_addr_last ? 
-							run ? WAIT_DELAY : IDLE : SEND;
-		   
+					byte_addr_enable = 1; // Step ptr by 1
+					if(byte_addr_last)
+						next = run ? WAIT_DELAY : IDLE;
+					else
+						next = WAIT_FOR_NEXT_BYTE;
 				end	
+			WAIT_FOR_NEXT_BYTE:
+				// Here waits for the tx to drop ready
+				begin
+					next = ready ? WAIT_FOR_NEXT_BYTE : RUNNING;  
+					send = 1;
+				end
+
 			WAIT_DELAY:
 				begin
 					wait_count_enable = 1;

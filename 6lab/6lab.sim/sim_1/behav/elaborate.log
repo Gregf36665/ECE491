@@ -1,38 +1,14 @@
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 60cceaf4e0644802b887a5ae662938d5 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_rx_test_behav xil_defaultlib.tx_rx_test xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 60cceaf4e0644802b887a5ae662938d5 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot transmitterTestUnit_testBench_behav xil_defaultlib.transmitterTestUnit_testBench xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/jitteryclock.sv" Line 1. Module jitteryclock(SEED=4321) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/jitteryclock.sv" Line 1. Module jitteryclock doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/check_p.sv" Line 37. Module check_p doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/jitteryclock.sv" Line 1. Module jitteryclock(SEED=4321) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/jitteryclock.sv" Line 1. Module jitteryclock doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/check_p.sv" Line 37. Module check_p doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.jitteryclock(SEED=4321)
-Compiling module xil_defaultlib.jitteryclock
-Compiling module xil_defaultlib.fsm_pll
-Compiling module xil_defaultlib.fsm_psfd
-Compiling module xil_defaultlib.fsm_data
-Compiling module xil_defaultlib.one_bit_ff
-Compiling module xil_defaultlib.sync_input
-Compiling module xil_defaultlib.FSMs
-Compiling module xil_defaultlib.data_buffer
-Compiling module xil_defaultlib.clkenb(DIVFREQ=800000)
-Compiling module xil_defaultlib.clkenb(DIVFREQ=3200000)
-Compiling module xil_defaultlib.counter
-Compiling module xil_defaultlib.counter(MAX=127)
-Compiling module xil_defaultlib.counter(MAX=63)
-Compiling module xil_defaultlib.f_error
-Compiling module xil_defaultlib.correlator(LEN=128,PATTERN=128'b...
-Compiling module xil_defaultlib.correlator(LEN=256,PATTERN=256'b...
-Compiling module xil_defaultlib.correlator(LEN=64,PATTERN=64'b11...
-Compiling module xil_defaultlib.correlator(LEN=64,PATTERN=64'b11...
-Compiling module xil_defaultlib.mx_rcvr_default
+Compiling module xil_defaultlib.single_pulser
+Compiling module xil_defaultlib.mxtest_2_default
 Compiling module xil_defaultlib.clkenb(DIVFREQ=50000)
 Compiling module xil_defaultlib.reg_parm(W=8)
 Compiling module xil_defaultlib.mux8_parm(W=1)
@@ -41,7 +17,7 @@ Compiling module xil_defaultlib.counter_parm(W=2,CARRY_VAL=2)
 Compiling module xil_defaultlib.clkenb_baud(DIVFREQ=100000)
 Compiling module xil_defaultlib.transmitter_for_mx(EOF_WIDTH=2,B...
 Compiling module xil_defaultlib.manchester_tx
-Compiling module xil_defaultlib.tx_rx_test
+Compiling module xil_defaultlib.TransmitterTestUnit
+Compiling module xil_defaultlib.transmitterTestUnit_testBench
 Compiling module xil_defaultlib.glbl
-Compiling package xil_defaultlib.check_p
-Built simulation snapshot tx_rx_test_behav
+Built simulation snapshot transmitterTestUnit_testBench_behav

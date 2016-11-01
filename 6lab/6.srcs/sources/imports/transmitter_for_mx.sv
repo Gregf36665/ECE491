@@ -90,7 +90,7 @@ module transmitter_for_mx #(parameter EOF_WIDTH = 2, parameter BAUD_RATE = 9600)
                         else next = STAND_BY_START;
                         
                         lden = 1'b1;
-                        rdy = 1'b1;
+                        rdy = 1'b0;
                         txd = 1'b1; 
                         clk_reset = 1'b0;
                         eof_reset = 1'b1;
