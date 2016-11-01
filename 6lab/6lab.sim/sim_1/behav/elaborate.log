@@ -1,23 +1,54 @@
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 60cceaf4e0644802b887a5ae662938d5 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot transmitterTestUnit_testBench_behav xil_defaultlib.transmitterTestUnit_testBench xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 60cceaf4e0644802b887a5ae662938d5 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_level_sim_behav xil_defaultlib.Top_level_sim xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.fsm_pll
+Compiling module xil_defaultlib.fsm_psfd
+Compiling module xil_defaultlib.fsm_data
+Compiling module xil_defaultlib.one_bit_ff
+Compiling module xil_defaultlib.sync_input
+Compiling module xil_defaultlib.FSMs
+Compiling module xil_defaultlib.data_buffer
+Compiling module xil_defaultlib.clkenb(DIVFREQ=800000)
+Compiling module xil_defaultlib.clkenb(DIVFREQ=3200000)
+Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.counter(MAX=127)
+Compiling module xil_defaultlib.counter(MAX=63)
+Compiling module xil_defaultlib.f_error
+Compiling module xil_defaultlib.correlator(LEN=128,PATTERN=128'b...
+Compiling module xil_defaultlib.correlator(LEN=256,PATTERN=256'b...
+Compiling module xil_defaultlib.correlator(LEN=64,PATTERN=64'b11...
+Compiling module xil_defaultlib.correlator(LEN=64,PATTERN=64'b11...
+Compiling module xil_defaultlib.mx_rcvr_default
+Compiling module xil_defaultlib.clkenb(DIVFREQ=1000)
+Compiling module xil_defaultlib.counter_parm(W=3)
+Compiling module xil_defaultlib.decoder_3_8_en
+Compiling module xil_defaultlib.mux8_parm(W=1)
+Compiling module xil_defaultlib.mux8_parm
+Compiling module xil_defaultlib.seven_seg
+Compiling module xil_defaultlib.dispctl
+Compiling module xil_defaultlib.p_fifo(DEPTH=1024)
+Compiling module xil_defaultlib.fifo_fsm
+Compiling module xil_defaultlib.clkenb(DIVFREQ=9600)
+Compiling module xil_defaultlib.reg_parm(W=8)
+Compiling module xil_defaultlib.counter_parm(CARRY_VAL=4'b1000)
+Compiling module xil_defaultlib.transmitter
+Compiling module xil_defaultlib.ReceiverTestUnit
 Compiling module xil_defaultlib.single_pulser
 Compiling module xil_defaultlib.mxtest_2_default
 Compiling module xil_defaultlib.clkenb(DIVFREQ=50000)
-Compiling module xil_defaultlib.reg_parm(W=8)
-Compiling module xil_defaultlib.mux8_parm(W=1)
 Compiling module xil_defaultlib.counter_parm(W=3,CARRY_VAL=4'b01...
 Compiling module xil_defaultlib.counter_parm(W=2,CARRY_VAL=2)
 Compiling module xil_defaultlib.clkenb_baud(DIVFREQ=100000)
 Compiling module xil_defaultlib.transmitter_for_mx(EOF_WIDTH=2,B...
 Compiling module xil_defaultlib.manchester_tx
 Compiling module xil_defaultlib.TransmitterTestUnit
-Compiling module xil_defaultlib.transmitterTestUnit_testBench
+Compiling module xil_defaultlib.nexys4DDR
+Compiling module xil_defaultlib.Top_level_sim
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot transmitterTestUnit_testBench_behav
+Built simulation snapshot Top_level_sim_behav

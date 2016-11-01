@@ -21,7 +21,7 @@ module ReceiverTestUnit(
 	// Modules to connect
 	
 	// receiver
-	mx_rcvr U_RX (.clk, .reset, .rxd, .cardet, .data(data_out), .write, .error);
+	mx_rcvr U_RX (.clk, .reset, .rxd(rxdata), .cardet, .data(data_out), .write, .error);
 
 	// Control the seven seg display with data from the rx
 	dispctl U_SEG_CTL (.clk, .reset, .d7(4'h0), .d6(4'h0), .d5(4'h0), .d4(4'h0), 

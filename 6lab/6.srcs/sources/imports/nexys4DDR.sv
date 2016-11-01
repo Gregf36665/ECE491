@@ -28,18 +28,43 @@ module nexys4DDR (
 		  output logic [6:0]  SEGS,
 		  output logic [7:0]  AN,
 		  output logic 	      DP,
-		  output logic [3:0]  LED, // can be up to 7
 //		  input logic         UART_TXD_IN,
-		  output logic [2:0]  JA,
+		  input logic         IN_JA1,
+		  output logic        OUT_JA2,
+		  output logic        OUT_JA3,
+		  output logic        OUT_JA4,
 		  output logic        UART_RXD_OUT,
 		  output logic		  LED16_R, LED16_G,
 		  output logic		  LED17_R, LED17_G
             );
 
 
-	ReceiverTestUnit U_RX_UNIT (.*);
+	// Clock and reset
+	assign clk = CLK100MHZ;
+	assign reset = BTNC; // GSR
 
-	TransmitterTestUnit U_TX_UNIT (.*);
+	// PMOD connections
+	assign rxdata = IN_JA1; // Rx on pin 1
+	assign OUT_JA2 = txdata;  // Tx on pin 2
+	assign OUT_JA3 = ~txen; // txen is the inversion of pin 3
+	assign OUT_JA4 = 1'b1; // This pin should always be high
+
+	//Button connections
+	assign enb = BTND;
+
+	// Length selection
+	logic [5:0] length;
+	assign length = SW[5:0]; // The 6 switches to the right
+	// internal signals
+	logic txdata, txen;
+	logic cardet, error; // These are internal signals that can be used
+
+	ReceiverTestUnit U_RX_UNIT (.clk, .reset, .rxdata, .SEGS, .AN, .DP,
+								.cardet, .error, .UART_RXD_OUT,
+								.LED16_R, .LED16_G, .LED17_R, .LED17_G);
+
+	TransmitterTestUnit U_TX_UNIT (.clk, .reset, .enb, .length,
+									.txen, .txdata);
 
 
                                             
