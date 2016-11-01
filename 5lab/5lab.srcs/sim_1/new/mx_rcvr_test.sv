@@ -305,6 +305,7 @@ module mx_rcvr_test();
 			send_SFD(.noise(1'b0));
 			send_byte(byte_to_send, .noise(1'b0));
 			send_EOF(.noise(1'b0));
+			send_EOF(.noise(1'b0));
 			check("Error low", error, 1'b0);
 			check("Data received", data, byte_to_send);
 			check("Carrier detect dropped", cardet, 1'b0);

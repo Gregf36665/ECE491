@@ -70,9 +70,9 @@ module fsm_psfd(
 						end
 					PREAMBLE_MATCH:
 						begin
-							// This looks at the lowest 5 bits of sample
+							// This looks at the lowest 6 bits of sample
 							// This lets the sample count go to 63
-							if(slow_sample_count [4:0] == 5'd33)
+							if(slow_sample_count [5:0] == 6'd33)
 								begin
 									if(!preamble_match) next = RESET_SLOW_SAMPLE;
 									else next = PREAMBLE_MATCH;
@@ -90,7 +90,7 @@ module fsm_psfd(
 						begin
 							if(sfd_match) next = STARTING; // Found SFD
 							else if(slow_sample_count == 7'd127) // We should have seen SFD by here
-								next = IDLE; // Didn't see anything
+								next = preamble_match ? PREAMBLE_MATCH: IDLE; // Didn't see anything
 							else next = SFD_MAYBE;
 							cardet = 1'b1;
 						end

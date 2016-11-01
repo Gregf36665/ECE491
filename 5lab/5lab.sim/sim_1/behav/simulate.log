@@ -1,7 +1,9 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
 START: 2.1 Check response to preamble at time 200095.
-OK: 2.1 Check response to preamble (6 tests passed)
+FAIL(Cardet fell on clean EOF) Failed test 3 at time 1060085.
+  Expected value 0x0, Inspected Value 0x1
+FAIL: 2.1 Check response to preamble. (1/6 falures)
 START: 2.2 Check response to one byte at time 2120085.
 OK: 2.2 Check response to one byte (10 tests passed)
 START: 2.3 Check no byte at time 3440085.
@@ -13,3 +15,13 @@ OK: 10a check one byte (3 tests passed)
 START: 10b check 24 bytes at time 6530085.
 OK: 10b check 24 bytes (49 tests passed)
 START: 10d test at time 11070085.
+FAIL(Error triggered with noise) Failed test 82 at time 12581175.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: 10d test. (1/4 falures)
+START: 10e test at time 12581175.
+FAIL(Error triggered with noise) Failed test 86 at time 13711575.
+  Expected value 0x1, Inspected Value 0x0
+FAIL: 10e test. (1/4 falures)
+
+Tesbench Complete.
+ATTENTION: 3 Error(s) in 87 tests
