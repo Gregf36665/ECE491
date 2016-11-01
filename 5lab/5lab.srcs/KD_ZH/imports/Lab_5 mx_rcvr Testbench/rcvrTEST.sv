@@ -28,7 +28,7 @@ module rcvrTEST;
      mx_rcvr #() URVR( .clk(clk), .rst(rst), .rxd(rxd), .cardet(cardet), .data(data), .write(write), .error(error) );
        
     
-    import check_p1::*;
+    import check_p::*;
   
     // clock generator
     always
@@ -40,7 +40,7 @@ module rcvrTEST;
     
   //check rst 
    task check_rst;
-    rst = 1; rxd = xx;
+    rst = 1; rxd = 0;
     @(posedge clk) #1;
     check("cardet reset", cardet, 1'h0);                      //cardet
     check("error reset", error, 1'h0);                        //error

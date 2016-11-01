@@ -24,6 +24,7 @@ module Erroneous_SelfCheck #(parameter SAMPLE_RATE = 64) ();
 
 import check_p::*;
 
+	logic state = 0;
     logic clk, reset, rxd, cardet, write, error;
     logic [7:0] data_out;
      
@@ -103,10 +104,12 @@ import check_p::*;
             rxd = ~data[2]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
             rxd = data[3]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
             rxd = ~data[3]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
+			state = 0;
             rxd = 1; repeat(SAMPLE_RATE) @(posedge clk) #1;
 //            rxd = data[4]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
 //            rxd = ~data[4]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
             check("check error is asserted high", error, 1);
+			state = 1;
             rxd = data[5]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
             rxd = ~data[5]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
             rxd = data[6]; repeat(SAMPLE_RATE/2) @(posedge clk) #1;
@@ -125,11 +128,13 @@ import check_p::*;
             sendStartByte(.data(preamble));
             sendStartByte(.data(sfd));
             checkErroneous1(data1);
-            #1024;
+			#2048;
+            //#1024;
             
             sendStartByte(.data(preamble));
             sendStartByte(.data(preamble));
             sendStartByte(.data(sfd));
+			state = 1;
             checkErroneous2(data2);
             #1024;
             

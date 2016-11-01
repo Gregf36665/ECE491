@@ -112,7 +112,7 @@ module fifo_sim(
 	endtask
 
 
-	sasc_fifo4 DUV (clk, rst, clr, din, we, dout, re, full, empty);
+	ness_christer_fifo DUV (clk, rst, clr, din, we, dout, re, full, empty);
 
 	always
 		#5 clk = ~clk;

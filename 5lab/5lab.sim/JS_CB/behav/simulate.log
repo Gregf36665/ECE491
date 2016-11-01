@@ -1,0 +1,262 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+START: Verification of error, write, data, and cardet with a single byte at time 2000.
+FAIL(cardet asserted after first 8 bits of preamble) Failed test 1 at time 15000.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(write is high at the end of the eight bit) Failed test 2 at time 39100.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is ff when write is asserted) Failed test 3 at time 39100.
+  Expected value 0x0, Inspected Value 0xff
+OK: error remains low after successful transmission
+OK: write is low after EOF
+OK: cardet is low after EOF
+OK: error remains low after successful transmission
+FAIL: Verification of error, write, data, and cardet with a single byte. (3/7 falures)
+START: Verification of error, write, data, and cardet with a 24 bytes at time 89100.
+FAIL(cardet asserted after first 8 bits of preamble) Failed test 8 at time 102100.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 11 when write is asserted) Failed test 9 at time 126200.
+  Expected value 0x0, Inspected Value 0x11
+FAIL(write is high at the end of the eight bit) Failed test 10 at time 126200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 12 at time 126200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 22 when write is asserted) Failed test 13 at time 134200.
+  Expected value 0x0, Inspected Value 0x22
+FAIL(write is high at the end of the eight bit) Failed test 14 at time 134200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 16 at time 134200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 33 when write is asserted) Failed test 17 at time 142200.
+  Expected value 0x0, Inspected Value 0x33
+FAIL(write is high at the end of the eight bit) Failed test 18 at time 142200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 20 at time 142200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 44 when write is asserted) Failed test 21 at time 150200.
+  Expected value 0x0, Inspected Value 0x44
+FAIL(write is high at the end of the eight bit) Failed test 22 at time 150200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 24 at time 150200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 55 when write is asserted) Failed test 25 at time 158200.
+  Expected value 0x0, Inspected Value 0x55
+FAIL(write is high at the end of the eight bit) Failed test 26 at time 158200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 28 at time 158200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 66 when write is asserted) Failed test 29 at time 166200.
+  Expected value 0x0, Inspected Value 0x66
+FAIL(write is high at the end of the eight bit) Failed test 30 at time 166200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 32 at time 166200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 77 when write is asserted) Failed test 33 at time 174200.
+  Expected value 0x0, Inspected Value 0x77
+FAIL(write is high at the end of the eight bit) Failed test 34 at time 174200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 36 at time 174200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 88 when write is asserted) Failed test 37 at time 182200.
+  Expected value 0x0, Inspected Value 0x88
+FAIL(write is high at the end of the eight bit) Failed test 38 at time 182200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 40 at time 182200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 99 when write is asserted) Failed test 41 at time 190200.
+  Expected value 0x0, Inspected Value 0x99
+FAIL(write is high at the end of the eight bit) Failed test 42 at time 190200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 44 at time 190200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is aa when write is asserted) Failed test 45 at time 198200.
+  Expected value 0x0, Inspected Value 0xaa
+FAIL(write is high at the end of the eight bit) Failed test 46 at time 198200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 48 at time 198200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is bb when write is asserted) Failed test 49 at time 206200.
+  Expected value 0x0, Inspected Value 0xbb
+FAIL(write is high at the end of the eight bit) Failed test 50 at time 206200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 52 at time 206200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is cc when write is asserted) Failed test 53 at time 214200.
+  Expected value 0x0, Inspected Value 0xcc
+FAIL(write is high at the end of the eight bit) Failed test 54 at time 214200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 56 at time 214200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is dd when write is asserted) Failed test 57 at time 222200.
+  Expected value 0x0, Inspected Value 0xdd
+FAIL(write is high at the end of the eight bit) Failed test 58 at time 222200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 60 at time 222200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is ee when write is asserted) Failed test 61 at time 230200.
+  Expected value 0x0, Inspected Value 0xee
+FAIL(write is high at the end of the eight bit) Failed test 62 at time 230200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 64 at time 230200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is ff when write is asserted) Failed test 65 at time 238200.
+  Expected value 0x0, Inspected Value 0xff
+FAIL(write is high at the end of the eight bit) Failed test 66 at time 238200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 68 at time 238200.
+  Expected value 0x0, Inspected Value 0x1
+OK: data is 00 when write is asserted
+FAIL(write is high at the end of the eight bit) Failed test 70 at time 246200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 72 at time 246200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 11 when write is asserted) Failed test 73 at time 254200.
+  Expected value 0x0, Inspected Value 0x11
+FAIL(write is high at the end of the eight bit) Failed test 74 at time 254200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 76 at time 254200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 22 when write is asserted) Failed test 77 at time 262200.
+  Expected value 0x0, Inspected Value 0x22
+FAIL(write is high at the end of the eight bit) Failed test 78 at time 262200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 80 at time 262200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 33 when write is asserted) Failed test 81 at time 270200.
+  Expected value 0x0, Inspected Value 0x33
+FAIL(write is high at the end of the eight bit) Failed test 82 at time 270200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 84 at time 270200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 44 when write is asserted) Failed test 85 at time 278200.
+  Expected value 0x0, Inspected Value 0x44
+FAIL(write is high at the end of the eight bit) Failed test 86 at time 278200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 88 at time 278200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 55 when write is asserted) Failed test 89 at time 286200.
+  Expected value 0x0, Inspected Value 0x55
+FAIL(write is high at the end of the eight bit) Failed test 90 at time 286200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 92 at time 286200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 66 when write is asserted) Failed test 93 at time 294200.
+  Expected value 0x0, Inspected Value 0x66
+FAIL(write is high at the end of the eight bit) Failed test 94 at time 294200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 96 at time 294200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 77 when write is asserted) Failed test 97 at time 302200.
+  Expected value 0x0, Inspected Value 0x77
+FAIL(write is high at the end of the eight bit) Failed test 98 at time 302200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 100 at time 302200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 88 when write is asserted) Failed test 101 at time 310200.
+  Expected value 0x0, Inspected Value 0x88
+FAIL(write is high at the end of the eight bit) Failed test 102 at time 310200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 104 at time 310200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is 99 when write is asserted) Failed test 105 at time 318200.
+  Expected value 0x0, Inspected Value 0x99
+FAIL(write is high at the end of the eight bit) Failed test 106 at time 318200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 108 at time 318200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is aa when write is asserted) Failed test 109 at time 326200.
+  Expected value 0x0, Inspected Value 0xaa
+FAIL(write is high at the end of the eight bit) Failed test 110 at time 326200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 112 at time 326200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is bb when write is asserted) Failed test 113 at time 334200.
+  Expected value 0x0, Inspected Value 0xbb
+FAIL(write is high at the end of the eight bit) Failed test 114 at time 334200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 116 at time 334200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is cc when write is asserted) Failed test 117 at time 342200.
+  Expected value 0x0, Inspected Value 0xcc
+FAIL(write is high at the end of the eight bit) Failed test 118 at time 342200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 120 at time 342200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is dd when write is asserted) Failed test 121 at time 350200.
+  Expected value 0x0, Inspected Value 0xdd
+FAIL(write is high at the end of the eight bit) Failed test 122 at time 350200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 124 at time 350200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is ee when write is asserted) Failed test 125 at time 358200.
+  Expected value 0x0, Inspected Value 0xee
+FAIL(write is high at the end of the eight bit) Failed test 126 at time 358200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 128 at time 358200.
+  Expected value 0x0, Inspected Value 0x1
+FAIL(data is ff when write is asserted) Failed test 129 at time 366200.
+  Expected value 0x0, Inspected Value 0xff
+FAIL(write is high at the end of the eight bit) Failed test 130 at time 366200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 132 at time 366200.
+  Expected value 0x0, Inspected Value 0x1
+OK: data is 00 when write is asserted
+FAIL(write is high at the end of the eight bit) Failed test 134 at time 374200.
+  Expected value 0x0, Inspected Value 0x1
+OK: error remains low during reception
+FAIL(cardet stays high when changing bytes during reception) Failed test 136 at time 374200.
+  Expected value 0x0, Inspected Value 0x1
+OK: cardet is low after EOF
+OK: write is low after EOF
+OK: error is low after successful transmission
+FAIL: Verification of error, write, data, and cardet with a 24 bytes. (95/132 falures)
+START: Checks receiver functionality when an error in manchester encoding is received (all low bit) at time 379100.
+FAIL(cardet asserted after first 8 bits of preamble) Failed test 140 at time 392100.
+  Expected value 0x0, Inspected Value 0x1
+OK: write did not get asserted after receiving byte with an entirely low bit
+FAIL(error was asserted after receiving byte with an entirely low bit) Failed test 142 at time 416100.
+  Expected value 0x0, Inspected Value 0x1
+OK: cardet is low after error of receiving byte with an entirely low bit
+FAIL: Checks receiver functionality when an error in manchester encoding is received (all low bit). (2/4 falures)
+START: Checks receiver functionality when an error in manchester encoding is received (all high bit) at time 416100.
+FAIL(cardet asserted after first 8 bits of preamble) Failed test 144 at time 429100.
+  Expected value 0x0, Inspected Value 0x1
+OK: write did not get asserted after receiving byte with an entirely high bit
+FAIL(error was asserted after receiving byte with an entirely high bit) Failed test 146 at time 453100.
+  Expected value 0x0, Inspected Value 0x1
+OK: cardet is low after error of receiving byte with an entirely high bit
+FAIL: Checks receiver functionality when an error in manchester encoding is received (all high bit). (2/4 falures)
+
+Tesbench Complete.
+ATTENTION: 102 Error(s) in 147 tests

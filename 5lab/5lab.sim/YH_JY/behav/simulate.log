@@ -1,0 +1,66 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+OK: cardet is low before finding out a preamble
+FAIL(cardet is high after finding out a preamble) Failed test 2 at time 8756.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(cardet is still high when get 16bits of preamble) Failed test 3 at time 11316.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(cardet high after SFD) Failed test 4 at time 13876.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(writeis high when get one byte of data) Failed test 5 at time 16436.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(cardet is still high) Failed test 6 at time 16436.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(output data matches the inputted data) Failed test 7 at time 16436.
+  Expected value 0xff, Inspected Value 0xxx
+OK: cardet is low after EOF
+FAIL(data is not change after eof) Failed test 9 at time 33076.
+  Expected value 0xff, Inspected Value 0xxx
+FAIL(write is high when receiving each byte of data) Failed test 10 at time 53516.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 11 at time 56076.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 12 at time 58636.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 13 at time 61196.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 14 at time 63756.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 15 at time 66316.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 16 at time 68876.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 17 at time 71436.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 18 at time 73996.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 19 at time 76556.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 20 at time 79116.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 21 at time 81676.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 22 at time 84236.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 23 at time 86796.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 24 at time 89356.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 25 at time 91916.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 26 at time 94476.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 27 at time 97036.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 28 at time 99596.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 29 at time 102156.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 30 at time 104716.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 31 at time 107276.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 32 at time 109836.
+  Expected value 0x1, Inspected Value 0x0
+FAIL(write is high when receiving each byte of data) Failed test 33 at time 112396.
+  Expected value 0x1, Inspected Value 0x0

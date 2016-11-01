@@ -1,0 +1,9 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+START: Check single byte transmissions at time 15441.
+OK: Check single byte transmissions (1 tests passed)
+START: Check single byte transmissions at time 37961.
+OK: Check single byte transmissions (1 tests passed)
+
+Tesbench Complete.
+No errors in 2 tests. :)

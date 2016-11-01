@@ -31,6 +31,7 @@ module nexys4DDR (
 		  output logic [3:0]  LED, // can be up to 7
 //		  input logic         UART_TXD_IN,
 		  output logic [2:0]  JA,
+		  //input logic  [0:0]  JA_I, // Use for hooking up a tx to the rx
 		  output logic        UART_RXD_OUT,
 		  output logic		  LED16_R, LED16_G,
 		  output logic		  LED17_R, LED17_G
@@ -90,6 +91,7 @@ module nexys4DDR (
 
                      
 	// Assign statements
+	//assign txd = JA_I; // Do this to connect to a tx
     assign JA[0] = data_line; // This allows the mx data link to be viewed on the scope
     assign JA[1] = error;
 	assign JA[2] = cardet; 

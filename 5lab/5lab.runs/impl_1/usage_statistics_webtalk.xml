@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun Oct 30 21:35:37 2016'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Mon Oct 31 19:36:05 2016'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1577090" description="" />
-  <keyValuePair key="date_generated" value="Sun Oct 30 21:35:37 2016" description="" />
+  <keyValuePair key="date_generated" value="Mon Oct 31 19:36:05 2016" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2016.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="dd429faf13654bdbaa58cc108d99a37b" description="" />
-  <keyValuePair key="project_iteration" value="20" description="" />
-  <keyValuePair key="random_id" value="73a23c674b2257e7a30ea1d1050aafbd" description="" />
-  <keyValuePair key="registration_id" value="73a23c674b2257e7a30ea1d1050aafbd" description="" />
+  <keyValuePair key="project_iteration" value="23" description="" />
+  <keyValuePair key="random_id" value="5afd585b72b05ea7a65287d2ca2b639f" description="" />
+  <keyValuePair key="registration_id" value="5afd585b72b05ea7a65287d2ca2b639f" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
   <keyValuePair key="target_device" value="xc7a100t" description="" />
   <keyValuePair key="target_family" value="artix7" description="" />
@@ -19,11 +19,11 @@
   <keyValuePair key="tool_flow" value="Vivado" description="" />
  </section>
  <section name="user_environment" level="1" order="2" description="">
-  <keyValuePair key="cpu_name" value="Intel(R) Xeon(R) CPU E5-1620 0 @ 3.60GHz" description="" />
-  <keyValuePair key="cpu_speed" value="3591 MHz" description="" />
+  <keyValuePair key="cpu_name" value="Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz" description="" />
+  <keyValuePair key="cpu_speed" value="3408 MHz" description="" />
   <keyValuePair key="os_name" value="Microsoft Windows 7 , 64-bit" description="" />
   <keyValuePair key="os_release" value="Service Pack 1  (build 7601)" description="" />
-  <keyValuePair key="system_ram" value="17.000 GB" description="" />
+  <keyValuePair key="system_ram" value="34.000 GB" description="" />
   <keyValuePair key="total_processors" value="1" description="" />
  </section>
  <section name="report_drc" level="1" order="3" description="">
@@ -299,7 +299,7 @@
    <keyValuePair key="nets" value="2303" description="" />
    <keyValuePair key="pins" value="14372" description="" />
    <keyValuePair key="pll" value="0" description="" />
-   <keyValuePair key="router_runtime" value="34.410000" description="" />
+   <keyValuePair key="router_runtime" value="24.633000" description="" />
    <keyValuePair key="router_timing_driven" value="1" description="" />
    <keyValuePair key="threads" value="2" description="" />
    <keyValuePair key="timing_constraints_exist" value="1" description="" />
@@ -342,10 +342,10 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:42s" description="" />
+   <keyValuePair key="elapsed" value="00:00:30s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="459.941MB" description="" />
-   <keyValuePair key="memory_peak" value="694.336MB" description="" />
+   <keyValuePair key="memory_gain" value="459.773MB" description="" />
+   <keyValuePair key="memory_peak" value="694.465MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="7" description="">
@@ -393,7 +393,7 @@
  </section>
  <section name="vivado_usage" level="1" order="8" description="">
   <section name="other_data" level="2" order="1" description="">
-   <keyValuePair key="guimode" value="30" description="" />
+   <keyValuePair key="guimode" value="31" description="" />
   </section>
   <section name="project_data" level="2" order="2" description="">
    <keyValuePair key="board" value="Nexys4 DDR" description="" />
@@ -417,7 +417,7 @@
    <keyValuePair key="launch_simulation_questa" value="0" description="" />
    <keyValuePair key="launch_simulation_riviera" value="0" description="" />
    <keyValuePair key="launch_simulation_vcs" value="0" description="" />
-   <keyValuePair key="launch_simulation_xsim" value="949" description="" />
+   <keyValuePair key="launch_simulation_xsim" value="950" description="" />
    <keyValuePair key="simulator_language" value="Mixed" description="" />
    <keyValuePair key="srcsetcount" value="29" description="" />
    <keyValuePair key="synthesisstrategy" value="Vivado Synthesis Defaults" description="" />

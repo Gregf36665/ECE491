@@ -31,7 +31,7 @@ module fifo_upgrade_sim();
 	// Outputs
 	logic full, empty;
 
-	p_fifo #(.DEPTH(4)) DUV (.*);
+	ness_christer_fifo #(.DEPTH(4)) DUV (.*);
 
 	task read_byte(logic [7:0] expected);
 		$display("Checking %h", expected);

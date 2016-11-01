@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon Oct 31 12:58:23 2016
+# Process ID: 10748
+# Current directory: C:/Users/flynng/Desktop/ECE491/5lab
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7996 C:\Users\flynng\Desktop\ECE491\5lab\5lab.xpr
+# Log file: C:/Users/flynng/Desktop/ECE491/5lab/vivado.log
+# Journal file: C:/Users/flynng/Desktop/ECE491/5lab\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/flynng/Desktop/ECE491/5lab/5lab.xpr
+launch_simulation
+open_wave_config C:/Users/flynng/Desktop/ECE491/5lab/mx_rcvr_test_behav.wcfg
+open_wave_config C:/Users/flynng/Desktop/ECE491/5lab/tx_rx_test_behav.wcfg
+source mx_test_tx_rx_test.tcl
+restart
+run all
+close_sim

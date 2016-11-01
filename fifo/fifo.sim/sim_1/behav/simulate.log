@@ -1,72 +1,34 @@
 Vivado Simulator 2016.2
 Time resolution is 1 ps
-Val is at xxxx
-Data is 0xxxx
-Ones is at i 0
-=============
-Data index 0 is xx
-Showing data xx
-Checking xx
-Ones are at i, at i x          0
-Showing data xx
-Checking xx
-Ones are at i, at i x          1
-Showing data 0x
-Checking 0x
-Ones are at i, at i x          2
-=== Final value:  x ones
-Checking xx
-Checking xx
-Checking xx
-Val is at ff00
-Data is 0ff00
-Ones is at i 0
-=============
-Data index 0 is 00
-Showing data 00
+Checking 10
+OK: Verify data read correctly
+Checking 0f
+OK: Verify data read correctly
+Checking ab
+OK: Verify data read correctly
+Checking 10
+OK: Verify data read correctly
+Checking 42
+OK: Verify data read correctly
+Checking 0f
+OK: Verify data read correctly
+Checking ab
+OK: Verify data read correctly
+Checking 10
+OK: Verify data read correctly
 Checking 00
-Ones are at i, at i x          0
-Showing data 3c
-Checking 3c
-Ones are at i, at i x          1
-Showing data 0f
-Checking 0f
-Ones are at i, at i x          2
-=== Final value:  8 ones
+OK: Verify data read correctly
 Checking 00
-Checking 3c
-Checking xf
-Val is at ff7f
-Data is 0ff7f
-Ones is at i 0
-=============
-Data index 0 is 3f
-Showing data 3f
-Checking 3f
-Ones are at i, at i x          0
-Showing data 3d
-Checking 3d
-Ones are at i, at i x          1
-Showing data 0f
+OK: Verify data read correctly
 Checking 0f
-Ones are at i, at i x          2
-=== Final value: 15 ones
-Checking 3f
-Checking 3d
-Val is at ffff
-Data is 0ffff
-Ones is at i 0
-=============
-Data index 0 is 3f
-Showing data 3f
-Checking 3f
-Ones are at i, at i x          0
-Showing data 3f
-Checking 3f
-Ones are at i, at i x          1
-Showing data 0f
-Checking 0f
-Ones are at i, at i x          2
-=== Final value: 16 ones
-Checking 3f
-$finish called at time : 206 ns : File "C:/Users/flynng/Desktop/ECE491/fifo/fifo.srcs/sim_1/new/correlator_test.sv" Line 47
+OK: Verify data read correctly
+Checking ab
+OK: Verify data read correctly
+Checking 10
+OK: Verify data read correctly
+Checking 42
+OK: Verify data read correctly
+
+Tesbench Complete.
+No errors in 14 tests. :)
+$finish called at time : 1331 ns : File "C:/Users/flynng/Desktop/ECE491/fifo/fifo.srcs/sim_1/new/fifo_upgrade_sim.sv" Line 125
