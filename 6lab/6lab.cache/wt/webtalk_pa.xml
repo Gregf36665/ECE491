@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Nov 01 13:01:08 2016">
+<application name="pa" timeStamp="Thu Nov 03 15:11:05 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="daa610d041b14b9b869f1880d4793f39" type="ProjectID"/>
-<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+<property name="ProjectIteration" value="3" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -18,39 +18,43 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="AddSources" value="9" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="1" type="JavaHandler"/>
+<property name="CloseProject" value="1" type="JavaHandler"/>
 <property name="EditDelete" value="2" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="1" type="JavaHandler"/>
 <property name="LeaveFeedback" value="1" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
-<property name="RunSynthesis" value="8" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="1" type="JavaHandler"/>
+<property name="RunBitgen" value="1" type="JavaHandler"/>
+<property name="RunImplementation" value="1" type="JavaHandler"/>
+<property name="RunSynthesis" value="10" type="JavaHandler"/>
 <property name="SetTopNode" value="1" type="JavaHandler"/>
 <property name="ShowView" value="4" type="JavaHandler"/>
-<property name="SimulationBreak" value="2" type="JavaHandler"/>
+<property name="SimulationBreak" value="4" type="JavaHandler"/>
 <property name="SimulationClose" value="1" type="JavaHandler"/>
-<property name="SimulationRelaunch" value="22" type="JavaHandler"/>
-<property name="SimulationRestart" value="6" type="JavaHandler"/>
-<property name="SimulationRun" value="9" type="JavaHandler"/>
-<property name="SimulationRunAll" value="30" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="42" type="JavaHandler"/>
+<property name="SimulationRelaunch" value="29" type="JavaHandler"/>
+<property name="SimulationRestart" value="10" type="JavaHandler"/>
+<property name="SimulationRun" value="10" type="JavaHandler"/>
+<property name="SimulationRunAll" value="42" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="68" type="JavaHandler"/>
 <property name="WaveformOpenConfiguration" value="1" type="JavaHandler"/>
+<property name="WaveformSaveConfiguration" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="5" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, simulation_live_run_all" value="2" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, nexys4DDR (nexys4DDR.sv" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, Top_level_sim (Top_level_sim.sv" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 11, false" value="2" type="GuiResourceData"/>
-<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="2" type="GuiResourceData"/>
-<property name="RDIResource.GraphicalView_ZOOM_FIT, Waveform Viewer_zoom_fit" value="3" type="GuiResourceData"/>
-<property name="RDIResource.GraphicalView_ZOOM_OUT, Waveform Viewer_zoom_out" value="3" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 241, 516" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 811, 408" value="1" type="GuiResourceData"/>
-<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 813, 422" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, Auto Connect" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, Open Hardware Manager" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, nexys4DDR (nexys4DDR.sv" value="4" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_CODE, Code" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, Open target" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, Program device" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="54" type="GuiMode"/>
+<property name="GuiMode" value="55" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="46" type="TclMode"/>
+<property name="TclMode" value="47" type="TclMode"/>
 </item>
 </section>
 </application>

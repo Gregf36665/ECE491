@@ -30,10 +30,18 @@ module single_pulser(
 	logic curr, last;
 
 	always_ff @(posedge clk)
-	begin
-		curr <= enb;
-		last <= curr;
-	end
+	if (reset)
+		begin
+			curr <= 1'b0;
+			last <= 1'b0;
+		end
+	else
+		begin
+			curr <= enb;
+			last <= curr;
+		end
+
+
 	assign pulse = curr & ~last;
 	
 endmodule

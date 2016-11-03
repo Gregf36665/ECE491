@@ -82,9 +82,9 @@ module Top_level_sim();
 		#1000;
 		BTNC = 0; // Exit reset
 		#1000;
-		repeat(20) send_byte(8'h55); // Send preamble
-		send_byte(8'h0D); // send SFD
-		send_byte(8'h72); // send data
+		repeat(2) send_byte(8'h55); // Send preamble
+		send_byte(8'hD0); // send SFD
+		send_byte(8'h55); // send data
 		IN_JA1 = 1; // Idle the data line
 	endtask
 
@@ -93,6 +93,7 @@ module Top_level_sim();
 			//send_data;
 			#1000;
 			receive_data;
+			#1_500_000;
 			$finish;
 		end
 
