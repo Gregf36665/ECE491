@@ -27,7 +27,7 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
     output logic cardet,
     output logic [7:0] data,
     output logic write,
-    output logic error
+    output logic error, error1, error2, error3
     );
 
 	// All of the internal wires
@@ -44,7 +44,8 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 				.sfd_match, .match_error, .match_idle, .match_one, .match_zero, 
 				.set_ferr, .clr_ferr, .sample_count, .cardet, .sample_count_reset,
 				.bit_count, .zero_one_strength, .sample_inc, .sample_dec, .bit_count_reset, 
-				.slow_sample_reset, .store_byte, .store_bit, .data_bit, .write);
+				.slow_sample_reset, .store_byte, .store_bit, .data_bit, .write, .set_ferr1,
+				.set_ferr2, .set_ferr3);
 
 	// Create a buffer to keep track of the data
 	data_buffer U_DATA (.clk, .reset ,.data_bit, .store_bit, .store_byte, .data);
@@ -67,6 +68,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 
 	// error block
 	f_error U_ERROR (.clk, .set_ferr, .clr_ferr, .reset, .ferr(error));
+	f_error U_ERROR1 (.clk, .set_ferr(set_ferr1), .clr_ferr, .reset, .ferr(error1));
+	f_error U_ERROR2 (.clk, .set_ferr(set_ferr2), .clr_ferr, .reset, .ferr(error2));
+	f_error U_ERROR3 (.clk, .set_ferr(set_ferr3), .clr_ferr, .reset, .ferr(error3));
 	
 	// Correlator patterns
 	localparam PREAMBLE_PATTERN = {4{32'hFF0000FF}};
@@ -76,8 +80,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	localparam IDLE_PATTERN = {{32{1'b1}},{32{1'b1}}};
 
 	// These are the triggers for the 1/0/idle/error bits
-	localparam MIN_TRIGGER = 8;
-	localparam MAX_TRIGGER = 56;
+	localparam THRESHOLD   = 20;
+	localparam MIN_TRIGGER = THRESHOLD;
+	localparam MAX_TRIGGER = 64-THRESHOLD;
 
 
 	// HTHRESH set to fall after 1 wrong bit + 2 samples

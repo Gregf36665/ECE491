@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Thu Nov 03 14:15:50 2016
-| Host             : ECE400-F6N3KB2 running 64-bit Service Pack 1  (build 7601)
+| Date             : Thu Nov 03 16:05:41 2016
+| Host             : ECE400-F6M9KB2 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file nexys4DDR_power_routed.rpt -pb nexys4DDR_power_summary_routed.pb -rpx nexys4DDR_power_routed.rpx
 | Design           : nexys4DDR
 | Device           : xc7a100tcsg324-1
@@ -50,14 +50,14 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.003 |        3 |       --- |             --- |
-| Slice Logic              |     0.001 |     1900 |       --- |             --- |
-|   LUT as Logic           |     0.001 |      805 |     63400 |            1.27 |
-|   CARRY4                 |    <0.001 |       30 |     15850 |            0.19 |
-|   Register               |    <0.001 |      600 |    126800 |            0.47 |
+| Slice Logic              |     0.001 |     1903 |       --- |             --- |
+|   LUT as Logic           |     0.001 |      809 |     63400 |            1.28 |
+|   CARRY4                 |    <0.001 |       28 |     15850 |            0.18 |
+|   Register               |    <0.001 |      602 |    126800 |            0.47 |
 |   F7/F8 Muxes            |    <0.001 |       24 |     63400 |            0.04 |
 |   LUT as Distributed RAM |    <0.001 |      192 |     19000 |            1.01 |
-|   Others                 |     0.000 |       44 |       --- |             --- |
-| Signals                  |     0.002 |     1524 |       --- |             --- |
+|   Others                 |     0.000 |       46 |       --- |             --- |
+| Signals                  |     0.001 |     1527 |       --- |             --- |
 | I/O                      |     0.006 |       34 |       210 |           16.19 |
 | Static Power             |     0.097 |          |           |                 |
 | Total                    |     0.108 |          |           |                 |
@@ -211,6 +211,8 @@ Table of Contents
 |       U_BIT_COUNT          |    <0.001 |
 |       U_DATA               |    <0.001 |
 |       U_ERROR              |    <0.001 |
+|       U_ERROR1             |    <0.001 |
+|       U_ERROR2             |    <0.001 |
 |       U_FAST_COUNT         |    <0.001 |
 |       U_FSM                |    <0.001 |
 |         U_DATA             |    <0.001 |

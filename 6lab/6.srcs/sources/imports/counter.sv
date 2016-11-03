@@ -29,7 +29,7 @@ module counter #(parameter MAX = 7)(
 	begin
 		if(reset) q <= 0;
 		if(inc)   q <= q + 2; // skip a step up
-		if(dec)   q <= q - 3; // skip a step down
+		if(dec)   q <= q - 7; // skip a step down
 		if(enb)   q <= q+1;
 	end
 endmodule

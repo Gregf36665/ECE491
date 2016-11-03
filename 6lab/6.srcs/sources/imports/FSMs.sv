@@ -27,7 +27,7 @@ module FSMs(input logic clk, reset, preamble_match, sfd_match, match_error,
 			input logic [6:0] zero_one_strength,
 			output logic sample_inc, sample_dec, bit_count_reset, store_bit, 
 			slow_sample_reset, data_bit, cardet, store_byte, clr_ferr, set_ferr, 
-			write, sample_count_reset);
+			write, sample_count_reset, set_ferr1, set_ferr2, set_ferr3);
 
 	logic enable_pll;
 	logic enable_data;
@@ -43,7 +43,8 @@ module FSMs(input logic clk, reset, preamble_match, sfd_match, match_error,
 
 	fsm_data U_DATA   (.clk, .reset, .match_one, .match_zero, .match_idle, .match_error,
 					   .sample_count, .bit_count, .data_bit, .store_bit, .store_byte,
-					   .set_ferr, .write(write_next), .enable_data, .data_done, .sample_count_reset());
+					   .set_ferr, .write(write_next), .enable_data, .data_done, .sample_count_reset(), 
+					   .set_ferr1, .set_ferr2);
 					   //TODO remove sample_count)reset
 
 

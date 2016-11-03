@@ -17,14 +17,19 @@ module ReceiverTestUnit(
 
 	// Data outputs for rx, data out of the fifo and the fsm
     logic [7:0] data_out, data_fifo, data_fsm;
+
+	logic error1, error2, error3; // Error codes
+	logic [3:0] error_code;
+	assign error_code = {error, error1, error2, error3};
     
 	// Modules to connect
 	
 	// receiver
-	mx_rcvr U_RX (.clk, .reset, .rxd(rxdata), .cardet, .data(data_out), .write, .error);
+	mx_rcvr U_RX (.clk, .reset, .rxd(rxdata), .cardet, .data(data_out), .write, .error, 
+				.error1, .error2, .error3);
 
 	// Control the seven seg display with data from the rx
-	dispctl U_SEG_CTL (.clk, .reset, .d7(4'h0), .d6(4'h0), .d5(4'h0), .d4(4'h0), 
+	dispctl U_SEG_CTL (.clk, .reset, .d7(error_code), .d6(4'h0), .d5(4'h0), .d4(4'h0), 
 						.d3(4'h0), .d2(4'h0), .d1(data_out[7:4]), .d0(data_out[3:0]),
 						.dp7(1'b0), .dp6(1'b0), .dp5(1'b0), .dp4(1'b0), .dp3(1'b0), 
 						.dp2(1'b0), .dp1(1'b0), .dp0(1'b0), .seg(SEGS), .dp(DP), .an(AN)); 

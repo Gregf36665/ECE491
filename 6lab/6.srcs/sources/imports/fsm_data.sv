@@ -25,7 +25,8 @@ module fsm_data(
 		input logic clk, reset, match_one, match_zero, match_idle, match_error, enable_data,
 		input logic [5:0] sample_count,
 		input logic [2:0] bit_count,
-		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done, sample_count_reset
+		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done, sample_count_reset,
+		output logic set_ferr1, set_ferr2
 		);
 				
 		typedef enum logic [3:0] {
@@ -58,6 +59,8 @@ module fsm_data(
 				store_bit 	= 1'b0;
 				store_byte 	= 1'b0;
 				set_ferr    = 1'b0;
+				set_ferr1    = 1'b0;
+				set_ferr2    = 1'b0;
 				write       = 1'b0;
 				data_done   = 1'b0;
 			    sample_count_reset = 1'b0;
@@ -120,12 +123,14 @@ module fsm_data(
 					    begin
 						  next = IDLE;
 						  set_ferr = 1'b1;
+						  set_ferr2 = 1'b1;
 						end
 					MISSED:
 						// This is a different state for debugging
 					    begin
 						  next = IDLE;
 						  set_ferr = 1'b1;
+						  set_ferr1 = 1'b1;
 						end
 					default:
 						next = IDLE;
