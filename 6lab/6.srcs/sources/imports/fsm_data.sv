@@ -25,7 +25,7 @@ module fsm_data(
 		input logic clk, reset, match_one, match_zero, match_idle, match_error, enable_data,
 		input logic [5:0] sample_count,
 		input logic [2:0] bit_count,
-		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done, sample_count_reset,
+		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done, 
 		output logic set_ferr1, set_ferr2
 		);
 				
@@ -63,14 +63,12 @@ module fsm_data(
 				set_ferr2    = 1'b0;
 				write       = 1'b0;
 				data_done   = 1'b0;
-			    sample_count_reset = 1'b0;
 							
 				case (state)
 					IDLE:
 					   begin
 					       next = enable_data ? START_RECIEVE : IDLE;
 					       data_done = 1'b1;
-						   sample_count_reset = 1'b1;
 					   end
 					START_RECIEVE:
 						begin

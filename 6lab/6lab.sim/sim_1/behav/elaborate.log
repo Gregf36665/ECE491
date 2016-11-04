@@ -12,6 +12,7 @@ Compiling module xil_defaultlib.fsm_psfd
 Compiling module xil_defaultlib.fsm_data
 Compiling module xil_defaultlib.one_bit_ff
 Compiling module xil_defaultlib.sync_input
+Compiling module xil_defaultlib.accumulator
 Compiling module xil_defaultlib.FSMs
 Compiling module xil_defaultlib.data_buffer
 Compiling module xil_defaultlib.clkenb(DIVFREQ=800000)

@@ -24,7 +24,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE49
 INFO: [VRFC 10-311] analyzing module f_error
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/FSMs.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module FSMs
-INFO: [VRFC 10-2458] undeclared symbol data_bit_last, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/FSMs.sv:37]
+INFO: [VRFC 10-2458] undeclared symbol data_bit_last, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/FSMs.sv:39]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/decoder_3_8_en.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module decoder_3_8_en
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/data_buffer.sv" into library xil_defaultlib
@@ -84,6 +84,8 @@ WARNING: [VRFC 10-756] identifier txdata is used before its declaration [C:/User
 WARNING: [VRFC 10-756] identifier txen is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:49]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/check_p.sv" into library xil_defaultlib
 INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/check_p.sv:84]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/accumulator.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accumulator
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sim_1/new/tx_rx_test_jitter.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tx_rx_test_jitter
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sim_1/new/tx_rx_test.sv" into library xil_defaultlib

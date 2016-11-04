@@ -25,7 +25,8 @@ module fsm_pll(
 		input logic clk, reset, data_bit, enable_pll,
 		input logic [5:0] sample_count, 
 		input logic [6:0] current_corr,
-		output logic sample_inc, sample_dec
+		output logic sample_inc, sample_dec,
+		output logic [5:0] error_change
 		);
 				
 		typedef enum logic [3:0] {
@@ -53,6 +54,9 @@ module fsm_pll(
 		logic [6:0] next_min_corr, next_max_corr;
 		logic [5:0] next_min_time, next_max_time, next_final_time;
 		
+		// Wire to figure out how far out of sync we are
+		logic [5:0] next_error_change;
+
 		logic look; // Internal signal for debugging
 
 		always_ff @(posedge clk)
@@ -65,6 +69,7 @@ module fsm_pll(
 					min_corr <= 0;
 					max_corr <= 0;
 					final_time <= 0;
+					error_change <= 0;
 				end
 				else
 				begin 
@@ -74,6 +79,7 @@ module fsm_pll(
 					if(update_min_corr) min_corr <= next_min_corr;
 					if(update_max_corr) max_corr <= next_max_corr;
 					if(update_final_time) final_time <= next_final_time;
+					error_change <= next_error_change;
 				end
 			end
 			
@@ -96,6 +102,8 @@ module fsm_pll(
 				update_min_corr = 0;
 				update_max_corr = 0;
 				update_final_time = 0;
+				
+				next_error_change = 0;
 
 				next = IDLE;
 							
@@ -157,6 +165,8 @@ module fsm_pll(
 						end
 					INC_DEC:
 						begin
+							// This is how far we are off by
+							next_error_change = final_time > 32 ? 64 - final_time : final_time;
 							if((final_time <= 6'd20) && (final_time >= 6'd4)) next = DEC_SAMPLE;
 							else if((final_time <= 6'd60) && (final_time >= 6'd40)) next = INC_SAMPLE;
 							else next = WAIT;

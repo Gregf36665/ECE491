@@ -48,7 +48,6 @@ set_msg_config -id {HDL 9-1654} -limit 100000
 start_step init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -120,21 +119,5 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-}
-
-start_step write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  catch { write_mem_info -force nexys4DDR.mmi }
-  write_bitstream -force nexys4DDR.bit 
-  catch { write_sysdef -hwdef nexys4DDR.hwdef -bitfile nexys4DDR.bit -meminfo nexys4DDR.mmi -file nexys4DDR.sysdef }
-  catch {write_debug_probes -quiet -force debug_nets}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
 }
 

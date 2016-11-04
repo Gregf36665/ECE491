@@ -996,3 +996,207 @@ WARNING: [Synth 8-3332] Sequential element (shreg_reg[127]) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (shreg_reg[126]) is unused and will be removed from module correlator.
 WARNING: [Synth 8-3332] Sequential element (csum_reg[1]) is unused and will be removed from module correlator__parameterized0.
 WARNING: [Synth 8-3332] Sequential element (csum_reg[0]) is unused and will be removed from module correlator__parameterized0.
+WARNING: [Synth 8-3332] Sequential element (q_reg[2]) is unused and will be removed from module counter_parm.
+WARNING: [Synth 8-3332] Sequential element (q_reg[1]) is unused and will be removed from module counter_parm.
+WARNING: [Synth 8-3332] Sequential element (q_reg[0]) is unused and will be removed from module counter_parm.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 670.363 ; gain = 462.438
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 670.363 ; gain = 462.438
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 670.363 ; gain = 462.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 693.113 ; gain = 485.188
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[0]' (FDCE) to 'U_FIFO/rp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[1]' (FDCE) to 'U_FIFO/rp_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[2]' (FDCE) to 'U_FIFO/rp_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[3]' (FDCE) to 'U_FIFO/rp_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[4]' (FDCE) to 'U_FIFO/rp_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[5]' (FDCE) to 'U_FIFO/rp_reg[5]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[6]' (FDCE) to 'U_FIFO/rp_reg[6]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[7]' (FDCE) to 'U_FIFO/rp_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[8]' (FDCE) to 'U_FIFO/rp_reg[8]'
+INFO: [Synth 8-3886] merging instance 'U_FIFO/rp_reg_rep[9]' (FDCE) to 'U_FIFO/rp_reg[9]'
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[0]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[1]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[2]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[3]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[4]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[5]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[6]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[7]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[8]) is unused and will be removed from module p_fifo.
+WARNING: [Synth 8-3332] Sequential element (rp_reg_rep[9]) is unused and will be removed from module p_fifo.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 694.875 ; gain = 486.949
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 694.875 ; gain = 486.949
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 694.875 ; gain = 486.949
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 694.875 ; gain = 486.949
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 694.875 ; gain = 486.949
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 694.875 ; gain = 486.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    32|
+|3     |LUT1     |    74|
+|4     |LUT2     |    81|
+|5     |LUT3     |   233|
+|6     |LUT4     |    99|
+|7     |LUT5     |   251|
+|8     |LUT6     |   448|
+|9     |MUXF7    |    19|
+|10    |MUXF8    |     8|
+|11    |RAM64M   |    32|
+|12    |RAM64X1D |    32|
+|13    |FDCE     |    20|
+|14    |FDRE     |   782|
+|15    |FDSE     |     2|
+|16    |IBUF     |    12|
+|17    |OBUF     |    28|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------+-----------------------------+------+
+|      |Instance                |Module                       |Cells |
++------+------------------------+-----------------------------+------+
+|1     |top                     |                             |  2154|
+|2     |  U_PULSER              |single_pulser                |     3|
+|3     |  U_MXTEST              |mxtest_2                     |    97|
+|4     |  U_TX                  |manchester_tx                |    95|
+|5     |    U_TX                |transmitter_for_mx           |    94|
+|6     |      U_CLKENB          |clkenb                       |    31|
+|7     |      U_SNAPSHOT        |reg_parm__1                  |     8|
+|8     |      U_EOF_WIDTH_COUNT |counter_parm__parameterized0 |     4|
+|9     |      U_BAUD_GEN        |clkenb_baud                  |    30|
+|10    |  U_RX                  |mx_rcvr                      |  1521|
+|11    |    U_FSM               |FSMs                         |   210|
+|12    |      U_PLL             |fsm_pll                      |   130|
+|13    |      U_DETECT          |fsm_psfd                     |    19|
+|14    |      U_DATA            |fsm_data                     |    35|
+|15    |      U_LAST_BIT        |one_bit_ff                   |     2|
+|16    |      U_WRITE           |sync_input__1                |     1|
+|17    |      U_ERROR_ACCUM     |accumulator                  |    23|
+|18    |    U_DATA              |data_buffer                  |    19|
+|19    |    U_SYNC              |sync_input                   |     1|
+|20    |    U_SLOW_SAMPLE       |clkenb__parameterized0       |    19|
+|21    |    U_SAMPLE            |clkenb__parameterized1       |    12|
+|22    |    U_BIT_COUNT         |counter                      |     6|
+|23    |    U_SLOW_COUNT        |counter__parameterized0      |    17|
+|24    |    U_FAST_COUNT        |counter__parameterized1      |    17|
+|25    |    U_ERROR             |f_error                      |     2|
+|26    |    U_PREAMBLE_CORR     |correlator                   |   289|
+|27    |    U_SFD_CORR          |correlator__parameterized0   |   611|
+|28    |    U_ONE_N_ZERO_CORR   |correlator__parameterized1   |   159|
+|29    |    U_IDLE_N_ERROR_CORR |correlator__parameterized2   |   159|
+|30    |  U_SEG_CTL             |dispctl                      |    97|
+|31    |    U_CLKENB            |clkenb__parameterized2       |    60|
+|32    |    U_COUNTER           |counter_parm__parameterized1 |     6|
+|33    |    U_DECODER           |decoder_3_8_en               |     8|
+|34    |    U_SEGMUX            |mux8_parm__parameterized0    |     8|
+|35    |    U_SEVEN_SEG         |seven_seg                    |     7|
+|36    |  U_FIFO                |p_fifo                       |   199|
+|37    |  U_FIFO_EXTRACTOR      |fifo_fsm                     |    14|
+|38    |  U_UART_TX             |transmitter                  |    84|
+|39    |    U_CLKENB            |clkenb__parameterized3       |    50|
+|40    |    U_SNAPSHOT          |reg_parm                     |     8|
+|41    |    U_SENDER            |mux8_parm                    |     3|
+|42    |    U_COUNTER           |counter_parm__parameterized2 |     9|
++------+------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 694.875 ; gain = 486.949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 694.875 ; gain = 148.625
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 694.875 ; gain = 486.949
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 108 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 32 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+197 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 694.875 ; gain = 460.797
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 694.875 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 04 11:39:12 2016...
