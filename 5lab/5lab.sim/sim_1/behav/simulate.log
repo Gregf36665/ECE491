@@ -10,16 +10,16 @@ START: 2.3 Check no byte at time 3440085.
 OK: 2.3 Check no byte (3 tests passed)
 START: 2 byte tx at time 4140085.
 OK: 2 byte tx (8 tests passed)
-START: 10a check one byte at time 5670085.
+START: 10a check one byte at time 5710085.
 OK: 10a check one byte (3 tests passed)
-START: 10b check 24 bytes at time 6530085.
+START: 10b check 24 bytes at time 6570085.
 OK: 10b check 24 bytes (49 tests passed)
-START: 10d test at time 11070085.
-FAIL(Error triggered with noise) Failed test 82 at time 12581175.
+START: 10d test at time 11110085.
+FAIL(Error triggered with noise) Failed test 82 at time 12621175.
   Expected value 0x1, Inspected Value 0x0
 FAIL: 10d test. (1/4 falures)
-START: 10e test at time 12581175.
-FAIL(Error triggered with noise) Failed test 86 at time 13711575.
+START: 10e test at time 12621175.
+FAIL(Error triggered with noise) Failed test 86 at time 13751575.
   Expected value 0x1, Inspected Value 0x0
 FAIL: 10e test. (1/4 falures)
 

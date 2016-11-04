@@ -12,11 +12,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="285030833334fs"></ZoomStartTime>
-      <ZoomEndTime time="1995215833334fs"></ZoomEndTime>
-      <Cursor1Time time="1710185000000fs"></Cursor1Time>
+      <ZoomStartTime time="3185251131750fs"></ZoomStartTime>
+      <ZoomEndTime time="15864839773651fs"></ZoomEndTime>
+      <Cursor1Time time="13751575000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/mx_rcvr_test/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -75,10 +75,6 @@
          <obj_property name="ElementShortName">reset</obj_property>
          <obj_property name="ObjectShortName">reset</obj_property>
       </wvobject>
-      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_DATA/look" type="logic">
-         <obj_property name="ElementShortName">look</obj_property>
-         <obj_property name="ObjectShortName">look</obj_property>
-      </wvobject>
       <wvobject fp_name="/mx_rcvr_test/DUV/U_ONE_N_ZERO_CORR/csum" type="array">
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="ElementShortName">csum[6:0]</obj_property>
@@ -126,6 +122,7 @@
    <wvobject fp_name="group38" type="group">
       <obj_property name="label">pll_fsm</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_PLL/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -195,7 +192,6 @@
    <wvobject fp_name="group151" type="group">
       <obj_property name="label">detect_fsm</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/mx_rcvr_test/DUV/U_SFD_CORR/csum" type="array">
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="ElementShortName">csum[8:0]</obj_property>
@@ -301,6 +297,55 @@
       <wvobject fp_name="/mx_rcvr_test/DUV/U_ERROR/ferr" type="logic">
          <obj_property name="ElementShortName">ferr</obj_property>
          <obj_property name="ObjectShortName">ferr</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group209" type="group">
+      <obj_property name="label">Accum</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/inc_error" type="logic">
+         <obj_property name="ElementShortName">inc_error</obj_property>
+         <obj_property name="ObjectShortName">inc_error</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/dec_error" type="logic">
+         <obj_property name="ElementShortName">dec_error</obj_property>
+         <obj_property name="ObjectShortName">dec_error</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/error_change" type="array">
+         <obj_property name="ElementShortName">error_change[5:0]</obj_property>
+         <obj_property name="ObjectShortName">error_change[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/sample_inc" type="logic">
+         <obj_property name="ElementShortName">sample_inc</obj_property>
+         <obj_property name="ObjectShortName">sample_inc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/sample_dec" type="logic">
+         <obj_property name="ElementShortName">sample_dec</obj_property>
+         <obj_property name="ObjectShortName">sample_dec</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/error" type="array">
+         <obj_property name="ElementShortName">error[6:0]</obj_property>
+         <obj_property name="ObjectShortName">error[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/next_error" type="array">
+         <obj_property name="ElementShortName">next_error[6:0]</obj_property>
+         <obj_property name="ObjectShortName">next_error[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/sample_inc_next" type="logic">
+         <obj_property name="ElementShortName">sample_inc_next</obj_property>
+         <obj_property name="ObjectShortName">sample_inc_next</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mx_rcvr_test/DUV/U_FSM/U_ERROR_ACCUM/sample_dec_next" type="logic">
+         <obj_property name="ElementShortName">sample_dec_next</obj_property>
+         <obj_property name="ObjectShortName">sample_dec_next</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
