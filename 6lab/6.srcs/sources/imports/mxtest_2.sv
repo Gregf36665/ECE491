@@ -152,7 +152,9 @@ module mxtest_2(
 			IDLE:
 			   begin
 				byte_addr_reset = 1; // reset the rom pointer 
-				next = run ? RUNNING :  IDLE;
+				if (length == 0) next = IDLE; // Don't allow jamming
+				else
+					next = run ? RUNNING :  IDLE;
 			   end
 
 			RUNNING:
