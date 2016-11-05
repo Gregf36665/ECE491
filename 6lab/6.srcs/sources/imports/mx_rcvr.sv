@@ -33,13 +33,13 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
     output logic [7:0] data,
     output logic write,
     output logic error, error1, error2, error3,
-	output logic looking, match_error,
+	output logic looking, 
 	output logic [7:0] error_count
     );
 
 	// All of the internal wires
 	logic data_bit, set_ferr, store_byte, match_zero, match_one, sfd_match;
-	logic preamble_match, match_idle, clr_ferr, bit_count_reset, sample_count_reset;
+	logic preamble_match, match_idle, match_error, clr_ferr, bit_count_reset, sample_count_reset;
 	logic [6:0] zero_one_strength;
 	logic [6:0] slow_sample_count;
 	logic [5:0] sample_count;
@@ -116,7 +116,7 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	// Keep track of number of bad packets
 	single_pulser U_ERROR_PULSER (.clk, .reset, .pulse(inc_error), .enb(error));
 
-	counter #(.MAX(127)) U_ERROR_COUNT (.clk, .enb(inc_error), .reset, .inc(), .dec(), .q(error_count));
+	counter #(.MAX(255)) U_ERROR_COUNT (.clk, .enb(inc_error), .reset, .inc(1'b0), .dec(1'b0), .q(error_count));
 
 
 endmodule
