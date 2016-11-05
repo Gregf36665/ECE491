@@ -135,7 +135,7 @@ module fsm_data(
 					EARLY_STOP:
 						begin
 							next = IDLE;
-							set_ferr = 1;
+							set_ferr = 1'b1;
 							set_ferr3 = 1'b1;
 						end
 					default:

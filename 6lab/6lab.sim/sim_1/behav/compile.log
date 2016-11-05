@@ -43,6 +43,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE49
 INFO: [VRFC 10-311] analyzing module p_fifo
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/mx_rcvr.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mx_rcvr
+WARNING: [VRFC 10-1315] redeclaration of ansi port match_error is not allowed [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/mx_rcvr.sv:35]
 INFO: [VRFC 10-2458] undeclared symbol rxd_sync, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/mx_rcvr.sv:55]
 INFO: [VRFC 10-2458] undeclared symbol sample_slow, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/mx_rcvr.sv:59]
 INFO: [VRFC 10-2458] undeclared symbol sample, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/mx_rcvr.sv:60]
@@ -76,13 +77,15 @@ INFO: [VRFC 10-311] analyzing module TransmitterTestUnit
 INFO: [VRFC 10-2458] undeclared symbol rdy, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6lab.srcs/sources_1/new/TransmitterTestUnit.sv:30]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module nexys4DDR
-INFO: [VRFC 10-2458] undeclared symbol clk, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:44]
-INFO: [VRFC 10-2458] undeclared symbol reset, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:45]
-INFO: [VRFC 10-2458] undeclared symbol rxdata, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:48]
-INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:59]
-WARNING: [VRFC 10-756] identifier txdata is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:49]
-WARNING: [VRFC 10-756] identifier txen is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:50]
-WARNING: [VRFC 10-756] identifier looking is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:55]
+INFO: [VRFC 10-2458] undeclared symbol clk, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:45]
+INFO: [VRFC 10-2458] undeclared symbol reset, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:46]
+INFO: [VRFC 10-2458] undeclared symbol rxdata, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:49]
+INFO: [VRFC 10-2458] undeclared symbol enb, assumed default net type wire [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:62]
+WARNING: [VRFC 10-756] identifier txdata is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:50]
+WARNING: [VRFC 10-756] identifier txen is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:51]
+WARNING: [VRFC 10-756] identifier looking is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:56]
+WARNING: [VRFC 10-756] identifier cardet is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:57]
+WARNING: [VRFC 10-756] identifier error is used before its declaration [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/nexys4DDR.sv:58]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/check_p.sv" into library xil_defaultlib
 INFO: [VRFC 10-443] port direction not specified for function/task, assuming input [C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/check_p.sv:84]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/flynng/Desktop/ECE491/6lab/6.srcs/sources/imports/accumulator.sv" into library xil_defaultlib

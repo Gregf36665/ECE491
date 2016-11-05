@@ -33,7 +33,7 @@ module Top_level_sim();
 	logic [6:0] SEGS;
 	logic [7:0] AN;
 	logic DP;
-	logic OUT_JB1, OUT_JB2;
+	logic OUT_JB1, OUT_JB2, OUT_JB3, OUT_JB4;
 
 	// PMOD logic
 	logic IN_JA1 = 0;
@@ -63,11 +63,13 @@ module Top_level_sim();
 
 	
 	// Send a manchester bit
+	localparam JITTER_AMOUNT = 100; // clock cycles/ baud
+	localparam NOISE = 5;
 	task send_bit(input logic data_bit);
-		repeat(1_000) @(posedge CLK100MHZ) // 1000 clock cycles @10ns = 100kBaud
-			IN_JA1 = data_bit;
-		repeat(1_000) @(posedge CLK100MHZ) // 1000 clock cycles @10ns = 100kBaud
-			IN_JA1 = ~data_bit;
+		repeat($urandom_range(1000-JITTER_AMOUNT,1000+JITTER_AMOUNT)) @(posedge CLK100MHZ) // 1000 clock cycles @10ns = 100kBaud
+			IN_JA1 = data_bit ^ ($urandom_range(100,1) < NOISE);  // add in some noise
+		repeat($urandom_range(1000-JITTER_AMOUNT,1000+JITTER_AMOUNT)) @(posedge CLK100MHZ) // 1000 clock cycles @10ns = 100kBaud
+			IN_JA1 = ~(data_bit ^ ($urandom_range(100,1) < NOISE));  // add in some noise
 	endtask
 
 	// Send a byte of data
@@ -94,7 +96,7 @@ module Top_level_sim();
 			//send_data;
 			#1000;
 			receive_data;
-			#1_500_000;
+			#18_500_000;
 			$finish;
 		end
 

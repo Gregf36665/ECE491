@@ -88,6 +88,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	localparam MIN_TRIGGER = THRESHOLD;
 	localparam MAX_TRIGGER = 64-THRESHOLD;
 
+	localparam IDLE_THRESHOLD = 60;
+	localparam ERROR_THRESHOLD = 0;
+
 
 	// HTHRESH set to fall after 1 wrong bit + 2 samples
 	correlator #(.LEN(128), .PATTERN(PREAMBLE_PATTERN), .HTHRESH(111), .LTHRESH(14)) U_PREAMBLE_CORR 
@@ -99,8 +102,8 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 		.l_out(match_zero), .csum(zero_one_strength));
 	// Make error much less sensitive than the others, it is very rare.
 	// If we miss an error but nothing else correlates then an error will still trigger
-	correlator #(.LEN(64), .PATTERN(IDLE_PATTERN), .HTHRESH(MAX_TRIGGER), .LTHRESH(10)) U_IDLE_N_ERROR_CORR
-		(.clk, .reset, .enb(sample), .d_in(rxd_sync), .csum(),
+	correlator #(.LEN(64), .PATTERN(IDLE_PATTERN), .HTHRESH(IDLE_THRESHOLD), .LTHRESH(ERROR_THRESHOLD)) 
+		U_IDLE_N_ERROR_CORR (.clk, .reset, .enb(sample), .d_in(rxd_sync), .csum(),
 		.h_out(match_idle), .l_out(match_error));
 
 
