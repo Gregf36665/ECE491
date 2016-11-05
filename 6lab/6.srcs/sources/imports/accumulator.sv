@@ -51,7 +51,7 @@ module accumulator(
 			end
 		end
 
-	localparam GAIN = 4; // 1/GAIN for the feedback loop
+	localparam GAIN = 2; // 1/GAIN for the feedback loop
 	always_comb
 	begin
 		// Default values

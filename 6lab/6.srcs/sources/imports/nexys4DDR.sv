@@ -35,7 +35,9 @@ module nexys4DDR (
 		  output logic        OUT_JA4,
 		  output logic        UART_RXD_OUT,
 		  output logic		  LED16_R, LED16_G,
-		  output logic		  LED17_R, LED17_G
+		  output logic		  LED17_R, LED17_G,
+		  output logic		  OUT_JB1, OUT_JB2,
+							  OUT_JB3, OUT_JB4
             );
 
 
@@ -49,6 +51,13 @@ module nexys4DDR (
 	assign OUT_JA3 = ~txen; // txen is the inversion of pin 3
 	assign OUT_JA4 = 1'b1; // This pin should always be high
 
+	// Debugging connections
+	assign OUT_JB1 = IN_JA1; // the rx line
+	assign OUT_JB2 = looking;
+	assign OUT_JB3 = cardet;
+	assign OUT_JB4 = error;
+
+
 	//Button connections
 	assign enb = BTND;
 
@@ -59,9 +68,12 @@ module nexys4DDR (
 	logic txdata, txen;
 	logic cardet, error; // These are internal signals that can be used
 
+	logic looking; // signal to connect the looking pulse
+
 	ReceiverTestUnit U_RX_UNIT (.clk, .reset, .rxdata, .SEGS, .AN, .DP,
 								.cardet, .error, .UART_RXD_OUT,
-								.LED16_R, .LED16_G, .LED17_R, .LED17_G);
+								.LED16_R, .LED16_G, .LED17_R, .LED17_G,
+								.looking);
 
 	TransmitterTestUnit U_TX_UNIT (.clk, .reset, .enb, .length,
 									.txen, .txdata);

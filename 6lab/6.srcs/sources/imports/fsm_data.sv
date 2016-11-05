@@ -26,7 +26,7 @@ module fsm_data(
 		input logic [5:0] sample_count,
 		input logic [2:0] bit_count,
 		output logic data_bit, store_bit, store_byte, set_ferr, write, data_done, 
-		output logic set_ferr1, set_ferr2
+		output logic set_ferr1, set_ferr2, set_ferr3
 		);
 				
 		typedef enum logic [3:0] {
@@ -39,7 +39,8 @@ module fsm_data(
 			BYTE_DONE		  = 4'h6,
 			WAIT_FOR_NEXT	  = 4'h7,
 			ERROR 			  = 4'h8,
-			MISSED			  = 4'h9
+			MISSED			  = 4'h9,
+			EARLY_STOP		  = 4'hA
 		} states;
 				
 		states state, next;
@@ -61,6 +62,7 @@ module fsm_data(
 				set_ferr    = 1'b0;
 				set_ferr1    = 1'b0;
 				set_ferr2    = 1'b0;
+				set_ferr3    = 1'b0;
 				write       = 1'b0;
 				data_done   = 1'b0;
 							
@@ -82,7 +84,7 @@ module fsm_data(
 						if(match_one) next = FOUND_ONE;
 						else if(match_zero) next = FOUND_ZERO;
 						// Check if we got an EOF at the right point
-						else if(match_idle) next = bit_count == 3'b0 ? IDLE: ERROR;
+						else if(match_idle) next = bit_count == 3'b0 ? IDLE: EARLY_STOP;
 						else if(match_error) next = ERROR;
 						else if(sample_count == 20) next = MISSED; // We missed it
 						else next = LOOKING;
@@ -129,6 +131,12 @@ module fsm_data(
 						  next = IDLE;
 						  set_ferr = 1'b1;
 						  set_ferr1 = 1'b1;
+						end
+					EARLY_STOP:
+						begin
+							next = IDLE;
+							set_ferr = 1;
+							set_ferr3 = 1'b1;
 						end
 					default:
 						next = IDLE;

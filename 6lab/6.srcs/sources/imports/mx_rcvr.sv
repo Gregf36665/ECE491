@@ -27,7 +27,8 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
     output logic cardet,
     output logic [7:0] data,
     output logic write,
-    output logic error, error1, error2, error3
+    output logic error, error1, error2, error3,
+	output logic looking, match_error
     );
 
 	// All of the internal wires
@@ -66,6 +67,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	counter #(.MAX(63)) U_FAST_COUNT (.clk, .enb(sample), .reset(sample_count_reset), .inc(sample_inc),
 										.dec(sample_dec), .q(sample_count));
 
+	// This should be a pulse on the edge of the mx bit
+	assign looking = sample_count == 32;
+
 	// error block
 	f_error U_ERROR (.clk, .set_ferr, .clr_ferr, .reset, .ferr(error));
 	f_error U_ERROR1 (.clk, .set_ferr(set_ferr1), .clr_ferr, .reset, .ferr(error1));
@@ -93,7 +97,9 @@ module mx_rcvr #(parameter BIT_RATE = 50_000)(
 	correlator #(.LEN(64), .PATTERN(ONE_PATTERN), .HTHRESH(MAX_TRIGGER), .LTHRESH(MIN_TRIGGER)) U_ONE_N_ZERO_CORR
 		(.clk, .reset, .enb(sample), .d_in(rxd_sync), .h_out(match_one), 
 		.l_out(match_zero), .csum(zero_one_strength));
-	correlator #(.LEN(64), .PATTERN(IDLE_PATTERN), .HTHRESH(MAX_TRIGGER), .LTHRESH(MIN_TRIGGER)) U_IDLE_N_ERROR_CORR
+	// Make error much less sensitive than the others, it is very rare.
+	// If we miss an error but nothing else correlates then an error will still trigger
+	correlator #(.LEN(64), .PATTERN(IDLE_PATTERN), .HTHRESH(MAX_TRIGGER), .LTHRESH(10)) U_IDLE_N_ERROR_CORR
 		(.clk, .reset, .enb(sample), .d_in(rxd_sync), .csum(),
 		.h_out(match_idle), .l_out(match_error));
 

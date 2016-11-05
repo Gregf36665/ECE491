@@ -11,7 +11,8 @@ module ReceiverTestUnit(
 				output logic DP,
 				output logic cardet, error,
 				output logic UART_RXD_OUT,
-				output logic LED16_R, LED16_G, LED17_R, LED17_G // signal LEDs
+				output logic LED16_R, LED16_G, LED17_R, LED17_G, // signal LEDs
+				output logic looking
 				);
 
 
@@ -26,7 +27,7 @@ module ReceiverTestUnit(
 	
 	// receiver
 	mx_rcvr U_RX (.clk, .reset, .rxd(rxdata), .cardet, .data(data_out), .write, .error, 
-				.error1, .error2, .error3);
+				.error1, .error2, .error3, .looking);
 
 	// Control the seven seg display with data from the rx
 	dispctl U_SEG_CTL (.clk, .reset, .d7(error_code), .d6(4'h0), .d5(4'h0), .d4(4'h0), 

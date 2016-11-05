@@ -33,6 +33,7 @@ module Top_level_sim();
 	logic [6:0] SEGS;
 	logic [7:0] AN;
 	logic DP;
+	logic OUT_JB1, OUT_JB2;
 
 	// PMOD logic
 	logic IN_JA1 = 0;
@@ -84,7 +85,7 @@ module Top_level_sim();
 		#1000;
 		repeat(2) send_byte(8'h55); // Send preamble
 		send_byte(8'hD0); // send SFD
-		send_byte(8'h55); // send data
+		repeat(20) send_byte(8'h55); // send data
 		IN_JA1 = 1; // Idle the data line
 	endtask
 
